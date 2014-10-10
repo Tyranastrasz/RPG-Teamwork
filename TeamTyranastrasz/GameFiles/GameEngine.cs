@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RpgGame
+﻿namespace RpgGame
 {
-    class GameEngine
+    public class GameEngine
     {
+        private void CreateNewPlayer()
+        {
+        }
+
+        private void GenerateEnemies()
+        {
+        }
+
+        private void CalculateBattleOutcome()
+        {
+        }
+
+        private void SaveGame()
+        {
+        }
+
+        private void LoadGame()
+        {
+        }
     }
 }
