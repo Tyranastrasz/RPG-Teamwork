@@ -1,12 +1,11 @@
-﻿using GameObject.Interfaces;
-using GameObject.Items;
-
-namespace GameObject.Player
+﻿namespace RpgGame.Player
 {
     using System;
     using System.Collections.Generic;
+    using RpgGame.Interfaces;
+    using RpgGame.Items;
 
-    public abstract class Player : Unit, IAttack, IDefend, IMovable, ITeleportable, IUsable, ITrade, IStats
+    public abstract class Player : Unit, IAttack, IDefend, IMovable, ITeleportable, IUsable, ITrade, ICharacter
     {
         //private int Level = 1;
 

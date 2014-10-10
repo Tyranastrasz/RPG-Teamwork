@@ -1,4 +1,4 @@
-﻿namespace GameObject.Items
+﻿namespace RpgGame.Items
 {
     // Maybe we can make this abstract class... or not?
     public class Weapon : Item

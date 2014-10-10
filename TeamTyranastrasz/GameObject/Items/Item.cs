@@ -1,8 +1,8 @@
-﻿using GameObject.Interfaces;
-
-namespace GameObject.Items
+﻿namespace RpgGame.Items
 {
-    public abstract class Item : GameObject, IStats
+    using RpgGame.Interfaces;
+
+    public abstract class Item : GameObject, ICharacter
     {
         protected Item(string name) : base(name)
         {

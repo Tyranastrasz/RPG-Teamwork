@@ -1,4 +1,4 @@
-﻿namespace GameObject.Player
+﻿namespace RpgGame.Player
 {
     using System;
     using System.Collections.Generic;

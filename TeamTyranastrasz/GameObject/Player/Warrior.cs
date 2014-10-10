@@ -1,11 +1,5 @@
-﻿namespace GameObject.Player
+﻿namespace RpgGame.Player
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     public class Warrior : Player
     {
         public Warrior(string name, int str, int dex, int vit, int intl, int x, int y) : base(name)

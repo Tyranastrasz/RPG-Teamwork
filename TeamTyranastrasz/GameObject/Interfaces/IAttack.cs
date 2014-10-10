@@ -1,4 +1,4 @@
-﻿namespace GameObject.Interfaces
+﻿namespace RpgGame.Interfaces
 {
     using System;
     using System.Collections.Generic;

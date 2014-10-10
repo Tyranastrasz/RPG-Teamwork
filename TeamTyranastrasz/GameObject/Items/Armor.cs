@@ -1,4 +1,4 @@
-﻿namespace GameObject.Items
+﻿namespace RpgGame.Items
 {
     public abstract class Armor : Item
     {

@@ -1,4 +1,4 @@
-﻿namespace GameObject
+﻿namespace RpgGame
 {
     partial class Form1
     {

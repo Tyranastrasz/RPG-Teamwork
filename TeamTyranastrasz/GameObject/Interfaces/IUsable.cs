@@ -1,4 +1,4 @@
-﻿namespace GameObject.Interfaces
+﻿namespace RpgGame.Interfaces
 {
     public interface IUsable
     {
