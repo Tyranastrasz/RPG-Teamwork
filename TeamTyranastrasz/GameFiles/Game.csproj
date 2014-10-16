@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enemies\MeleeType\Golem.cs" />
+    <Compile Include="Enemies\MeleeType\Ork.cs" />
+    <Compile Include="Enemies\MeleeType\Skeleton.cs" />
+    <Compile Include="Enemies\RangeType\Drake.cs" />
+    <Compile Include="Enemies\RangeType\Goblin.cs" />
+    <Compile Include="Enemies\RangeType\Shade.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Boots.cs" />
     <Compile Include="Enemies\Boss.cs" />
@@ -139,6 +145,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
