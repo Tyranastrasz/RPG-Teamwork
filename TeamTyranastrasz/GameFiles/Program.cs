@@ -1,5 +1,6 @@
 ﻿namespace RpgGame
 {
+    using RpgGame.Player;
     using System;
     using System.Windows.Forms;
 
@@ -11,9 +12,13 @@
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1());
+
+            Warrior player = new Warrior("Pesho");
+            var hitpoints = player.DefensePoints;
+            Console.WriteLine();
         }
     }
 }

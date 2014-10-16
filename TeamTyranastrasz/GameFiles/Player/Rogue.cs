@@ -2,15 +2,20 @@
 {
     public class Rogue : Player
     {
-        // TODO - some of the stats have to be hardcoded when initializing the player!
-        public Rogue(string name, int str, int dex, int vit, int intl, int x, int y) : base(name)
+        public const int strength = 4;
+        public const int strengthModifier = 2;
+        public const int dexterity = 3;
+        public const int dexterityModifier = 2;
+        public const int vitality = 10;
+        public const int vitalityModifier = 3;
+        public const int intelligence = 2;
+        public const int intelligenceModifier = 1;
+
+        public Rogue(string name)
+            : base(name, strength, dexterity, vitality, intelligence, strengthModifier, dexterityModifier, vitalityModifier, intelligenceModifier)
         {
-            this.Strength = str;
-            this.Dexterity = dex;
-            this.Vitality = vit;
-            this.Intelligence = intl;
-            this.X = x;
-            this.Y = y;
+            //this.X = x;
+            //this.Y = y;
         }
     }
 }

@@ -1,21 +1,21 @@
 ﻿namespace RpgGame.Player
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     public class Mage : Player
     {
-        public Mage(string name, int str, int dex, int vit, int intl, int x, int y) : base(name)
+        public const int strength = 4;
+        public const int strengthModifier = 2;
+        public const int dexterity = 3;
+        public const int dexterityModifier = 2;
+        public const int vitality = 10;
+        public const int vitalityModifier = 3;
+        public const int intelligence = 2;
+        public const int intelligenceModifier = 1;
+
+        public Mage(string name)
+            : base(name, strength, dexterity, vitality, intelligence, strengthModifier, dexterityModifier, vitalityModifier, intelligenceModifier)
         {
-            this.Strength = str;
-            this.Dexterity = dex;
-            this.Vitality = vit;
-            this.Intelligence = intl;
-            this.X = x;
-            this.Y = y;
+            //this.X = x;
+            //this.Y = y;
         }
     }
 }

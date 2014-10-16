@@ -12,5 +12,11 @@
         {
             throw new NotImplementedException();
         }
+
+        public override int HitPoints { get; set; }
+
+        public override int DefensePoints { get; set; }
+
+        public override int AttackPoints { get; set; }
     }
 }
