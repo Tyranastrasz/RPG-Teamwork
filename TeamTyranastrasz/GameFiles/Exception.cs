@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace RpgGame
+﻿namespace RpgGame
 {
-    public static class Exception
+    using System;
+
+    public class NotEnoughDicePointsException : ApplicationException 
     {
         public static void ShowInvalidNameMessageBoxException()
         {

@@ -24,6 +24,10 @@
 
         int Cash { get; }
 
+        int Range { get; }
+
+        int Level { get; }
+
         Position Position { get; }
     }
 }

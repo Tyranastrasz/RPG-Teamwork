@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RpgGame.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace RpgGame.Forms
         public Town()
         {
             InitializeComponent();
+            ICharacter playerCharacter = GameEngine.PlayerCharacter;
         }
 
         private void Town_Load(object sender, EventArgs e)

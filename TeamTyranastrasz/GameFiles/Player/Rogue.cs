@@ -2,23 +2,21 @@
 {
     public class Rogue : Player
     {
-        public const int startingStrength = 10;
-        public const int startingDexterity = 2;
-        public const int startingVitality = 10;
-        public const int startingIntelligence = 5;
+        public const int RogueStartingStrength = 10;
+        public const int RogueStartingDexterity = 2;
+        public const int RogueStartingVitality = 10;
+        public const int RogueStartingIntelligence = 5;
 
-        public const int strengthModifier = 3;
-        public const int dexterityModifier = 1;
-        public const int vitalityModifier = 1;
-        public const int intelligenceModifier = 2;
+        public const int RogueStrengthModifier = 3;
+        public const int RogueDexterityModifier = 1;
+        public const int RogueVitalityModifier = 1;
+        public const int RogueIntelligenceModifier = 2;
 
         private Position position;
 
         public Rogue(string name)
-            : base(name, startingStrength, startingDexterity, startingVitality, startingIntelligence, strengthModifier, dexterityModifier, vitalityModifier, intelligenceModifier)
+            : base(name, RogueStartingStrength, RogueStartingDexterity, RogueStartingVitality, RogueStartingIntelligence, RogueStrengthModifier, RogueDexterityModifier, RogueVitalityModifier, RogueIntelligenceModifier)
         {
-            //this.X = x;
-            //this.Y = y;
         }
     }
 }
