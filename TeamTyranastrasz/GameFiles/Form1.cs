@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace RpgGame
 {
-    public partial class Form1 : Form
+    public partial class Map : Form
     {
-        public Form1()
+        public Map()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

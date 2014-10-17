@@ -19,12 +19,14 @@ namespace RpgGame
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
 
-            ICharacter player = new Warrior("Pesho");
+            //ICharacter player = new Warrior("Pesho");
 
-            IItem helm = new Helmet("Wizard hat", 200, 2, 5);
+            //IItem helm = new Helmet("Wizard hat", 200, 2, 5);
 
-            var hitpoints = player.DefencePoints;
-            Console.WriteLine();
+            //var hitpoints = player.DefencePoints;
+            //Console.WriteLine();
+
+            Application.Run(new Map());
         }
     }
 }
