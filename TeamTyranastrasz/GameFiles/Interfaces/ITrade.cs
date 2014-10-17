@@ -1,8 +1,11 @@
 ﻿namespace RpgGame.Interfaces
 {
+    using RpgGame.Items;
+
     public interface ITrade
     {
-        void Sell();
-        void Buy();
+        void Sell(Item item);
+
+        void Buy(Item item);
     }
 }

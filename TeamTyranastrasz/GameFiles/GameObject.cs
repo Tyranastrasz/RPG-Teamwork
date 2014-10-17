@@ -7,6 +7,8 @@
             this.Name = name;
         }
         public string Name { get; set; }
+
+        Position Position { get; set; }
         // image?
     }
 }

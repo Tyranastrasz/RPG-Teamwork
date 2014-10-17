@@ -14,16 +14,14 @@
 
         int DefencePoints { get; }
 
-        int HitPoints { get; }
+        int MaxHitPoints { get; }
+
+        int CurrentHitPoints { get; }
 
         int Experience { get; }
 
         int Cash { get; }
 
-        //void CalculateAttackPoints();
-
-        //void CalculateDefensePoints();
-
-        //void CalculateHitPoints();
+        Position Position { get; }
     }
 }

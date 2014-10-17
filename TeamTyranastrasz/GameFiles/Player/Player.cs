@@ -1,7 +1,4 @@
-﻿
-using System.Runtime.Remoting.Messaging;
-
-namespace RpgGame.Player
+﻿namespace RpgGame.Player
 {
     using System.Linq;
     using System;
@@ -18,6 +15,9 @@ namespace RpgGame.Player
         public readonly int VitalityModifier;
         public readonly int IntelligenceModifier;
 
+        private Position position;
+        private int cash;
+
         protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier) : base(name)
         {
             this.Strength = str;
@@ -31,6 +31,7 @@ namespace RpgGame.Player
             CalculateAttackPoints();
             CalculateDefencePoints();
             CalculateHitPoints();
+            this.CurrentHitPoints = this.MaxHitPoints;
         }
 
         public int Strength { get; set; }
@@ -41,7 +42,9 @@ namespace RpgGame.Player
 
         public int Intelligence { get; set; }
 
-        public int HitPoints { get; set; }
+        public int MaxHitPoints { get; set; }
+
+        public int CurrentHitPoints { get; set; }
 
         public int DefencePoints { get; set; }
 
@@ -49,10 +52,21 @@ namespace RpgGame.Player
 
         public int Experience { get; set; }
 
-        public int Cash { get; set; }
+        public int Cash {
+            get { return this.cash; }
+
+            set {
+                if (this.Cash - value < 0)
+                {
+                    throw new InvalidOperationException("You do not have enough money for this action.");
+                }
+
+                this.cash = value;
+            }
+        }
 
         //public int Level { get; set; }
-        public IList<Item> Inventory { get; set; }
+        public List<Item> Inventory { get; set; }
 
         public List<Item> Equiped { get; set; }
 
@@ -62,16 +76,16 @@ namespace RpgGame.Player
             return this.AttackPoints;
         }
 
-        public int CalculateDefencePoints()
+        private int CalculateDefencePoints()
         {
             this.DefencePoints = this.Dexterity * this.DexterityModifier;
             return this.DefencePoints;
         }
 
-        public int CalculateHitPoints()
+        private int CalculateHitPoints()
         {
-            this.HitPoints = this.Vitality * this.VitalityModifier;
-            return this.HitPoints;
+            this.MaxHitPoints = this.Vitality * this.VitalityModifier;
+            return this.MaxHitPoints;
         }
 
         public virtual void Attack()
@@ -97,29 +111,59 @@ namespace RpgGame.Player
             throw new NotImplementedException();
         }
 
-        public void Consume()
+        // The next coule of methods probably should implement an event - click over an item
+        public void Consume(Item item)
         {
-            throw new NotImplementedException();
+            if (item.IsConsumable)
+            {
+                this.MaxHitPoints += item.HitPoints;
+                this.RemoveFromInventory(item);
+            }
         }
 
-        public void Equip()
+        public void Equip(Item item)
         {
-            throw new NotImplementedException();
+            bool hasType = false;
+            foreach (var equipedItem in Equiped)
+            {
+                if (equipedItem.GetType() == item.GetType())
+                {
+                    hasType = true;
+                }
+            }
+            if (this.Equiped.Count >= 5 && hasType)
+            {
+                throw new Exception("You cannot equip this item!");
+            }
+
+            this.Equiped.Add(item);
         }
 
-        public void Remove()
+        public void AddToInventory(Item item)
         {
-            throw new NotImplementedException();
+            if (this.Inventory.Count < 10)
+            {
+                this.Inventory.Add(item);
+            }
         }
 
-        public void Sell()
+        public void RemoveFromInventory(Item item)
         {
-            throw new NotImplementedException();
+            this.Inventory.Remove(item);
         }
 
-        public void Buy()
+        public void Sell(Item item)
         {
-            throw new NotImplementedException();
+            this.Cash += item.Price;
+            this.RemoveFromInventory(item);
+        }
+
+        public void Buy(Item item)
+        {
+            if (this.Cash >= item.Price)
+            {
+                this.AddToInventory(item);
+            }
         }
     }
 }

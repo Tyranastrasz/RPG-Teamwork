@@ -38,5 +38,7 @@ namespace RpgGame.Items
         public int Price { get; set; }
 
         public string Description { get; protected set; }
+
+        public bool IsConsumable { get; set; }
     }
 }

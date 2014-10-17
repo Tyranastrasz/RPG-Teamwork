@@ -21,5 +21,7 @@
         int Price { get; set; }
 
         string Description { get; }
+
+        bool IsConsumable { get; }
     }
 }
