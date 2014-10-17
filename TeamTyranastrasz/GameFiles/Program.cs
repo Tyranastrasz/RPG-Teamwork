@@ -1,4 +1,7 @@
-﻿namespace RpgGame
+﻿using RpgGame.Interfaces;
+using RpgGame.Items;
+
+namespace RpgGame
 {
     using RpgGame.Player;
     using System;
@@ -16,8 +19,11 @@
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
 
-            Warrior player = new Warrior("Pesho");
-            var hitpoints = player.DefensePoints;
+            ICharacter player = new Warrior("Pesho");
+
+            IItem helm = new Helmet("Wizard hat", 200, 2, 5);
+
+            var hitpoints = player.DefencePoints;
             Console.WriteLine();
         }
     }

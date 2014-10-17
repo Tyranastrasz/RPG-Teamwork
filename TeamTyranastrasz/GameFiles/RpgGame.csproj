@@ -72,7 +72,9 @@
     <Compile Include="Enemies\RangeType\Goblin.cs" />
     <Compile Include="Enemies\RangeType\Shade.cs" />
     <Compile Include="GameEngine.cs" />
-    <Compile Include="Image.cs" />
+    <Compile Include="Interfaces\IEnemy.cs" />
+    <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Pictures.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Boots.cs" />
     <Compile Include="Enemies\Boss.cs" />

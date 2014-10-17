@@ -2,13 +2,9 @@
 {
     public class Chainmail : Armor
     {
-        public Chainmail(string name, int str = 0, int dex = 0, int vit = 0, int intl = 0, int level = 0) : base(name)
+        public Chainmail(string name, int price, int deffensePoints, int levelRequirement)
+            : base(name, price, deffensePoints, levelRequirement)
         {
-            this.Strength = str;
-            this.Dexterity = dex;
-            this.Vitality = vit;
-            this.Intelligence = intl;
-            this.LevelRequirement = level;
         }
     }
 }

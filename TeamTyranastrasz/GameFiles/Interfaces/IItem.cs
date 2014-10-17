@@ -1,6 +1,6 @@
-﻿namespace RpgGame.Interfaces
+﻿namespace RpgGame
 {
-    public interface ICharacter
+    public interface IItem
     {
         int Strength { get; }
 
@@ -16,14 +16,10 @@
 
         int HitPoints { get; }
 
-        int Experience { get; }
+        int LevelRequirement { get; set; }
 
-        int Cash { get; }
+        int Price { get; set; }
 
-        //void CalculateAttackPoints();
-
-        //void CalculateDefensePoints();
-
-        //void CalculateHitPoints();
+        string Description { get; }
     }
 }

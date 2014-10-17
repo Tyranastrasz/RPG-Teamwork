@@ -1,6 +1,6 @@
 ﻿namespace RpgGame
 {
-    public enum Image
+    public enum Pictures
     {
         Mage,
         Rogue,

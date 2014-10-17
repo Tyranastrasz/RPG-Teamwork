@@ -1,5 +1,9 @@
-﻿namespace RpgGame.Player
+﻿
+using System.Runtime.Remoting.Messaging;
+
+namespace RpgGame.Player
 {
+    using System.Linq;
     using System;
     using System.Collections.Generic;
     using RpgGame.Interfaces;
@@ -8,10 +12,11 @@
     public abstract class Player : Unit, IAttack, IDefend, IMovable, ITeleportable, IUsable, ITrade, ICharacter
     {
         //private int Level = 1;
-        protected int attackPoints;
-        protected int defensePoints;
-        protected int hitPoints;
 
+        public readonly int StrengthModifier;
+        public readonly int DexterityModifier;
+        public readonly int VitalityModifier;
+        public readonly int IntelligenceModifier;
 
         protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier) : base(name)
         {
@@ -19,9 +24,13 @@
             this.Dexterity = dex;
             this.Vitality = vit;
             this.Intelligence = intl;
-            this.AttackPoints = (this.Strength * strengthModifier) + (this.Intelligence * intelligenceModifier);
-            this.DefensePoints = this.Dexterity * dexterityModifier;
-            this.HitPoints = this.Vitality*vitalityModifier;
+            this.StrengthModifier = strengthModifier;
+            this.DexterityModifier = dexterityModifier;
+            this.VitalityModifier = vitalityModifier;
+            this.IntelligenceModifier = intelligenceModifier;
+            CalculateAttackPoints();
+            CalculateDefencePoints();
+            CalculateHitPoints();
         }
 
         public int Strength { get; set; }
@@ -32,11 +41,11 @@
 
         public int Intelligence { get; set; }
 
-        public override int HitPoints { get; set; }
+        public int HitPoints { get; set; }
 
-        public override int DefensePoints { get; set; }
+        public int DefencePoints { get; set; }
 
-        public override int AttackPoints { get; set; }
+        public int AttackPoints { get; set; }
 
         public int Experience { get; set; }
 
@@ -45,16 +54,37 @@
         //public int Level { get; set; }
         public IList<Item> Inventory { get; set; }
 
-        public IList<Item> Equiped { get; set; }
+        public List<Item> Equiped { get; set; }
+
+        private int CalculateAttackPoints()
+        {
+            this.AttackPoints = (this.Strength * this.StrengthModifier) + (this.Intelligence * this.IntelligenceModifier);
+            return this.AttackPoints;
+        }
+
+        public int CalculateDefencePoints()
+        {
+            this.DefencePoints = this.Dexterity * this.DexterityModifier;
+            return this.DefencePoints;
+        }
+
+        public int CalculateHitPoints()
+        {
+            this.HitPoints = this.Vitality * this.VitalityModifier;
+            return this.HitPoints;
+        }
 
         public virtual void Attack()
         {
-            throw new NotImplementedException();
+            int damage = CalculateAttackPoints();
+            damage += this.Equiped.Sum(item => item.DefencePoints);
+
         }
 
         public virtual void Defend()
         {
-            throw new NotImplementedException();
+            int defence = CalculateDefencePoints(); 
+            defence += this.Equiped.Sum(item => item.DefencePoints);
         }
 
         public virtual void Move()
