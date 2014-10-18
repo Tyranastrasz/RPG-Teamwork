@@ -111,7 +111,7 @@
             throw new NotImplementedException();
         }
 
-        // The next coule of methods probably should implement an event - click over an item
+        // The next couple of methods probably should implement an event - click over an item
         public void Consume(Item item)
         {
             if (item.IsConsumable)
