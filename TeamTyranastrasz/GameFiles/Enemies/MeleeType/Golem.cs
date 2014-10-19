@@ -2,7 +2,7 @@
 {
     public class Golem : Melee
     {
-        public Golem(string name, int hitPoints, int attackPoints, int defensePoints)
+        public Golem(string name, int hitPoints, int attackPoints, int defensePoints, Pictures picture)
             : base(name, hitPoints, defensePoints, attackPoints)
         {
         }

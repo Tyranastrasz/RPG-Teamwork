@@ -1,11 +1,6 @@
 ﻿using RpgGame.Forms;
-using RpgGame.Forms.TestDraw;
-using RpgGame.Interfaces;
-using RpgGame.Items;
-
 namespace RpgGame
 {
-    using RpgGame.Player;
     using System;
     using System.Windows.Forms;
 
