@@ -1,13 +1,6 @@
-﻿using RpgGame.Forms;
-<<<<<<< HEAD
-using RpgGame.Forms;
-using RpgGame.Interfaces;
-using RpgGame.Items;
-
-=======
->>>>>>> fixing_bug
-namespace RpgGame
+﻿namespace RpgGame
 {
+    using RpgGame.Forms;
     using System;
     using System.Windows.Forms;
 
