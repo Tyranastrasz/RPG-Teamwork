@@ -1,4 +1,5 @@
-﻿using RpgGame.Interfaces;
+﻿using RpgGame.Forms;
+using RpgGame.Interfaces;
 using RpgGame.Items;
 
 namespace RpgGame
@@ -26,7 +27,7 @@ namespace RpgGame
             //var hitpoints = player.DefencePoints;
             //Console.WriteLine();
 
-            Application.Run(new Map());
+            Application.Run(new StartScreen());
         }
     }
 }
