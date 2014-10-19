@@ -123,17 +123,12 @@
 
         public void Equip(Item item)
         {
-            bool hasType = false;
             foreach (var equipedItem in Equiped)
             {
                 if (equipedItem.GetType() == item.GetType())
                 {
-                    hasType = true;
+                    throw new Exception("You cannot have two items from the same type");
                 }
-            }
-            if (this.Equiped.Count >= 5 && hasType)
-            {
-                throw new Exception("You cannot equip this item!");
             }
 
             this.Equiped.Add(item);

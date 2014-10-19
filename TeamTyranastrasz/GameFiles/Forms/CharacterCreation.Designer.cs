@@ -30,17 +30,19 @@
         {
             this.lblCharName = new System.Windows.Forms.Label();
             this.inputCharName = new System.Windows.Forms.TextBox();
-            this.btnWarrSelect = new System.Windows.Forms.Button();
-            this.btnMageSelect = new System.Windows.Forms.Button();
-            this.btnRogueSelect = new System.Windows.Forms.Button();
             this.tempReffBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.createChar = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
+            this.CreateCharacter = new System.Windows.Forms.GroupBox();
+            this.Btn_Warrior = new System.Windows.Forms.RadioButton();
+            this.Btn_Mage = new System.Windows.Forms.RadioButton();
+            this.Btn_Rogue = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.tempReffBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.CreateCharacter.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCharName
@@ -60,34 +62,6 @@
             this.inputCharName.Size = new System.Drawing.Size(100, 20);
             this.inputCharName.TabIndex = 1;
             this.inputCharName.TextChanged += new System.EventHandler(this.inputCharName_TextChanged);
-            // 
-            // btnWarrSelect
-            // 
-            this.btnWarrSelect.Location = new System.Drawing.Point(340, 318);
-            this.btnWarrSelect.Name = "btnWarrSelect";
-            this.btnWarrSelect.Size = new System.Drawing.Size(135, 38);
-            this.btnWarrSelect.TabIndex = 2;
-            this.btnWarrSelect.Text = "Warrior";
-            this.btnWarrSelect.UseVisualStyleBackColor = true;
-            this.btnWarrSelect.Click += new System.EventHandler(this.btnWarrSelect_Click);
-            // 
-            // btnMageSelect
-            // 
-            this.btnMageSelect.Location = new System.Drawing.Point(498, 318);
-            this.btnMageSelect.Name = "btnMageSelect";
-            this.btnMageSelect.Size = new System.Drawing.Size(135, 38);
-            this.btnMageSelect.TabIndex = 3;
-            this.btnMageSelect.Text = "Mage";
-            this.btnMageSelect.UseVisualStyleBackColor = true;
-            // 
-            // btnRogueSelect
-            // 
-            this.btnRogueSelect.Location = new System.Drawing.Point(659, 318);
-            this.btnRogueSelect.Name = "btnRogueSelect";
-            this.btnRogueSelect.Size = new System.Drawing.Size(135, 38);
-            this.btnRogueSelect.TabIndex = 4;
-            this.btnRogueSelect.Text = "Rogue";
-            this.btnRogueSelect.UseVisualStyleBackColor = true;
             // 
             // tempReffBox1
             // 
@@ -136,20 +110,64 @@
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
+            // CreateCharacter
+            // 
+            this.CreateCharacter.Controls.Add(this.Btn_Rogue);
+            this.CreateCharacter.Controls.Add(this.Btn_Mage);
+            this.CreateCharacter.Controls.Add(this.Btn_Warrior);
+            this.CreateCharacter.Location = new System.Drawing.Point(357, 308);
+            this.CreateCharacter.Name = "CreateCharacter";
+            this.CreateCharacter.Size = new System.Drawing.Size(398, 58);
+            this.CreateCharacter.TabIndex = 10;
+            this.CreateCharacter.TabStop = false;
+            this.CreateCharacter.Text = "Choose your Hero!";
+            this.CreateCharacter.Enter += new System.EventHandler(this.CreateCharacter_Enter);
+            // 
+            // Btn_Warrior
+            // 
+            this.Btn_Warrior.AutoSize = true;
+            this.Btn_Warrior.Location = new System.Drawing.Point(16, 24);
+            this.Btn_Warrior.Name = "Btn_Warrior";
+            this.Btn_Warrior.Size = new System.Drawing.Size(59, 17);
+            this.Btn_Warrior.TabIndex = 0;
+            this.Btn_Warrior.TabStop = true;
+            this.Btn_Warrior.Text = "Warrior";
+            this.Btn_Warrior.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Mage
+            // 
+            this.Btn_Mage.AutoSize = true;
+            this.Btn_Mage.Location = new System.Drawing.Point(141, 24);
+            this.Btn_Mage.Name = "Btn_Mage";
+            this.Btn_Mage.Size = new System.Drawing.Size(52, 17);
+            this.Btn_Mage.TabIndex = 1;
+            this.Btn_Mage.TabStop = true;
+            this.Btn_Mage.Text = "Mage";
+            this.Btn_Mage.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Rogue
+            // 
+            this.Btn_Rogue.AutoSize = true;
+            this.Btn_Rogue.Location = new System.Drawing.Point(283, 26);
+            this.Btn_Rogue.Name = "Btn_Rogue";
+            this.Btn_Rogue.Size = new System.Drawing.Size(57, 17);
+            this.Btn_Rogue.TabIndex = 2;
+            this.Btn_Rogue.TabStop = true;
+            this.Btn_Rogue.Text = "Rogue";
+            this.Btn_Rogue.UseVisualStyleBackColor = true;
+            // 
             // CharacterCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RpgGame.Properties.Resources.main_char_creat_img;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.CreateCharacter);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.createChar);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tempReffBox1);
-            this.Controls.Add(this.btnRogueSelect);
-            this.Controls.Add(this.btnMageSelect);
-            this.Controls.Add(this.btnWarrSelect);
             this.Controls.Add(this.inputCharName);
             this.Controls.Add(this.lblCharName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -160,6 +178,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tempReffBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.CreateCharacter.ResumeLayout(false);
+            this.CreateCharacter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,13 +189,14 @@
 
         private System.Windows.Forms.Label lblCharName;
         private System.Windows.Forms.TextBox inputCharName;
-        private System.Windows.Forms.Button btnWarrSelect;
-        private System.Windows.Forms.Button btnMageSelect;
-        private System.Windows.Forms.Button btnRogueSelect;
         private System.Windows.Forms.PictureBox tempReffBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button createChar;
         private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.GroupBox CreateCharacter;
+        private System.Windows.Forms.RadioButton Btn_Rogue;
+        private System.Windows.Forms.RadioButton Btn_Mage;
+        private System.Windows.Forms.RadioButton Btn_Warrior;
     }
 }
