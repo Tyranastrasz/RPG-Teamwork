@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RpgGame.Map" Collapsed="true">
+    <Position X="30" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACgAAKCAAAAAAACEQAgCQAhAAAECAAQBAAAAAAA=</HashCode>
+      <FileName>Forms\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="RpgGame.GameObject">
     <Position X="14" Y="0.5" Width="1.5" />
     <TypeIdentifier>

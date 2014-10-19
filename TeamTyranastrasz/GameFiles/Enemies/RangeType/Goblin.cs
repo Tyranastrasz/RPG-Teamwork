@@ -4,8 +4,8 @@ namespace RpgGame.Enemies.RangeType
 {
     public class Goblin : Range
     {
-        public Goblin(string name, int hitPoints, int attackPoints, int defensePoints)
-            : base(name, hitPoints, defensePoints, attackPoints)
+        public Goblin(string name, int hitPoints, int attackPoints, int defensePoints, Pictures picture)
+            : base(name, hitPoints, defensePoints, attackPoints, picture)
         {
         }
 

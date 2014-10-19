@@ -4,8 +4,8 @@ namespace RpgGame.Enemies.MeleeType
 {
     public class Skeleton : Melee
     {
-        public Skeleton(string name, int hitPoints, int attackPoints, int defensePoints)
-            : base(name, hitPoints, defensePoints, attackPoints)
+        public Skeleton(string name, int hitPoints, int attackPoints, int defensePoints, Pictures picture)
+            : base(name, hitPoints, defensePoints, attackPoints, picture)
         {
         }
 

@@ -14,7 +14,7 @@
 
         private Position position;
 
-        public Mage(string name)
+        public Mage(string name, Position position)
             : base(name, startingStrength, startingDexterity, startingVitality, startingIntelligence, strengthModifier, dexterityModifier, vitalityModifier, intelligenceModifier)
         {
             //this.X = x;

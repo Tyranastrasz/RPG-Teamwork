@@ -48,6 +48,7 @@ namespace RpgGame.Forms
                 return;
             }
 
+            Position characterPosition = new Position();
             if (!Btn_Mage.Checked && !Btn_Rogue.Checked && !Btn_Warrior.Checked)
             {
                 // throw new Exception("")
@@ -56,18 +57,15 @@ namespace RpgGame.Forms
             }
             else if (this.Btn_Warrior.Checked)
             {
-                string characterClass = "warrior";
-                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
+                ICharacter warrior = new Warrior(inputCharName.Text, characterPosition);
             }
             else if (this.Btn_Mage.Checked)
             {
-                string characterClass = "mage";
-                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
+                ICharacter mage = new Mage(inputCharName.Text, characterPosition);
             }
-            else if (this.Btn_Rogue.Checked)
+            else if (this.Btn_Warrior.Checked)
             {
-                string characterClass = "rogue";
-                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
+                ICharacter rogue = new Rogue(inputCharName.Text, characterPosition);
             }
 
             Map mainMap = new Map();

@@ -1,5 +1,5 @@
 ﻿using RpgGame.Forms;
-using RpgGame.Forms.TestDraw;
+using RpgGame.Forms;
 using RpgGame.Interfaces;
 using RpgGame.Items;
 
@@ -44,7 +44,7 @@ namespace RpgGame
             //Application.Run(new Town());
 
             // start from the draw test
-            // Application.Run(new BattleTest());
+            //Application.Run(new BattleTest());
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using RpgGame.Interfaces;
 
 namespace RpgGame.Forms
 {
@@ -9,8 +8,6 @@ namespace RpgGame.Forms
         public Map()
         {
             InitializeComponent();
-            ICharacter playerCharacter = GameEngine.player;
-            MessageBox.Show(playerCharacter.Name);
         }
 
         private void Form1_Load(object sender, EventArgs e)

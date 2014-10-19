@@ -4,8 +4,8 @@ namespace RpgGame.Enemies.RangeType
 {
     public class Drake : Range
     {
-        public Drake(string name, int hitPoints, int attackPoints, int defensePoints)
-            : base(name, hitPoints, defensePoints, attackPoints)
+        public Drake(string name, int hitPoints, int attackPoints, int defensePoints, Pictures picture)
+            : base(name, hitPoints, defensePoints, attackPoints, picture)
         {
         }
 

@@ -32,7 +32,6 @@
             CalculateDefencePoints();
             CalculateHitPoints();
             this.CurrentHitPoints = this.MaxHitPoints;
-            this.Position = new Position();
         }
 
         public int Strength { get; set; }

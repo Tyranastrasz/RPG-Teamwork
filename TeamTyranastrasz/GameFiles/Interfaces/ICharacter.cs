@@ -2,7 +2,6 @@
 {
     public interface ICharacter
     {
-        string Name { get; }
         int Strength { get; }
 
         int Dexterity { get; }
