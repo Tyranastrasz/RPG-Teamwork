@@ -2,7 +2,8 @@
 {
     public abstract class Melee : Enemy
     {
-        protected Melee(string name) : base(name)
+        protected Melee(string name, int hitPoints, int attackPoints, int defensePoints)
+            : base(name, hitPoints, defensePoints, attackPoints)
         {
         }
     }

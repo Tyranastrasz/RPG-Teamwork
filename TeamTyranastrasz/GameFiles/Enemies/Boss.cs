@@ -2,7 +2,8 @@
 {
     public abstract class Boss : Enemy
     {
-        protected Boss(string name) : base(name)
+        protected Boss(string name, int hitPoints, int attackPoints, int defensePoints)
+            : base(name, hitPoints, defensePoints, attackPoints)
         {
         }
     }

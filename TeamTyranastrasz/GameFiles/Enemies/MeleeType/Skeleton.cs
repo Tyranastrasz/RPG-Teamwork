@@ -1,13 +1,16 @@
-﻿namespace RpgGame.Enemies.MeleeType
+﻿using System.Windows.Forms;
+
+namespace RpgGame.Enemies.MeleeType
 {
     public class Skeleton : Melee
     {
-        public Skeleton(string name): base(name)
+        public Skeleton(string name, int hitPoints, int attackPoints, int defensePoints)
+            : base(name, hitPoints, defensePoints, attackPoints)
         {
         }
 
-        public override int HitPoints { get; set; }
-        public override int DefensePoints { get; set; }
-        public override int AttackPoints { get; set; }
+        //public override int HitPoints { get; set; }
+        //public override int DefensePoints { get; set; }
+        //public override int AttackPoints { get; set; }
     }
 }

@@ -89,6 +89,12 @@
     <Compile Include="Forms\StartScreen.Designer.cs">
       <DependentUpon>StartScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TestDraw\BattleTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestDraw\BattleTest.Designer.cs">
+      <DependentUpon>BattleTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Town.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StartScreen.resx">
       <DependentUpon>StartScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestDraw\BattleTest.resx">
+      <DependentUpon>BattleTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Town.resx">
       <DependentUpon>Town.cs</DependentUpon>

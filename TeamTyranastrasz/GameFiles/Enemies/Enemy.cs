@@ -5,8 +5,13 @@
 
     public abstract class Enemy : Unit, IAttack, IEnemy
     {
-        protected Enemy(string name) : base(name) // ??? enemies should't have names, just classes
+        // changed for draw tets
+        protected Enemy(string name, int hitPoints, int attackPoints, int defensePoints)
+            : base(name) // ??? enemies should't have names, just classes
         {
+            this.HitPoints = hitPoints;
+            this.DefensePoints = defensePoints;
+            this.AttackPoints = attackPoints;
         }
 
         public virtual void Attack()
@@ -14,10 +19,10 @@
             throw new NotImplementedException();
         }
 
-        public abstract int HitPoints { get; set; }
+        public int HitPoints { get; set; }
 
-        public abstract int DefensePoints { get; set; }
+        public int DefensePoints { get; set; }
 
-        public abstract int AttackPoints { get; set; }
+        public int AttackPoints { get; set; }
     }
 }

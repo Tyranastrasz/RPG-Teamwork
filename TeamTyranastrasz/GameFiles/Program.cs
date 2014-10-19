@@ -1,4 +1,5 @@
 ﻿using RpgGame.Forms;
+using RpgGame.Forms.TestDraw;
 using RpgGame.Interfaces;
 using RpgGame.Items;
 
@@ -27,7 +28,23 @@ namespace RpgGame
             //var hitpoints = player.DefencePoints;
             //Console.WriteLine();
 
+            // start from the start screen
             Application.Run(new StartScreen());
+
+            // start from the chae creation
+            //Application.Run(new CharacterCreation());
+
+            // start from the map
+            //Application.Run(new Map());
+
+            // start from the battle
+            //Application.Run(new Battle());
+
+            // start from the town
+            //Application.Run(new Town());
+
+            // start from the draw test
+            // Application.Run(new BattleTest());
         }
     }
 }
