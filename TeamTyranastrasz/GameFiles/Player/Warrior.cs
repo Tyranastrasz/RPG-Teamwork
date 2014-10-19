@@ -14,7 +14,7 @@
 
         private Position position;
 
-        public Warrior(string name, Position position)
+        public Warrior(string name)
             : base(name, StartingStrength, StartingDexterity, StartingVitality, StartingIntelligence, StrengthModifier, DexterityModifier, VitalityModifier, IntelligenceModifier)
         {
         }

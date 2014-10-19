@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RpgGame.Interfaces;
 
 namespace RpgGame
 {
@@ -15,6 +16,8 @@ namespace RpgGame
         public Map()
         {
             InitializeComponent();
+            ICharacter playerCharacter = GameEngine.player;
+            MessageBox.Show(playerCharacter.Name);
         }
 
         private void Form1_Load(object sender, EventArgs e)
