@@ -15,8 +15,6 @@ namespace RpgGame.Forms.TestDraw
     {
         private List<IEnemy> enemyList = new List<IEnemy>();
 
-        private List<PictureBox> picBoxList = new List<PictureBox>();
-
         private Label enemyHp;
         private Label enemyDmg;
         private Label enemyDef;
@@ -66,7 +64,6 @@ namespace RpgGame.Forms.TestDraw
             foreach (IEnemy enemy in enemyList)
             {
                 PictureBox picBox = new PictureBox();
-                picBoxList.Add(picBox);
                 DrawImages(picBox, enemy, Properties.Resources.golem, counter.ToString());
                 counter++;
             }
@@ -84,15 +81,6 @@ namespace RpgGame.Forms.TestDraw
 
         private void DrawImages(PictureBox pictureBox, IEnemy enemy, Image image, string id)
         {
-            //golemEnemy1.Position = new Position(25, 12);
-            //golemEnemy1.PictureBox.Image = Properties.Resources.golem;
-            //golemEnemy1.PictureBox.Width = Properties.Resources.golem.Width;
-            //golemEnemy1.PictureBox.Height = Properties.Resources.golem.Height;
-            //golemEnemy1.PictureBox.BackColor = Color.Transparent;
-            //golemEnemy1.PictureBox.Left = golemEnemy1.Position.X;
-            //golemEnemy1.PictureBox.Top = golemEnemy1.Position.Y;
-            //golemEnemy1.PictureBox.Click += PictureBox_Click;
-            //this.Controls.Add(golemEnemy1.PictureBox);
 
             pictureBox.Image = image;
             pictureBox.Width = image.Width;
