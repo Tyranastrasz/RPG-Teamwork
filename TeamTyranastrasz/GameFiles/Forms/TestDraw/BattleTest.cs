@@ -13,24 +13,25 @@ namespace RpgGame.Forms.TestDraw
 {
     public partial class BattleTest : Form
     {
-        private IEnemy golemEnemy1;
-        private IEnemy golemEnemy2;
+        private List<IEnemy> enemyList = new List<IEnemy>();
 
-        private PictureBox picBoxBot1 = new PictureBox();
-        private PictureBox picBoxMid = new PictureBox();
-        private PictureBox picBoxTop1;
-        private PictureBox picBoxBot2;
-        private PictureBox picBoxTop2;
+        private List<PictureBox> picBoxList = new List<PictureBox>();
 
         private Label enemyHp;
         private Label enemyDmg;
         private Label enemyDef;
-        
+        private Label debug;
+
         public BattleTest()
         {
             InitializeComponent();
 
-            InitializeComponent();
+            debug = new Label();
+            debug.Left = 10;
+            debug.Top = 500;
+            debug.Width = 600;
+            debug.Height = 50;
+            Controls.Add(debug);
 
             enemyHp = new Label();
             enemyHp.Left = 250;
@@ -50,33 +51,38 @@ namespace RpgGame.Forms.TestDraw
             enemyDef.Width = 20;
             Controls.Add(enemyDef);
 
-            golemEnemy1 = new Golem("Dumb", 85, 35, 20);
-            golemEnemy1.Position = new Position(25, 12);
+            IEnemy enemy = new Golem("Dumb", 85, 35, 20);
+            enemy.Position = new Position(25, 12);
+            enemyList.Add(enemy);
 
-            golemEnemy2 = new Ork("Orglem", 100, 40, 25);
-            golemEnemy2.Position = new Position(350, 20);
+            IEnemy enemy2 = new Ork("Orglem", 100, 40, 25);
+            enemy2.Position = new Position(25, 200);
+            enemyList.Add(enemy2);
         }
 
         private void BattleTest_Load(object sender, EventArgs e)
         {
-            DrawImages(picBoxMid, golemEnemy1, Properties.Resources.golem);
-            DrawImages(picBoxBot1, golemEnemy2, Properties.Resources.golem);
+            int counter = 0;
+            foreach (IEnemy enemy in enemyList)
+            {
+                PictureBox picBox = new PictureBox();
+                picBoxList.Add(picBox);
+                DrawImages(picBox, enemy, Properties.Resources.golem, counter.ToString());
+                counter++;
+            }
         }
 
         void PictureBox_Click(object sender, EventArgs e)
         {
-            enemyHp.Text = golemEnemy1.HitPoints.ToString();
-            enemyDef.Text = golemEnemy1.DefensePoints.ToString();
-            enemyDmg.Text = golemEnemy1.AttackPoints.ToString();
+            PictureBox p = sender as PictureBox;
+            int id = int.Parse(p.Name);
+
+            enemyHp.Text = enemyList[id].HitPoints.ToString();
+            enemyDef.Text = enemyList[id].DefensePoints.ToString();
+            enemyDmg.Text = enemyList[id].AttackPoints.ToString();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            //golemEnemy1.PictureBox.Update();
-            //golemEnemy1.PictureBox.Left += 10;
-        }
-
-        private void DrawImages(PictureBox pictureBox, IEnemy enemy, Image image)
+        private void DrawImages(PictureBox pictureBox, IEnemy enemy, Image image, string id)
         {
             //golemEnemy1.Position = new Position(25, 12);
             //golemEnemy1.PictureBox.Image = Properties.Resources.golem;
@@ -95,6 +101,7 @@ namespace RpgGame.Forms.TestDraw
             pictureBox.Left = enemy.Position.X;
             pictureBox.Top = enemy.Position.Y;
             pictureBox.Click += PictureBox_Click;
+            pictureBox.Name = id;
             this.Controls.Add(pictureBox);
         }
     }
