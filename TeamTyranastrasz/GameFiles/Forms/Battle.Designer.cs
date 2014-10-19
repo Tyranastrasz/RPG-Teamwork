@@ -1,4 +1,4 @@
-﻿namespace RpgGame
+﻿namespace RpgGame.Forms
 {
     partial class Battle
     {
