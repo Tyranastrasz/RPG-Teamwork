@@ -203,6 +203,8 @@
     <Content Include="Images\golem.png" />
     <Content Include="Images\main_char_creat_img.jpg" />
     <Content Include="Images\town_tem_img.jpg" />
+    <None Include="Resources\exit-100x100.png" />
+    <None Include="Resources\exit.png" />
     <None Include="Resources\flying-dragon-animated-image_zpsa0010db9.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

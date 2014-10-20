@@ -37,6 +37,11 @@ namespace RpgGame.Forms
             Application.Exit();
         }
 
+        private void exit_Paint(object sender, PaintEventArgs e)
+        {
+            exit.BackColor = Color.FromArgb(163, 0, 0, 0);
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             DesignPanelUp.BackColor = Color.FromArgb(163, 0, 0, 0);
@@ -52,6 +57,7 @@ namespace RpgGame.Forms
         {
             CharacterCreation charCreation = new CharacterCreation();
             charCreation.Show();
+
             this.Hide();
         }
     }
