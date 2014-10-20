@@ -1,10 +1,10 @@
 ﻿namespace RpgGame
 {
+    using System;
+    using System.Windows.Forms;
     using RpgGame.Forms;
     using RpgGame.Interfaces;
     using RpgGame.Player;
-    using System;
-    using System.Windows.Forms;
 
     public class GameEngine
     {

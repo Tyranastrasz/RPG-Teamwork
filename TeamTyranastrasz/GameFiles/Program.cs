@@ -1,10 +1,10 @@
 ﻿namespace RpgGame
 {
-    using RpgGame.Items;
-    using RpgGame.Forms;
     using System;
     using System.Windows.Forms;
+    using RpgGame.Forms;
     using RpgGame.Interfaces;
+    using RpgGame.Items;
     using RpgGame.Player;
 
     static class Program

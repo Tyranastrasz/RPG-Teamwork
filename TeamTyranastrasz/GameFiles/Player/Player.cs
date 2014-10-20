@@ -1,10 +1,11 @@
 ﻿namespace RpgGame.Player
 {
-    using System.Linq;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using RpgGame.Interfaces;
     using RpgGame.Items;
+    
 
     public abstract class Player : Unit, IAttack, IDefend, IMovable, ITeleportable, IUsable, ITrade, ICharacter
     {
