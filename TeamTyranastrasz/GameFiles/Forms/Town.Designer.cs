@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Town));
             this.exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.exit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Town";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Town";

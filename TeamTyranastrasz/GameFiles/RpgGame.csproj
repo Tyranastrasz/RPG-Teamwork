@@ -38,6 +38,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +52,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>RpgGame.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -193,10 +197,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="favicon.ico" />
     <Content Include="Images\battle_temp_img.jpg" />
     <Content Include="Images\golem.png" />
     <Content Include="Images\main_char_creat_img.jpg" />
     <Content Include="Images\town_tem_img.jpg" />
+    <None Include="Resources\flying-dragon-animated-image_zpsa0010db9.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

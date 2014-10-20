@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CharacterCreation));
             this.lblCharName = new System.Windows.Forms.Label();
             this.inputCharName = new System.Windows.Forms.TextBox();
             this.tempReffBox1 = new System.Windows.Forms.PictureBox();
@@ -36,9 +37,9 @@
             this.createChar = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.CreateCharacter = new System.Windows.Forms.GroupBox();
-            this.Btn_Warrior = new System.Windows.Forms.RadioButton();
-            this.Btn_Mage = new System.Windows.Forms.RadioButton();
             this.Btn_Rogue = new System.Windows.Forms.RadioButton();
+            this.Btn_Mage = new System.Windows.Forms.RadioButton();
+            this.Btn_Warrior = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.tempReffBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -123,16 +124,16 @@
             this.CreateCharacter.Text = "Choose your Hero!";
             this.CreateCharacter.Enter += new System.EventHandler(this.CreateCharacter_Enter);
             // 
-            // Btn_Warrior
+            // Btn_Rogue
             // 
-            this.Btn_Warrior.AutoSize = true;
-            this.Btn_Warrior.Location = new System.Drawing.Point(16, 24);
-            this.Btn_Warrior.Name = "Btn_Warrior";
-            this.Btn_Warrior.Size = new System.Drawing.Size(59, 17);
-            this.Btn_Warrior.TabIndex = 0;
-            this.Btn_Warrior.TabStop = true;
-            this.Btn_Warrior.Text = "Warrior";
-            this.Btn_Warrior.UseVisualStyleBackColor = true;
+            this.Btn_Rogue.AutoSize = true;
+            this.Btn_Rogue.Location = new System.Drawing.Point(283, 26);
+            this.Btn_Rogue.Name = "Btn_Rogue";
+            this.Btn_Rogue.Size = new System.Drawing.Size(57, 17);
+            this.Btn_Rogue.TabIndex = 2;
+            this.Btn_Rogue.TabStop = true;
+            this.Btn_Rogue.Text = "Rogue";
+            this.Btn_Rogue.UseVisualStyleBackColor = true;
             // 
             // Btn_Mage
             // 
@@ -145,16 +146,16 @@
             this.Btn_Mage.Text = "Mage";
             this.Btn_Mage.UseVisualStyleBackColor = true;
             // 
-            // Btn_Rogue
+            // Btn_Warrior
             // 
-            this.Btn_Rogue.AutoSize = true;
-            this.Btn_Rogue.Location = new System.Drawing.Point(283, 26);
-            this.Btn_Rogue.Name = "Btn_Rogue";
-            this.Btn_Rogue.Size = new System.Drawing.Size(57, 17);
-            this.Btn_Rogue.TabIndex = 2;
-            this.Btn_Rogue.TabStop = true;
-            this.Btn_Rogue.Text = "Rogue";
-            this.Btn_Rogue.UseVisualStyleBackColor = true;
+            this.Btn_Warrior.AutoSize = true;
+            this.Btn_Warrior.Location = new System.Drawing.Point(16, 24);
+            this.Btn_Warrior.Name = "Btn_Warrior";
+            this.Btn_Warrior.Size = new System.Drawing.Size(59, 17);
+            this.Btn_Warrior.TabIndex = 0;
+            this.Btn_Warrior.TabStop = true;
+            this.Btn_Warrior.Text = "Warrior";
+            this.Btn_Warrior.UseVisualStyleBackColor = true;
             // 
             // CharacterCreation
             // 
@@ -171,6 +172,7 @@
             this.Controls.Add(this.inputCharName);
             this.Controls.Add(this.lblCharName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CharacterCreation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CharacterCreation";

@@ -41,7 +41,7 @@
             // battleStart
             // 
             this.battleStart.Cursor = System.Windows.Forms.Cursors.Default;
-            this.battleStart.Location = new System.Drawing.Point(700, 449);
+            this.battleStart.Location = new System.Drawing.Point(700, 456);
             this.battleStart.Name = "battleStart";
             this.battleStart.Size = new System.Drawing.Size(75, 23);
             this.battleStart.TabIndex = 0;
@@ -52,7 +52,7 @@
             // enterTown
             // 
             this.enterTown.Cursor = System.Windows.Forms.Cursors.Default;
-            this.enterTown.Location = new System.Drawing.Point(357, 167);
+            this.enterTown.Location = new System.Drawing.Point(303, 52);
             this.enterTown.Name = "enterTown";
             this.enterTown.Size = new System.Drawing.Size(75, 23);
             this.enterTown.TabIndex = 1;
@@ -130,6 +130,7 @@
             this.Controls.Add(this.enterTown);
             this.Controls.Add(this.battleStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Map";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Map";

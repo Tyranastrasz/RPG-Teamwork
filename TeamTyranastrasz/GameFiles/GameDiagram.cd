@@ -131,14 +131,14 @@
   <Class Name="RpgGame.Player.Mage">
     <Position X="0.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAAAAAAgYgAAAAAAAAIAAiAAAAAAAgA=</HashCode>
+      <HashCode>AABAAAYAABAAAAAAAACAIgAAAAAAAAAAAAAAIAAAAgA=</HashCode>
       <FileName>Player\Mage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Player.Player">
     <Position X="3" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgIAAgyIQIAMAACAQAgAIAAIIIBEAAAgIBACBwAAQCI=</HashCode>
+      <HashCode>AgIAAgyIQIAMCACAQAgAIAAIIIBEAAAhIBACBwAAQCI=</HashCode>
       <FileName>Player\Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -146,14 +146,14 @@
   <Class Name="RpgGame.Player.Rogue">
     <Position X="2.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAAAAAAgYgAAAAAAAAIAAiAAAAAAAgA=</HashCode>
+      <HashCode>AAAAAgAAAAAQAgAAAAAAoAAQFAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Player\Rogue.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Player.Warrior">
     <Position X="5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAMAgAAAAAAAACAAIgAIAAAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <HashCode>AAAAAACAgAAAAAAIAAAgIAAAAAAAAQAAAIBAAAAEAAA=</HashCode>
       <FileName>Player\Warrior.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -170,14 +170,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Enemies.MeleeType.Golem">
-    <Position X="7.25" Y="8.75" Width="1.5" />
+    <Position X="6.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\MeleeType\Golem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Enemies.MeleeType.Ork">
-    <Position X="8.75" Y="8.75" Width="1.5" />
+    <Position X="8.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\MeleeType\Ork.cs</FileName>
@@ -198,14 +198,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Enemies.RangeType.Goblin">
-    <Position X="14" Y="8.75" Width="1.5" />
+    <Position X="14.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\RangeType\Goblin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Enemies.RangeType.Shade">
-    <Position X="15.5" Y="8.75" Width="1.5" />
+    <Position X="16.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\RangeType\Shade.cs</FileName>
@@ -235,7 +235,7 @@
   <Interface Name="RpgGame.Interfaces.ICharacter">
     <Position X="33.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAyAAAAIAAAgAAAAAAQIAABAAAAAABAAAQAAQCA=</HashCode>
+      <HashCode>AAAAAAyAAAAICAAgAAAAAAQIAABAAAABABAAAQAAQCA=</HashCode>
       <FileName>Interfaces\ICharacter.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -284,7 +284,7 @@
   <Interface Name="RpgGame.IEnemy">
     <Position X="33.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAAAABAAIAIAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAAAABAAIAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Interfaces\IEnemy.cs</FileName>
     </TypeIdentifier>
   </Interface>
