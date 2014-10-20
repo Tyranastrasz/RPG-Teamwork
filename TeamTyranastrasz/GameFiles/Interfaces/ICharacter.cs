@@ -1,6 +1,6 @@
 ﻿namespace RpgGame.Interfaces
 {
-    public interface ICharacter
+    public interface ICharacter : IAttack
     {
         string Name { get; }
 

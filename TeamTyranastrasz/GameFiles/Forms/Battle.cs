@@ -12,42 +12,34 @@
     {
         private List<IEnemy> enemyList = new List<IEnemy>();
 
-        private List<PictureBox> picBoxList = new List<PictureBox>();
+        private List<PictureBox> pictureBoxList = new List<PictureBox>();
 
-        private Label enemyHp;
-        private Label enemyDmg;
-        private Label enemyDef;
         private Label debug;
+        private Label targetBox;
+
+        ICharacter player;
         
         public Battle()
         {
             InitializeComponent();
-            ICharacter playerCharacter = GameEngine.PlayerCharacter;
+
+            this.player = GameEngine.PlayerCharacter;
+            BattleManager.player = this.player;
 
             debug = new Label();
             debug.Left = 10;
             debug.Top = 500;
             debug.Width = 600;
             debug.Height = 50;
-            Controls.Add(debug);
+            //Controls.Add(debug);
 
-            enemyHp = new Label();
-            enemyHp.Left = 250;
-            enemyHp.Top = 30;
-            enemyHp.Width = 20;
-            Controls.Add(enemyHp);
-
-            enemyDmg = new Label();
-            enemyDmg.Left = 250;
-            enemyDmg.Top = 60;
-            enemyDmg.Width = 20;
-            Controls.Add(enemyDmg);
-
-            enemyDef = new Label();
-            enemyDef.Left = 250;
-            enemyDef.Top = 90;
-            enemyDef.Width = 20;
-            Controls.Add(enemyDef);
+            targetBox = new Label();
+            targetBox.Left = 0;
+            targetBox.Top = 0;
+            targetBox.Width = 100;
+            targetBox.Height = 50;
+            Controls.Add(targetBox);
+            targetBox.Hide();
 
             IEnemy enemy = new Golem("Dumb", 85, 35, 20, Pictures.Golem);
             enemy.Position = new Position(25, 12);
@@ -60,19 +52,27 @@
 
         private void Battle_Load(object sender, EventArgs e)
         {
-            int counter = 0;
-            foreach (IEnemy enemy in enemyList)
+            DrawEnemies();
+
+            while (BattleManager.battleEnd == false)
             {
-                PictureBox picBox = new PictureBox();
-                picBoxList.Add(picBox);
-                DrawImages(picBox, enemy, Properties.Resources.golem, counter.ToString());
-                counter++;
+                if (BattleManager.playerTurn == true)
+                {
+                    BattleManager.PlayerTurn();
+                }
+                else
+                {
+                    BattleManager.EnemyTurn();
+                }
+
+                BattleManager.CheckBattleStatus(enemyList);
             }
         }
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
-
+            IEnemy enemy = BattleManager.PlayerAttack(BattleManager.currentTarget);
+            enemyList = BattleManager.CheckForDeadEnemies(enemyList);
         }
 
         private void btnDefend_Click(object sender, EventArgs e)
@@ -87,7 +87,7 @@
 
         private void btnEndTurn_Click(object sender, EventArgs e)
         {
-
+            BattleManager.playerTurn = false;
         }
 
         private void btnAttackSkillLow_Click(object sender, EventArgs e)
@@ -130,23 +130,13 @@
             PictureBox p = sender as PictureBox;
             int id = int.Parse(p.Name);
 
-            enemyHp.Text = enemyList[id].HitPoints.ToString();
-            enemyDef.Text = enemyList[id].DefensePoints.ToString();
-            enemyDmg.Text = enemyList[id].AttackPoints.ToString();
+            BattleManager.currentTarget = enemyList[id];
+            BattleManager.currentTargetId = id;
+            showTargetBox(targetBox, enemyList[id]);
         }
 
         private void DrawImages(PictureBox pictureBox, IEnemy enemy, Image image, string id)
         {
-            //golemEnemy1.Position = new Position(25, 12);
-            //golemEnemy1.PictureBox.Image = Properties.Resources.golem;
-            //golemEnemy1.PictureBox.Width = Properties.Resources.golem.Width;
-            //golemEnemy1.PictureBox.Height = Properties.Resources.golem.Height;
-            //golemEnemy1.PictureBox.BackColor = Color.Transparent;
-            //golemEnemy1.PictureBox.Left = golemEnemy1.Position.X;
-            //golemEnemy1.PictureBox.Top = golemEnemy1.Position.Y;
-            //golemEnemy1.PictureBox.Click += PictureBox_Click;
-            //this.Controls.Add(golemEnemy1.PictureBox);
-
             pictureBox.Image = image;
             pictureBox.Width = image.Width;
             pictureBox.Height = image.Height;
@@ -156,6 +146,26 @@
             pictureBox.Click += PictureBox_Click;
             pictureBox.Name = id;
             this.Controls.Add(pictureBox);
+        }
+
+        private void DrawEnemies()
+        {
+            int counter = 0;
+            foreach (IEnemy enemy in enemyList)
+            {
+                PictureBox picBox = new PictureBox();
+                pictureBoxList.Add(picBox);
+                DrawImages(picBox, enemy, Properties.Resources.golem, counter.ToString());
+                counter++;
+            }
+        }
+
+        private void showTargetBox(Label box, IEnemy enemy)
+        {
+            box.Show();
+            box.Text = "Attack: " + enemy.AttackPoints
+                        + "\nDefense: " + enemy.DefensePoints
+                        + "\nHitpoints: " + enemy.HitPoints;
         }
 
         // temp usage to close the form

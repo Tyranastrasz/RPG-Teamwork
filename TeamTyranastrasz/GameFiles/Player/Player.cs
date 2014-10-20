@@ -95,7 +95,7 @@
         public virtual int Attack()
         {
             int damage = CalculateAttackPoints();
-            damage += this.Equiped.Sum(item => item.DefencePoints);
+            damage += this.Equiped.Sum(item => item.AttackPoints);
             return damage;
 
         }
