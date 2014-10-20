@@ -50,7 +50,9 @@ namespace RpgGame.Forms
 
         private void startGame_Click(object sender, EventArgs e)
         {
-
+            CharacterCreation charCreation = new CharacterCreation();
+            charCreation.Show();
+            this.Hide();
         }
     }
 }
