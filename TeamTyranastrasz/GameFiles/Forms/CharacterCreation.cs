@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RpgGame.Interfaces;
 using RpgGame.Player;
+using RpgGame;
 
 namespace RpgGame.Forms
 {

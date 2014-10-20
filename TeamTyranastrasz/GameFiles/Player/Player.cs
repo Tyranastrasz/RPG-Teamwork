@@ -66,7 +66,9 @@
             }
         }
 
-        //public int Level { get; set; }
+        public int Range { get; set; }
+
+        public int Level { get; set; }
         public List<Item> Inventory { get; set; }
 
         public List<Item> Equiped { get; set; }
@@ -89,17 +91,19 @@
             return this.MaxHitPoints;
         }
 
-        public virtual void Attack()
+        public virtual int Attack()
         {
             int damage = CalculateAttackPoints();
             damage += this.Equiped.Sum(item => item.DefencePoints);
+            return damage;
 
         }
 
-        public virtual void Defend()
+        public virtual int Defend()
         {
             int defence = CalculateDefencePoints(); 
             defence += this.Equiped.Sum(item => item.DefencePoints);
+            return defence;
         }
 
         public virtual void Move()

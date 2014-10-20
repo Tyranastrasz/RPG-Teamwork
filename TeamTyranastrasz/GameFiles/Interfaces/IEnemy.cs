@@ -10,7 +10,5 @@
 
         // added for draw tests
         Position Position { get; set; }
-
-        void Attack();
     }
 }

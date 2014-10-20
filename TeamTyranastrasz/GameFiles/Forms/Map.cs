@@ -9,8 +9,7 @@ namespace RpgGame.Forms
         public Map()
         {
             InitializeComponent();
-            ICharacter playerCharacter = GameEngine.player;
-            MessageBox.Show(playerCharacter.Name);
+            ICharacter playerCharacter = GameEngine.PlayerCharacter;
         }
 
         private void Form1_Load(object sender, EventArgs e)

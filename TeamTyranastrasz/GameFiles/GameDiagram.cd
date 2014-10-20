@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="RpgGame.Map" Collapsed="true">
+  <Class Name="RpgGame.Forms.Map" Collapsed="true">
     <Position X="30" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAACgAAKCAAAAAAACEQAgCQAhAAAECAAQBAAAAAAA=</HashCode>
@@ -24,7 +24,7 @@
   <Class Name="RpgGame.Sound" Collapsed="true">
     <Position X="31.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAQAQEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sound.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,7 +45,7 @@
   <Class Name="RpgGame.Enemies.Enemy">
     <Position X="11" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAABAAIAIAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAAAAAAAAAABAAIAIAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Enemies\Enemy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.262" />
@@ -211,7 +211,7 @@
       <FileName>Enemies\RangeType\Shade.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RpgGame.Exception">
+  <Class Name="RpgGame.NotEnoughDicePointsException">
     <Position X="33.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -235,7 +235,7 @@
   <Interface Name="RpgGame.Interfaces.ICharacter">
     <Position X="33.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAyAAAAIAAAgAAAAAAAIAABAAAAAABAAAQAAQCA=</HashCode>
+      <HashCode>AAAAAAyAAAAIAAAgAAAAAAQIAABAAAAAABAAAQAAQCA=</HashCode>
       <FileName>Interfaces\ICharacter.cs</FileName>
     </TypeIdentifier>
   </Interface>

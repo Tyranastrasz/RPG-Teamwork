@@ -2,23 +2,21 @@
 {
     public class Mage : Player
     {
-        public const int startingStrength = 1;
-        public const int startingDexterity = 3;
-        public const int startingVitality = 5;
-        public const int startingIntelligence = 10;
+        public const int MageStartingStrength = 1;
+        public const int MageStartingDexterity = 3;
+        public const int MageStartingVitality = 5;
+        public const int MageStartingIntelligence = 10;
 
-        public const int strengthModifier = 1;
-        public const int dexterityModifier = 1;
-        public const int vitalityModifier = 2;
-        public const int intelligenceModifier = 3;
+        public const int MageStrengthModifier = 1;
+        public const int MageDexterityModifier = 1;
+        public const int MageVitalityModifier = 2;
+        public const int MageIntelligenceModifier = 3;
 
         private Position position;
 
         public Mage(string name)
-            : base(name, startingStrength, startingDexterity, startingVitality, startingIntelligence, strengthModifier, dexterityModifier, vitalityModifier, intelligenceModifier)
+            : base(name, MageStartingStrength, MageStartingDexterity, MageStartingVitality, MageStartingIntelligence, MageStrengthModifier, MageDexterityModifier, MageVitalityModifier, MageIntelligenceModifier)
         {
-            //this.X = x;
-            //this.Y = y;
         }
 
     }

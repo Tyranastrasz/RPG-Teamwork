@@ -15,7 +15,7 @@
             this.Picture = picture;
         }
 
-        public virtual void Attack()
+        public virtual int Attack()
         {
             throw new NotImplementedException();
         }

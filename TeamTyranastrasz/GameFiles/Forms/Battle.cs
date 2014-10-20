@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
-using RpgGame.Enemies.MeleeType;
-using RpgGame.Enemies.RangeType;
-
-namespace RpgGame.Forms
+﻿namespace RpgGame.Forms
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Windows.Forms;
+    using RpgGame.Enemies.MeleeType;
+    using RpgGame.Enemies.RangeType;
+    using RpgGame.Interfaces;
+
     public partial class Battle : Form
     {
         private List<IEnemy> enemyList = new List<IEnemy>();
@@ -21,6 +22,7 @@ namespace RpgGame.Forms
         public Battle()
         {
             InitializeComponent();
+            ICharacter playerCharacter = GameEngine.PlayerCharacter;
 
             debug = new Label();
             debug.Left = 10;
