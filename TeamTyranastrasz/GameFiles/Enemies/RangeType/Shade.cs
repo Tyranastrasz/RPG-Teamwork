@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace RpgGame.Enemies.RangeType
+﻿namespace RpgGame.Enemies.RangeType
 {
     public class Shade : Range
     {

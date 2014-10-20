@@ -2,8 +2,9 @@
 {
     using System;
     using RpgGame.Interfaces;
+    using System.Windows.Forms;
 
-    public abstract class Enemy : Unit, IAttack, IEnemy
+    public abstract class Enemy : Unit, IUnit, IEnemy
     {
         // changed for draw tets
         protected Enemy(string name, int hitPoints, int attackPoints, int defensePoints, Pictures picture)
@@ -13,11 +14,17 @@
             this.DefensePoints = defensePoints;
             this.AttackPoints = attackPoints;
             this.Picture = picture;
+            this.PicBox = new PictureBox();
         }
 
         public virtual int Attack()
         {
-            throw new NotImplementedException();
+            return this.AttackPoints;
+        }
+
+        public virtual int Defend()
+        {
+            return this.DefensePoints;
         }
 
         public int HitPoints { get; set; }
@@ -27,5 +34,7 @@
         public int AttackPoints { get; set; }
 
         public Pictures Picture { get; set; }
+
+        public PictureBox PicBox { get; set; }
     }
 }

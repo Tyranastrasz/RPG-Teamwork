@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace RpgGame.Enemies.MeleeType
+﻿namespace RpgGame.Enemies.MeleeType
 {
     public class Ork : Melee
     {

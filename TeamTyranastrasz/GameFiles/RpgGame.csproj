@@ -104,6 +104,7 @@
     <Compile Include="GameEngine.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Interfaces\IUnit.cs" />
     <Compile Include="Pictures.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Boots.cs" />

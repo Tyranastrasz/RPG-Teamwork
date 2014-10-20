@@ -5,9 +5,10 @@
     using System.Linq;
     using RpgGame.Interfaces;
     using RpgGame.Items;
+    using System.Windows.Forms;
     
 
-    public abstract class Player : Unit, IAttack, IDefend, IMovable, ITeleportable, IUsable, ITrade, ICharacter
+    public abstract class Player : Unit, IMovable, ITeleportable, IUsable, ITrade, ICharacter
     {
         //private int Level = 1;
 
@@ -34,6 +35,7 @@
             CalculateHitPoints();
             this.CurrentHitPoints = this.MaxHitPoints;
             this.Position = new Position();
+            this.PicBox = new PictureBox();
         }
 
         public int Strength { get; set; }
@@ -46,26 +48,15 @@
 
         public int MaxHitPoints { get; set; }
 
-        public int CurrentHitPoints { get; set; }
-
         public int DefencePoints { get; set; }
 
         public int AttackPoints { get; set; }
 
         public int Experience { get; set; }
 
-        public int Cash {
-            get { return this.cash; }
+        public PictureBox PicBox { get; set; }
 
-            set {
-                if (this.Cash - value < 0)
-                {
-                    throw new InvalidOperationException("You do not have enough money for this action.");
-                }
-
-                this.cash = value;
-            }
-        }
+        public int Cash { get; set; }
 
         public int Range { get; set; }
 
@@ -97,7 +88,6 @@
             int damage = CalculateAttackPoints();
             damage += this.Equiped.Sum(item => item.AttackPoints);
             return damage;
-
         }
 
         public virtual int Defend()

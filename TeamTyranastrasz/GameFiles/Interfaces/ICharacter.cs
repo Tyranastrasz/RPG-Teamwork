@@ -1,6 +1,6 @@
 ﻿namespace RpgGame.Interfaces
 {
-    public interface ICharacter : IAttack
+    public interface ICharacter : IUnit
     {
         string Name { get; }
 
@@ -17,8 +17,6 @@
         int DefencePoints { get; }
 
         int MaxHitPoints { get; }
-
-        int CurrentHitPoints { get; }
 
         int Experience { get; }
 

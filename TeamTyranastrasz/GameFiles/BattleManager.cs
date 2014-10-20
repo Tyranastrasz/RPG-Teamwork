@@ -5,50 +5,40 @@
     using System.Collections.Generic;
     using RpgGame.Player;
 
-    public static class BattleManager
+    public class BattleManager
     {
-        public static bool playerTurn = true;
-        public static bool battleEnd = false;
-        public static int dicePoints;
+        public bool playerTurn = true;
+        public bool battleEnd = false;
+        public int dicePoints;
 
-        public static ICharacter player;
-        public static IEnemy currentTarget;
-        public static int currentTargetId;
+        public ICharacter player;
+        public List<IEnemy> enemyList = new List<IEnemy>();
 
-        public static int lastEnemyTurn = 0;
+        public IEnemy currentTarget;
+        public int currentTargetId;
 
-        public static void PlayerTurn()
+        public int lastTurnEnemyId = -1;
+
+        public void PlayerTurn()
         {
             int[] dices = RollTheDices();
             dicePoints = dices[0] + dices[1];
         }
 
-        public static void EnemyTurn()
+        public void EnemyTurn()
         {
 
         }
 
-        public static int[] RollTheDices()
-        {
-            int[] dices = new int[2];
-
-            Random rnd = new Random();
-            dices[0] = rnd.Next(1, 7);
-            dices[1] = rnd.Next(1, 7);
-
-            return dices;
-
-        }
-
-        public static void CheckBattleStatus(List<IEnemy> enemyList)
+        public void CheckBattleStatus(List<IEnemy> enemyList)
         {
             if (enemyList.Count == 0 || player.CurrentHitPoints <= 0)
             {
-                battleEnd = true;
+                this.battleEnd = true;
             }
         }
 
-        public static List<IEnemy> CheckForDeadEnemies(List<IEnemy> enemyList)
+        public List<IEnemy> CheckForDeadEnemies(List<IEnemy> enemyList)
         {
             foreach (IEnemy enemy in enemyList)
             {
@@ -61,41 +51,38 @@
             return enemyList;
         }
 
-        public static IEnemy PlayerAttack(IEnemy enemy)
+        public void Attack(IUnit attacker, IUnit target)
         {
-            int damage = player.AttackPoints - enemy.DefensePoints + enemy.HitPoints;
-            player.Attack();
+            int damage = attacker.Attack() - target.Defend();
 
-            if (damage <= 0)
+            if (damage > 0)
             {
-                enemy.DefensePoints = 0;
-                enemy.HitPoints = 0;
+                target.CurrentHitPoints -= damage;
             }
-            else
+
+            if (target.CurrentHitPoints <= 0)
             {
-                int defDamage = player.AttackPoints - enemy.DefensePoints;
-                int hpDamage = player.AttackPoints - enemy.HitPoints;
-
-                if (defDamage <= 0)
+                if (this.playerTurn == true)
                 {
-                    enemy.DefensePoints = 0;
-
-                    if (hpDamage <= 0)
-                    {
-                        enemy.HitPoints = 0;
-                    }
-                    else
-                    {
-                        enemy.HitPoints = hpDamage;
-                    }
+                    target.PicBox.Hide();
+                    enemyList.RemoveAt(this.currentTargetId);
                 }
                 else
                 {
-                    enemy.DefensePoints = defDamage;
+                    throw new EndBattleException("You have died!");
                 }
             }
+        }
 
-            return enemy;
+        public static int[] RollTheDices()
+        {
+            int[] dices = new int[2];
+
+            Random rnd = new Random();
+            dices[0] = rnd.Next(1, 7);
+            dices[1] = rnd.Next(1, 7);
+
+            return dices;
         }
     }
 }

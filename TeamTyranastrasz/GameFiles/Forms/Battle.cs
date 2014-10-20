@@ -10,21 +10,14 @@
 
     public partial class Battle : Form
     {
-        private List<IEnemy> enemyList = new List<IEnemy>();
-
-        private List<PictureBox> pictureBoxList = new List<PictureBox>();
+        private BattleManager battle = new BattleManager();
 
         private Label debug;
         private Label targetBox;
-
-        ICharacter player;
         
         public Battle()
         {
             InitializeComponent();
-
-            this.player = GameEngine.PlayerCharacter;
-            BattleManager.player = this.player;
 
             debug = new Label();
             debug.Left = 10;
@@ -43,36 +36,35 @@
 
             IEnemy enemy = new Golem("Dumb", 85, 35, 20, Pictures.Golem);
             enemy.Position = new Position(25, 12);
-            enemyList.Add(enemy);
+            battle.enemyList.Add(enemy);
 
             IEnemy enemy2 = new Ork("Orglem", 100, 40, 25, Pictures.Golem);
             enemy2.Position = new Position(25, 200);
-            enemyList.Add(enemy2);
+            battle.enemyList.Add(enemy2);
         }
 
         private void Battle_Load(object sender, EventArgs e)
         {
             DrawEnemies();
-
-            while (BattleManager.battleEnd == false)
-            {
-                if (BattleManager.playerTurn == true)
-                {
-                    BattleManager.PlayerTurn();
-                }
-                else
-                {
-                    BattleManager.EnemyTurn();
-                }
-
-                BattleManager.CheckBattleStatus(enemyList);
-            }
         }
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
-            IEnemy enemy = BattleManager.PlayerAttack(BattleManager.currentTarget);
-            enemyList = BattleManager.CheckForDeadEnemies(enemyList);
+
+            if (battle.playerTurn == true)
+            {
+                try
+                {
+                    battle.Attack((IUnit)battle.player, (IUnit)battle.currentTarget);
+                }
+                catch (EndBattleException ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                    Map mapScreen = new Map();
+                    mapScreen.Show();
+                    this.Close();
+                }
+            }
         }
 
         private void btnDefend_Click(object sender, EventArgs e)
@@ -87,7 +79,8 @@
 
         private void btnEndTurn_Click(object sender, EventArgs e)
         {
-            BattleManager.playerTurn = false;
+            battle.playerTurn = false;
+            battle.EnemyTurn();
         }
 
         private void btnAttackSkillLow_Click(object sender, EventArgs e)
@@ -130,9 +123,9 @@
             PictureBox p = sender as PictureBox;
             int id = int.Parse(p.Name);
 
-            BattleManager.currentTarget = enemyList[id];
-            BattleManager.currentTargetId = id;
-            showTargetBox(targetBox, enemyList[id]);
+            battle.currentTarget = battle.enemyList[id];
+            battle.currentTargetId = id;
+            showTargetBox(targetBox, battle.enemyList[id]);
         }
 
         private void DrawImages(PictureBox pictureBox, IEnemy enemy, Image image, string id)
@@ -151,11 +144,9 @@
         private void DrawEnemies()
         {
             int counter = 0;
-            foreach (IEnemy enemy in enemyList)
+            foreach (IEnemy enemy in battle.enemyList)
             {
-                PictureBox picBox = new PictureBox();
-                pictureBoxList.Add(picBox);
-                DrawImages(picBox, enemy, Properties.Resources.golem, counter.ToString());
+                DrawImages(enemy.PicBox, enemy, Properties.Resources.golem, counter.ToString());
                 counter++;
             }
         }

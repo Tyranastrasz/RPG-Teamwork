@@ -1,4 +1,5 @@
-﻿namespace RpgGame
+﻿using System.Windows.Forms;
+namespace RpgGame
 {
     public interface IEnemy
     {
@@ -10,5 +11,7 @@
 
         // added for draw tests
         Position Position { get; set; }
+
+        PictureBox PicBox { get; set; }
     }
 }

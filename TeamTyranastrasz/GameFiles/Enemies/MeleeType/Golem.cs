@@ -1,4 +1,5 @@
-﻿namespace RpgGame.Enemies.MeleeType
+﻿using System.Windows.Forms;
+namespace RpgGame.Enemies.MeleeType
 {
     public class Golem : Melee
     {

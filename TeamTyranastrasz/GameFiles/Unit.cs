@@ -1,4 +1,5 @@
-﻿namespace RpgGame
+﻿using RpgGame.Interfaces;
+namespace RpgGame
 {
     public abstract class Unit : GameObject
     {
@@ -11,5 +12,7 @@
         public int X { get; set; }
 
         public int Y { get; set; }
+
+        public int CurrentHitPoints { get; set; }
     }
 }
