@@ -146,7 +146,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Sound.cs" />
+    <Compile Include="Sound\Sound.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="Player\Warrior.cs" />
     <Compile Include="Items\Weapon.cs" />
@@ -199,25 +199,28 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Sound\SoundFiles\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Images\battle_temp_img.jpg" />
     <Content Include="Images\golem.png" />
     <None Include="Resources\BattleScreenBg.jpg" />
     <None Include="Resources\Hakaar-the-Destroyer1.png" />
+    <None Include="Resources\arrow-left.png" />
+    <None Include="Resources\arrow-right.png" />
+    <None Include="Resources\welcome-sparkle.png" />
+    <None Include="Resources\welcome1.png" />
+    <None Include="Resources\30uefjn.gif" />
+    <None Include="Resources\welcome.png" />
     <None Include="Images\Hakaar-the-Destroyer.png" />
     <Content Include="Images\main_char_creat_img.jpg" />
     <None Include="Images\main_start_screen.jpg" />
     <Content Include="Images\town_tem_img.jpg" />
     <None Include="Resources\lights.png" />
-    <None Include="Resources\pic-shadow.png" />
     <None Include="Resources\main_char_creat_img-bgr.jpg" />
-    <None Include="Resources\Hakaar-the-Destroyer.png" />
     <None Include="Resources\main_char_creat_img.jpg" />
-    <None Include="Resources\exit-btn.png" />
-    <None Include="Resources\exit-100x100.png" />
-    <None Include="Resources\exit.png" />
     <None Include="Resources\flying-dragon-animated-image_zpsa0010db9.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
