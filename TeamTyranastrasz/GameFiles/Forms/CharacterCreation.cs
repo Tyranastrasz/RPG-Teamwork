@@ -72,10 +72,9 @@ namespace RpgGame.Forms
                 GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
             }
 
+            this.Close();
             Map mainMap = new Map();
             mainMap.Show();
-
-            this.Close();
         }
 
         // temp usage to close the form

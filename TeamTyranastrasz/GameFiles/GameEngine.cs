@@ -40,6 +40,7 @@
         {
             BattleScreen = new Battle();
             BattleScreen.Show();
+            Sound.PlayBattleSound();
         }
 
         private void GenerateEnemies()

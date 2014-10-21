@@ -10,7 +10,7 @@ namespace RpgGame.Forms
         {
             InitializeComponent();
             ICharacter playerCharacter = GameEngine.PlayerCharacter;
-
+            Sound.PlayMapSound();
             // TODO: Make buttons transperant with no text, but on hover the objects are sparkling (photoshoped layers for each location)
         }
 
