@@ -146,7 +146,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Sound.cs" />
+    <Compile Include="Sound\Sound.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="Player\Warrior.cs" />
     <Compile Include="Items\Weapon.cs" />
@@ -199,7 +199,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Sound\SoundFiles\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Images\battle_temp_img.jpg" />
