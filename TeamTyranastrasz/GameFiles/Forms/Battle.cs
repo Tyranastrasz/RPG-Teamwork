@@ -14,7 +14,7 @@
 
         public Label debug;
         private Label targetBox;
-        
+
         public Battle()
         {
             InitializeComponent();
@@ -34,14 +34,6 @@
             Controls.Add(targetBox);
             targetBox.Hide();
 
-            //IEnemy enemy = new Golem("Dumb", 85, 35, 5, Pictures.Golem);
-            //enemy.Position = new Position(25, 12);
-            //battle.EnemyList.Add(enemy);
-
-            //IEnemy enemy2 = new Ork("Orglem", 100, 40, 5, Pictures.Golem);
-            //enemy2.Position = new Position(25, 200);
-            //battle.EnemyList.Add(enemy2);
-
             battle.CreateEnemies();
         }
 
@@ -58,28 +50,32 @@
             {
                 try
                 {
+                    battle.CheckDicePoints(BattleManager.AttackDicePoints);
                     battle.Attack((IUnit)battle.Player, (IUnit)battle.CurrentTarget);
                     if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
                     }
                 }
-                catch (EndBattleException ex)
+                catch (NotEnoughDicePointsException)
                 {
-                    MessageBox.Show(ex.ToString());
-                    Map mapScreen = new Map();
-                    mapScreen.Show();
-                    this.Close();
+                    MessageBox.Show("You do not have enough dice points!");
                 }
             }
         }
 
         private void btnDefend_Click(object sender, EventArgs e)
         {
-            debug.Text = "";
-            foreach (var item in battle.EnemyList)
+            if (battle.IsPlayerTurn == true)
             {
-                debug.Text += item + "\n";
+                try
+                {
+                    battle.CheckDicePoints(BattleManager.DefendDicePoints);
+                }
+                catch(NotEnoughDicePointsException)
+                {
+                    MessageBox.Show("You do not have enough dice points!");
+                }
             }
         }
 
@@ -194,7 +190,7 @@
                 //    break;
                 default:
                     return Properties.Resources.golem;
-                    //throw new NoPictureException();
+                //throw new NoPictureException();
             }
         }
 
