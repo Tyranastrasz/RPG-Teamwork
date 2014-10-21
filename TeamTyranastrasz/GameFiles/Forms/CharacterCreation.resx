@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="warriorPic1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAVYAAAEjCAYAAABpQCnxAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
         DwAAjA8AAP1SAACBQAAAfXkAAOmLAAA85QAAGcxzPIV3AAAKOWlDQ1BQaG90b3Nob3AgSUNDIHByb2Zp
@@ -1718,6 +1718,13 @@
         1apWtapV3bhSFq5qVata1apuXCkLV7WqVa1qVTeulIWrWtWqVrWqG1fKwlWtalWrWtWNK2Xhqla1qlWt
         6saVsnBVq1rVqlZ140pZuKpVrWpVq7pRQff/AdfGIGKnPy1tAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="HeroDescription.Text" xml:space="preserve">
+    <value>The warrior is the loyal soldier, the man that stands up for what is right. The warrior is the guy that gets things done his own way.
+
+The warrior has no time for childish games, but he doesn't let his personal life get in the way of his mission. The warrior is often a hero in the making on the verge of doing something great, a warrior is miss understood at times but he always pulls threw.
+
+The warrior is born not made, he knows that his soul purpose in life is to serve and fight. </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

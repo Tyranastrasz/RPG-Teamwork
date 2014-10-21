@@ -18,6 +18,14 @@ namespace RpgGame.Forms
         public CharacterCreation()
         {
             InitializeComponent();
+
+            //TODO: This will be moved on checked event, but for now, lets load bars here:
+            // Warrior base stats
+            strengthProgressBar.Increment(4);
+            dexterityProgressBar.Increment(3);
+            vitalityProgressBar.Increment(10);
+            intelligenceProgressBar.Increment(2);
+
             // TODO: Add background music and sound for clicks
         }
 
@@ -59,6 +67,7 @@ namespace RpgGame.Forms
             else if (this.Btn_Warrior.Checked)
             {
                 string characterClass = "warrior";
+
                 GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
             }
             else if (this.Btn_Mage.Checked)
@@ -112,5 +121,39 @@ namespace RpgGame.Forms
             
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            DescriptionPanel.BackColor = Color.FromArgb(163, 0, 0, 0);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void arrowRight_Click(object sender, EventArgs e)
+        {
+            warriorPic1.Hide();
+        }
+
+        private void arrowLeft_Click(object sender, EventArgs e)
+        {
+            warriorPic1.Show();
+        }
     }
 }

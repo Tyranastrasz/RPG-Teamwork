@@ -118,17 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="arrow-right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Hakaar-the-Destroyer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Hakaar-the-Destroyer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lights" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lights.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="welcome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\welcome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main_start_screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\main_start_screen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="main_char_creat_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\main_char_creat_img.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Hakaar-the-Destroyer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Hakaar-the-Destroyer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="30uefjn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\30uefjn.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="welcome1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\welcome1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="welcome-sparkle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\welcome-sparkle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="town_tem_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\town_tem_img.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +157,11 @@
   <data name="Hakaar-the-Destroyer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Hakaar-the-Destroyer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="main_start_screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\main_start_screen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="battle_temp_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\battle_temp_img.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lights" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lights.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="main_char_creat_img1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\main_char_creat_img.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,10 +169,10 @@
   <data name="golem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\golem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="battle_temp_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\battle_temp_img.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="flying-dragon-animated-image_zpsa0010db9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flying-dragon-animated-image_zpsa0010db9.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow-left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
