@@ -32,7 +32,6 @@
             this.btnAttack = new System.Windows.Forms.Button();
             this.btnDefend = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
-            this.btnDiceRoll = new System.Windows.Forms.Button();
             this.btnAttackSkillLow = new System.Windows.Forms.Button();
             this.btnAttackSkillMed = new System.Windows.Forms.Button();
             this.btnAttackSkillHigh = new System.Windows.Forms.Button();
@@ -40,7 +39,6 @@
             this.btnDefenseBuff = new System.Windows.Forms.Button();
             this.btnHeal = new System.Windows.Forms.Button();
             this.btnEndTurn = new System.Windows.Forms.Button();
-            this.lblDiceRollScore = new System.Windows.Forms.Label();
             this.exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -73,16 +71,6 @@
             this.btnInventory.Text = "Inventory";
             this.btnInventory.UseVisualStyleBackColor = true;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
-            // 
-            // btnDiceRoll
-            // 
-            this.btnDiceRoll.Location = new System.Drawing.Point(839, 629);
-            this.btnDiceRoll.Name = "btnDiceRoll";
-            this.btnDiceRoll.Size = new System.Drawing.Size(135, 69);
-            this.btnDiceRoll.TabIndex = 4;
-            this.btnDiceRoll.Text = "Dice Roll";
-            this.btnDiceRoll.UseVisualStyleBackColor = true;
-            this.btnDiceRoll.Click += new System.EventHandler(this.btnDiceRoll_Click);
             // 
             // btnAttackSkillLow
             // 
@@ -154,15 +142,6 @@
             this.btnEndTurn.UseVisualStyleBackColor = true;
             this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
             // 
-            // lblDiceRollScore
-            // 
-            this.lblDiceRollScore.AutoSize = true;
-            this.lblDiceRollScore.Location = new System.Drawing.Point(879, 582);
-            this.lblDiceRollScore.Name = "lblDiceRollScore";
-            this.lblDiceRollScore.Size = new System.Drawing.Size(51, 13);
-            this.lblDiceRollScore.TabIndex = 12;
-            this.lblDiceRollScore.Text = "DIcePool";
-            // 
             // exit
             // 
             this.exit.Location = new System.Drawing.Point(912, 21);
@@ -181,7 +160,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.exit);
-            this.Controls.Add(this.lblDiceRollScore);
             this.Controls.Add(this.btnEndTurn);
             this.Controls.Add(this.btnHeal);
             this.Controls.Add(this.btnDefenseBuff);
@@ -189,7 +167,6 @@
             this.Controls.Add(this.btnAttackSkillHigh);
             this.Controls.Add(this.btnAttackSkillMed);
             this.Controls.Add(this.btnAttackSkillLow);
-            this.Controls.Add(this.btnDiceRoll);
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.btnDefend);
             this.Controls.Add(this.btnAttack);
@@ -200,7 +177,6 @@
             this.Text = "Battle";
             this.Load += new System.EventHandler(this.Battle_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -209,7 +185,6 @@
         private System.Windows.Forms.Button btnAttack;
         private System.Windows.Forms.Button btnDefend;
         private System.Windows.Forms.Button btnInventory;
-        private System.Windows.Forms.Button btnDiceRoll;
         private System.Windows.Forms.Button btnAttackSkillLow;
         private System.Windows.Forms.Button btnAttackSkillMed;
         private System.Windows.Forms.Button btnAttackSkillHigh;
@@ -217,7 +192,6 @@
         private System.Windows.Forms.Button btnDefenseBuff;
         private System.Windows.Forms.Button btnHeal;
         private System.Windows.Forms.Button btnEndTurn;
-        private System.Windows.Forms.Label lblDiceRollScore;
         private System.Windows.Forms.Button exit;
     }
 }

@@ -71,7 +71,6 @@
   <ItemGroup>
     <Compile Include="BattleManager.cs" />
     <Compile Include="Exceptions\EndBattleException.cs" />
-    <Compile Include="Exception.cs" />
     <Compile Include="Forms\Battle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +106,7 @@
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\IUnit.cs" />
+    <Compile Include="Exceptions\NotEnoughDicePointsException.cs" />
     <Compile Include="Pictures.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Boots.cs" />
