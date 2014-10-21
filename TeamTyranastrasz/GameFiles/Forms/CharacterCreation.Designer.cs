@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CharacterCreation));
             this.lblCharName = new System.Windows.Forms.Label();
             this.inputCharName = new System.Windows.Forms.TextBox();
-            this.CreateCharacter = new System.Windows.Forms.GroupBox();
+            this.ChooseCharacterClass = new System.Windows.Forms.GroupBox();
             this.Btn_Rogue = new System.Windows.Forms.RadioButton();
             this.Btn_Mage = new System.Windows.Forms.RadioButton();
             this.Btn_Warrior = new System.Windows.Forms.RadioButton();
@@ -42,7 +42,7 @@
             this.arrowRight = new System.Windows.Forms.PictureBox();
             this.arrowLeft = new System.Windows.Forms.PictureBox();
             this.DescriptionPanel = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.CharacterType = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.intelligenceProgressBar = new System.Windows.Forms.ProgressBar();
@@ -53,7 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.strengthProgressBar = new System.Windows.Forms.ProgressBar();
             this.HeroDescription = new System.Windows.Forms.TextBox();
-            this.CreateCharacter.SuspendLayout();
+            this.ChooseCharacterClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warriorPic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowRight)).BeginInit();
@@ -84,22 +84,24 @@
             this.inputCharName.TabIndex = 1;
             this.inputCharName.TextChanged += new System.EventHandler(this.inputCharName_TextChanged);
             // 
-            // CreateCharacter
+            // ChooseCharacterClass
             // 
-            this.CreateCharacter.BackColor = System.Drawing.Color.Black;
-            this.CreateCharacter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.CreateCharacter.Controls.Add(this.Btn_Rogue);
-            this.CreateCharacter.Controls.Add(this.Btn_Mage);
-            this.CreateCharacter.Controls.Add(this.Btn_Warrior);
-            this.CreateCharacter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateCharacter.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.CreateCharacter.Location = new System.Drawing.Point(97, 649);
-            this.CreateCharacter.Name = "CreateCharacter";
-            this.CreateCharacter.Size = new System.Drawing.Size(355, 59);
-            this.CreateCharacter.TabIndex = 10;
-            this.CreateCharacter.TabStop = false;
-            this.CreateCharacter.Text = "Choose your Hero!";
-            this.CreateCharacter.Enter += new System.EventHandler(this.CreateCharacter_Enter);
+            this.ChooseCharacterClass.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.ChooseCharacterClass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ChooseCharacterClass.BackColor = System.Drawing.Color.Black;
+            this.ChooseCharacterClass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ChooseCharacterClass.Controls.Add(this.Btn_Rogue);
+            this.ChooseCharacterClass.Controls.Add(this.Btn_Mage);
+            this.ChooseCharacterClass.Controls.Add(this.Btn_Warrior);
+            this.ChooseCharacterClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChooseCharacterClass.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ChooseCharacterClass.Location = new System.Drawing.Point(97, 649);
+            this.ChooseCharacterClass.Name = "ChooseCharacterClass";
+            this.ChooseCharacterClass.Size = new System.Drawing.Size(355, 59);
+            this.ChooseCharacterClass.TabIndex = 10;
+            this.ChooseCharacterClass.TabStop = false;
+            this.ChooseCharacterClass.Text = "Choose your Hero!";
+            this.ChooseCharacterClass.Enter += new System.EventHandler(this.CreateCharacter_Enter);
             // 
             // Btn_Rogue
             // 
@@ -111,6 +113,7 @@
             this.Btn_Rogue.TabStop = true;
             this.Btn_Rogue.Text = "Rogue";
             this.Btn_Rogue.UseVisualStyleBackColor = true;
+            this.Btn_Rogue.CheckedChanged += new System.EventHandler(this.Btn_Rogue_CheckedChanged);
             // 
             // Btn_Mage
             // 
@@ -122,6 +125,7 @@
             this.Btn_Mage.TabStop = true;
             this.Btn_Mage.Text = "Mage";
             this.Btn_Mage.UseVisualStyleBackColor = true;
+            this.Btn_Mage.CheckedChanged += new System.EventHandler(this.Btn_Mage_CheckedChanged_1);
             // 
             // Btn_Warrior
             // 
@@ -133,6 +137,7 @@
             this.Btn_Warrior.TabStop = true;
             this.Btn_Warrior.Text = "Warrior";
             this.Btn_Warrior.UseVisualStyleBackColor = true;
+            this.Btn_Warrior.CheckedChanged += new System.EventHandler(this.Btn_Warrior_CheckedChanged);
             // 
             // exit
             // 
@@ -220,7 +225,7 @@
             // DescriptionPanel
             // 
             this.DescriptionPanel.BackColor = System.Drawing.Color.Transparent;
-            this.DescriptionPanel.Controls.Add(this.label7);
+            this.DescriptionPanel.Controls.Add(this.CharacterType);
             this.DescriptionPanel.Controls.Add(this.label6);
             this.DescriptionPanel.Controls.Add(this.label4);
             this.DescriptionPanel.Controls.Add(this.intelligenceProgressBar);
@@ -237,18 +242,18 @@
             this.DescriptionPanel.TabIndex = 16;
             this.DescriptionPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label7
+            // CharacterType
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Impact", 15.25F);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(19, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 26);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Warrior";
+            this.CharacterType.AutoSize = true;
+            this.CharacterType.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CharacterType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CharacterType.Font = new System.Drawing.Font("Impact", 15.25F);
+            this.CharacterType.ForeColor = System.Drawing.Color.Black;
+            this.CharacterType.Location = new System.Drawing.Point(19, 18);
+            this.CharacterType.Name = "CharacterType";
+            this.CharacterType.Size = new System.Drawing.Size(79, 26);
+            this.CharacterType.TabIndex = 12;
+            this.CharacterType.Text = "Warrior";
             // 
             // label6
             // 
@@ -349,6 +354,7 @@
             this.strengthProgressBar.Name = "strengthProgressBar";
             this.strengthProgressBar.Size = new System.Drawing.Size(208, 16);
             this.strengthProgressBar.TabIndex = 1;
+            this.strengthProgressBar.Click += new System.EventHandler(this.strengthProgressBar_Click);
             // 
             // HeroDescription
             // 
@@ -378,7 +384,7 @@
             this.Controls.Add(this.lblCharName);
             this.Controls.Add(this.createHero);
             this.Controls.Add(this.inputCharName);
-            this.Controls.Add(this.CreateCharacter);
+            this.Controls.Add(this.ChooseCharacterClass);
             this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -388,8 +394,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.CharacterCreation_Load);
-            this.CreateCharacter.ResumeLayout(false);
-            this.CreateCharacter.PerformLayout();
+            this.ChooseCharacterClass.ResumeLayout(false);
+            this.ChooseCharacterClass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warriorPic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowRight)).EndInit();
@@ -406,7 +412,7 @@
         private System.Windows.Forms.Label lblCharName;
         private System.Windows.Forms.TextBox inputCharName;
         private System.Windows.Forms.PictureBox warriorPic1;
-        private System.Windows.Forms.GroupBox CreateCharacter;
+        private System.Windows.Forms.GroupBox ChooseCharacterClass;
         private System.Windows.Forms.RadioButton Btn_Rogue;
         private System.Windows.Forms.RadioButton Btn_Mage;
         private System.Windows.Forms.RadioButton Btn_Warrior;
@@ -419,7 +425,7 @@
         private System.Windows.Forms.TextBox HeroDescription;
         private System.Windows.Forms.ProgressBar strengthProgressBar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label CharacterType;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ProgressBar intelligenceProgressBar;
