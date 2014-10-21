@@ -81,5 +81,10 @@ namespace RpgGame.Forms
         {
             Application.Exit();
         }
+
+        private void DesignPanelUp_Paint(object sender, PaintEventArgs e)
+        {
+            DesignPanelUp.BackColor = Color.FromArgb(163, 0, 0, 0);
+        }
     }
 }

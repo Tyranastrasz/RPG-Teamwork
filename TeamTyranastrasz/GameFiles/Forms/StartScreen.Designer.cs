@@ -46,11 +46,15 @@
             // loadGame
             // 
             this.loadGame.BackColor = System.Drawing.Color.Transparent;
+            this.loadGame.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.loadGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
+            this.loadGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.loadGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadGame.Font = new System.Drawing.Font("Impact", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loadGame.ForeColor = System.Drawing.Color.Black;
-            this.loadGame.Location = new System.Drawing.Point(67, 275);
+            this.loadGame.ForeColor = System.Drawing.Color.Transparent;
+            this.loadGame.Location = new System.Drawing.Point(246, 21);
             this.loadGame.Name = "loadGame";
-            this.loadGame.Size = new System.Drawing.Size(176, 37);
+            this.loadGame.Size = new System.Drawing.Size(165, 48);
             this.loadGame.TabIndex = 1;
             this.loadGame.Text = "LOAD GAME";
             this.loadGame.UseVisualStyleBackColor = false;
@@ -59,10 +63,16 @@
             // about
             // 
             this.about.BackColor = System.Drawing.Color.Transparent;
+            this.about.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.about.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.about.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
+            this.about.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.about.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.about.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.about.Location = new System.Drawing.Point(67, 402);
+            this.about.ForeColor = System.Drawing.Color.Transparent;
+            this.about.Location = new System.Drawing.Point(588, 16);
             this.about.Name = "about";
-            this.about.Size = new System.Drawing.Size(176, 37);
+            this.about.Size = new System.Drawing.Size(165, 48);
             this.about.TabIndex = 2;
             this.about.Text = "ABOUT";
             this.about.UseVisualStyleBackColor = false;
@@ -71,12 +81,17 @@
             // exit
             // 
             this.exit.BackColor = System.Drawing.Color.Transparent;
+            this.exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.exit.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
+            this.exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.exit.Location = new System.Drawing.Point(79, 35);
+            this.exit.ForeColor = System.Drawing.Color.Transparent;
+            this.exit.Location = new System.Drawing.Point(796, 16);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(176, 37);
+            this.exit.Size = new System.Drawing.Size(165, 48);
             this.exit.TabIndex = 3;
             this.exit.Text = "EXIT";
             this.exit.UseVisualStyleBackColor = false;
@@ -86,10 +101,12 @@
             // 
             this.DesignPanelUp.BackColor = System.Drawing.Color.Transparent;
             this.DesignPanelUp.Controls.Add(this.panel1);
+            this.DesignPanelUp.Controls.Add(this.startNewGame);
+            this.DesignPanelUp.Controls.Add(this.loadGame);
             this.DesignPanelUp.Dock = System.Windows.Forms.DockStyle.Top;
             this.DesignPanelUp.Location = new System.Drawing.Point(0, 0);
             this.DesignPanelUp.Name = "DesignPanelUp";
-            this.DesignPanelUp.Size = new System.Drawing.Size(984, 100);
+            this.DesignPanelUp.Size = new System.Drawing.Size(976, 95);
             this.DesignPanelUp.TabIndex = 10;
             this.DesignPanelUp.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -106,6 +123,7 @@
             this.DesignPanelBottom.BackColor = System.Drawing.Color.Transparent;
             this.DesignPanelBottom.Controls.Add(this.panel3);
             this.DesignPanelBottom.Controls.Add(this.exit);
+            this.DesignPanelBottom.Controls.Add(this.about);
             this.DesignPanelBottom.Location = new System.Drawing.Point(-12, 622);
             this.DesignPanelBottom.Name = "DesignPanelBottom";
             this.DesignPanelBottom.Size = new System.Drawing.Size(1024, 100);
@@ -122,18 +140,17 @@
             // 
             // startNewGame
             // 
-            this.startNewGame.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.startNewGame.BackColor = System.Drawing.Color.Transparent;
-            this.startNewGame.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.startNewGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.startNewGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.startNewGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.startNewGame.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.startNewGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
+            this.startNewGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.startNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startNewGame.Font = new System.Drawing.Font("Impact", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.startNewGame.ForeColor = System.Drawing.Color.Black;
-            this.startNewGame.Location = new System.Drawing.Point(67, 163);
+            this.startNewGame.ForeColor = System.Drawing.Color.Transparent;
+            this.startNewGame.Location = new System.Drawing.Point(38, 21);
             this.startNewGame.Name = "startNewGame";
-            this.startNewGame.Size = new System.Drawing.Size(176, 37);
+            this.startNewGame.Size = new System.Drawing.Size(165, 48);
             this.startNewGame.TabIndex = 0;
             this.startNewGame.Text = "NEW GAME";
             this.startNewGame.UseVisualStyleBackColor = false;
@@ -158,20 +175,16 @@
             this.BackgroundImage = global::RpgGame.Properties.Resources.main_char_creat_img;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.exit;
-            this.ClientSize = new System.Drawing.Size(984, 706);
+            this.ClientSize = new System.Drawing.Size(976, 698);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.DesignPanelBottom);
-            this.Controls.Add(this.startNewGame);
-            this.Controls.Add(this.about);
-            this.Controls.Add(this.loadGame);
             this.Controls.Add(this.DesignPanelUp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StartScreen";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.StartScreen_Load);
             this.DesignPanelUp.ResumeLayout(false);

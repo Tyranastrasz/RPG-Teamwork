@@ -122,6 +122,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.ControlBox = false;
             this.Controls.Add(this.quit);
             this.Controls.Add(this.load);
             this.Controls.Add(this.save);
@@ -133,7 +134,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Map";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Map";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

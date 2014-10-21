@@ -39,8 +39,8 @@
 
             // start from the start screen
 
-            //GameEngine game = new GameEngine();
-            //game.Run();
+            GameEngine game = new GameEngine();
+            game.Run();
 
             // start from the chae creation
             //Application.Run(new CharacterCreation());
@@ -49,7 +49,7 @@
             //Application.Run(new Map());
 
             // start from the battle
-            Application.Run(new Battle());
+            //Application.Run(new Battle());
 
             // start from the town
             //Application.Run(new Town());

@@ -39,7 +39,7 @@ namespace RpgGame.Forms
 
         private void exit_Paint(object sender, PaintEventArgs e)
         {
-            exit.BackColor = Color.FromArgb(163, 0, 0, 0);
+            exit.ForeColor = Color.FromArgb(163, 0, 0, 0);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

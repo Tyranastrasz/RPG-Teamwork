@@ -11,6 +11,8 @@
     <AssemblyName>RpgGame</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,10 +25,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleManager.cs" />
+    <Compile Include="EndBattleException.cs" />
     <Compile Include="Exception.cs" />
     <Compile Include="Forms\Battle.cs">
       <SubType>Form</SubType>
@@ -204,6 +205,7 @@
     <Content Include="Images\golem.png" />
     <Content Include="Images\main_char_creat_img.jpg" />
     <Content Include="Images\town_tem_img.jpg" />
+    <None Include="Resources\exit-btn.png" />
     <None Include="Resources\exit-100x100.png" />
     <None Include="Resources\exit.png" />
     <None Include="Resources\flying-dragon-animated-image_zpsa0010db9.gif" />
