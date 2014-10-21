@@ -7,9 +7,20 @@
     using System.Threading;
     using RpgGame.Enemies.MeleeType;
     using RpgGame.Enemies.RangeType;
+    using System.Windows.Forms;
+    using RpgGame.Forms;
 
     public class BattleManager
     {
+        public const int AttackDicePoints = 2;
+        public const int DefendDicePoints = 2;
+        public const int AttackSkill1DicePoints = 2;
+        public const int AttackSkill2DicePoints = 4;
+        public const int AttackSkill3DicePoints = 6;
+        public const int AttackBuffDicePoints = 3;
+        public const int DefenceBuffDicePoints = 3;
+        public const int HeakDicePoints = 3;
+
         public List<Position> enemiesPossitions = new List<Position>();
 
         public bool IsPlayerTurn { get; set; }
@@ -38,11 +49,15 @@
             this.enemiesPossitions.Add(new Position(200, 20));
             this.enemiesPossitions.Add(new Position(200, 170));
             this.enemiesPossitions.Add(new Position(200, 340));
+
+            RollTheDices();
         }
 
         public void PlayerTurn()
         {
-            // TODO ?
+            this.IsPlayerTurn = true;
+            GameEngine.BattleScreen.debug.Text = this.Player.ToString();
+            GameEngine.BattleScreen.debug.Text += "\n" + this.DicePoints;
         }
 
         public void EnemyTurn()
@@ -50,9 +65,18 @@
             // use thread.sleep
             this.IsPlayerTurn = false;
             this.LastTurnEnemyId++;
-            Attack((IUnit)this.EnemyList[this.LastTurnEnemyId], (IUnit)Player);
-            this.IsPlayerTurn = true;
-            GameEngine.BattleScreen.debug.Text = this.Player.ToString();
+            try
+            {
+                Attack((IUnit)this.EnemyList[this.LastTurnEnemyId], (IUnit)Player);
+            }
+            catch (EndBattleException)
+            {
+                MessageBox.Show("You have died!");
+                GameEngine.BattleScreen.Close();
+                Map mapScreen = new Map();
+                mapScreen.Show();
+            }
+            PlayerTurn();
         }
 
         public void CheckBattleStatus(List<IEnemy> enemyList)
@@ -63,17 +87,15 @@
             }
         }
 
-        public List<IEnemy> CheckForDeadEnemies(List<IEnemy> enemyList)
+        public bool CheckDicePoints(int points)
         {
-            foreach (IEnemy enemy in this.EnemyList)
+            if (this.DicePoints >= points)
             {
-                if (enemy.HitPoints <= 0)
-                {
-                    this.EnemyList[this.CurrentTargetId].IsAlive = false;
-                }
+                this.DicePoints -= points;
+                return true;
             }
 
-            return enemyList;
+            throw new NotEnoughDicePointsException();
         }
 
         public void Attack(IUnit attacker, IUnit target)
@@ -95,7 +117,7 @@
                 }
                 else
                 {
-                    throw new EndBattleException("You have died!");
+                    throw new EndBattleException();
                 }
             }
         }
