@@ -40,7 +40,7 @@ namespace RpgGame
             {
                 using (SoundPlayer mapSound = new SoundPlayer("..\\..\\Sound\\SoundFiles\\DiabloTristramVillage.wav"))
                 {
-                    mapSound.PlayLooping();
+                    //mapSound.PlayLooping();
                 }
             }
             catch (FileNotFoundException)
@@ -96,7 +96,7 @@ namespace RpgGame
             {
                 using (SoundPlayer battleSound = new SoundPlayer("..\\..\\Sound\\SoundFiles\\TheBattle.wav"))
                 {
-                    battleSound.Play();
+                    //battleSound.Play();
                 }
             }
             catch (FileNotFoundException)
