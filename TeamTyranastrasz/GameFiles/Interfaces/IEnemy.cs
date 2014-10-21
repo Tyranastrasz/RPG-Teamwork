@@ -9,8 +9,14 @@ namespace RpgGame
 
         int AttackPoints { get; set; }
 
+        bool IsAlive { get; set; }
+
+        int Experience { get; set; }
+
         // added for draw tests
         Position Position { get; set; }
+
+        Pictures Picture { get; set; }
 
         PictureBox PicBox { get; set; }
     }

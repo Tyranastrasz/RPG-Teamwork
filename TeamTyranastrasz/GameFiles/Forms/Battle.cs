@@ -12,7 +12,7 @@
     {
         private BattleManager battle = new BattleManager();
 
-        private Label debug;
+        public Label debug;
         private Label targetBox;
         
         public Battle()
@@ -24,7 +24,7 @@
             debug.Top = 500;
             debug.Width = 600;
             debug.Height = 50;
-            //Controls.Add(debug);
+            Controls.Add(debug);
 
             targetBox = new Label();
             targetBox.Left = 0;
@@ -34,28 +34,35 @@
             Controls.Add(targetBox);
             targetBox.Hide();
 
-            IEnemy enemy = new Golem("Dumb", 85, 35, 20, Pictures.Golem);
-            enemy.Position = new Position(25, 12);
-            battle.enemyList.Add(enemy);
+            //IEnemy enemy = new Golem("Dumb", 85, 35, 5, Pictures.Golem);
+            //enemy.Position = new Position(25, 12);
+            //battle.EnemyList.Add(enemy);
 
-            IEnemy enemy2 = new Ork("Orglem", 100, 40, 25, Pictures.Golem);
-            enemy2.Position = new Position(25, 200);
-            battle.enemyList.Add(enemy2);
+            //IEnemy enemy2 = new Ork("Orglem", 100, 40, 5, Pictures.Golem);
+            //enemy2.Position = new Position(25, 200);
+            //battle.EnemyList.Add(enemy2);
+
+            battle.CreateEnemies();
         }
 
         private void Battle_Load(object sender, EventArgs e)
         {
             DrawEnemies();
+            debug.Text = battle.Player.ToString();
         }
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
 
-            if (battle.playerTurn == true)
+            if (battle.IsPlayerTurn == true)
             {
                 try
                 {
-                    battle.Attack((IUnit)battle.player, (IUnit)battle.currentTarget);
+                    battle.Attack((IUnit)battle.Player, (IUnit)battle.CurrentTarget);
+                    if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
+                    {
+                        showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
+                    }
                 }
                 catch (EndBattleException ex)
                 {
@@ -69,7 +76,11 @@
 
         private void btnDefend_Click(object sender, EventArgs e)
         {
-
+            debug.Text = "";
+            foreach (var item in battle.EnemyList)
+            {
+                debug.Text += item + "\n";
+            }
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
@@ -79,7 +90,6 @@
 
         private void btnEndTurn_Click(object sender, EventArgs e)
         {
-            battle.playerTurn = false;
             battle.EnemyTurn();
         }
 
@@ -123,9 +133,9 @@
             PictureBox p = sender as PictureBox;
             int id = int.Parse(p.Name);
 
-            battle.currentTarget = battle.enemyList[id];
-            battle.currentTargetId = id;
-            showTargetBox(targetBox, battle.enemyList[id]);
+            battle.CurrentTarget = battle.EnemyList[id];
+            battle.CurrentTargetId = id;
+            showTargetBox(targetBox, (IUnit)battle.EnemyList[id]);
         }
 
         private void DrawImages(PictureBox pictureBox, IEnemy enemy, Image image, string id)
@@ -144,19 +154,48 @@
         private void DrawEnemies()
         {
             int counter = 0;
-            foreach (IEnemy enemy in battle.enemyList)
+            foreach (IEnemy enemy in battle.EnemyList)
             {
-                DrawImages(enemy.PicBox, enemy, Properties.Resources.golem, counter.ToString());
+                //DrawImages(enemy.PicBox, enemy, Properties.Resources.golem, counter.ToString());
+                DrawImages(enemy.PicBox, enemy, getImage(enemy), counter.ToString());
                 counter++;
             }
         }
 
-        private void showTargetBox(Label box, IEnemy enemy)
+        private void showTargetBox(Label box, IUnit enemy)
         {
             box.Show();
-            box.Text = "Attack: " + enemy.AttackPoints
-                        + "\nDefense: " + enemy.DefensePoints
-                        + "\nHitpoints: " + enemy.HitPoints;
+            box.Text = "Attack: " + enemy.Attack()
+                        + "\nDefense: " + enemy.Defend()
+                        + "\nHitpoints: " + enemy.CurrentHitPoints;
+        }
+
+        private Image getImage(IEnemy enemy)
+        {
+            switch (enemy.Picture)
+            {
+                case Pictures.Golem:
+                    return Properties.Resources.golem;
+                    break;
+                //case Pictures.Ork:
+                //    return Properties.Resources.ork;
+                //    break;
+                //case Pictures.Skeleton:
+                //    return Properties.Resources.skeleton;
+                //    break;
+                //case Pictures.Drake:
+                //    return Properties.Resources.drake;
+                //    break;
+                //case Pictures.Goblin:
+                //    return Properties.Resources.goblin;
+                //    break;
+                //case Pictures.Shade:
+                //    return Properties.Resources.shade;
+                //    break;
+                default:
+                    return Properties.Resources.golem;
+                    //throw new NoPictureException();
+            }
         }
 
         // temp usage to close the form

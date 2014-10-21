@@ -70,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleManager.cs" />
-    <Compile Include="EndBattleException.cs" />
+    <Compile Include="Exceptions\EndBattleException.cs" />
     <Compile Include="Exception.cs" />
     <Compile Include="Forms\Battle.cs">
       <SubType>Form</SubType>
@@ -90,6 +90,7 @@
     <Compile Include="Forms\CharacterCreation.Designer.cs">
       <DependentUpon>CharacterCreation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\NoPictureException.cs" />
     <Compile Include="Forms\StartScreen.cs">
       <SubType>Form</SubType>
     </Compile>

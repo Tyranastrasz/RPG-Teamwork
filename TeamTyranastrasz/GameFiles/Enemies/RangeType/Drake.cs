@@ -2,8 +2,10 @@
 {
     public class Drake : Range
     {
+        public const int experience = 50;
+
         public Drake(string name, int hitPoints, int attackPoints, int defensePoints, Pictures picture)
-            : base(name, hitPoints, defensePoints, attackPoints, picture)
+            : base(name, hitPoints, defensePoints, attackPoints, picture, experience)
         {
         }
 

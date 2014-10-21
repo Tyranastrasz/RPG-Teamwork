@@ -19,15 +19,15 @@
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
 
-            ICharacter player = new Warrior("Pesho");
+            //ICharacter player = new Warrior("Pesho");
 
-            IItem helm = new Helmet("Wizard hat", 200, 2, 5);
-            IItem boots = new Boots("Yellow boots", 200, 2, 5);
-            IItem chainmail = new Chainmail("Dragonmail", 200, 2, 5);
-            IItem secondChainmail = new Chainmail("Diablo's plate", 500, 5, 5);
+            //IItem helm = new Helmet("Wizard hat", 200, 2, 5);
+            //IItem boots = new Boots("Yellow boots", 200, 2, 5);
+            //IItem chainmail = new Chainmail("Dragonmail", 200, 2, 5);
+            //IItem secondChainmail = new Chainmail("Diablo's plate", 500, 5, 5);
 
-            Type bootstype = boots.GetType();
-            Type chainmailtype = chainmail.GetType();
+            //Type bootstype = boots.GetType();
+            //Type chainmailtype = chainmail.GetType();
 
             //if (secondChainmail.GetType() == chainmail.GetType())
             //{

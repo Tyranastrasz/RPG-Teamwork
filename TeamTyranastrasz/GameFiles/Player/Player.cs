@@ -10,15 +10,12 @@
 
     public abstract class Player : Unit, IMovable, ITeleportable, IUsable, ITrade, ICharacter
     {
-        //private int Level = 1;
-
         public readonly int StrengthModifier;
         public readonly int DexterityModifier;
         public readonly int VitalityModifier;
         public readonly int IntelligenceModifier;
 
         private Position position;
-        private int cash;
 
         protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier) : base(name)
         {
@@ -36,6 +33,7 @@
             this.CurrentHitPoints = this.MaxHitPoints;
             this.Position = new Position();
             this.PicBox = new PictureBox();
+            this.Level = 1;
         }
 
         public int Strength { get; set; }
@@ -61,6 +59,7 @@
         public int Range { get; set; }
 
         public int Level { get; set; }
+
         public List<Item> Inventory { get; set; }
 
         public List<Item> Equiped { get; set; }
@@ -86,14 +85,20 @@
         public virtual int Attack()
         {
             int damage = CalculateAttackPoints();
-            damage += this.Equiped.Sum(item => item.AttackPoints);
+            if (this.Equiped != null)
+            {
+                damage += this.Equiped.Sum(item => item.AttackPoints);
+            }
             return damage;
         }
 
         public virtual int Defend()
         {
-            int defence = CalculateDefencePoints(); 
-            defence += this.Equiped.Sum(item => item.DefencePoints);
+            int defence = CalculateDefencePoints();
+            if (this.Equiped != null)
+            {
+                defence += this.Equiped.Sum(item => item.DefencePoints);
+            }
             return defence;
         }
 
@@ -155,6 +160,13 @@
             {
                 this.AddToInventory(item);
             }
+        }
+
+        public override string ToString()
+        {
+            return "Att: " + this.Attack()
+                    + "Def: " + this.Defend()
+                    + "Hp: " + this.CurrentHitPoints;
         }
     }
 }

@@ -8,13 +8,15 @@
 
     public class GameEngine
     {
-        public static ICharacter playerCharacter;
-
         public static ICharacter PlayerCharacter { get; set; }
+        public static Battle BattleScreen { get; set; }
 
         public void Run()
         {
             Application.Run(new StartScreen());
+            //CreateNewPlayer("warrior", "asd");
+            //CreateBattleScreen();
+            //Application.Run(BattleScreen);
         }
         public static void CreateNewPlayer(string characterClass, string characterName)
         {
@@ -32,6 +34,12 @@
                 default:
                     throw new InvalidOperationException("Something went terribly terribly wrong!");
             }
+        }
+
+        public static void CreateBattleScreen()
+        {
+            BattleScreen = new Battle();
+            BattleScreen.Show();
         }
 
         private void GenerateEnemies()

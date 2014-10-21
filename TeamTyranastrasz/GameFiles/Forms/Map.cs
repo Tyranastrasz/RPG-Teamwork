@@ -21,8 +21,7 @@ namespace RpgGame.Forms
 
         private void battleStart_Click(object sender, EventArgs e)
         {
-            Battle battleScreen = new Battle();
-            battleScreen.Show();
+            GameEngine.CreateBattleScreen();
             this.Hide();
         }
 

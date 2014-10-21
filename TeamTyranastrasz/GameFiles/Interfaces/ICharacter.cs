@@ -18,7 +18,7 @@
 
         int MaxHitPoints { get; }
 
-        int Experience { get; }
+        int Experience { get; set; }
 
         int Cash { get; }
 

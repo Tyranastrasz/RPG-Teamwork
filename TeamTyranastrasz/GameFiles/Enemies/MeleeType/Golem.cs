@@ -3,8 +3,10 @@ namespace RpgGame.Enemies.MeleeType
 {
     public class Golem : Melee
     {
+        public const int experience = 50;
+
         public Golem(string name, int hitPoints, int attackPoints, int defensePoints, Pictures picture)
-            : base(name, hitPoints, defensePoints, attackPoints, picture)
+            : base(name, hitPoints, defensePoints, attackPoints, picture, experience)
         {
         }
 
