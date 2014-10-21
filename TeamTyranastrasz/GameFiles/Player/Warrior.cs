@@ -18,5 +18,37 @@
             : base(name, WarriorStartingStrength, WarriorStartingDexterity, WarriorStartingVitality, WarriorStartingIntelligence, WarriorStrengthModifier, WarriorDexterityModifier, WarriorVitalityModifier, WarriorIntelligenceModifier)
         {
         }
+
+        public override void CastBuff(string type)
+        {
+            switch (type)
+            {
+                case "attack":
+                    this.Strength += (int)((double)this.Strength * 0.1);
+                    break;
+                case "defence":
+                    this.Dexterity += (int)((double)this.Dexterity * 0.05);
+                    break;
+                case "health":
+                    this.Vitality += (int)((double)this.Vitality * 0.2);
+                    break;
+            }
+        }
+
+        public override void ClearBuff(string type)
+        {
+            switch (type)
+            {
+                case "attack":
+                    this.Strength -= (int)((double)this.Strength * 0.1);
+                    break;
+                case "defence":
+                    this.Dexterity -= (int)((double)this.Dexterity * 0.05);
+                    break;
+                case "health":
+                    this.Vitality -= (int)((double)this.Vitality * 0.2);
+                    break;
+            }
+        }
     }
 }

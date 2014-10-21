@@ -18,6 +18,14 @@ namespace RpgGame.Forms
         public CharacterCreation()
         {
             InitializeComponent();
+
+            //TODO: This will be moved on checked event, but for now, lets load bars here:
+            // Warrior base stats
+            strengthProgressBar.Increment(4);
+            dexterityProgressBar.Increment(3);
+            vitalityProgressBar.Increment(10);
+            intelligenceProgressBar.Increment(2);
+
             // TODO: Add background music and sound for clicks
         }
 
@@ -39,43 +47,6 @@ namespace RpgGame.Forms
         private void CreateCharacter_Enter(object sender, EventArgs e)
         {
 
-        }
-
-        private void createChar_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrWhiteSpace(inputCharName.Text))
-            {
-                //throw new Exception("");
-                MessageBox.Show("You must type in a name for your hero!");
-                return;
-            }
-
-            if (!Btn_Mage.Checked && !Btn_Rogue.Checked && !Btn_Warrior.Checked)
-            {
-                // throw new Exception("")
-                MessageBox.Show("You must select a character type!");
-                return;
-            }
-            else if (this.Btn_Warrior.Checked)
-            {
-                string characterClass = "warrior";
-                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
-            }
-            else if (this.Btn_Mage.Checked)
-            {
-                string characterClass = "mage";
-                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
-            }
-            else if (this.Btn_Rogue.Checked)
-            {
-                string characterClass = "rogue";
-                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
-            }
-
-            Map mainMap = new Map();
-            mainMap.Show();
-
-            this.Close();
         }
 
         // temp usage to close the form
@@ -112,5 +83,76 @@ namespace RpgGame.Forms
             
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            DescriptionPanel.BackColor = Color.FromArgb(163, 0, 0, 0);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void arrowRight_Click(object sender, EventArgs e)
+        {
+            warriorPic1.Hide();
+        }
+
+        private void arrowLeft_Click(object sender, EventArgs e)
+        {
+            warriorPic1.Show();
+        }
+
+        private void about_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(inputCharName.Text))
+            {
+                //throw new Exception("");
+                MessageBox.Show("You must type in a name for your hero!");
+                return;
+            }
+
+            if (!Btn_Mage.Checked && !Btn_Rogue.Checked && !Btn_Warrior.Checked)
+            {
+                // throw new Exception("")
+                MessageBox.Show("You must select a character type!");
+                return;
+            }
+            else if (this.Btn_Warrior.Checked)
+            {
+                string characterClass = "warrior";
+
+                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
+            }
+            else if (this.Btn_Mage.Checked)
+            {
+                string characterClass = "mage";
+                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
+            }
+            else if (this.Btn_Rogue.Checked)
+            {
+                string characterClass = "rogue";
+                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
+            }
+
+            this.Close();
+            Map mainMap = new Map();
+            mainMap.Show();
+        }
     }
 }

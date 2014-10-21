@@ -13,10 +13,10 @@
 
         public void Run()
         {
-            //Application.Run(new StartScreen());
-            CreateNewPlayer("warrior", "asd");
-            CreateBattleScreen();
-            Application.Run(BattleScreen);
+            Application.Run(new StartScreen());
+            //CreateNewPlayer("warrior", "asd");
+            //CreateBattleScreen();
+            //Application.Run(BattleScreen);
         }
         public static void CreateNewPlayer(string characterClass, string characterName)
         {
@@ -40,6 +40,7 @@
         {
             BattleScreen = new Battle();
             BattleScreen.Show();
+            Sound.PlayBattleSound();
         }
 
         private void GenerateEnemies()

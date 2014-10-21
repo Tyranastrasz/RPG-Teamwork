@@ -44,7 +44,7 @@
             // 
             // btnAttack
             // 
-            this.btnAttack.Location = new System.Drawing.Point(80, 582);
+            this.btnAttack.Location = new System.Drawing.Point(95, 674);
             this.btnAttack.Name = "btnAttack";
             this.btnAttack.Size = new System.Drawing.Size(135, 45);
             this.btnAttack.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // btnDefend
             // 
-            this.btnDefend.Location = new System.Drawing.Point(272, 582);
+            this.btnDefend.Location = new System.Drawing.Point(95, 725);
             this.btnDefend.Name = "btnDefend";
             this.btnDefend.Size = new System.Drawing.Size(135, 45);
             this.btnDefend.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             // btnInventory
             // 
-            this.btnInventory.Location = new System.Drawing.Point(464, 582);
+            this.btnInventory.Location = new System.Drawing.Point(869, 611);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(135, 45);
             this.btnInventory.TabIndex = 3;
@@ -74,9 +74,9 @@
             // 
             // btnAttackSkillLow
             // 
-            this.btnAttackSkillLow.Location = new System.Drawing.Point(80, 653);
+            this.btnAttackSkillLow.Location = new System.Drawing.Point(292, 690);
             this.btnAttackSkillLow.Name = "btnAttackSkillLow";
-            this.btnAttackSkillLow.Size = new System.Drawing.Size(92, 45);
+            this.btnAttackSkillLow.Size = new System.Drawing.Size(47, 45);
             this.btnAttackSkillLow.TabIndex = 5;
             this.btnAttackSkillLow.Text = "Attack Skill Low (2dp)";
             this.btnAttackSkillLow.UseVisualStyleBackColor = true;
@@ -84,9 +84,9 @@
             // 
             // btnAttackSkillMed
             // 
-            this.btnAttackSkillMed.Location = new System.Drawing.Point(201, 653);
+            this.btnAttackSkillMed.Location = new System.Drawing.Point(345, 690);
             this.btnAttackSkillMed.Name = "btnAttackSkillMed";
-            this.btnAttackSkillMed.Size = new System.Drawing.Size(92, 45);
+            this.btnAttackSkillMed.Size = new System.Drawing.Size(47, 45);
             this.btnAttackSkillMed.TabIndex = 6;
             this.btnAttackSkillMed.Text = "Attack Skill Med (4dp)";
             this.btnAttackSkillMed.UseVisualStyleBackColor = true;
@@ -94,9 +94,9 @@
             // 
             // btnAttackSkillHigh
             // 
-            this.btnAttackSkillHigh.Location = new System.Drawing.Point(315, 653);
+            this.btnAttackSkillHigh.Location = new System.Drawing.Point(398, 690);
             this.btnAttackSkillHigh.Name = "btnAttackSkillHigh";
-            this.btnAttackSkillHigh.Size = new System.Drawing.Size(92, 45);
+            this.btnAttackSkillHigh.Size = new System.Drawing.Size(44, 45);
             this.btnAttackSkillHigh.TabIndex = 7;
             this.btnAttackSkillHigh.Text = "Attack Skill Hign (6dp)";
             this.btnAttackSkillHigh.UseVisualStyleBackColor = true;
@@ -104,9 +104,9 @@
             // 
             // btnAttackBuff
             // 
-            this.btnAttackBuff.Location = new System.Drawing.Point(464, 653);
+            this.btnAttackBuff.Location = new System.Drawing.Point(448, 690);
             this.btnAttackBuff.Name = "btnAttackBuff";
-            this.btnAttackBuff.Size = new System.Drawing.Size(92, 45);
+            this.btnAttackBuff.Size = new System.Drawing.Size(44, 45);
             this.btnAttackBuff.TabIndex = 8;
             this.btnAttackBuff.Text = "Attack Buff (3dp)";
             this.btnAttackBuff.UseVisualStyleBackColor = true;
@@ -114,9 +114,9 @@
             // 
             // btnDefenseBuff
             // 
-            this.btnDefenseBuff.Location = new System.Drawing.Point(580, 653);
+            this.btnDefenseBuff.Location = new System.Drawing.Point(498, 690);
             this.btnDefenseBuff.Name = "btnDefenseBuff";
-            this.btnDefenseBuff.Size = new System.Drawing.Size(92, 45);
+            this.btnDefenseBuff.Size = new System.Drawing.Size(40, 45);
             this.btnDefenseBuff.TabIndex = 9;
             this.btnDefenseBuff.Text = "Defense Buff(3dp)";
             this.btnDefenseBuff.UseVisualStyleBackColor = true;
@@ -124,9 +124,9 @@
             // 
             // btnHeal
             // 
-            this.btnHeal.Location = new System.Drawing.Point(693, 653);
+            this.btnHeal.Location = new System.Drawing.Point(544, 690);
             this.btnHeal.Name = "btnHeal";
-            this.btnHeal.Size = new System.Drawing.Size(92, 45);
+            this.btnHeal.Size = new System.Drawing.Size(43, 45);
             this.btnHeal.TabIndex = 10;
             this.btnHeal.Text = "Heal (3dp)";
             this.btnHeal.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             // 
             // btnEndTurn
             // 
-            this.btnEndTurn.Location = new System.Drawing.Point(656, 582);
+            this.btnEndTurn.Location = new System.Drawing.Point(869, 690);
             this.btnEndTurn.Name = "btnEndTurn";
             this.btnEndTurn.Size = new System.Drawing.Size(143, 45);
             this.btnEndTurn.TabIndex = 11;
@@ -144,7 +144,7 @@
             // 
             // exit
             // 
-            this.exit.Location = new System.Drawing.Point(912, 21);
+            this.exit.Location = new System.Drawing.Point(946, 2);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(75, 37);
             this.exit.TabIndex = 13;
@@ -156,9 +156,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RpgGame.Properties.Resources.battle_temp_img;
+            this.BackgroundImage = global::RpgGame.Properties.Resources.BattleScreenBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.btnEndTurn);
             this.Controls.Add(this.btnHeal);
@@ -170,7 +170,7 @@
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.btnDefend);
             this.Controls.Add(this.btnAttack);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Battle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

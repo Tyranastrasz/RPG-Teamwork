@@ -42,6 +42,11 @@
             //GameEngine game = new GameEngine();
             //game.Run();
 
+            //string fileName = "BattleAxeSwing.wav";
+            //string path = Sound.GeneratePathToFile(fileName);
+            //int opa = 5;
+
+
             // start from the chae creation
             //Application.Run(new CharacterCreation());
 
