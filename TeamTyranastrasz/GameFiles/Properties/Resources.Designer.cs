@@ -73,36 +73,6 @@ namespace RpgGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap exit {
-            get {
-                object obj = ResourceManager.GetObject("exit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap exit_100x100 {
-            get {
-                object obj = ResourceManager.GetObject("exit-100x100", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap exit_btn {
-            get {
-                object obj = ResourceManager.GetObject("exit-btn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap flying_dragon_animated_image_zpsa0010db9 {
             get {
                 object obj = ResourceManager.GetObject("flying-dragon-animated-image_zpsa0010db9", resourceCulture);
@@ -123,9 +93,89 @@ namespace RpgGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Hakaar_the_Destroyer {
+            get {
+                object obj = ResourceManager.GetObject("Hakaar-the-Destroyer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hakaar_the_Destroyer1 {
+            get {
+                object obj = ResourceManager.GetObject("Hakaar-the-Destroyer1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hakaar_the_Destroyer2 {
+            get {
+                object obj = ResourceManager.GetObject("Hakaar-the-Destroyer2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hakaar_the_Destroyer3 {
+            get {
+                object obj = ResourceManager.GetObject("Hakaar-the-Destroyer3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lights {
+            get {
+                object obj = ResourceManager.GetObject("lights", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap main_char_creat_img {
             get {
                 object obj = ResourceManager.GetObject("main_char_creat_img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap main_char_creat_img_bgr {
+            get {
+                object obj = ResourceManager.GetObject("main_char_creat_img-bgr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap main_char_creat_img1 {
+            get {
+                object obj = ResourceManager.GetObject("main_char_creat_img1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap main_start_screen {
+            get {
+                object obj = ResourceManager.GetObject("main_start_screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

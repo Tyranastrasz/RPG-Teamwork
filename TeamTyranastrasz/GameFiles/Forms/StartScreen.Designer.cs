@@ -29,36 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartScreen));
-            this.loadGame = new System.Windows.Forms.Button();
             this.about = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
-            this.DesignPanelUp = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.DesignPanelBottom = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.loadGame = new System.Windows.Forms.Button();
             this.startNewGame = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.DesignPanelUp.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.DesignPanelUp = new System.Windows.Forms.Panel();
             this.DesignPanelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.DesignPanelUp.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // loadGame
-            // 
-            this.loadGame.BackColor = System.Drawing.Color.Transparent;
-            this.loadGame.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.loadGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
-            this.loadGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.loadGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadGame.Font = new System.Drawing.Font("Impact", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loadGame.ForeColor = System.Drawing.Color.Transparent;
-            this.loadGame.Location = new System.Drawing.Point(246, 21);
-            this.loadGame.Name = "loadGame";
-            this.loadGame.Size = new System.Drawing.Size(165, 48);
-            this.loadGame.TabIndex = 1;
-            this.loadGame.Text = "LOAD GAME";
-            this.loadGame.UseVisualStyleBackColor = false;
-            this.loadGame.Click += new System.EventHandler(this.loadGame_Click);
             // 
             // about
             // 
@@ -97,27 +80,6 @@
             this.exit.UseVisualStyleBackColor = false;
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
-            // DesignPanelUp
-            // 
-            this.DesignPanelUp.BackColor = System.Drawing.Color.Transparent;
-            this.DesignPanelUp.Controls.Add(this.panel1);
-            this.DesignPanelUp.Controls.Add(this.startNewGame);
-            this.DesignPanelUp.Controls.Add(this.loadGame);
-            this.DesignPanelUp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DesignPanelUp.Location = new System.Drawing.Point(0, 0);
-            this.DesignPanelUp.Name = "DesignPanelUp";
-            this.DesignPanelUp.Size = new System.Drawing.Size(976, 95);
-            this.DesignPanelUp.TabIndex = 10;
-            this.DesignPanelUp.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(8, 641);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1024, 93);
-            this.panel1.TabIndex = 5;
-            // 
             // DesignPanelBottom
             // 
             this.DesignPanelBottom.BackColor = System.Drawing.Color.Transparent;
@@ -137,6 +99,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1024, 93);
             this.panel3.TabIndex = 5;
+            // 
+            // loadGame
+            // 
+            this.loadGame.BackColor = System.Drawing.Color.Transparent;
+            this.loadGame.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.loadGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
+            this.loadGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.loadGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadGame.Font = new System.Drawing.Font("Impact", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loadGame.ForeColor = System.Drawing.Color.Transparent;
+            this.loadGame.Location = new System.Drawing.Point(246, 21);
+            this.loadGame.Name = "loadGame";
+            this.loadGame.Size = new System.Drawing.Size(165, 48);
+            this.loadGame.TabIndex = 1;
+            this.loadGame.Text = "LOAD GAME";
+            this.loadGame.UseVisualStyleBackColor = false;
+            this.loadGame.Click += new System.EventHandler(this.loadGame_Click);
             // 
             // startNewGame
             // 
@@ -167,12 +146,33 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Location = new System.Drawing.Point(8, 641);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1024, 93);
+            this.panel1.TabIndex = 5;
+            // 
+            // DesignPanelUp
+            // 
+            this.DesignPanelUp.BackColor = System.Drawing.Color.Transparent;
+            this.DesignPanelUp.Controls.Add(this.panel1);
+            this.DesignPanelUp.Controls.Add(this.startNewGame);
+            this.DesignPanelUp.Controls.Add(this.loadGame);
+            this.DesignPanelUp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DesignPanelUp.Location = new System.Drawing.Point(0, 0);
+            this.DesignPanelUp.Name = "DesignPanelUp";
+            this.DesignPanelUp.Size = new System.Drawing.Size(976, 95);
+            this.DesignPanelUp.TabIndex = 10;
+            this.DesignPanelUp.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // StartScreen
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Application;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RpgGame.Properties.Resources.main_char_creat_img;
+            this.BackgroundImage = global::RpgGame.Properties.Resources.main_start_screen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.exit;
             this.ClientSize = new System.Drawing.Size(976, 698);
@@ -187,23 +187,23 @@
             this.Name = "StartScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.StartScreen_Load);
-            this.DesignPanelUp.ResumeLayout(false);
             this.DesignPanelBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.DesignPanelUp.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button loadGame;
         private System.Windows.Forms.Button about;
         private System.Windows.Forms.Button exit;
-        private System.Windows.Forms.Panel DesignPanelUp;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel DesignPanelBottom;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button loadGame;
         private System.Windows.Forms.Button startNewGame;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel DesignPanelUp;
     }
 }

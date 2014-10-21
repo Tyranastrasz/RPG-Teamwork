@@ -31,116 +31,70 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CharacterCreation));
             this.lblCharName = new System.Windows.Forms.Label();
             this.inputCharName = new System.Windows.Forms.TextBox();
-            this.tempReffBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.createChar = new System.Windows.Forms.Button();
-            this.exit = new System.Windows.Forms.Button();
             this.CreateCharacter = new System.Windows.Forms.GroupBox();
             this.Btn_Rogue = new System.Windows.Forms.RadioButton();
             this.Btn_Mage = new System.Windows.Forms.RadioButton();
             this.Btn_Warrior = new System.Windows.Forms.RadioButton();
             this.startNewGame = new System.Windows.Forms.Button();
             this.loadGame = new System.Windows.Forms.Button();
-            this.DesignPanelUp = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.exit = new System.Windows.Forms.Button();
             this.about = new System.Windows.Forms.Button();
-            this.DesignPanelBottom = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.tempReffBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tempReffBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.CreateCharacter.SuspendLayout();
-            this.DesignPanelUp.SuspendLayout();
-            this.DesignPanelBottom.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tempReffBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCharName
             // 
             this.lblCharName.AutoSize = true;
-            this.lblCharName.Location = new System.Drawing.Point(167, 18);
+            this.lblCharName.BackColor = System.Drawing.Color.Transparent;
+            this.lblCharName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblCharName.Font = new System.Drawing.Font("Impact", 12.25F);
+            this.lblCharName.Location = new System.Drawing.Point(211, 166);
             this.lblCharName.Name = "lblCharName";
-            this.lblCharName.Size = new System.Drawing.Size(82, 13);
+            this.lblCharName.Size = new System.Drawing.Size(122, 21);
             this.lblCharName.TabIndex = 0;
-            this.lblCharName.Text = "Character name";
+            this.lblCharName.Text = "character name";
             this.lblCharName.Click += new System.EventHandler(this.lblCharName_Click);
             // 
             // inputCharName
             // 
-            this.inputCharName.Location = new System.Drawing.Point(128, 34);
+            this.inputCharName.BackColor = System.Drawing.Color.Silver;
+            this.inputCharName.Location = new System.Drawing.Point(188, 190);
             this.inputCharName.Name = "inputCharName";
             this.inputCharName.Size = new System.Drawing.Size(170, 20);
             this.inputCharName.TabIndex = 1;
             this.inputCharName.TextChanged += new System.EventHandler(this.inputCharName_TextChanged);
             // 
-            // tempReffBox1
-            // 
-            this.tempReffBox1.BackColor = System.Drawing.Color.Transparent;
-            this.tempReffBox1.BackgroundImage = global::RpgGame.Properties.Resources.golem;
-            this.tempReffBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tempReffBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tempReffBox1.Location = new System.Drawing.Point(41, 302);
-            this.tempReffBox1.Name = "tempReffBox1";
-            this.tempReffBox1.Size = new System.Drawing.Size(135, 199);
-            this.tempReffBox1.TabIndex = 5;
-            this.tempReffBox1.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::RpgGame.Properties.Resources.golem;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(185, 302);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 199);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::RpgGame.Properties.Resources.golem;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(326, 302);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(135, 199);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
             // createChar
             // 
-            this.createChar.Location = new System.Drawing.Point(185, 540);
+            this.createChar.Font = new System.Drawing.Font("Impact", 12.25F);
+            this.createChar.Location = new System.Drawing.Point(201, 569);
             this.createChar.Name = "createChar";
-            this.createChar.Size = new System.Drawing.Size(135, 48);
+            this.createChar.Size = new System.Drawing.Size(148, 29);
             this.createChar.TabIndex = 8;
             this.createChar.Text = "Create Character";
             this.createChar.UseVisualStyleBackColor = true;
             this.createChar.Click += new System.EventHandler(this.createChar_Click);
             // 
-            // exit
-            // 
-            this.exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exit.Location = new System.Drawing.Point(891, 659);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(75, 37);
-            this.exit.TabIndex = 9;
-            this.exit.Text = "Exit";
-            this.exit.UseVisualStyleBackColor = true;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
-            // 
             // CreateCharacter
             // 
+            this.CreateCharacter.BackColor = System.Drawing.Color.Transparent;
+            this.CreateCharacter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CreateCharacter.Controls.Add(this.Btn_Rogue);
             this.CreateCharacter.Controls.Add(this.Btn_Mage);
             this.CreateCharacter.Controls.Add(this.Btn_Warrior);
-            this.CreateCharacter.Location = new System.Drawing.Point(29, 79);
+            this.CreateCharacter.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.CreateCharacter.Location = new System.Drawing.Point(151, 504);
             this.CreateCharacter.Name = "CreateCharacter";
-            this.CreateCharacter.Size = new System.Drawing.Size(384, 78);
+            this.CreateCharacter.Size = new System.Drawing.Size(262, 59);
             this.CreateCharacter.TabIndex = 10;
             this.CreateCharacter.TabStop = false;
             this.CreateCharacter.Text = "Choose your Hero!";
@@ -149,7 +103,7 @@
             // Btn_Rogue
             // 
             this.Btn_Rogue.AutoSize = true;
-            this.Btn_Rogue.Location = new System.Drawing.Point(283, 26);
+            this.Btn_Rogue.Location = new System.Drawing.Point(191, 24);
             this.Btn_Rogue.Name = "Btn_Rogue";
             this.Btn_Rogue.Size = new System.Drawing.Size(57, 17);
             this.Btn_Rogue.TabIndex = 2;
@@ -160,7 +114,7 @@
             // Btn_Mage
             // 
             this.Btn_Mage.AutoSize = true;
-            this.Btn_Mage.Location = new System.Drawing.Point(141, 24);
+            this.Btn_Mage.Location = new System.Drawing.Point(112, 24);
             this.Btn_Mage.Name = "Btn_Mage";
             this.Btn_Mage.Size = new System.Drawing.Size(52, 17);
             this.Btn_Mage.TabIndex = 1;
@@ -171,7 +125,7 @@
             // Btn_Warrior
             // 
             this.Btn_Warrior.AutoSize = true;
-            this.Btn_Warrior.Location = new System.Drawing.Point(16, 24);
+            this.Btn_Warrior.Location = new System.Drawing.Point(25, 24);
             this.Btn_Warrior.Name = "Btn_Warrior";
             this.Btn_Warrior.Size = new System.Drawing.Size(59, 17);
             this.Btn_Warrior.TabIndex = 0;
@@ -188,8 +142,8 @@
             this.startNewGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.startNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startNewGame.Font = new System.Drawing.Font("Impact", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.startNewGame.ForeColor = System.Drawing.Color.Transparent;
-            this.startNewGame.Location = new System.Drawing.Point(38, 21);
+            this.startNewGame.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.startNewGame.Location = new System.Drawing.Point(50, 20);
             this.startNewGame.Name = "startNewGame";
             this.startNewGame.Size = new System.Drawing.Size(165, 48);
             this.startNewGame.TabIndex = 0;
@@ -204,52 +158,32 @@
             this.loadGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.loadGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadGame.Font = new System.Drawing.Font("Impact", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loadGame.ForeColor = System.Drawing.Color.Transparent;
-            this.loadGame.Location = new System.Drawing.Point(263, 21);
+            this.loadGame.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.loadGame.Location = new System.Drawing.Point(248, 20);
             this.loadGame.Name = "loadGame";
             this.loadGame.Size = new System.Drawing.Size(165, 48);
             this.loadGame.TabIndex = 1;
             this.loadGame.Text = "LOAD GAME";
             this.loadGame.UseVisualStyleBackColor = false;
             // 
-            // DesignPanelUp
+            // exit
             // 
-            this.DesignPanelUp.BackColor = System.Drawing.Color.Transparent;
-            this.DesignPanelUp.Controls.Add(this.panel1);
-            this.DesignPanelUp.Controls.Add(this.startNewGame);
-            this.DesignPanelUp.Controls.Add(this.loadGame);
-            this.DesignPanelUp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DesignPanelUp.Location = new System.Drawing.Point(0, 0);
-            this.DesignPanelUp.Name = "DesignPanelUp";
-            this.DesignPanelUp.Size = new System.Drawing.Size(1008, 95);
-            this.DesignPanelUp.TabIndex = 12;
-            this.DesignPanelUp.Paint += new System.Windows.Forms.PaintEventHandler(this.DesignPanelUp_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(8, 641);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1024, 93);
-            this.panel1.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(796, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 48);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "EXIT";
-            this.button1.UseVisualStyleBackColor = false;
+            this.exit.BackColor = System.Drawing.Color.Transparent;
+            this.exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.exit.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
+            this.exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.exit.Location = new System.Drawing.Point(783, 663);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(165, 48);
+            this.exit.TabIndex = 3;
+            this.exit.Text = "EXIT";
+            this.exit.UseVisualStyleBackColor = false;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // about
             // 
@@ -260,77 +194,95 @@
             this.about.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.about.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.about.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.about.ForeColor = System.Drawing.Color.Transparent;
-            this.about.Location = new System.Drawing.Point(574, 16);
+            this.about.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.about.Location = new System.Drawing.Point(584, 662);
             this.about.Name = "about";
-            this.about.Size = new System.Drawing.Size(165, 48);
+            this.about.Size = new System.Drawing.Size(165, 49);
             this.about.TabIndex = 2;
             this.about.Text = "ABOUT";
             this.about.UseVisualStyleBackColor = false;
             // 
-            // DesignPanelBottom
+            // pictureBox1
             // 
-            this.DesignPanelBottom.BackColor = System.Drawing.Color.Transparent;
-            this.DesignPanelBottom.Controls.Add(this.panel3);
-            this.DesignPanelBottom.Controls.Add(this.button1);
-            this.DesignPanelBottom.Controls.Add(this.about);
-            this.DesignPanelBottom.Location = new System.Drawing.Point(-8, 626);
-            this.DesignPanelBottom.Name = "DesignPanelBottom";
-            this.DesignPanelBottom.Size = new System.Drawing.Size(1024, 100);
-            this.DesignPanelBottom.TabIndex = 11;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(72, 216);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(407, 282);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // panel3
+            // tempReffBox1
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(8, 641);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1024, 93);
-            this.panel3.TabIndex = 5;
+            this.tempReffBox1.BackColor = System.Drawing.Color.Transparent;
+            this.tempReffBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tempReffBox1.Location = new System.Drawing.Point(151, 231);
+            this.tempReffBox1.Name = "tempReffBox1";
+            this.tempReffBox1.Size = new System.Drawing.Size(262, 325);
+            this.tempReffBox1.TabIndex = 5;
+            this.tempReffBox1.TabStop = false;
+            this.tempReffBox1.Click += new System.EventHandler(this.tempReffBox1_Click);
             // 
-            // panel2
+            // pictureBox2
             // 
-            this.panel2.Controls.Add(this.CreateCharacter);
-            this.panel2.Controls.Add(this.inputCharName);
-            this.panel2.Controls.Add(this.lblCharName);
-            this.panel2.Location = new System.Drawing.Point(38, 124);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(423, 172);
-            this.panel2.TabIndex = 13;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox2.Location = new System.Drawing.Point(151, 216);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(262, 340);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Location = new System.Drawing.Point(176, 461);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(196, 50);
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // CharacterCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RpgGame.Properties.Resources.main_char_creat_img;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.CancelButton = this.exit;
-            this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.BackgroundImage = global::RpgGame.Properties.Resources.main_char_creat_img1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(972, 730);
             this.ControlBox = false;
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.DesignPanelUp);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.tempReffBox1);
-            this.Controls.Add(this.DesignPanelBottom);
+            this.Controls.Add(this.startNewGame);
             this.Controls.Add(this.exit);
+            this.Controls.Add(this.loadGame);
+            this.Controls.Add(this.lblCharName);
+            this.Controls.Add(this.about);
+            this.Controls.Add(this.inputCharName);
+            this.Controls.Add(this.CreateCharacter);
+            this.Controls.Add(this.tempReffBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.createChar);
+            this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CharacterCreation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.CharacterCreation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tempReffBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.CreateCharacter.ResumeLayout(false);
             this.CreateCharacter.PerformLayout();
-            this.DesignPanelUp.ResumeLayout(false);
-            this.DesignPanelBottom.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tempReffBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -342,19 +294,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button createChar;
-        private System.Windows.Forms.Button exit;
         private System.Windows.Forms.GroupBox CreateCharacter;
         private System.Windows.Forms.RadioButton Btn_Rogue;
         private System.Windows.Forms.RadioButton Btn_Mage;
         private System.Windows.Forms.RadioButton Btn_Warrior;
         private System.Windows.Forms.Button startNewGame;
         private System.Windows.Forms.Button loadGame;
-        private System.Windows.Forms.Panel DesignPanelUp;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Button about;
-        private System.Windows.Forms.Panel DesignPanelBottom;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

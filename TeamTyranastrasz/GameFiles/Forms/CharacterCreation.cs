@@ -18,6 +18,7 @@ namespace RpgGame.Forms
         public CharacterCreation()
         {
             InitializeComponent();
+            // TODO: Add background music and sound for clicks
         }
 
         private void CharacterCreation_Load(object sender, EventArgs e)
@@ -73,6 +74,7 @@ namespace RpgGame.Forms
 
             Map mainMap = new Map();
             mainMap.Show();
+
             this.Close();
         }
 
@@ -82,9 +84,33 @@ namespace RpgGame.Forms
             Application.Exit();
         }
 
-        private void DesignPanelUp_Paint(object sender, PaintEventArgs e)
+        //private void DesignPanelUp_Paint(object sender, PaintEventArgs e)
+        //{
+            
+        //    // TODO: Animate panels to slide from out to the screen. Use timer and ticks to do that
+        //}
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            DesignPanelUp.BackColor = Color.FromArgb(163, 0, 0, 0);
+            /* TODO: One box with arrows. On click the image changes
+               TODO: Arrays with images. If the mage is clicked (for example), 
+               TODO: the 'array with mages' is loaded in the box and player can choose from different pictures for a hero*/
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //pictureBox1.Hide();
+        }
+
+        private void tempReffBox1_Click(object sender, EventArgs e)
+        {
+            //tempReffBox1.BringToFront(); interesting method
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }
