@@ -50,6 +50,10 @@
 
         public int AttackPoints { get; set; }
 
+        public int BonusDefencePoints { get; set; }
+
+        public int BonusAttackPoints { get; set; }
+
         public int Experience { get; set; }
 
         public PictureBox PicBox { get; set; }
@@ -66,13 +70,13 @@
 
         private int CalculateAttackPoints()
         {
-            this.AttackPoints = (this.Strength * this.StrengthModifier) + (this.Intelligence * this.IntelligenceModifier);
+            this.AttackPoints = this.BonusAttackPoints + (this.Strength * this.StrengthModifier) + (this.Intelligence * this.IntelligenceModifier);
             return this.AttackPoints;
         }
 
         private int CalculateDefencePoints()
         {
-            this.DefencePoints = this.Dexterity * this.DexterityModifier;
+            this.DefencePoints = this.BonusDefencePoints + this.Dexterity * this.DexterityModifier;
             return this.DefencePoints;
         }
 
@@ -161,6 +165,25 @@
                 this.AddToInventory(item);
             }
         }
+
+        public int CalculateSkillStats(string type)
+        {
+            switch (type)
+            {
+                case "low":
+                    return this.Level * 1;
+                case "medium":
+                    return (int)((double)this.Level * 1.5);
+                case "heavy":
+                    return this.Level * 2;
+                default:
+                    return 0;
+            }
+        }
+
+        public abstract void CastBuff(string type);
+
+        public abstract void ClearBuff(string type);
 
         public override string ToString()
         {

@@ -12,19 +12,12 @@
     {
         private BattleManager battle = new BattleManager();
 
-        public Label debug;
         private Label targetBox;
+        private Label statsBox;
 
         public Battle()
         {
             InitializeComponent();
-
-            debug = new Label();
-            debug.Left = 10;
-            debug.Top = 500;
-            debug.Width = 600;
-            debug.Height = 50;
-            Controls.Add(debug);
 
             targetBox = new Label();
             targetBox.Left = 0;
@@ -34,19 +27,25 @@
             Controls.Add(targetBox);
             targetBox.Hide();
 
+            statsBox = new Label();
+            statsBox.Left = 0;
+            statsBox.Top = 0;
+            statsBox.Width = 100;
+            statsBox.Height = 50;
+            Controls.Add(statsBox);
+
             battle.CreateEnemies();
         }
 
         private void Battle_Load(object sender, EventArgs e)
         {
             DrawEnemies();
-            debug.Text = battle.Player.ToString();
         }
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
 
-            if (battle.IsPlayerTurn == true)
+            if (battle.IsPlayerTurn == true && battle.CurrentTarget != null)
             {
                 try
                 {
@@ -71,6 +70,7 @@
                 try
                 {
                     battle.CheckDicePoints(BattleManager.DefendDicePoints);
+                    battle.Defend(); // todo
                 }
                 catch(NotEnoughDicePointsException)
                 {
@@ -86,42 +86,140 @@
 
         private void btnEndTurn_Click(object sender, EventArgs e)
         {
+            if (battle.AttackBuffUsed == true)
+            {
+                battle.Player.ClearBuff("attack");
+                battle.AttackBuffUsed = false;
+            }
+            if (battle.DefenceBuffUsed == true)
+            {
+                battle.Player.ClearBuff("defence");
+                battle.DefenceBuffUsed = false;
+            }
+            if (battle.HealthBuffUsed == true)
+            {
+                battle.Player.ClearBuff("health");
+                battle.HealthBuffUsed = false;
+            }
+
             battle.EnemyTurn();
         }
 
         private void btnAttackSkillLow_Click(object sender, EventArgs e)
         {
-
+            if (battle.IsPlayerTurn == true && battle.CurrentTarget != null)
+            {
+                try
+                {
+                    battle.CheckDicePoints(BattleManager.AttackSkill1DicePoints);
+                    battle.Player.BonusAttackPoints += battle.Player.CalculateSkillStats("low");
+                    battle.Attack((IUnit)battle.Player, (IUnit)battle.CurrentTarget);
+                    battle.Player.BonusAttackPoints -= battle.Player.CalculateSkillStats("low");
+                    if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
+                    {
+                        showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
+                    }
+                }
+                catch (NotEnoughDicePointsException)
+                {
+                    MessageBox.Show("You do not have enough dice points!");
+                }
+            }
         }
 
         private void btnAttackSkillMed_Click(object sender, EventArgs e)
         {
-
+            if (battle.IsPlayerTurn == true && battle.CurrentTarget != null)
+            {
+                try
+                {
+                    battle.CheckDicePoints(BattleManager.AttackSkill2DicePoints);
+                    battle.Player.BonusAttackPoints += battle.Player.CalculateSkillStats("medium");
+                    battle.Attack((IUnit)battle.Player, (IUnit)battle.CurrentTarget);
+                    battle.Player.BonusAttackPoints -= battle.Player.CalculateSkillStats("medium");
+                    if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
+                    {
+                        showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
+                    }
+                }
+                catch (NotEnoughDicePointsException)
+                {
+                    MessageBox.Show("You do not have enough dice points!");
+                }
+            }
         }
 
         private void btnAttackSkillHigh_Click(object sender, EventArgs e)
         {
-
+            if (battle.IsPlayerTurn == true && battle.CurrentTarget != null)
+            {
+                try
+                {
+                    battle.CheckDicePoints(BattleManager.AttackSkill3DicePoints);
+                    battle.Player.BonusAttackPoints += battle.Player.CalculateSkillStats("heavy");
+                    battle.Attack((IUnit)battle.Player, (IUnit)battle.CurrentTarget);
+                    battle.Player.BonusAttackPoints -= battle.Player.CalculateSkillStats("heavy");
+                    if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
+                    {
+                        showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
+                    }
+                }
+                catch (NotEnoughDicePointsException)
+                {
+                    MessageBox.Show("You do not have enough dice points!");
+                }
+            }
         }
 
         private void btnAttackBuff_Click(object sender, EventArgs e)
         {
-
+            if (battle.IsPlayerTurn == true && battle.AttackBuffUsed == false)
+            {
+                try
+                {
+                    battle.CheckDicePoints(BattleManager.AttackBuffDicePoints);
+                    battle.Player.CastBuff("attack");
+                    battle.AttackBuffUsed = true;
+                }
+                catch (NotEnoughDicePointsException)
+                {
+                    MessageBox.Show("You do not have enough dice points!");
+                }
+            }
         }
 
         private void btnDefenseBuff_Click(object sender, EventArgs e)
         {
-
+            if (battle.IsPlayerTurn == true && battle.DefenceBuffUsed == false)
+            {
+                try
+                {
+                    battle.CheckDicePoints(BattleManager.DefenceBuffDicePoints);
+                    battle.Player.CastBuff("defence");
+                    battle.DefenceBuffUsed = true;
+                }
+                catch (NotEnoughDicePointsException)
+                {
+                    MessageBox.Show("You do not have enough dice points!");
+                }
+            }
         }
 
         private void btnHeal_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnDiceRoll_Click(object sender, EventArgs e)
-        {
-
+            if (battle.IsPlayerTurn == true && battle.HealthBuffUsed == false)
+            {
+                try
+                {
+                    battle.CheckDicePoints(BattleManager.HealthDicePoints);
+                    battle.Player.CastBuff("health");
+                    battle.HealthBuffUsed = true;
+                }
+                catch (NotEnoughDicePointsException)
+                {
+                    MessageBox.Show("You do not have enough dice points!");
+                }
+            }
         }
 
         void PictureBox_Click(object sender, EventArgs e)
@@ -152,7 +250,6 @@
             int counter = 0;
             foreach (IEnemy enemy in battle.EnemyList)
             {
-                //DrawImages(enemy.PicBox, enemy, Properties.Resources.golem, counter.ToString());
                 DrawImages(enemy.PicBox, enemy, getImage(enemy), counter.ToString());
                 counter++;
             }
@@ -192,6 +289,11 @@
                     return Properties.Resources.golem;
                 //throw new NoPictureException();
             }
+        }
+
+        private void RefreshStats()
+        {
+            // todo
         }
 
         // temp usage to close the form

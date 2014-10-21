@@ -19,5 +19,36 @@
         {
         }
 
+        public override void CastBuff(string type)
+        {
+            switch (type)
+            {
+                case "attack":
+                    this.Intelligence += (int)((double)this.Intelligence * 0.1);
+                    break;
+                case "defence":
+                    this.Dexterity += (int)((double)this.Dexterity * 0.05);
+                    break;
+                case "health":
+                    this.Vitality += (int)((double)this.Vitality * 0.2);
+                    break;
+            }
+        }
+
+        public override void ClearBuff(string type)
+        {
+            switch (type)
+            {
+                case "attack":
+                    this.Intelligence -= (int)((double)this.Intelligence * 0.1);
+                    break;
+                case "defence":
+                    this.Dexterity -= (int)((double)this.Dexterity * 0.05);
+                    break;
+                case "health":
+                    this.Vitality -= (int)((double)this.Vitality * 0.2);
+                    break;
+            }
+        }
     }
 }

@@ -16,6 +16,10 @@
 
         int DefencePoints { get; }
 
+        int BonusAttackPoints { get; set; }
+
+        int BonusDefencePoints { get; set; }
+
         int MaxHitPoints { get; }
 
         int Experience { get; set; }
@@ -27,5 +31,12 @@
         int Level { get; }
 
         Position Position { get; }
+
+        int CalculateSkillStats(string type);
+
+        void CastBuff(string type);
+        
+        void ClearBuff(string type);
+
     }
 }

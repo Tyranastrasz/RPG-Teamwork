@@ -19,7 +19,7 @@
         public const int AttackSkill3DicePoints = 6;
         public const int AttackBuffDicePoints = 3;
         public const int DefenceBuffDicePoints = 3;
-        public const int HeakDicePoints = 3;
+        public const int HealthDicePoints = 3;
 
         public List<Position> enemiesPossitions = new List<Position>();
 
@@ -35,6 +35,10 @@
 
         public int LastTurnEnemyId { get; set; }
 
+        public bool AttackBuffUsed { get; set; }
+        public bool DefenceBuffUsed { get; set; }
+        public bool HealthBuffUsed { get; set; }
+
         public BattleManager()
         {
             this.Player = GameEngine.PlayerCharacter;
@@ -42,6 +46,10 @@
             this.IsBattleEnd = false;
             this.EnemyList = new List<IEnemy>();
             this.LastTurnEnemyId = -1;
+
+            this.AttackBuffUsed = false;
+            this.DefenceBuffUsed = false;
+            this.HealthBuffUsed = false;
 
             this.enemiesPossitions.Add(new Position(20, 20));
             this.enemiesPossitions.Add(new Position(20, 170));
@@ -56,8 +64,6 @@
         public void PlayerTurn()
         {
             this.IsPlayerTurn = true;
-            GameEngine.BattleScreen.debug.Text = this.Player.ToString();
-            GameEngine.BattleScreen.debug.Text += "\n" + this.DicePoints;
         }
 
         public void EnemyTurn()
@@ -120,6 +126,11 @@
                     throw new EndBattleException();
                 }
             }
+        }
+
+        public void Defend()
+        {
+            // todo
         }
 
         public void RollTheDices()

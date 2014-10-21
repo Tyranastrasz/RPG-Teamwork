@@ -204,6 +204,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Images\battle_temp_img.jpg" />
     <Content Include="Images\golem.png" />
+    <None Include="Resources\BattleScreenBg.jpg" />
     <None Include="Resources\Hakaar-the-Destroyer1.png" />
     <None Include="Images\Hakaar-the-Destroyer.png" />
     <Content Include="Images\main_char_creat_img.jpg" />
