@@ -210,5 +210,15 @@ The warrior is born not made, he knows that his soul purpose in life is to serve
             vitalityProgressBar.Value = 0;
             intelligenceProgressBar.Value = 0;
         }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
     }
 }

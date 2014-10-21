@@ -44,9 +44,9 @@
             // 
             // btnAttack
             // 
-            this.btnAttack.Location = new System.Drawing.Point(95, 674);
+            this.btnAttack.Location = new System.Drawing.Point(95, 688);
             this.btnAttack.Name = "btnAttack";
-            this.btnAttack.Size = new System.Drawing.Size(135, 45);
+            this.btnAttack.Size = new System.Drawing.Size(124, 31);
             this.btnAttack.TabIndex = 0;
             this.btnAttack.Text = "Attack(2dp)";
             this.btnAttack.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // 
             this.btnDefend.Location = new System.Drawing.Point(95, 725);
             this.btnDefend.Name = "btnDefend";
-            this.btnDefend.Size = new System.Drawing.Size(135, 45);
+            this.btnDefend.Size = new System.Drawing.Size(124, 31);
             this.btnDefend.TabIndex = 1;
             this.btnDefend.Text = "Defend(2dp)";
             this.btnDefend.UseVisualStyleBackColor = true;
@@ -64,9 +64,9 @@
             // 
             // btnInventory
             // 
-            this.btnInventory.Location = new System.Drawing.Point(869, 611);
+            this.btnInventory.Location = new System.Drawing.Point(869, 659);
             this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(135, 45);
+            this.btnInventory.Size = new System.Drawing.Size(143, 46);
             this.btnInventory.TabIndex = 3;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.UseVisualStyleBackColor = true;
@@ -74,9 +74,9 @@
             // 
             // btnAttackSkillLow
             // 
-            this.btnAttackSkillLow.Location = new System.Drawing.Point(292, 690);
+            this.btnAttackSkillLow.Location = new System.Drawing.Point(294, 690);
             this.btnAttackSkillLow.Name = "btnAttackSkillLow";
-            this.btnAttackSkillLow.Size = new System.Drawing.Size(47, 45);
+            this.btnAttackSkillLow.Size = new System.Drawing.Size(45, 45);
             this.btnAttackSkillLow.TabIndex = 5;
             this.btnAttackSkillLow.Text = "Attack Skill Low (2dp)";
             this.btnAttackSkillLow.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             // 
             // btnEndTurn
             // 
-            this.btnEndTurn.Location = new System.Drawing.Point(869, 690);
+            this.btnEndTurn.Location = new System.Drawing.Point(869, 711);
             this.btnEndTurn.Name = "btnEndTurn";
             this.btnEndTurn.Size = new System.Drawing.Size(143, 45);
             this.btnEndTurn.TabIndex = 11;
@@ -170,6 +170,7 @@
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.btnDefend);
             this.Controls.Add(this.btnAttack);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Battle";

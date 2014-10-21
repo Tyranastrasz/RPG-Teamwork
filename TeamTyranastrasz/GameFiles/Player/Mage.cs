@@ -30,7 +30,16 @@
                     this.Dexterity += (int)((double)this.Dexterity * 0.05);
                     break;
                 case "health":
-                    this.Vitality += (int)((double)this.Vitality * 0.2);
+                    int vitality = (int)((double)this.Vitality * 0.2);
+                    int addHitPoints = vitality * this.VitalityModifier;
+                    if (addHitPoints + this.CurrentHitPoints > this.MaxHitPoints)
+                    {
+                        this.CurrentHitPoints = this.MaxHitPoints;
+                    }
+                    else
+                    {
+                        this.CurrentHitPoints += addHitPoints;
+                    }
                     break;
             }
         }

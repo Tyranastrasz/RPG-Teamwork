@@ -13,7 +13,9 @@
         private BattleManager battle = new BattleManager();
 
         private Label targetBox;
-        private Label statsBox;
+        private Label mainStatsBox;
+        private Label subStatsBox;
+        private Label dicePointsBox;
 
         public Battle()
         {
@@ -27,12 +29,32 @@
             Controls.Add(targetBox);
             targetBox.Hide();
 
-            statsBox = new Label();
-            statsBox.Left = 0;
-            statsBox.Top = 0;
-            statsBox.Width = 100;
-            statsBox.Height = 50;
-            Controls.Add(statsBox);
+            mainStatsBox = new Label();
+            mainStatsBox.Left = 650;
+            mainStatsBox.Top = 650;
+            mainStatsBox.Width = 150;
+            mainStatsBox.Height = 40;
+            mainStatsBox.BackColor = Color.Transparent;
+            mainStatsBox.ForeColor = Color.White;
+            Controls.Add(mainStatsBox);
+
+            subStatsBox = new Label();
+            subStatsBox.Left = 650;
+            subStatsBox.Top = 710;
+            subStatsBox.Width = 150;
+            subStatsBox.Height = 40;
+            subStatsBox.BackColor = Color.Transparent;
+            subStatsBox.ForeColor = Color.White;
+            Controls.Add(subStatsBox);
+
+            dicePointsBox = new Label();
+            dicePointsBox.Left = 900;
+            dicePointsBox.Top = 600;
+            dicePointsBox.Width = 120;
+            dicePointsBox.Height = 50;
+            dicePointsBox.BackColor = Color.Transparent;
+            dicePointsBox.ForeColor = Color.White;
+            Controls.Add(dicePointsBox);
 
             battle.CreateEnemies();
         }
@@ -40,6 +62,7 @@
         private void Battle_Load(object sender, EventArgs e)
         {
             DrawEnemies();
+            RefreshStats();
         }
 
         private void btnAttack_Click(object sender, EventArgs e)
@@ -70,7 +93,8 @@
                 try
                 {
                     battle.CheckDicePoints(BattleManager.DefendDicePoints);
-                    battle.Defend(); // todo
+                    battle.Defend();
+                    RefreshStats();
                 }
                 catch(NotEnoughDicePointsException)
                 {
@@ -180,6 +204,7 @@
                     battle.CheckDicePoints(BattleManager.AttackBuffDicePoints);
                     battle.Player.CastBuff("attack");
                     battle.AttackBuffUsed = true;
+                    RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -197,6 +222,7 @@
                     battle.CheckDicePoints(BattleManager.DefenceBuffDicePoints);
                     battle.Player.CastBuff("defence");
                     battle.DefenceBuffUsed = true;
+                    RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -214,6 +240,7 @@
                     battle.CheckDicePoints(BattleManager.HealthDicePoints);
                     battle.Player.CastBuff("health");
                     battle.HealthBuffUsed = true;
+                    RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -291,15 +318,34 @@
             }
         }
 
-        private void RefreshStats()
+        public void RefreshStats()
         {
-            // todo
+            this.mainStatsBox.Text = "Strength: " + battle.Player.Strength
+                              + "      Intelligence: " + battle.Player.Intelligence
+                              + "\n\nDexterity: " + battle.Player.Dexterity
+                              + "     Vitality: " + battle.Player.Vitality;
+
+            this.subStatsBox.Text = "Attack: " + battle.Player.Attack()
+                              + "        Defence: " + battle.Player.Defend()
+                              + "\n\nHealth: " + battle.Player.CurrentHitPoints;
+
+            this.dicePointsBox.Text = battle.DicePoints.ToString();
         }
 
         // temp usage to close the form
         private void exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
         }
     }
 }

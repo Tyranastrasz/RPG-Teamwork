@@ -38,6 +38,7 @@
         public bool AttackBuffUsed { get; set; }
         public bool DefenceBuffUsed { get; set; }
         public bool HealthBuffUsed { get; set; }
+        public bool DefendUsed { get; set; }
 
         public BattleManager()
         {
@@ -50,6 +51,7 @@
             this.AttackBuffUsed = false;
             this.DefenceBuffUsed = false;
             this.HealthBuffUsed = false;
+            this.DefendUsed = false;
 
             this.enemiesPossitions.Add(new Position(20, 20));
             this.enemiesPossitions.Add(new Position(20, 170));
@@ -58,12 +60,14 @@
             this.enemiesPossitions.Add(new Position(200, 170));
             this.enemiesPossitions.Add(new Position(200, 340));
 
+
             RollTheDices();
         }
 
         public void PlayerTurn()
         {
             this.IsPlayerTurn = true;
+            GameEngine.BattleScreen.RefreshStats();
         }
 
         public void EnemyTurn()
@@ -81,6 +85,12 @@
                 GameEngine.BattleScreen.Close();
                 Map mapScreen = new Map();
                 mapScreen.Show();
+            }
+
+            if (this.DefendUsed == true)
+            {
+                this.Player.BonusDefencePoints -= 2;
+                this.DefendUsed = false;
             }
             PlayerTurn();
         }
@@ -130,7 +140,11 @@
 
         public void Defend()
         {
-            // todo
+            if (this.DefendUsed == false)
+            {
+                this.Player.BonusDefencePoints += 2;
+                this.DefendUsed = true;
+            }
         }
 
         public void RollTheDices()
