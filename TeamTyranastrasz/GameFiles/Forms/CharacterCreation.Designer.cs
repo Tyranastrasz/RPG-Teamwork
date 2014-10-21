@@ -36,7 +36,7 @@
             this.Btn_Mage = new System.Windows.Forms.RadioButton();
             this.Btn_Warrior = new System.Windows.Forms.RadioButton();
             this.exit = new System.Windows.Forms.Button();
-            this.about = new System.Windows.Forms.Button();
+            this.createHero = new System.Windows.Forms.Button();
             this.warriorPic1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.arrowRight = new System.Windows.Forms.PictureBox();
@@ -153,22 +153,23 @@
             this.exit.UseVisualStyleBackColor = false;
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
-            // about
+            // createHero
             // 
-            this.about.BackColor = System.Drawing.Color.Transparent;
-            this.about.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.about.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
-            this.about.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
-            this.about.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.about.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.about.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.about.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.about.Location = new System.Drawing.Point(780, 659);
-            this.about.Name = "about";
-            this.about.Size = new System.Drawing.Size(165, 49);
-            this.about.TabIndex = 2;
-            this.about.Text = "Create Character";
-            this.about.UseVisualStyleBackColor = false;
+            this.createHero.BackColor = System.Drawing.Color.Transparent;
+            this.createHero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.createHero.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.createHero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
+            this.createHero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.createHero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createHero.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.createHero.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.createHero.Location = new System.Drawing.Point(780, 659);
+            this.createHero.Name = "createHero";
+            this.createHero.Size = new System.Drawing.Size(165, 49);
+            this.createHero.TabIndex = 2;
+            this.createHero.Text = "Create Character";
+            this.createHero.UseVisualStyleBackColor = false;
+            this.createHero.Click += new System.EventHandler(this.about_Click);
             // 
             // warriorPic1
             // 
@@ -375,7 +376,7 @@
             this.Controls.Add(this.warriorPic1);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.lblCharName);
-            this.Controls.Add(this.about);
+            this.Controls.Add(this.createHero);
             this.Controls.Add(this.inputCharName);
             this.Controls.Add(this.CreateCharacter);
             this.Controls.Add(this.pictureBox3);
@@ -410,7 +411,7 @@
         private System.Windows.Forms.RadioButton Btn_Mage;
         private System.Windows.Forms.RadioButton Btn_Warrior;
         private System.Windows.Forms.Button exit;
-        private System.Windows.Forms.Button about;
+        private System.Windows.Forms.Button createHero;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox arrowRight;
         private System.Windows.Forms.PictureBox arrowLeft;

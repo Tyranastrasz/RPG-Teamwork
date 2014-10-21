@@ -49,44 +49,6 @@ namespace RpgGame.Forms
 
         }
 
-        private void createChar_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrWhiteSpace(inputCharName.Text))
-            {
-                //throw new Exception("");
-                MessageBox.Show("You must type in a name for your hero!");
-                return;
-            }
-
-            if (!Btn_Mage.Checked && !Btn_Rogue.Checked && !Btn_Warrior.Checked)
-            {
-                // throw new Exception("")
-                MessageBox.Show("You must select a character type!");
-                return;
-            }
-            else if (this.Btn_Warrior.Checked)
-            {
-                string characterClass = "warrior";
-
-                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
-            }
-            else if (this.Btn_Mage.Checked)
-            {
-                string characterClass = "mage";
-                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
-            }
-            else if (this.Btn_Rogue.Checked)
-            {
-                string characterClass = "rogue";
-                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
-            }
-
-            Map mainMap = new Map();
-            mainMap.Show();
-
-            this.Close();
-        }
-
         // temp usage to close the form
         private void exit_Click(object sender, EventArgs e)
         {
@@ -154,6 +116,44 @@ namespace RpgGame.Forms
         private void arrowLeft_Click(object sender, EventArgs e)
         {
             warriorPic1.Show();
+        }
+
+        private void about_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(inputCharName.Text))
+            {
+                //throw new Exception("");
+                MessageBox.Show("You must type in a name for your hero!");
+                return;
+            }
+
+            if (!Btn_Mage.Checked && !Btn_Rogue.Checked && !Btn_Warrior.Checked)
+            {
+                // throw new Exception("")
+                MessageBox.Show("You must select a character type!");
+                return;
+            }
+            else if (this.Btn_Warrior.Checked)
+            {
+                string characterClass = "warrior";
+
+                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
+            }
+            else if (this.Btn_Mage.Checked)
+            {
+                string characterClass = "mage";
+                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
+            }
+            else if (this.Btn_Rogue.Checked)
+            {
+                string characterClass = "rogue";
+                GameEngine.CreateNewPlayer(characterClass, inputCharName.Text);
+            }
+
+            Map mainMap = new Map();
+            mainMap.Show();
+
+            this.Close();
         }
     }
 }
