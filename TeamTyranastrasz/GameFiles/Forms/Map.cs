@@ -27,7 +27,9 @@ namespace RpgGame.Forms
 
         private void enterTown_Click(object sender, EventArgs e)
         {
-
+            Town enterTown = new Town();
+            enterTown.Show();
+            this.Hide();
         }
 
         private void inventory_Click(object sender, EventArgs e)

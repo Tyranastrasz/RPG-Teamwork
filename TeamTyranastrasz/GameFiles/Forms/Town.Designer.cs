@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Town));
             this.exit = new System.Windows.Forms.Button();
+            this.btnShop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // exit
@@ -42,6 +43,16 @@
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
+            // btnShop
+            // 
+            this.btnShop.Location = new System.Drawing.Point(561, 333);
+            this.btnShop.Name = "btnShop";
+            this.btnShop.Size = new System.Drawing.Size(75, 23);
+            this.btnShop.TabIndex = 11;
+            this.btnShop.Text = "Shop";
+            this.btnShop.UseVisualStyleBackColor = true;
+            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
+            // 
             // Town
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -49,6 +60,7 @@
             this.BackgroundImage = global::RpgGame.Properties.Resources.town_tem_img;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.btnShop);
             this.Controls.Add(this.exit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -63,5 +75,6 @@
         #endregion
 
         private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.Button btnShop;
     }
 }

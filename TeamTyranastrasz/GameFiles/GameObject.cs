@@ -1,4 +1,6 @@
-﻿namespace RpgGame
+﻿using System.Windows.Forms;
+
+namespace RpgGame
 {
     public abstract class GameObject
     {

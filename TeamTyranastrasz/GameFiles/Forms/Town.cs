@@ -24,6 +24,12 @@ namespace RpgGame.Forms
 
         }
 
+        private void btnShop_Click(object sender, EventArgs e)
+        {
+            ShopInventory shop = new ShopInventory();
+            shop.ShowDialog();
+        }
+        
         // temp ussage to close the form
         private void exit_Click(object sender, EventArgs e)
         {

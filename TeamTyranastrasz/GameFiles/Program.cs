@@ -39,8 +39,8 @@
 
             // start from the start screen
 
-            GameEngine game = new GameEngine();
-            game.Run();
+            //GameEngine game = new GameEngine();
+            //game.Run();
 
             // start from the chae creation
             //Application.Run(new CharacterCreation());
@@ -54,7 +54,7 @@
             // start from the town
             //Application.Run(new Town());
 
-            // Application.Run(new StartScreen());
+            Application.Run(new StartScreen());
         }
     }
 }
