@@ -12,7 +12,7 @@
         public readonly int VitalityModifier;
         public readonly int IntelligenceModifier;
 
-        protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier) : base(name)
+        protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier, List<IItem> baseItems) : base(name)
         {
             this.Strength = str;
             this.Dexterity = dex;
@@ -31,6 +31,7 @@
             this.Level = 1;
             this.Inventory = new List<IItem>();
             this.Equiped = new List<IItem>();
+            InitialItemEquip(baseItems);
         }
 
         protected Player(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier)
@@ -82,6 +83,14 @@
         public List<IItem> Inventory { get; set; }
 
         public List<IItem> Equiped { get; set; }
+
+        private void InitialItemEquip(List<IItem> baseItems)
+        {
+            for (int i = 0; i < baseItems.Count(); i++)
+            {
+                this.Equip(baseItems[i], i, true);
+            }
+        }
 
         private void CloneInventory(List<IItem> inventory)
         {
@@ -162,25 +171,37 @@
             }
         }
 
-        public void Equip(IItem item)
+        public void Equip(IItem item, int id, bool IsNew = false)
         {
             if (this.Equiped != null)
             {
-                foreach (var equipedItem in Equiped)
+                if (IsNew)
                 {
-                    if (equipedItem.GetType() == item.GetType())
-                    {
-                        throw new Exception("You cannot have two items from the same type");
-                    }
+                    this.Equiped.Add(item);
+                }
+                else
+                {
+                    this.Equiped[id] = item;
                 }
 
-                this.Equiped.Add(item);
+                this.Strength += item.Strength;
+                this.Intelligence += item.Intelligence;
+                this.Dexterity += item.Dexterity;
+                this.Vitality += item.Vitality;
             }
             else
             {
-                throw new NullReferenceException();
+                throw new NullReferenceException("Fatal Error!");
             }
             
+        }
+
+        public void UnEquip(IItem item)
+        {
+            this.Strength -= item.Strength;
+            this.Intelligence -= item.Intelligence;
+            this.Dexterity -= item.Dexterity;
+            this.Vitality -= item.Vitality;
         }
 
         public void AddToInventory(IItem item)
@@ -202,7 +223,7 @@
 
         public void Sell(IItem item)
         {
-            this.Cash += item.Price;
+            this.Cash += item.Price / 2;
             this.RemoveFromInventory(item);
         }
 
@@ -210,6 +231,7 @@
         {
             if (this.Cash >= item.Price)
             {
+                this.Cash -= item.Price;
                 this.AddToInventory(item);
             }
         }

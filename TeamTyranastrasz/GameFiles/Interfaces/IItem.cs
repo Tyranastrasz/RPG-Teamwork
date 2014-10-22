@@ -23,5 +23,7 @@
         string Description { get; }
 
         bool IsConsumable { get; }
+
+        Pictures Picture { get; set; }
     }
 }

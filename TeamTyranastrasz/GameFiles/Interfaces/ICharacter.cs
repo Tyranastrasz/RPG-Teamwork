@@ -3,7 +3,7 @@ using RpgGame.Items;
 
 namespace RpgGame.Interfaces
 {
-    public interface ICharacter : IUnit
+    public interface ICharacter : IUnit, IUsable
     {
         string Name { get; }
 

@@ -62,14 +62,14 @@ namespace RpgGame.Forms
             this.playerItemsPossitions.Add(new Position(378, 290));
             this.playerItemsPossitions.Add(new Position(448, 290));
 
-            this.shopItems.Add(new Weapon("Big Sword", 100, 0, 40, 0, 0, 10, 0, 0, 8, "Big sword for heavy strikes."));
-            this.shopItems.Add(new Weapon("Iron Sword", 5, 0, 5, 0, 0, 0, 0, 0, 1, "Basic battle equipment."));
-            this.shopItems.Add(new Helmet("Iron-horn Helm", 20, 2, 0, 3, 0, 0, 1, 0, 1, "Basic - but stylis."));
-            this.shopItems.Add(new Gloves("Fighter Gloves", 15, 1, 0, 2, 0, 1, 0, 0, 1, "Good for melee characters."));
-            this.shopItems.Add(new Boots("Armored Boots", 10, 1, 1, 0, 0, 0, 1, 0, 1, "Heavy and slow."));
-            this.shopItems.Add(new Chainmail("Chainmail", 25, 2, 0, 0, 0, 1, 1, 0, 1, "Chainmail armor mekas you more agile."));
-            this.shopItems.Add(new Potion("Small Health Potion", 20, 0, 0, 0, 0, 0, 0, 0, 1, "Return + 10hp"));
-            this.shopItems.Add(new Scroll("Teleport Scroll", 0, 0, 0, 0, 0, 0, 0, 0, 1, "Use to teleport to location."));
+            //this.shopItems.Add(new Weapon("Big Sword", 100, 0, 40, 0, 0, 10, 0, 0, 8, "Big sword for heavy strikes."));
+            //this.shopItems.Add(new Weapon("Iron Sword", 5, 0, 5, 0, 0, 0, 0, 0, 1, "Basic battle equipment."));
+            //this.shopItems.Add(new Helmet("Iron-horn Helm", 20, 2, 0, 3, 0, 0, 1, 0, 1, "Basic - but stylis."));
+            //this.shopItems.Add(new Gloves("Fighter Gloves", 15, 1, 0, 2, 0, 1, 0, 0, 1, "Good for melee characters."));
+            //this.shopItems.Add(new Boots("Armored Boots", 10, 1, 1, 0, 0, 0, 1, 0, 1, "Heavy and slow."));
+            //this.shopItems.Add(new Chainmail("Chainmail", 25, 2, 0, 0, 0, 1, 1, 0, 1, "Chainmail armor mekas you more agile."));
+            //this.shopItems.Add(new Potion("Small Health Potion", 20, 0, 0, 0, 0, 0, 0, 0, 1, "Return + 10hp"));
+            //this.shopItems.Add(new Scroll("Teleport Scroll", 0, 0, 0, 0, 0, 0, 0, 0, 1, "Use to teleport to location."));
         }
 
         private void ShopInventory_Load(object sender, EventArgs e)

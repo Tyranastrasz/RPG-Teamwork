@@ -10,6 +10,7 @@
     {
         public static ICharacter PlayerCharacter { get; set; }
         public static Battle BattleScreen { get; set; }
+        public static PlayerInventory Inventory { get; set; }
 
         public void Run()
         {
@@ -17,6 +18,8 @@
             //CreateNewPlayer("warrior", "asd");
             //CreateBattleScreen();
             //Application.Run(BattleScreen);
+            //Map map = new Map();
+            //Application.Run(map);
         }
         public static void CreateNewPlayer(string characterClass, string characterName)
         {

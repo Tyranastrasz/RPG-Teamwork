@@ -4,7 +4,7 @@
 
     public abstract class Item : GameObject, IItem
     {
-        protected Item(string name, int price, int defencePoints = 0, int attackPoints = 0, int hitPoints = 0, int str = 0, int dex = 0, int vit = 0, int intl = 0, int level = 0, string description = null)
+        protected Item(string name, int price, Pictures picture, int defencePoints = 0, int attackPoints = 0, int hitPoints = 0, int str = 0, int dex = 0, int vit = 0, int intl = 0, int level = 0, string description = null)
             : base(name)
         {
             this.Strength = str;
@@ -17,6 +17,7 @@
             this.HitPoints = hitPoints;
             this.Price = price;
             this.Description = description;
+            this.Picture = picture;
         }
 
         public int Strength { get; set; }
@@ -40,5 +41,7 @@
         public string Description { get; protected set; }
 
         public bool IsConsumable { get; set; }
+
+        public Pictures Picture { get; set; }
     }
 }

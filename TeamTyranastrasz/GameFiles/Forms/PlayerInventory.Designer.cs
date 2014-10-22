@@ -28,24 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(222, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 204);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "HP:\r\nDEF:\r\nDMG:\r\n\r\nSTR:\r\nINT:\r\nVIT:\r\nDEX:\r\n\r\nCASH:";
             // 
             // PlayerInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.BackgroundImage = global::RpgGame.Properties.Resources.player_inventory;
             this.ClientSize = new System.Drawing.Size(364, 362);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PlayerInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -57,6 +48,5 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
     }
 }

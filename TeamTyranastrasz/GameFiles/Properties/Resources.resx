@@ -226,4 +226,19 @@
   <data name="town_map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\town_map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="player_inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player_inventory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shop_inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shop_inventory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="healing_potion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\healing_potion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="head_mage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\head_mage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="head_rogue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\head_rogue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

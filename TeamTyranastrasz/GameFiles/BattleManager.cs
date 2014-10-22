@@ -28,8 +28,7 @@ namespace RpgGame
         public bool IsPlayerTurn { get; set; }
         public bool IsBattleEnd { get; set; }
         public int DicePoints { get; set; }
-
-        public ICharacter Player { get; set; }
+        
         public List<IEnemy> EnemyList { get; set; }
 
         public IEnemy CurrentTarget { get; set; }
@@ -44,7 +43,6 @@ namespace RpgGame
 
         public BattleManager()
         {
-            this.Player = GameEngine.PlayerCharacter;
             this.IsPlayerTurn = true;
             this.IsBattleEnd = false;
             this.EnemyList = new List<IEnemy>();
@@ -79,7 +77,7 @@ namespace RpgGame
             this.LastTurnEnemyId++;
             try
             {
-                Attack((IUnit)this.EnemyList[this.LastTurnEnemyId], (IUnit)Player);
+                Attack((IUnit)this.EnemyList[this.LastTurnEnemyId], (IUnit)GameEngine.PlayerCharacter);
             }
             catch (EndBattleException)
             {
@@ -91,7 +89,7 @@ namespace RpgGame
 
             if (this.DefendUsed == true)
             {
-                this.Player.BonusDefencePoints -= 2;
+                GameEngine.PlayerCharacter.BonusDefencePoints -= 2;
                 this.DefendUsed = false;
             }
             PlayerTurn();
@@ -99,7 +97,7 @@ namespace RpgGame
 
         public void CheckBattleStatus(List<IEnemy> enemyList)
         {
-            if (this.EnemyList.Count == 0 || this.Player.CurrentHitPoints <= 0)
+            if (this.EnemyList.Count == 0 || GameEngine.PlayerCharacter.CurrentHitPoints <= 0)
             {
                 this.IsBattleEnd = true;
             }
@@ -131,8 +129,8 @@ namespace RpgGame
                 {
                     this.EnemyList[this.CurrentTargetId].PicBox.Hide();
                     this.EnemyList[this.CurrentTargetId].IsAlive = false;
-                    this.Player.Experience += this.EnemyList[this.CurrentTargetId].Experience;
-                    GameEngine.BattleScreen.experienceBar.Value = this.Player.Experience;
+                    GameEngine.PlayerCharacter.Experience += this.EnemyList[this.CurrentTargetId].Experience;
+                    GameEngine.BattleScreen.experienceBar.Value = GameEngine.PlayerCharacter.Experience;
                 }
                 else
                 {
@@ -145,7 +143,7 @@ namespace RpgGame
         {
             if (this.DefendUsed == false)
             {
-                this.Player.BonusDefencePoints += 2;
+                GameEngine.PlayerCharacter.BonusDefencePoints += 2;
                 this.DefendUsed = true;
             }
         }
@@ -170,7 +168,7 @@ namespace RpgGame
 
             int possitionCounter = 0;
 
-            if (this.Player.Level >= 1 && this.Player.Level <= 4)
+            if (GameEngine.PlayerCharacter.Level >= 1 && GameEngine.PlayerCharacter.Level <= 4)
             {
                 for (int i = 0; i < mele; i++)
                 {
@@ -188,7 +186,7 @@ namespace RpgGame
                     this.EnemyList.Add(enemy);
                 }
             }
-            else if (this.Player.Level > 4 && this.Player.Level <= 8)
+            else if (GameEngine.PlayerCharacter.Level > 4 && GameEngine.PlayerCharacter.Level <= 8)
             {
                 for (int i = 0; i < mele; i++)
                 {
@@ -206,7 +204,7 @@ namespace RpgGame
                     this.EnemyList.Add(enemy);
                 }
             }
-            else if (this.Player.Level > 8 && this.Player.Level <= 10)
+            else if (GameEngine.PlayerCharacter.Level > 8 && GameEngine.PlayerCharacter.Level <= 10)
             {
                 for (int i = 0; i < mele; i++)
                 {

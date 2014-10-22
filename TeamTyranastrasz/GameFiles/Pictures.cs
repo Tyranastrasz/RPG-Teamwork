@@ -17,6 +17,10 @@
         Chainmail,
         Gloves,
         Helmet,
-        Weapon
+        Staff,
+        Sword,
+        Axe,
+        TestItem1,
+        TestItem2
     }
 }

@@ -231,6 +231,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Images\battle_temp_img.jpg" />
     <Content Include="Images\golem.png" />
+    <None Include="Resources\head_rogue.png" />
+    <None Include="Resources\head_mage.png" />
+    <None Include="Resources\blank.png" />
+    <None Include="Resources\healing_potion.png" />
+    <None Include="Resources\shop_inventory.png" />
+    <None Include="Resources\player_inventory.png" />
     <None Include="Resources\target-panel.png" />
     <None Include="Resources\BattleScreenBg.jpg" />
     <None Include="Resources\Hakaar-the-Destroyer1.png" />

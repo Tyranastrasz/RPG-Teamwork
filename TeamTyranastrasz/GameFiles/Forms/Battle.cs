@@ -84,7 +84,7 @@ namespace RpgGame.Forms
             experienceBar.Size = new System.Drawing.Size(296, 24);
             experienceBar.TabIndex = 14;
             experienceBar.Maximum = 1000;
-            experienceBar.Value = battle.Player.Experience;
+            experienceBar.Value = GameEngine.PlayerCharacter.Experience;
             experienceBar.BackColor = ColorTranslator.FromHtml("#b0b0b1");
             experienceBar.ForeColor = ColorTranslator.FromHtml("#04252d");
             experienceBar.Style = ProgressBarStyle.Continuous;
@@ -107,7 +107,7 @@ namespace RpgGame.Forms
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackDicePoints);
-                    battle.Attack((IUnit)battle.Player, (IUnit)battle.CurrentTarget);
+                    battle.Attack((IUnit)GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
@@ -140,24 +140,33 @@ namespace RpgGame.Forms
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-
+            if (GameEngine.Inventory != null)
+            {
+                GameEngine.Inventory.Show();
+            }
+            else
+            {
+                GameEngine.Inventory = new PlayerInventory();
+            }
+            GameEngine.Inventory.Visible = false;
+            GameEngine.Inventory.ShowDialog();
         }
 
         private void btnEndTurn_Click(object sender, EventArgs e)
         {
             if (battle.AttackBuffUsed == true)
             {
-                battle.Player.ClearBuff("attack");
+                GameEngine.PlayerCharacter.ClearBuff("attack");
                 battle.AttackBuffUsed = false;
             }
             if (battle.DefenceBuffUsed == true)
             {
-                battle.Player.ClearBuff("defence");
+                GameEngine.PlayerCharacter.ClearBuff("defence");
                 battle.DefenceBuffUsed = false;
             }
             if (battle.HealthBuffUsed == true)
             {
-                battle.Player.ClearBuff("health");
+                GameEngine.PlayerCharacter.ClearBuff("health");
                 battle.HealthBuffUsed = false;
             }
 
@@ -171,9 +180,9 @@ namespace RpgGame.Forms
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackSkill1DicePoints);
-                    battle.Player.BonusAttackPoints += battle.Player.CalculateSkillStats("low");
-                    battle.Attack((IUnit)battle.Player, (IUnit)battle.CurrentTarget);
-                    battle.Player.BonusAttackPoints -= battle.Player.CalculateSkillStats("low");
+                    GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("low");
+                    battle.Attack((IUnit)GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
+                    GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("low");
                     if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
@@ -194,9 +203,9 @@ namespace RpgGame.Forms
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackSkill2DicePoints);
-                    battle.Player.BonusAttackPoints += battle.Player.CalculateSkillStats("medium");
-                    battle.Attack((IUnit)battle.Player, (IUnit)battle.CurrentTarget);
-                    battle.Player.BonusAttackPoints -= battle.Player.CalculateSkillStats("medium");
+                    GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("medium");
+                    battle.Attack((IUnit)GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
+                    GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("medium");
                     if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
@@ -217,9 +226,9 @@ namespace RpgGame.Forms
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackSkill3DicePoints);
-                    battle.Player.BonusAttackPoints += battle.Player.CalculateSkillStats("heavy");
-                    battle.Attack((IUnit)battle.Player, (IUnit)battle.CurrentTarget);
-                    battle.Player.BonusAttackPoints -= battle.Player.CalculateSkillStats("heavy");
+                    GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("heavy");
+                    battle.Attack((IUnit)GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
+                    GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("heavy");
                     if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
@@ -240,7 +249,7 @@ namespace RpgGame.Forms
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackBuffDicePoints);
-                    battle.Player.CastBuff("attack");
+                    GameEngine.PlayerCharacter.CastBuff("attack");
                     battle.AttackBuffUsed = true;
                     RefreshStats();
                 }
@@ -258,7 +267,7 @@ namespace RpgGame.Forms
                 try
                 {
                     battle.CheckDicePoints(BattleManager.DefenceBuffDicePoints);
-                    battle.Player.CastBuff("defence");
+                    GameEngine.PlayerCharacter.CastBuff("defence");
                     battle.DefenceBuffUsed = true;
                     RefreshStats();
                 }
@@ -276,7 +285,7 @@ namespace RpgGame.Forms
                 try
                 {
                     battle.CheckDicePoints(BattleManager.HealthDicePoints);
-                    battle.Player.CastBuff("health");
+                    GameEngine.PlayerCharacter.CastBuff("health");
                     battle.HealthBuffUsed = true;
                     RefreshStats();
                 }
@@ -352,15 +361,15 @@ namespace RpgGame.Forms
 
         public void RefreshStats()
         {
-            this.mainStatsBox.Text = "Strength: " + battle.Player.Strength
-                              + "\n\nIntelligence: " + battle.Player.Intelligence
-                              + "\n\nDexterity: " + battle.Player.Dexterity
-                              + "\n\nVitality: " + battle.Player.Vitality;
+            this.mainStatsBox.Text = "Strength: " + GameEngine.PlayerCharacter.Strength
+                              + "\n\nIntelligence: " + GameEngine.PlayerCharacter.Intelligence
+                              + "\n\nDexterity: " + GameEngine.PlayerCharacter.Dexterity
+                              + "\n\nVitality: " + GameEngine.PlayerCharacter.Vitality;
 
-            this.subStatsBox.Text = "Attack: " + battle.Player.Attack()
-                              + "\n\nDefence: " + battle.Player.Defend()
-                              + "\n\nHealth: " + battle.Player.CurrentHitPoints
-                              + "\n\nLevel: " + battle.Player.Level;
+            this.subStatsBox.Text = "Attack: " + GameEngine.PlayerCharacter.Attack()
+                              + "\n\nDefence: " + GameEngine.PlayerCharacter.Defend()
+                              + "\n\nHealth: " + GameEngine.PlayerCharacter.CurrentHitPoints
+                              + "\n\nLevel: " + GameEngine.PlayerCharacter.Level;
 
             this.dicePointsBox.Text = battle.DicePoints.ToString();
         }
