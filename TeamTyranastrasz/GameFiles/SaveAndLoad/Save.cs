@@ -1,14 +1,12 @@
-﻿using System;
-using System.Drawing;
-using System.IO;
-using System.Web.Script.Serialization;
-using System.Windows.Forms;
-using RpgGame.Exceptions;
-using RpgGame.Interfaces;
-using RpgGame.Player;
-
-namespace RpgGame.SaveAndLoad
+﻿namespace RpgGame.SaveAndLoad
 {
+    using System;
+    using System.IO;
+    using System.Web.Script.Serialization;
+    using System.Windows.Forms;
+    using RpgGame.Interfaces;
+    using RpgGame.Player;
+
     public class Save
     {
         public static void SaveGame()
@@ -16,13 +14,13 @@ namespace RpgGame.SaveAndLoad
             ICharacter currentPlayerState = GameEngine.PlayerCharacter;
             SnapshotOfCharacter saveSnapshotOfCharacter = new SnapshotOfCharacter(currentPlayerState);
             var jsonSerializer = new JavaScriptSerializer();
-            var savedData = jsonSerializer.Serialize(currentPlayerState);
+            var savedData = jsonSerializer.Serialize(saveSnapshotOfCharacter);
             string currentPlayerClass = CheckCurrentPlayerClass(currentPlayerState);
 
             try
             {
                 using (StreamWriter file = new StreamWriter(
-                "..\\..\\SaveAndLoad\\" + currentPlayerClass + "savegame.xml"))
+                "..\\..\\SaveAndLoad\\" + currentPlayerClass + "savegame.json"))
                 {
                     file.Write(savedData);
                     MessageBox.Show("Your game progress was saved!");

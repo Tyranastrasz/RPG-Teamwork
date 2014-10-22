@@ -18,7 +18,7 @@ namespace RpgGame.Player
         {
         }
 
-               public Mage(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position)
+        public Mage(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position)
             : base(name, strength, dexterity, vitality, intelligence, maxHitPoints, experience, cash, level, inventory, equiped, position, MageStrengthModifier, MageDexterityModifier, MageVitalityModifier, MageIntelligenceModifier)
         {
         }

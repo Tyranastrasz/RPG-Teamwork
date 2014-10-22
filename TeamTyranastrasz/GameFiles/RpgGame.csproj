@@ -161,7 +161,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SaveAndLoad\InvalidCharacterTypeException.cs" />
+    <Compile Include="Exceptions\InvalidCharacterTypeException.cs" />
     <Compile Include="SaveAndLoad\Load.cs" />
     <Compile Include="SaveAndLoad\Save.cs" />
     <Compile Include="SaveAndLoad\SnapshotOfCharacter.cs" />

@@ -27,6 +27,7 @@ namespace RpgGame.Forms
             SaveAndLoad.Load.LoadGame();
             Map mainMap = new Map();
             mainMap.Show();
+            MessageBox.Show("Game loaded!");
             this.Hide();
         }
 

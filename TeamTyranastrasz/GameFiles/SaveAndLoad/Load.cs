@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Script.Serialization;
-using System.Windows.Forms;
-using System.Xml.Serialization;
-using RpgGame.Exceptions;
-using RpgGame.Interfaces;
-using RpgGame.Player;
-
-namespace RpgGame.SaveAndLoad
+﻿namespace RpgGame.SaveAndLoad
 {
+    using System;
+    using System.IO;
+    using System.Web.Script.Serialization;
+    using System.Windows.Forms;
+    using RpgGame.Player;
+
     public class Load
     {
         public static void LoadGame()
@@ -21,13 +14,12 @@ namespace RpgGame.SaveAndLoad
             try
             {
                 using (StreamReader file = new StreamReader(
-                    "..\\..\\SaveAndLoad\\" + playerClass + "savegame.xml"))
+                    "..\\..\\SaveAndLoad\\" + playerClass + "savegame.json"))
                 {
                     var saveGameContent = file.ReadToEnd();
-                    var jsonSerializer = new JavaScriptSerializer();
+                    //var jsonSerializer = new JavaScriptSerializer();
 
-                    CreatePlayerFromSavedGame(playerClass, jsonSerializer, saveGameContent);
-                    MessageBox.Show("Loaded last game!");
+                    CreatePlayerFromSavedGame(playerClass, saveGameContent);
                 }
             }
             catch (FileLoadException)
@@ -52,12 +44,12 @@ namespace RpgGame.SaveAndLoad
             }
         }
 
-        private static void CreatePlayerFromSavedGame(string playerClass, JavaScriptSerializer jsonSerializer,
+        private static void CreatePlayerFromSavedGame(string playerClass, 
             string saveGameContent)
         {
             if (playerClass == "Warrior")
             {
-                SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
+                dynamic loadedCharacter = new JavaScriptSerializer().Deserialize<SnapshotOfCharacter>(saveGameContent);
                 GameEngine.PlayerCharacter = new Warrior(
                     loadedCharacter.Name,
                     loadedCharacter.Strength,
@@ -70,12 +62,11 @@ namespace RpgGame.SaveAndLoad
                     loadedCharacter.Level,
                     loadedCharacter.Inventory,
                     loadedCharacter.Equiped,
-                    loadedCharacter.Position
-                    );
+                    loadedCharacter.Position);
             }
             else if (playerClass == "Mage")
             {
-                SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
+                SnapshotOfCharacter loadedCharacter = new JavaScriptSerializer().Deserialize<SnapshotOfCharacter>(saveGameContent);
                 GameEngine.PlayerCharacter = new Mage(
                     loadedCharacter.Name,
                     loadedCharacter.Strength,
@@ -88,12 +79,11 @@ namespace RpgGame.SaveAndLoad
                     loadedCharacter.Level,
                     loadedCharacter.Inventory,
                     loadedCharacter.Equiped,
-                    loadedCharacter.Position
-                    );
+                    loadedCharacter.Position);
             }
             else if (playerClass == "Mage")
             {
-                SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
+                SnapshotOfCharacter loadedCharacter = new JavaScriptSerializer().Deserialize<SnapshotOfCharacter>(saveGameContent);
                 GameEngine.PlayerCharacter = new Rogue(
                     loadedCharacter.Name,
                     loadedCharacter.Strength,
@@ -106,8 +96,7 @@ namespace RpgGame.SaveAndLoad
                     loadedCharacter.Level,
                     loadedCharacter.Inventory,
                     loadedCharacter.Equiped,
-                    loadedCharacter.Position
-                    );
+                    loadedCharacter.Position);
             }
         }
 
@@ -155,7 +144,6 @@ namespace RpgGame.SaveAndLoad
             }
             catch (IOException)
             {
-
                 throw new IOException();
             }
         }
