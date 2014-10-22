@@ -1,4 +1,5 @@
-﻿namespace RpgGame.Player
+﻿using System.Collections.Generic;
+namespace RpgGame.Player
 {
     public class Mage : Player
     {
@@ -12,10 +13,13 @@
         public const int MageVitalityModifier = 2;
         public const int MageIntelligenceModifier = 3;
 
-        private Position position;
-
         public Mage(string name)
             : base(name, MageStartingStrength, MageStartingDexterity, MageStartingVitality, MageStartingIntelligence, MageStrengthModifier, MageDexterityModifier, MageVitalityModifier, MageIntelligenceModifier)
+        {
+        }
+
+               public Mage(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position)
+            : base(name, strength, dexterity, vitality, intelligence, maxHitPoints, experience, cash, level, inventory, equiped, position, MageStrengthModifier, MageDexterityModifier, MageVitalityModifier, MageIntelligenceModifier)
         {
         }
 

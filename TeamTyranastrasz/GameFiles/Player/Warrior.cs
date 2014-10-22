@@ -1,4 +1,6 @@
-﻿namespace RpgGame.Player
+﻿using System.Collections.Generic;
+
+namespace RpgGame.Player
 {
     public class Warrior : Player
     {
@@ -12,10 +14,13 @@
         public const int WarriorVitalityModifier = 3;
         public const int WarriorIntelligenceModifier = 1;
 
-        private Position position;
-
         public Warrior(string name)
             : base(name, WarriorStartingStrength, WarriorStartingDexterity, WarriorStartingVitality, WarriorStartingIntelligence, WarriorStrengthModifier, WarriorDexterityModifier, WarriorVitalityModifier, WarriorIntelligenceModifier)
+        {
+        }
+
+        public Warrior(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position)
+            : base(name, strength, dexterity, vitality, intelligence, maxHitPoints, experience, cash, level, inventory, equiped, position, WarriorStrengthModifier, WarriorDexterityModifier, WarriorVitalityModifier, WarriorIntelligenceModifier)
         {
         }
 

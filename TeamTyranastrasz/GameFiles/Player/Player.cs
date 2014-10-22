@@ -4,9 +4,6 @@
     using System.Collections.Generic;
     using System.Linq;
     using RpgGame.Interfaces;
-    using RpgGame.Items;
-    using System.Windows.Forms;
-    
 
     public abstract class Player : Unit, IMovable, ITeleportable, IUsable, ITrade, ICharacter
     {
@@ -14,8 +11,6 @@
         public readonly int DexterityModifier;
         public readonly int VitalityModifier;
         public readonly int IntelligenceModifier;
-
-        private Position position;
 
         protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier) : base(name)
         {
@@ -32,8 +27,30 @@
             CalculateHitPoints();
             this.CurrentHitPoints = this.MaxHitPoints;
             this.Position = new Position();
-            this.PicBox = new PictureBox();
+            //this.PicBox = new PictureBox();
             this.Level = 1;
+            this.Inventory = new List<IItem>();
+            this.Equiped = new List<IItem>();
+        }
+
+        protected Player(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier)
+            : base(name)
+        {
+            this.Strength = strength;
+            this.Dexterity = dexterity;
+            this.Vitality = vitality;
+            this.Intelligence = intelligence;
+            this.MaxHitPoints = maxHitPoints;
+            this.Experience = experience;
+            this.Cash = cash;
+            this.Level = Level;
+            CloneInventory(inventory);
+            CloneEquipedItems(equiped);
+            this.Position = position;
+            this.StrengthModifier = strengthModifier;
+            this.DexterityModifier = dexterityModifier;
+            this.VitalityModifier = vitalityModifier;
+            this.IntelligenceModifier = intelligenceModifier;
         }
 
         public int Strength { get; set; }
@@ -56,17 +73,37 @@
 
         public int Experience { get; set; }
 
-        public PictureBox PicBox { get; set; }
-
         public int Cash { get; set; }
 
         public int Range { get; set; }
 
         public int Level { get; set; }
 
-        public List<Item> Inventory { get; set; }
+        public List<IItem> Inventory { get; set; }
 
-        public List<Item> Equiped { get; set; }
+        public List<IItem> Equiped { get; set; }
+
+        private void CloneInventory(List<IItem> inventory)
+        {
+            if (inventory != null)
+            {
+                foreach (var item in inventory)
+                {
+                    this.Inventory.Add(item);
+                }
+            }
+        }
+
+        private void CloneEquipedItems(List<IItem> equiped)
+        {
+            if (equiped != null)
+            {
+                foreach (var item in equiped)
+                {
+                    this.Equiped.Add(item);
+                }
+            }
+        }
 
         private int CalculateAttackPoints()
         {
@@ -116,8 +153,7 @@
             throw new NotImplementedException();
         }
 
-        // The next couple of methods probably should implement an event - click over an item
-        public void Consume(Item item)
+        public void Consume(IItem item)
         {
             if (item.IsConsumable)
             {
@@ -126,39 +162,51 @@
             }
         }
 
-        public void Equip(Item item)
+        public void Equip(IItem item)
         {
-            foreach (var equipedItem in Equiped)
+            if (this.Equiped != null)
             {
-                if (equipedItem.GetType() == item.GetType())
+                foreach (var equipedItem in Equiped)
                 {
-                    throw new Exception("You cannot have two items from the same type");
+                    if (equipedItem.GetType() == item.GetType())
+                    {
+                        throw new Exception("You cannot have two items from the same type");
+                    }
                 }
-            }
 
-            this.Equiped.Add(item);
+                this.Equiped.Add(item);
+            }
+            else
+            {
+                throw new NullReferenceException();
+            }
+            
         }
 
-        public void AddToInventory(Item item)
+        public void AddToInventory(IItem item)
         {
-            if (this.Inventory.Count < 10)
+            if (this.Inventory != null || this.Inventory.Count < 10)
             {
                 this.Inventory.Add(item);
             }
+            else
+            {
+                throw new NullReferenceException();
+            }
         }
 
-        public void RemoveFromInventory(Item item)
+        public void RemoveFromInventory(IItem item)
         {
             this.Inventory.Remove(item);
         }
 
-        public void Sell(Item item)
+        public void Sell(IItem item)
         {
             this.Cash += item.Price;
             this.RemoveFromInventory(item);
         }
 
-        public void Buy(Item item)
+        public void Buy(IItem item)
         {
             if (this.Cash >= item.Price)
             {

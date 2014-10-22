@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace RpgGame
+﻿namespace RpgGame.Exceptions
 {
+    using System;
+
     class EndBattleException : Exception
     {
         

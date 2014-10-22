@@ -3,7 +3,7 @@
   <Class Name="RpgGame.Forms.Map" Collapsed="true">
     <Position X="30" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAACgAAKCAAAAAAACEQAgCQAhAAAECAAQBAAAAAAA=</HashCode>
+      <HashCode>IgAAACgAAKCAAAAAAACEQAgCQAhAAAECAAQBAAAAAAA=</HashCode>
       <FileName>Forms\Map.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -24,7 +24,7 @@
   <Class Name="RpgGame.Sound" Collapsed="true">
     <Position X="31.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAQEAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAQAQEAAAAAAAAAAAAAAAIAAAAAAQAA=</HashCode>
       <FileName>Sound\Sound.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -131,14 +131,14 @@
   <Class Name="RpgGame.Player.Mage">
     <Position X="0.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAYAABAAAAAAAACAIgAAAAAAAAAAAAAAIAAAAgA=</HashCode>
+      <HashCode>AABAAAYAADAAAAAAAACAAgAAEAAAAAAAAAAAIAAAAgA=</HashCode>
       <FileName>Player\Mage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Player.Player">
     <Position X="3" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgIAAgyIQIAACACEQAgAIAAIIIBEAAAhIBACBwAAQCI=</HashCode>
+      <HashCode>AgIAAgyIQKAACACEQAwAAAAIMIBEAAAhIBAiBwAAQCI=</HashCode>
       <FileName>Player\Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -146,14 +146,14 @@
   <Class Name="RpgGame.Player.Rogue">
     <Position X="2.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAQAgAAAAAAoAAQFAAAAAAAAAAAAAQAAAA=</HashCode>
+      <HashCode>AAAAAgAAACAQAgAAAAAAgAAQFAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Player\Rogue.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Player.Warrior">
     <Position X="5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAgAAAAAAIAAAgIAAAAAAAAQAAAIBAAAAEAAA=</HashCode>
+      <HashCode>AAAAAACAgCAAAAAIAAAgAAAAEAAAAQAAAIBAAAAEAAA=</HashCode>
       <FileName>Player\Warrior.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -205,17 +205,17 @@
       <FileName>Enemies\RangeType\Shade.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RpgGame.NotEnoughDicePointsException">
+  <Class Name="RpgGame.Exceptions.NotEnoughDicePointsException">
     <Position X="33.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Exception.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\NotEnoughDicePointsException.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Properties.Resources" Collapsed="true">
     <Position X="33.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgQAAAAAAAAAEAAAAACBEAAACQIAAAAAAAABMAAAAIA=</HashCode>
+      <HashCode>AgQAAAAAEAAAEAAAAACBEAEQCQIAAAAAAAgBMAAEAMA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Struct Name="RpgGame.Position">
@@ -235,7 +235,7 @@
   <Interface Name="RpgGame.Interfaces.ICharacter">
     <Position X="33.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAyAAAAACAAgAAAAAAQIAABAAAABABAAAQAAQCA=</HashCode>
+      <HashCode>AAAAAAyAACAACAAgAAQAAAQIEABAAAABABAgAQAAQCA=</HashCode>
       <FileName>Interfaces\ICharacter.cs</FileName>
     </TypeIdentifier>
   </Interface>

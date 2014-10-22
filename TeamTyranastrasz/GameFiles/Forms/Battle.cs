@@ -1,4 +1,6 @@
-﻿namespace RpgGame.Forms
+﻿using RpgGame.Exceptions;
+
+namespace RpgGame.Forms
 {
     using System;
     using System.Collections.Generic;
@@ -312,7 +314,6 @@
             {
                 case Pictures.Golem:
                     return Properties.Resources.golem;
-                    break;
                 //case Pictures.Ork:
                 //    return Properties.Resources.ork;
                 //    break;

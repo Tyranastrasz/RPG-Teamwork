@@ -4,8 +4,8 @@
 
     public interface ITrade
     {
-        void Sell(Item item);
+        void Sell(IItem item);
 
-        void Buy(Item item);
+        void Buy(IItem item);
     }
 }

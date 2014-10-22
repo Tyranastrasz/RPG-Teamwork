@@ -1,4 +1,5 @@
-﻿namespace RpgGame.Player
+﻿using System.Collections.Generic;
+namespace RpgGame.Player
 {
     public class Rogue : Player
     {
@@ -12,12 +13,16 @@
         public const int RogueVitalityModifier = 1;
         public const int RogueIntelligenceModifier = 2;
 
-        private Position position;
-
         public Rogue(string name)
             : base(name, RogueStartingStrength, RogueStartingDexterity, RogueStartingVitality, RogueStartingIntelligence, RogueStrengthModifier, RogueDexterityModifier, RogueVitalityModifier, RogueIntelligenceModifier)
         {
         }
+
+        public Rogue(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position)
+            : base(name, strength, dexterity, vitality, intelligence, maxHitPoints, experience, cash, level, inventory, equiped, position, RogueStrengthModifier, RogueDexterityModifier, RogueVitalityModifier, RogueIntelligenceModifier)
+        {
+        }
+
 
         public override void CastBuff(string type)
         {

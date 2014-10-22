@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace RpgGame
+﻿namespace RpgGame.Exceptions
 {
+    using System;
+
     class NotEnoughDicePointsException : Exception
     {
     }

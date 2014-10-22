@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using RpgGame.Interfaces;
+using RpgGame.SaveAndLoad;
 
 namespace RpgGame.Forms
 {
@@ -44,12 +45,12 @@ namespace RpgGame.Forms
 
         private void save_Click(object sender, EventArgs e)
         {
-
+            Save.SaveGame();
         }
 
         private void load_Click(object sender, EventArgs e)
         {
-
+            SaveAndLoad.Load.LoadGame();
         }
 
         private void quit_Click(object sender, EventArgs e)

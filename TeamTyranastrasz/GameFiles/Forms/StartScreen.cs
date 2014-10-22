@@ -24,7 +24,10 @@ namespace RpgGame.Forms
 
         private void loadGame_Click(object sender, EventArgs e)
         {
-
+            SaveAndLoad.Load.LoadGame();
+            Map mainMap = new Map();
+            mainMap.Show();
+            this.Hide();
         }
 
         private void about_Click(object sender, EventArgs e)

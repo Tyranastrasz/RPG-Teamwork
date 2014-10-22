@@ -4,12 +4,12 @@
 
     public interface IUsable
     {
-        void Consume(Item item);
+        void Consume(IItem item);
 
-        void Equip(Item item);
+        void Equip(IItem item);
 
-        void AddToInventory(Item item);
+        void AddToInventory(IItem item);
 
-        void RemoveFromInventory(Item item);
+        void RemoveFromInventory(IItem item);
     }
 }

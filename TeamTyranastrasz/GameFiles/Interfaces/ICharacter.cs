@@ -1,4 +1,7 @@
-﻿namespace RpgGame.Interfaces
+﻿using System.Collections.Generic;
+using RpgGame.Items;
+
+namespace RpgGame.Interfaces
 {
     public interface ICharacter : IUnit
     {
@@ -30,6 +33,10 @@
 
         int Level { get; }
 
+        List<IItem> Inventory { get; set; }
+
+        List<IItem> Equiped { get; set; }
+
         Position Position { get; }
 
         int CalculateSkillStats(string type);
@@ -37,6 +44,5 @@
         void CastBuff(string type);
         
         void ClearBuff(string type);
-
     }
 }

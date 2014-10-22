@@ -1,4 +1,6 @@
-﻿namespace RpgGame
+﻿using RpgGame.Exceptions;
+
+namespace RpgGame
 {
     using System;
     using RpgGame.Interfaces;
@@ -127,7 +129,7 @@
             {
                 if (this.IsPlayerTurn == true)
                 {
-                    target.PicBox.Hide();
+                    this.EnemyList[this.CurrentTargetId].PicBox.Hide();
                     this.EnemyList[this.CurrentTargetId].IsAlive = false;
                     this.Player.Experience += this.EnemyList[this.CurrentTargetId].Experience;
                     GameEngine.BattleScreen.experienceBar.Value = this.Player.Experience;
