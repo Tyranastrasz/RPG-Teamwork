@@ -2,7 +2,7 @@
 {
     using System;
 
-    class NotEnoughDicePointsException : Exception
+    class NotEnoughDicePointsException : ApplicationException
     {
     }
 }

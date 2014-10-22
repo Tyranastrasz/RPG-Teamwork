@@ -1,8 +1,8 @@
 ﻿namespace RpgGame.Enemies
 {
     using System;
-    using RpgGame.Interfaces;
     using System.Windows.Forms;
+    using RpgGame.Interfaces;
 
     public abstract class Enemy : Unit, IUnit, IEnemy
     {
