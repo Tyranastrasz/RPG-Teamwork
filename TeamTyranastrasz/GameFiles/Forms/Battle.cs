@@ -24,6 +24,15 @@ namespace RpgGame.Forms
         {
             InitializeComponent();
 
+            this.attackPb.Value = BattleManager.AttackDicePoints;
+            this.defendPb.Value = BattleManager.DefendDicePoints;
+            this.attackSkillLowPb.Value = BattleManager.AttackSkill1DicePoints;
+            this.attackSkillMedPb.Value = BattleManager.AttackSkill2DicePoints;
+            this.attackSkillHeavyPb.Value = BattleManager.AttackSkill3DicePoints;
+            this.attackBuffPb.Value = BattleManager.AttackBuffDicePoints;
+            this.defenceBuffPb.Value = BattleManager.DefenceBuffDicePoints;
+            this.healthBuffPb.Value = BattleManager.HealthDicePoints;
+
             targetBox = new Label();
             targetBox.Left = 500;
             targetBox.Top = 0;
@@ -38,39 +47,47 @@ namespace RpgGame.Forms
             targetBox.Hide();
 
             mainStatsBox = new Label();
-            mainStatsBox.Left = 650;
+            mainStatsBox.Left = 640;
             mainStatsBox.Top = 650;
-            mainStatsBox.Width = 150;
-            mainStatsBox.Height = 40;
+            mainStatsBox.Width = 95;
+            mainStatsBox.Height = 120;
             mainStatsBox.BackColor = Color.Transparent;
             mainStatsBox.ForeColor = Color.White;
             Controls.Add(mainStatsBox);
 
             subStatsBox = new Label();
-            subStatsBox.Left = 650;
-            subStatsBox.Top = 710;
-            subStatsBox.Width = 150;
-            subStatsBox.Height = 40;
+            subStatsBox.Left = 735;
+            subStatsBox.Top = 650;
+            subStatsBox.Width = 80;
+            subStatsBox.Height = 120;
             subStatsBox.BackColor = Color.Transparent;
             subStatsBox.ForeColor = Color.White;
             Controls.Add(subStatsBox);
 
             dicePointsBox = new Label();
-            dicePointsBox.Left = 900;
-            dicePointsBox.Top = 600;
-            dicePointsBox.Width = 120;
-            dicePointsBox.Height = 50;
+            dicePointsBox.Left = 870;
+            dicePointsBox.Top = 590;
+            dicePointsBox.Width = 150;
+            dicePointsBox.Height = 60;
             dicePointsBox.BackColor = Color.Transparent;
             dicePointsBox.ForeColor = Color.White;
+            dicePointsBox.Image = Properties.Resources.dices;
+            dicePointsBox.ImageAlign = ContentAlignment.TopLeft;
+            dicePointsBox.TextAlign = ContentAlignment.TopRight;
+            dicePointsBox.Font = new Font("Microsoft Sans Serif", 27, FontStyle.Bold);
+            dicePointsBox.Padding = new Padding(0, 10, 30, 0);
             Controls.Add(dicePointsBox);
 
             experienceBar = new ProgressBar();
-            experienceBar.Location = new System.Drawing.Point(294, 741);
+            experienceBar.Location = new System.Drawing.Point(294, 739);
             experienceBar.Name = "experienceBar";
-            experienceBar.Size = new System.Drawing.Size(293, 23);
+            experienceBar.Size = new System.Drawing.Size(296, 24);
             experienceBar.TabIndex = 14;
             experienceBar.Maximum = 1000;
             experienceBar.Value = battle.Player.Experience;
+            experienceBar.BackColor = ColorTranslator.FromHtml("#b0b0b1");
+            experienceBar.ForeColor = ColorTranslator.FromHtml("#04252d");
+            experienceBar.Style = ProgressBarStyle.Continuous;
             Controls.Add(experienceBar);
 
             battle.CreateEnemies();
@@ -161,6 +178,7 @@ namespace RpgGame.Forms
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
                     }
+                    RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -183,6 +201,7 @@ namespace RpgGame.Forms
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
                     }
+                    RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -205,6 +224,7 @@ namespace RpgGame.Forms
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
                     }
+                    RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -314,37 +334,33 @@ namespace RpgGame.Forms
             {
                 case Pictures.Golem:
                     return Properties.Resources.golem;
-                //case Pictures.Ork:
-                //    return Properties.Resources.ork;
-                //    break;
-                //case Pictures.Skeleton:
-                //    return Properties.Resources.skeleton;
-                //    break;
-                //case Pictures.Drake:
-                //    return Properties.Resources.drake;
-                //    break;
-                //case Pictures.Goblin:
-                //    return Properties.Resources.goblin;
-                //    break;
-                //case Pictures.Shade:
-                //    return Properties.Resources.shade;
-                //    break;
+                case Pictures.Ork:
+                    return Properties.Resources.orc;
+                case Pictures.Skeleton:
+                    return Properties.Resources.skeleton;
+                case Pictures.Drake:
+                    return Properties.Resources.drake;
+                case Pictures.Goblin:
+                    return Properties.Resources.goblin;
+                case Pictures.Shade:
+                    return Properties.Resources.shade;
                 default:
-                    return Properties.Resources.golem;
-                //throw new NoPictureException();
+                    //return Properties.Resources.golem;
+                    throw new NoPictureException();
             }
         }
 
         public void RefreshStats()
         {
             this.mainStatsBox.Text = "Strength: " + battle.Player.Strength
-                              + "      Intelligence: " + battle.Player.Intelligence
+                              + "\n\nIntelligence: " + battle.Player.Intelligence
                               + "\n\nDexterity: " + battle.Player.Dexterity
-                              + "     Vitality: " + battle.Player.Vitality;
+                              + "\n\nVitality: " + battle.Player.Vitality;
 
             this.subStatsBox.Text = "Attack: " + battle.Player.Attack()
-                              + "        Defence: " + battle.Player.Defend()
-                              + "\n\nHealth: " + battle.Player.CurrentHitPoints;
+                              + "\n\nDefence: " + battle.Player.Defend()
+                              + "\n\nHealth: " + battle.Player.CurrentHitPoints
+                              + "\n\nLevel: " + battle.Player.Level;
 
             this.dicePointsBox.Text = battle.DicePoints.ToString();
         }

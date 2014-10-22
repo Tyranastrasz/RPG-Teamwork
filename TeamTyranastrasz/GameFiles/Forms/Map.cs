@@ -35,7 +35,8 @@ namespace RpgGame.Forms
 
         private void inventory_Click(object sender, EventArgs e)
         {
-
+            PlayerInventory inventory = new PlayerInventory();
+            inventory.ShowDialog();
         }
 
         private void quests_Click(object sender, EventArgs e)

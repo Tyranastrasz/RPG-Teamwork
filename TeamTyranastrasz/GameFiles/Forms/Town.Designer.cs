@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RpgGame.Properties.Resources.town_tem_img;
+            this.BackgroundImage = global::RpgGame.Properties.Resources.town_map;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.btnShop);

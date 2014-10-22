@@ -93,9 +93,49 @@ namespace RpgGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap battle_temp_img {
+        internal static System.Drawing.Bitmap attackbtn {
             get {
-                object obj = ResourceManager.GetObject("battle_temp_img", resourceCulture);
+                object obj = ResourceManager.GetObject("attackbtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap attackbuff {
+            get {
+                object obj = ResourceManager.GetObject("attackbuff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap attackskillheavy {
+            get {
+                object obj = ResourceManager.GetObject("attackskillheavy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap attackskilllow {
+            get {
+                object obj = ResourceManager.GetObject("attackskilllow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap attackskillmed {
+            get {
+                object obj = ResourceManager.GetObject("attackskillmed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +153,69 @@ namespace RpgGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap defencebuff {
+            get {
+                object obj = ResourceManager.GetObject("defencebuff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap defendbtn {
+            get {
+                object obj = ResourceManager.GetObject("defendbtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dices {
+            get {
+                object obj = ResourceManager.GetObject("dices", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap drake {
+            get {
+                object obj = ResourceManager.GetObject("drake", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap endturnbtn {
+            get {
+                object obj = ResourceManager.GetObject("endturnbtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flying_dragon_animated_image_zpsa0010db9 {
             get {
                 object obj = ResourceManager.GetObject("flying-dragon-animated-image_zpsa0010db9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap goblin {
+            get {
+                object obj = ResourceManager.GetObject("goblin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +273,26 @@ namespace RpgGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap healthbuff {
+            get {
+                object obj = ResourceManager.GetObject("healthbuff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inventorybtn {
+            get {
+                object obj = ResourceManager.GetObject("inventorybtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lights {
             get {
                 object obj = ResourceManager.GetObject("lights", resourceCulture);
@@ -223,6 +343,36 @@ namespace RpgGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap orc {
+            get {
+                object obj = ResourceManager.GetObject("orc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shade {
+            get {
+                object obj = ResourceManager.GetObject("shade", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap skeleton {
+            get {
+                object obj = ResourceManager.GetObject("skeleton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap target_panel {
             get {
                 object obj = ResourceManager.GetObject("target_panel", resourceCulture);
@@ -233,9 +383,9 @@ namespace RpgGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap town_tem_img {
+        internal static System.Drawing.Bitmap town_map {
             get {
-                object obj = ResourceManager.GetObject("town_tem_img", resourceCulture);
+                object obj = ResourceManager.GetObject("town_map", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

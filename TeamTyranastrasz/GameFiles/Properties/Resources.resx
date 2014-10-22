@@ -145,9 +145,6 @@
   <data name="welcome-sparkle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\welcome-sparkle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="town_tem_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\town_tem_img.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="main_char_creat_img-bgr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\main_char_creat_img-bgr.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,17 +154,11 @@
   <data name="Hakaar-the-Destroyer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Hakaar-the-Destroyer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="battle_temp_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\battle_temp_img.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="lights" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lights.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="main_char_creat_img1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\main_char_creat_img.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="golem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\golem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="flying-dragon-animated-image_zpsa0010db9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flying-dragon-animated-image_zpsa0010db9.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -180,5 +171,59 @@
   </data>
   <data name="target_panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\target-panel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="attackbuff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\attackbuff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="attackskillheavy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\attackskillheavy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="attackskilllow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\attackskilllow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="attackskillmed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\attackskillmed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="defencebuff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\defencebuff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="healthbuff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\healthbuff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="attackbtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\attackbtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="defendbtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\defendbtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventorybtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inventorybtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="endturnbtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\endturnbtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dices" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dices.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drake" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="goblin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\goblin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="skeleton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\skeleton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="golem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\golem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="town_map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\town_map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
