@@ -49,7 +49,7 @@
         {
             if (playerClass == "Warrior")
             {
-                dynamic loadedCharacter = new JavaScriptSerializer().Deserialize<SnapshotOfCharacter>(saveGameContent);
+                SnapshotOfCharacter loadedCharacter = new JavaScriptSerializer().Deserialize<SnapshotOfCharacter>(saveGameContent);
                 GameEngine.PlayerCharacter = new Warrior(
                     loadedCharacter.Name,
                     loadedCharacter.Strength,
