@@ -14,7 +14,7 @@
     {
         public const int AttackDicePoints = 2;
         public const int DefendDicePoints = 2;
-        public const int AttackSkill1DicePoints = 2;
+        public const int AttackSkill1DicePoints = 3;
         public const int AttackSkill2DicePoints = 4;
         public const int AttackSkill3DicePoints = 6;
         public const int AttackBuffDicePoints = 3;
@@ -53,12 +53,12 @@
             this.HealthBuffUsed = false;
             this.DefendUsed = false;
 
-            this.enemiesPossitions.Add(new Position(20, 20));
-            this.enemiesPossitions.Add(new Position(20, 170));
-            this.enemiesPossitions.Add(new Position(20, 340));
-            this.enemiesPossitions.Add(new Position(200, 20));
-            this.enemiesPossitions.Add(new Position(200, 170));
-            this.enemiesPossitions.Add(new Position(200, 340));
+            this.enemiesPossitions.Add(new Position(40, 166));
+            this.enemiesPossitions.Add(new Position(40, 336));
+            this.enemiesPossitions.Add(new Position(40, 506));
+            this.enemiesPossitions.Add(new Position(200, 166));
+            this.enemiesPossitions.Add(new Position(200, 336));
+            this.enemiesPossitions.Add(new Position(200, 506));
 
             RollTheDices();
         }
@@ -127,7 +127,7 @@
             {
                 if (this.IsPlayerTurn == true)
                 {
-                    target.PicBox.Hide();
+                    this.EnemyList[this.CurrentTargetId].PicBox.Hide();
                     this.EnemyList[this.CurrentTargetId].IsAlive = false;
                     this.Player.Experience += this.EnemyList[this.CurrentTargetId].Experience;
                     GameEngine.BattleScreen.experienceBar.Value = this.Player.Experience;

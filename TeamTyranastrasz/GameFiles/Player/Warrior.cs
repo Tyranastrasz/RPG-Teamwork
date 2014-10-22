@@ -2,7 +2,7 @@
 {
     public class Warrior : Player
     {
-        public const int WarriorStartingStrength = 400;
+        public const int WarriorStartingStrength = 5;
         public const int WarriorStartingDexterity = 3;
         public const int WarriorStartingVitality = 10;
         public const int WarriorStartingIntelligence = 2;
