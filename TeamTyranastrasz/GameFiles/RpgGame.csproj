@@ -161,7 +161,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SaveAndLoad\InvalidCharacterTypeException.cs" />
+    <Compile Include="Exceptions\InvalidCharacterTypeException.cs" />
     <Compile Include="SaveAndLoad\Load.cs" />
     <Compile Include="SaveAndLoad\Save.cs" />
     <Compile Include="SaveAndLoad\SnapshotOfCharacter.cs" />
@@ -237,6 +237,10 @@
     <None Include="Resources\healing_potion.png" />
     <None Include="Resources\shop_inventory.png" />
     <None Include="Resources\player_inventory.png" />
+    <None Include="Resources\Stonehenge_%28Decoration%29-SW.png" />
+    <None Include="Resources\map-background-cropped.jpg" />
+    <None Include="Resources\battle.jpg" />
+    <None Include="Resources\map-background.jpg" />
     <None Include="Resources\target-panel.png" />
     <None Include="Resources\BattleScreenBg.jpg" />
     <None Include="Resources\Hakaar-the-Destroyer1.png" />

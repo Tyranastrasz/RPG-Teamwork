@@ -1,4 +1,6 @@
-﻿namespace RpgGame.Forms
+﻿using System.Security.AccessControl;
+
+namespace RpgGame.Forms
 {
     partial class Map
     {
@@ -29,30 +31,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Map));
-            this.battleStart = new System.Windows.Forms.Button();
             this.enterTown = new System.Windows.Forms.Button();
             this.inventory = new System.Windows.Forms.Button();
             this.quests = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
             this.load = new System.Windows.Forms.Button();
             this.quit = new System.Windows.Forms.Button();
+            this.battleTower = new System.Windows.Forms.PictureBox();
+            this.secretPlace = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.battleTower)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secretPlace)).BeginInit();
             this.SuspendLayout();
-            // 
-            // battleStart
-            // 
-            this.battleStart.Cursor = System.Windows.Forms.Cursors.Default;
-            this.battleStart.Location = new System.Drawing.Point(700, 456);
-            this.battleStart.Name = "battleStart";
-            this.battleStart.Size = new System.Drawing.Size(75, 23);
-            this.battleStart.TabIndex = 0;
-            this.battleStart.Text = "Battle";
-            this.battleStart.UseVisualStyleBackColor = true;
-            this.battleStart.Click += new System.EventHandler(this.battleStart_Click);
             // 
             // enterTown
             // 
             this.enterTown.Cursor = System.Windows.Forms.Cursors.Default;
-            this.enterTown.Location = new System.Drawing.Point(303, 52);
+            this.enterTown.Location = new System.Drawing.Point(396, 112);
             this.enterTown.Name = "enterTown";
             this.enterTown.Size = new System.Drawing.Size(75, 23);
             this.enterTown.TabIndex = 1;
@@ -63,7 +57,7 @@
             // inventory
             // 
             this.inventory.Cursor = System.Windows.Forms.Cursors.Default;
-            this.inventory.Location = new System.Drawing.Point(504, 12);
+            this.inventory.Location = new System.Drawing.Point(78, 64);
             this.inventory.Name = "inventory";
             this.inventory.Size = new System.Drawing.Size(75, 23);
             this.inventory.TabIndex = 2;
@@ -74,18 +68,17 @@
             // quests
             // 
             this.quests.Cursor = System.Windows.Forms.Cursors.Default;
-            this.quests.Location = new System.Drawing.Point(608, 12);
+            this.quests.Location = new System.Drawing.Point(78, 129);
             this.quests.Name = "quests";
             this.quests.Size = new System.Drawing.Size(75, 23);
             this.quests.TabIndex = 3;
             this.quests.Text = "Quests";
             this.quests.UseVisualStyleBackColor = true;
-            this.quests.Click += new System.EventHandler(this.quests_Click);
             // 
             // save
             // 
             this.save.Cursor = System.Windows.Forms.Cursors.Default;
-            this.save.Location = new System.Drawing.Point(710, 12);
+            this.save.Location = new System.Drawing.Point(284, 674);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 4;
@@ -96,7 +89,7 @@
             // load
             // 
             this.load.Cursor = System.Windows.Forms.Cursors.Default;
-            this.load.Location = new System.Drawing.Point(811, 12);
+            this.load.Location = new System.Drawing.Point(396, 674);
             this.load.Name = "load";
             this.load.Size = new System.Drawing.Size(75, 23);
             this.load.TabIndex = 5;
@@ -115,40 +108,72 @@
             this.quit.UseVisualStyleBackColor = true;
             this.quit.Click += new System.EventHandler(this.quit_Click);
             // 
+            // battleTower
+            // 
+            this.battleTower.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.battleTower.Image = global::RpgGame.Properties.Resources.battle;
+            this.battleTower.Location = new System.Drawing.Point(598, 386);
+            this.battleTower.Name = "battleTower";
+            this.battleTower.Size = new System.Drawing.Size(199, 201);
+            this.battleTower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.battleTower.TabIndex = 7;
+            this.battleTower.TabStop = false;
+            this.battleTower.Visible = false;
+            this.battleTower.WaitOnLoad = true;
+            this.battleTower.Click += new System.EventHandler(this.battleTower_Click);
+            // 
+            // secretPlace
+            // 
+            this.secretPlace.BackColor = System.Drawing.Color.Transparent;
+            this.secretPlace.Image = global::RpgGame.Properties.Resources.Stonehenge__Decoration__SW;
+            this.secretPlace.Location = new System.Drawing.Point(860, 57);
+            this.secretPlace.Name = "secretPlace";
+            this.secretPlace.Size = new System.Drawing.Size(100, 50);
+            this.secretPlace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.secretPlace.TabIndex = 8;
+            this.secretPlace.TabStop = false;
+            this.secretPlace.Click += new System.EventHandler(this.secretPlace_Click);
+            // 
             // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::RpgGame.Properties.Resources.map_background_cropped;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(1022, 766);
             this.ControlBox = false;
+            this.Controls.Add(this.secretPlace);
+            this.Controls.Add(this.battleTower);
             this.Controls.Add(this.quit);
             this.Controls.Add(this.load);
             this.Controls.Add(this.save);
             this.Controls.Add(this.quests);
             this.Controls.Add(this.inventory);
             this.Controls.Add(this.enterTown);
-            this.Controls.Add(this.battleStart);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Map";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Map_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Map_MouseMove);
+            ((System.ComponentModel.ISupportInitialize)(this.battleTower)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secretPlace)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button battleStart;
         private System.Windows.Forms.Button enterTown;
         private System.Windows.Forms.Button inventory;
         private System.Windows.Forms.Button quests;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button load;
         private System.Windows.Forms.Button quit;
+        private System.Windows.Forms.PictureBox battleTower;
+        private System.Windows.Forms.PictureBox secretPlace;
     }
 }
 

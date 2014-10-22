@@ -42,9 +42,10 @@
             this.Vitality = vitality;
             this.Intelligence = intelligence;
             this.MaxHitPoints = maxHitPoints;
+            this.CurrentHitPoints = this.MaxHitPoints;
             this.Experience = experience;
             this.Cash = cash;
-            this.Level = Level;
+            this.Level = level;
             CloneInventory(inventory);
             CloneEquipedItems(equiped);
             this.Position = position;

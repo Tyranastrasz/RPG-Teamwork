@@ -51,8 +51,6 @@ namespace RpgGame
             //Type characterType = SaveAndLoad.Load.GetCharacterType(fileContent);
             //XmlSerializer serializer = new XmlSerializer(characterType);
 
-
-
             // start from the start screen
 
             GameEngine game = new GameEngine();
