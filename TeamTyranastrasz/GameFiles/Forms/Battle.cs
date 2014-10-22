@@ -16,16 +16,22 @@
         private Label mainStatsBox;
         private Label subStatsBox;
         private Label dicePointsBox;
+        public ProgressBar experienceBar;
 
         public Battle()
         {
             InitializeComponent();
 
             targetBox = new Label();
-            targetBox.Left = 0;
+            targetBox.Left = 500;
             targetBox.Top = 0;
-            targetBox.Width = 100;
-            targetBox.Height = 50;
+            targetBox.Width = 130;
+            targetBox.Height = 68;
+            targetBox.Image = Properties.Resources.target_panel;
+            targetBox.BackColor = Color.Transparent;
+            targetBox.ForeColor = Color.White;
+            targetBox.Padding = new Padding(30, 0, 25, 0);
+            targetBox.Font = new Font("Microsoft Sans Serif", 8);
             Controls.Add(targetBox);
             targetBox.Hide();
 
@@ -56,6 +62,15 @@
             dicePointsBox.ForeColor = Color.White;
             Controls.Add(dicePointsBox);
 
+            experienceBar = new ProgressBar();
+            experienceBar.Location = new System.Drawing.Point(294, 741);
+            experienceBar.Name = "experienceBar";
+            experienceBar.Size = new System.Drawing.Size(293, 23);
+            experienceBar.TabIndex = 14;
+            experienceBar.Maximum = 1000;
+            experienceBar.Value = battle.Player.Experience;
+            Controls.Add(experienceBar);
+
             battle.CreateEnemies();
         }
 
@@ -78,6 +93,7 @@
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
                     }
+                    RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -285,7 +301,7 @@
         private void showTargetBox(Label box, IUnit enemy)
         {
             box.Show();
-            box.Text = "Attack: " + enemy.Attack()
+            box.Text = "\nAttack: " + enemy.Attack()
                         + "\nDefense: " + enemy.Defend()
                         + "\nHitpoints: " + enemy.CurrentHitPoints;
         }

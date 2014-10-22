@@ -60,13 +60,13 @@
             this.enemiesPossitions.Add(new Position(200, 170));
             this.enemiesPossitions.Add(new Position(200, 340));
 
-
             RollTheDices();
         }
 
         public void PlayerTurn()
         {
             this.IsPlayerTurn = true;
+            RollTheDices();
             GameEngine.BattleScreen.RefreshStats();
         }
 
@@ -130,6 +130,7 @@
                     target.PicBox.Hide();
                     this.EnemyList[this.CurrentTargetId].IsAlive = false;
                     this.Player.Experience += this.EnemyList[this.CurrentTargetId].Experience;
+                    GameEngine.BattleScreen.experienceBar.Value = this.Player.Experience;
                 }
                 else
                 {

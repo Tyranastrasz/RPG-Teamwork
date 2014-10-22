@@ -144,12 +144,19 @@
             // 
             // exit
             // 
-            this.exit.Location = new System.Drawing.Point(946, 2);
+            this.exit.BackColor = System.Drawing.Color.Transparent;
+            this.exit.FlatAppearance.BorderSize = 0;
+            this.exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exit.ForeColor = System.Drawing.Color.White;
+            this.exit.Location = new System.Drawing.Point(949, 2);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(75, 37);
+            this.exit.Size = new System.Drawing.Size(73, 23);
             this.exit.TabIndex = 13;
             this.exit.Text = "Exit";
-            this.exit.UseVisualStyleBackColor = true;
+            this.exit.UseVisualStyleBackColor = false;
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // Battle

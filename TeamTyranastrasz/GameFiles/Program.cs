@@ -39,8 +39,8 @@
 
             // start from the start screen
 
-            //GameEngine game = new GameEngine();
-            //game.Run();
+            GameEngine game = new GameEngine();
+            game.Run();
 
             //string fileName = "BattleAxeSwing.wav";
             //string path = Sound.GeneratePathToFile(fileName);
@@ -59,7 +59,7 @@
             // start from the town
             //Application.Run(new Town());
 
-            Application.Run(new StartScreen());
+            //Application.Run(new StartScreen());
         }
     }
 }
