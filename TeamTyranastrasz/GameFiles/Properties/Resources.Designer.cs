@@ -473,6 +473,16 @@ namespace RpgGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap town {
+            get {
+                object obj = ResourceManager.GetObject("town", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap town_map {
             get {
                 object obj = ResourceManager.GetObject("town_map", resourceCulture);

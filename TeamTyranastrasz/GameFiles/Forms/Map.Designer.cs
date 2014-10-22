@@ -31,7 +31,6 @@ namespace RpgGame.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Map));
-            this.enterTown = new System.Windows.Forms.Button();
             this.inventory = new System.Windows.Forms.Button();
             this.quests = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
@@ -39,20 +38,11 @@ namespace RpgGame.Forms
             this.quit = new System.Windows.Forms.Button();
             this.battleTower = new System.Windows.Forms.PictureBox();
             this.secretPlace = new System.Windows.Forms.PictureBox();
+            this.townSelected = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.battleTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secretPlace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.townSelected)).BeginInit();
             this.SuspendLayout();
-            // 
-            // enterTown
-            // 
-            this.enterTown.Cursor = System.Windows.Forms.Cursors.Default;
-            this.enterTown.Location = new System.Drawing.Point(396, 112);
-            this.enterTown.Name = "enterTown";
-            this.enterTown.Size = new System.Drawing.Size(75, 23);
-            this.enterTown.TabIndex = 1;
-            this.enterTown.Text = "Town";
-            this.enterTown.UseVisualStyleBackColor = true;
-            this.enterTown.Click += new System.EventHandler(this.enterTown_Click);
             // 
             // inventory
             // 
@@ -134,6 +124,17 @@ namespace RpgGame.Forms
             this.secretPlace.TabStop = false;
             this.secretPlace.Click += new System.EventHandler(this.secretPlace_Click);
             // 
+            // townSelected
+            // 
+            this.townSelected.Image = global::RpgGame.Properties.Resources.town;
+            this.townSelected.Location = new System.Drawing.Point(299, 0);
+            this.townSelected.Name = "townSelected";
+            this.townSelected.Size = new System.Drawing.Size(316, 132);
+            this.townSelected.TabIndex = 9;
+            this.townSelected.TabStop = false;
+            this.townSelected.Visible = false;
+            this.townSelected.Click += new System.EventHandler(this.townSelected_Click);
+            // 
             // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,6 +144,7 @@ namespace RpgGame.Forms
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1022, 766);
             this.ControlBox = false;
+            this.Controls.Add(this.townSelected);
             this.Controls.Add(this.secretPlace);
             this.Controls.Add(this.battleTower);
             this.Controls.Add(this.quit);
@@ -150,7 +152,6 @@ namespace RpgGame.Forms
             this.Controls.Add(this.save);
             this.Controls.Add(this.quests);
             this.Controls.Add(this.inventory);
-            this.Controls.Add(this.enterTown);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -160,13 +161,13 @@ namespace RpgGame.Forms
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Map_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.battleTower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secretPlace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.townSelected)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button enterTown;
         private System.Windows.Forms.Button inventory;
         private System.Windows.Forms.Button quests;
         private System.Windows.Forms.Button save;
@@ -174,6 +175,7 @@ namespace RpgGame.Forms
         private System.Windows.Forms.Button quit;
         private System.Windows.Forms.PictureBox battleTower;
         private System.Windows.Forms.PictureBox secretPlace;
+        private System.Windows.Forms.PictureBox townSelected;
     }
 }
 

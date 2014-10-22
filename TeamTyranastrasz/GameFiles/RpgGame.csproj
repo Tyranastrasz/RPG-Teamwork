@@ -231,6 +231,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Images\battle_temp_img.jpg" />
     <Content Include="Images\golem.png" />
+    <None Include="Resources\town.jpg" />
     <None Include="Resources\head_rogue.png" />
     <None Include="Resources\head_mage.png" />
     <None Include="Resources\blank.png" />

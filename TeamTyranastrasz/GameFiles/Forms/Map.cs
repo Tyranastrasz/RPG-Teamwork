@@ -17,25 +17,10 @@ namespace RpgGame.Forms
             // TODO: Make buttons transperant with no text, but on hover the objects are sparkling (photoshoped layers for each location)
         }
 
-        private void enterTown_Click(object sender, EventArgs e)
-        {
-            Town enterTown = new Town();
-            enterTown.Show();
-            this.Hide();
-        }
-
         private void inventory_Click(object sender, EventArgs e)
         {
-            if (GameEngine.Inventory != null)
-            {
-                GameEngine.Inventory.Show();
-            }
-            else
-            {
-                GameEngine.Inventory = new PlayerInventory();
-            }
-            GameEngine.Inventory.Visible = false;
-            GameEngine.Inventory.ShowDialog();
+            PlayerInventory inventory = new PlayerInventory();
+            inventory.ShowDialog();
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -113,12 +98,35 @@ namespace RpgGame.Forms
                 secretPlace.Visible = false;
             }
 
+            int townLocationX = townSelected.Location.X;
+            int townLocationY = townSelected.Location.Y;
+
+            int townHeigh = townSelected.Size.Height;
+            int townWidth = townSelected.Size.Width;
+
+            if (mouseX > townLocationX && mouseX < townLocationX + townHeigh &&
+                mouseY > townLocationY && mouseY < townLocationY + townWidth)
+            {
+                townSelected.Visible = true;
+            }
+            else
+            {
+                townSelected.Visible = false;
+            }
+
             // TODO: Create separate method for mouse hover
         }
 
         private void secretPlace_Click(object sender, EventArgs e)
         {
             Process.Start("http://softuni.bg");
+        }
+
+        private void townSelected_Click(object sender, EventArgs e)
+        {
+            Town enterTown = new Town();
+            enterTown.Show();
+            this.Hide();
         }
     }
 }
