@@ -90,6 +90,12 @@
       <DependentUpon>CharacterCreation.cs</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\NoPictureException.cs" />
+    <Compile Include="Forms\PlayerInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayerInventory.Designer.cs">
+      <DependentUpon>PlayerInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ShopInventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Map.resx">
       <DependentUpon>Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayerInventory.resx">
+      <DependentUpon>PlayerInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ShopInventory.resx">
       <DependentUpon>ShopInventory.cs</DependentUpon>
