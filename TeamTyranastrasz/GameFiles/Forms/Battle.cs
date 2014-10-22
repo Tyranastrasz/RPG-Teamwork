@@ -113,6 +113,7 @@ namespace RpgGame.Forms
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
                     }
                     RefreshStats();
+                    Sound.PlayAttackSound();
                 }
                 catch (NotEnoughDicePointsException)
                 {
