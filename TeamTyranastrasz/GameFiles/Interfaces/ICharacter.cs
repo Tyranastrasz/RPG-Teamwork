@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using RpgGame.Items;
-
-namespace RpgGame.Interfaces
+﻿namespace RpgGame.Interfaces
 {
+    using System.Collections.Generic;
+
     public interface ICharacter : IUnit, IUsable
     {
         string Name { get; }

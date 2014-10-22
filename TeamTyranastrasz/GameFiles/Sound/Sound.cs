@@ -1,14 +1,9 @@
-﻿using System.CodeDom.Compiler;
-
-namespace RpgGame
+﻿namespace RpgGame
 {
     using System;
     using System.IO;
     using System.Media;
     using System.Reflection;
-    using System.Runtime.InteropServices;
-    using System.Text;
-
 
     public class Sound
     {

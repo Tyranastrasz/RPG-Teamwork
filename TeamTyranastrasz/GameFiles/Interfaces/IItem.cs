@@ -1,4 +1,4 @@
-﻿namespace RpgGame
+﻿namespace RpgGame.Interfaces
 {
     public interface IItem
     {

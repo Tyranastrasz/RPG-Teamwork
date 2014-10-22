@@ -1,7 +1,5 @@
 ﻿namespace RpgGame.Interfaces
 {
-    using RpgGame.Items;
-
     public interface IUsable
     {
         void Consume(IItem item);

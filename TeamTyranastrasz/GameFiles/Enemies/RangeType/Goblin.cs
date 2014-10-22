@@ -2,15 +2,11 @@
 {
     public class Goblin : Range
     {
-        public const int experience = 50;
+        public const int GoblinExperience = 50;
 
         public Goblin(string name, int hitPoints, int attackPoints, int defensePoints, Pictures picture)
-            : base(name, hitPoints, defensePoints, attackPoints, picture, experience)
+            : base(name, hitPoints, defensePoints, attackPoints, picture, GoblinExperience)
         {
         }
-
-        //public override int HitPoints { get; set; }
-        //public override int DefensePoints { get; set; }
-        //public override int AttackPoints { get; set; }
     }
 }

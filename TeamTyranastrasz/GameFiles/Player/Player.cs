@@ -5,14 +5,15 @@
     using System.Linq;
     using RpgGame.Interfaces;
 
-    public abstract class Player : Unit, IMovable, ITeleportable, IUsable, ITrade, ICharacter
+    public abstract class Player : Unit, ITrade, ICharacter
     {
         public readonly int StrengthModifier;
         public readonly int DexterityModifier;
         public readonly int VitalityModifier;
         public readonly int IntelligenceModifier;
 
-        protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier, List<IItem> baseItems) : base(name)
+        protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier, List<IItem> baseItems) 
+            : base(name)
         {
             this.Strength = str;
             this.Dexterity = dex;
@@ -22,16 +23,15 @@
             this.DexterityModifier = dexterityModifier;
             this.VitalityModifier = vitalityModifier;
             this.IntelligenceModifier = intelligenceModifier;
-            CalculateAttackPoints();
-            CalculateDefencePoints();
-            CalculateHitPoints();
-            this.CurrentHitPoints = this.MaxHitPoints;
             this.Position = new Position();
-            //this.PicBox = new PictureBox();
             this.Level = 1;
             this.Inventory = new List<IItem>();
             this.Equiped = new List<IItem>();
             InitialItemEquip(baseItems);
+            CalculateAttackPoints();
+            CalculateDefencePoints();
+            CalculateHitPoints();
+            this.CurrentHitPoints = this.MaxHitPoints;
         }
 
         protected Player(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier)
@@ -153,16 +153,6 @@
             return defence;
         }
 
-        public virtual void Move()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Teleport()
-        {
-            throw new NotImplementedException();
-        }
-
         public void Consume(IItem item)
         {
             if (item.IsConsumable)
@@ -172,11 +162,11 @@
             }
         }
 
-        public void Equip(IItem item, int id, bool IsNew = false)
+        public void Equip(IItem item, int id, bool isNew = false)
         {
             if (this.Equiped != null)
             {
-                if (IsNew)
+                if (isNew)
                 {
                     this.Equiped.Add(item);
                 }

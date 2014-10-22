@@ -1,16 +1,13 @@
-﻿using RpgGame.Exceptions;
-
-namespace RpgGame
+﻿namespace RpgGame
 {
     using System;
     using System.Collections.Generic;
-    using System.Threading;
     using System.Windows.Forms;
     using RpgGame.Enemies.MeleeType;
     using RpgGame.Enemies.RangeType;
     using RpgGame.Forms;
     using RpgGame.Interfaces;
-    using RpgGame.Player;
+    using RpgGame.Exceptions;
 
     public class BattleManager
     {
@@ -32,14 +29,18 @@ namespace RpgGame
         public List<IEnemy> EnemyList { get; set; }
 
         public IEnemy CurrentTarget { get; set; }
+
         public int CurrentTargetId { get; set; }
 
         public int LastTurnEnemyId { get; set; }
 
-        public bool AttackBuffUsed { get; set; }
-        public bool DefenceBuffUsed { get; set; }
-        public bool HealthBuffUsed { get; set; }
-        public bool DefendUsed { get; set; }
+        public bool IsAttackBuffUsed { get; set; }
+
+        public bool IsDefenceBuffUsed { get; set; }
+
+        public bool IsHealthBuffUsed { get; set; }
+
+        public bool IsDefendUsed { get; set; }
 
         public BattleManager()
         {
@@ -48,25 +49,25 @@ namespace RpgGame
             this.EnemyList = new List<IEnemy>();
             this.LastTurnEnemyId = -1;
 
-            this.AttackBuffUsed = false;
-            this.DefenceBuffUsed = false;
-            this.HealthBuffUsed = false;
-            this.DefendUsed = false;
+            this.IsAttackBuffUsed = false;
+            this.IsDefenceBuffUsed = false;
+            this.IsHealthBuffUsed = false;
+            this.IsDefendUsed = false;
 
-            this.enemiesPossitions.Add(new Position(40, 166));
-            this.enemiesPossitions.Add(new Position(40, 336));
-            this.enemiesPossitions.Add(new Position(40, 506));
-            this.enemiesPossitions.Add(new Position(200, 166));
-            this.enemiesPossitions.Add(new Position(200, 336));
-            this.enemiesPossitions.Add(new Position(200, 506));
+            this.enemiesPossitions.Add(new Position(x: 40, y: 166));
+            this.enemiesPossitions.Add(new Position(x: 40, y: 336));
+            this.enemiesPossitions.Add(new Position(x: 40, y: 506));
+            this.enemiesPossitions.Add(new Position(x: 200, y: 166));
+            this.enemiesPossitions.Add(new Position(x: 200, y: 336));
+            this.enemiesPossitions.Add(new Position(x: 200, y: 506));
 
-            RollTheDices();
+            RollTheDice();
         }
 
         public void PlayerTurn()
         {
             this.IsPlayerTurn = true;
-            RollTheDices();
+            RollTheDice();
             GameEngine.BattleScreen.RefreshStats();
         }
 
@@ -77,7 +78,7 @@ namespace RpgGame
             this.LastTurnEnemyId++;
             try
             {
-                Attack((IUnit)this.EnemyList[this.LastTurnEnemyId], (IUnit)GameEngine.PlayerCharacter);
+                Attack((IUnit)this.EnemyList[this.LastTurnEnemyId], GameEngine.PlayerCharacter);
             }
             catch (EndBattleException)
             {
@@ -87,10 +88,10 @@ namespace RpgGame
                 mapScreen.Show();
             }
 
-            if (this.DefendUsed == true)
+            if (this.IsDefendUsed)
             {
                 GameEngine.PlayerCharacter.BonusDefencePoints -= 2;
-                this.DefendUsed = false;
+                this.IsDefendUsed = false;
             }
             PlayerTurn();
         }
@@ -125,7 +126,7 @@ namespace RpgGame
 
             if (target.CurrentHitPoints <= 0)
             {
-                if (this.IsPlayerTurn == true)
+                if (this.IsPlayerTurn)
                 {
                     this.EnemyList[this.CurrentTargetId].PicBox.Hide();
                     this.EnemyList[this.CurrentTargetId].IsAlive = false;
@@ -141,14 +142,14 @@ namespace RpgGame
 
         public void Defend()
         {
-            if (this.DefendUsed == false)
+            if (!this.IsDefendUsed)
             {
                 GameEngine.PlayerCharacter.BonusDefencePoints += 2;
-                this.DefendUsed = true;
+                this.IsDefendUsed = true;
             }
         }
 
-        public void RollTheDices()
+        public void RollTheDice()
         {
             int[] dices = new int[2];
 

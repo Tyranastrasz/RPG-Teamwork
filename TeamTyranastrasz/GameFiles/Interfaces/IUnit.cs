@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms;
-namespace RpgGame.Interfaces
+﻿namespace RpgGame.Interfaces
 {
     public interface IUnit : IAttack, IDefend
     {

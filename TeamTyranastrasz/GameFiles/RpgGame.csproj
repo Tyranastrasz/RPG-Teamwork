@@ -135,13 +135,10 @@
     <Compile Include="Items\Helmet.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
     <Compile Include="Interfaces\IDefend.cs" />
-    <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Interfaces\ICharacter.cs" />
-    <Compile Include="Interfaces\ITeleportable.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Interfaces\ITrade.cs" />
     <Compile Include="Interfaces\IUsable.cs" />
-    <Compile Include="Location.cs" />
     <Compile Include="Forms\PlayerInventory.cs">
       <SubType>Form</SubType>
     </Compile>

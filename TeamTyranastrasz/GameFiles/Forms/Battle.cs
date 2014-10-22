@@ -1,14 +1,10 @@
-﻿using RpgGame.Exceptions;
-
-namespace RpgGame.Forms
+﻿namespace RpgGame.Forms
 {
     using System;
-    using System.Collections.Generic;
     using System.Drawing;
     using System.Windows.Forms;
-    using RpgGame.Enemies.MeleeType;
-    using RpgGame.Enemies.RangeType;
     using RpgGame.Interfaces;
+    using RpgGame.Exceptions;
 
     public partial class Battle : Form
     {
@@ -102,12 +98,12 @@ namespace RpgGame.Forms
         private void btnAttack_Click(object sender, EventArgs e)
         {
 
-            if (battle.IsPlayerTurn == true && battle.CurrentTarget != null)
+            if (battle.IsPlayerTurn && battle.CurrentTarget != null)
             {
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackDicePoints);
-                    battle.Attack((IUnit)GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
+                    battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
@@ -124,7 +120,7 @@ namespace RpgGame.Forms
 
         private void btnDefend_Click(object sender, EventArgs e)
         {
-            if (battle.IsPlayerTurn == true)
+            if (battle.IsPlayerTurn)
             {
                 try
                 {
@@ -155,20 +151,20 @@ namespace RpgGame.Forms
 
         private void btnEndTurn_Click(object sender, EventArgs e)
         {
-            if (battle.AttackBuffUsed == true)
+            if (battle.IsAttackBuffUsed)
             {
                 GameEngine.PlayerCharacter.ClearBuff("attack");
-                battle.AttackBuffUsed = false;
+                battle.IsAttackBuffUsed = false;
             }
-            if (battle.DefenceBuffUsed == true)
+            if (battle.IsDefenceBuffUsed)
             {
                 GameEngine.PlayerCharacter.ClearBuff("defence");
-                battle.DefenceBuffUsed = false;
+                battle.IsDefenceBuffUsed = false;
             }
-            if (battle.HealthBuffUsed == true)
+            if (battle.IsHealthBuffUsed)
             {
                 GameEngine.PlayerCharacter.ClearBuff("health");
-                battle.HealthBuffUsed = false;
+                battle.IsHealthBuffUsed = false;
             }
 
             battle.EnemyTurn();
@@ -176,13 +172,13 @@ namespace RpgGame.Forms
 
         private void btnAttackSkillLow_Click(object sender, EventArgs e)
         {
-            if (battle.IsPlayerTurn == true && battle.CurrentTarget != null)
+            if (battle.IsPlayerTurn && battle.CurrentTarget != null)
             {
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackSkill1DicePoints);
                     GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("low");
-                    battle.Attack((IUnit)GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
+                    battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("low");
                     if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
                     {
@@ -199,13 +195,13 @@ namespace RpgGame.Forms
 
         private void btnAttackSkillMed_Click(object sender, EventArgs e)
         {
-            if (battle.IsPlayerTurn == true && battle.CurrentTarget != null)
+            if (battle.IsPlayerTurn && battle.CurrentTarget != null)
             {
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackSkill2DicePoints);
                     GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("medium");
-                    battle.Attack((IUnit)GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
+                    battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("medium");
                     if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
                     {
@@ -222,7 +218,7 @@ namespace RpgGame.Forms
 
         private void btnAttackSkillHigh_Click(object sender, EventArgs e)
         {
-            if (battle.IsPlayerTurn == true && battle.CurrentTarget != null)
+            if (battle.IsPlayerTurn && battle.CurrentTarget != null)
             {
                 try
                 {
@@ -245,13 +241,13 @@ namespace RpgGame.Forms
 
         private void btnAttackBuff_Click(object sender, EventArgs e)
         {
-            if (battle.IsPlayerTurn == true && battle.AttackBuffUsed == false)
+            if (battle.IsPlayerTurn && battle.IsAttackBuffUsed == false)
             {
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackBuffDicePoints);
                     GameEngine.PlayerCharacter.CastBuff("attack");
-                    battle.AttackBuffUsed = true;
+                    battle.IsAttackBuffUsed = true;
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
@@ -263,13 +259,13 @@ namespace RpgGame.Forms
 
         private void btnDefenseBuff_Click(object sender, EventArgs e)
         {
-            if (battle.IsPlayerTurn == true && battle.DefenceBuffUsed == false)
+            if (battle.IsPlayerTurn && battle.IsDefenceBuffUsed == false)
             {
                 try
                 {
                     battle.CheckDicePoints(BattleManager.DefenceBuffDicePoints);
                     GameEngine.PlayerCharacter.CastBuff("defence");
-                    battle.DefenceBuffUsed = true;
+                    battle.IsDefenceBuffUsed = true;
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
@@ -281,13 +277,13 @@ namespace RpgGame.Forms
 
         private void btnHeal_Click(object sender, EventArgs e)
         {
-            if (battle.IsPlayerTurn == true && battle.HealthBuffUsed == false)
+            if (battle.IsPlayerTurn && battle.IsHealthBuffUsed == false)
             {
                 try
                 {
                     battle.CheckDicePoints(BattleManager.HealthDicePoints);
                     GameEngine.PlayerCharacter.CastBuff("health");
-                    battle.HealthBuffUsed = true;
+                    battle.IsHealthBuffUsed = true;
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
@@ -381,6 +377,7 @@ namespace RpgGame.Forms
             Application.Exit();
         }
 
+        // This code reduces the flickering when loading the forms.
         protected override CreateParams CreateParams
         {
             get

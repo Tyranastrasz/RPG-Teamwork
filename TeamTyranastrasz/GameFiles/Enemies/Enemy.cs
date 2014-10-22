@@ -1,6 +1,5 @@
 ﻿namespace RpgGame.Enemies
 {
-    using System;
     using System.Windows.Forms;
     using RpgGame.Interfaces;
 
@@ -8,7 +7,7 @@
     {
         // changed for draw tets
         protected Enemy(string name, int hitPoints, int attackPoints, int defensePoints, Pictures picture, int experience)
-            : base(name) // ??? enemies should't have names, just classes
+            : base(name)
         {
             this.HitPoints = hitPoints;
             this.DefensePoints = defensePoints;
