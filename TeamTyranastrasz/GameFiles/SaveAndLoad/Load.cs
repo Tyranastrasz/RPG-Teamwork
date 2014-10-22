@@ -4,12 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using RpgGame.Exceptions;
 using RpgGame.Interfaces;
 using RpgGame.Player;
-using System.Web.Script.Serialization;
 
 namespace RpgGame.SaveAndLoad
 {

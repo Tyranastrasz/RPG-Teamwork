@@ -2,7 +2,7 @@
 {
     using System;
 
-    class EndBattleException : Exception
+    class EndBattleException : ApplicationException
     {
         
     }

@@ -3,12 +3,12 @@
 namespace RpgGame
 {
     using System;
+    using System.IO;
     using System.Windows.Forms;
     using RpgGame.Forms;
     using RpgGame.Interfaces;
     using RpgGame.Items;
     using RpgGame.Player;
-    using System.IO;
 
     static class Program
     {

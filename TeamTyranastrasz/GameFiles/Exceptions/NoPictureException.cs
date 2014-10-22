@@ -2,7 +2,7 @@
 {
     using System;
 
-    class NoPictureException : Exception
+    class NoPictureException : ApplicationException
     {
     }
 }

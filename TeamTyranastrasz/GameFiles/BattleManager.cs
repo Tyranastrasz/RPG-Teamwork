@@ -3,14 +3,14 @@
 namespace RpgGame
 {
     using System;
-    using RpgGame.Interfaces;
     using System.Collections.Generic;
-    using RpgGame.Player;
     using System.Threading;
+    using System.Windows.Forms;
     using RpgGame.Enemies.MeleeType;
     using RpgGame.Enemies.RangeType;
-    using System.Windows.Forms;
     using RpgGame.Forms;
+    using RpgGame.Interfaces;
+    using RpgGame.Player;
 
     public class BattleManager
     {
