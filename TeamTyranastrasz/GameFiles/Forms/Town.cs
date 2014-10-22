@@ -13,10 +13,11 @@ namespace RpgGame.Forms
 {
     public partial class Town : Form
     {
+        private ShopInventory itemShop = new ShopInventory();
+
         public Town()
         {
             InitializeComponent();
-            ICharacter playerCharacter = GameEngine.PlayerCharacter;
         }
 
         private void Town_Load(object sender, EventArgs e)
@@ -26,8 +27,7 @@ namespace RpgGame.Forms
 
         private void btnShop_Click(object sender, EventArgs e)
         {
-            ShopInventory shop = new ShopInventory();
-            shop.ShowDialog();
+            itemShop.ShowDialog();
         }
         
         // temp ussage to close the form

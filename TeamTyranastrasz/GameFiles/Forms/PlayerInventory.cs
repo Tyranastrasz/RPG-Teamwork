@@ -67,11 +67,6 @@ namespace RpgGame.Forms
             statsBox.BackColor = Color.FromArgb(150, 0, 0, 0);
             Controls.Add(statsBox);
             statsBox.Hide();
-
-
-            // FOR TEST
-            inventory.Add(new Helmet("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."));
-            inventory.Add(new Weapon("Iron Sword", 5, Pictures.TestItem2, 0, 5, 0, 20, 0, 0, 0, 1, "Basic battle equipment."));
         }
 
         private void PlayerInventory_Load(object sender, EventArgs e)

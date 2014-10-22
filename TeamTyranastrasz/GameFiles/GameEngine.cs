@@ -14,12 +14,12 @@
 
         public void Run()
         {
-            Application.Run(new StartScreen());
-            //CreateNewPlayer("warrior", "asd");
+            //Application.Run(new StartScreen());
+            CreateNewPlayer("warrior", "asd");
             //CreateBattleScreen();
             //Application.Run(BattleScreen);
-            //Map map = new Map();
-            //Application.Run(map);
+            Town town = new Town();
+            Application.Run(town);
         }
         public static void CreateNewPlayer(string characterClass, string characterName)
         {

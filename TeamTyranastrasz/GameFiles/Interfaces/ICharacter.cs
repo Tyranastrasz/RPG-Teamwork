@@ -37,6 +37,10 @@ namespace RpgGame.Interfaces
 
         List<IItem> Equiped { get; set; }
 
+        void Sell(IItem item);
+
+        void Buy(IItem item);
+
         Position Position { get; }
 
         int CalculateSkillStats(string type);

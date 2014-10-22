@@ -22,16 +22,16 @@
             this.DexterityModifier = dexterityModifier;
             this.VitalityModifier = vitalityModifier;
             this.IntelligenceModifier = intelligenceModifier;
-            CalculateAttackPoints();
-            CalculateDefencePoints();
-            CalculateHitPoints();
-            this.CurrentHitPoints = this.MaxHitPoints;
             this.Position = new Position();
             //this.PicBox = new PictureBox();
             this.Level = 1;
             this.Inventory = new List<IItem>();
             this.Equiped = new List<IItem>();
             InitialItemEquip(baseItems);
+            CalculateAttackPoints();
+            CalculateDefencePoints();
+            CalculateHitPoints();
+            this.CurrentHitPoints = this.MaxHitPoints;
         }
 
         protected Player(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier)
