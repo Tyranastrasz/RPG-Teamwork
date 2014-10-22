@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Web.Script.Serialization;
+using System.Windows.Forms;
 using RpgGame.Exceptions;
 using RpgGame.Interfaces;
 using RpgGame.Player;
@@ -24,6 +25,7 @@ namespace RpgGame.SaveAndLoad
                 "..\\..\\SaveAndLoad\\" + currentPlayerClass + "savegame.xml"))
                 {
                     file.Write(savedData);
+                    MessageBox.Show("Your game progress was saved!");
                 }
             }
             catch (DirectoryNotFoundException)

@@ -27,6 +27,7 @@ namespace RpgGame.SaveAndLoad
                     var jsonSerializer = new JavaScriptSerializer();
 
                     CreatePlayerFromSavedGame(playerClass, jsonSerializer, saveGameContent);
+                    MessageBox.Show("Loaded last game!");
                 }
             }
             catch (FileLoadException)

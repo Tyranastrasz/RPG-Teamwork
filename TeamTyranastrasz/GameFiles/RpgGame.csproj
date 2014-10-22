@@ -140,6 +140,12 @@
     <Compile Include="Interfaces\ITrade.cs" />
     <Compile Include="Interfaces\IUsable.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="Forms\PlayerInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayerInventory.designer.cs">
+      <DependentUpon>PlayerInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Player\Mage.cs" />
     <Compile Include="Enemies\Melee.cs" />
     <Compile Include="Player\Player.cs" />
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Town.resx">
       <DependentUpon>Town.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayerInventory.resx">
+      <DependentUpon>PlayerInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
