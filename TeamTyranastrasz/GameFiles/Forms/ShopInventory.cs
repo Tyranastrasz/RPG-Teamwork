@@ -66,6 +66,7 @@ namespace RpgGame.Forms
             this.inventoryPossitions.Add(new Position(378, 320));
             this.inventoryPossitions.Add(new Position(448, 320));
 
+            // name, price, picture, def, attk, hit, str, dex, vit, int, lvl, desc
             this.shopItems.Add(new Weapon("Big Sword", 100, Pictures.RareSword, 0, 40, 0, 0, 10, 0, 0, 8, "Big sword for heavy strikes."));
             this.shopItems.Add(new Weapon("Iron Sword", 5, Pictures.BasickSword, 0, 5, 0, 0, 0, 0, 0, 1, "Basic battle equipment."));
             this.shopItems.Add(new Helmet("Iron-horn Helm", 20, Pictures.WarriorHelmet, 2, 0, 3, 0, 0, 1, 0, 1, "Basic - but stylis."));

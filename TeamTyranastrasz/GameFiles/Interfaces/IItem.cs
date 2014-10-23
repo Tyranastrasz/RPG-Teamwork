@@ -1,4 +1,6 @@
-﻿namespace RpgGame.Interfaces
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace RpgGame.Interfaces
 {
     public interface IItem
     {

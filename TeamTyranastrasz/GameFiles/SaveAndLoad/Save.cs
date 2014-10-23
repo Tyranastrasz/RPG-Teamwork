@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿
 
 namespace RpgGame.SaveAndLoad
 {
     using System;
     using System.IO;
+    using System.Collections.Generic;
     using System.Web.Script.Serialization;
     using System.Windows.Forms;
     using RpgGame.Interfaces;
     using RpgGame.Player;
+    using RpgGame.Items;
 
     public class Save
     {
@@ -23,10 +25,25 @@ namespace RpgGame.SaveAndLoad
 
             try
             {
-                using (StreamWriter file = new StreamWriter(
-                "..\\..\\SaveAndLoad\\" + currentPlayerClass + "savegame.json"))
+                using (StreamWriter firstFile = new StreamWriter(
+                "..\\..\\SaveAndLoad\\" + currentPlayerClass + "savegame.txt"))
+                using (StreamWriter secondFile = new StreamWriter(
+                "..\\..\\SaveAndLoad\\" + currentPlayerClass + "saveinventory.txt"))
+                using (StreamWriter thirdFile = new StreamWriter(
+                "..\\..\\SaveAndLoad\\" + currentPlayerClass + "saveequipeditems.txt"))
                 {
-                    file.Write(savedData);
+                    firstFile.Write(savedData);
+
+                    foreach (var item in currentPlayerState.Inventory)
+                    {
+                        WriteItemToFile(item, secondFile);
+                    }
+
+                    foreach (var item in currentPlayerState.Equiped)
+                    {
+                        WriteItemToFile(item, thirdFile);
+                    }
+
                     MessageBox.Show("Your game progress was saved!");
                 }
             }
@@ -41,6 +58,46 @@ namespace RpgGame.SaveAndLoad
             catch (InvalidOperationException)
             {
                 throw new InvalidOperationException();
+            }
+
+        }
+
+        private static void WriteItemToFile(IItem item, StreamWriter file)
+        {
+            if (item.GetType() == typeof (Helmet))
+            {
+                file.Write("Helmet ");
+                file.Write(item.ToString());
+            }
+            if (item.GetType() == typeof (Chainmail))
+            {
+                file.Write("Chainmail ");
+                file.Write(item.ToString());
+            }
+            if (item.GetType() == typeof (Gloves))
+            {
+                file.Write("Gloves ");
+                file.Write(item.ToString());
+            }
+            if (item.GetType() == typeof (Weapon))
+            {
+                file.Write("Weapon ");
+                file.Write(item.ToString());
+            }
+            if (item.GetType() == typeof (Boots))
+            {
+                file.Write("Boots ");
+                file.Write(item.ToString());
+            }
+            if (item.GetType() == typeof (Potion))
+            {
+                file.Write("Potion ");
+                file.Write(item.ToString());
+            }
+            if (item.GetType() == typeof (Scroll))
+            {
+                file.Write("Scroll ");
+                file.Write(item.ToString());
             }
         }
 

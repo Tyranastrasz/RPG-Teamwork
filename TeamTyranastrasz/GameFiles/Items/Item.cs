@@ -111,5 +111,23 @@ namespace RpgGame.Items
         public bool IsConsumable { get; set; }
 
         public Pictures Picture { get; set; }
+
+        // name, price, picture, def, attk, hit, str, dex, vit, int, lvl, desc
+        public override string ToString()
+        {
+            return "Name" +
+                   " " + this.Price +
+                   " " + this.Picture +
+                   " " + this.DefencePoints +
+                   " " + this.AttackPoints +
+                   " " + this.HitPoints +
+                   " " + this.Strength +
+                   " " + this.Dexterity +
+                   " " + this.Vitality +
+                   " " + this.Intelligence +
+                   " " + this.LevelRequirement +
+                   " testing"  +
+                   "\n";
+        }
     }
 }
