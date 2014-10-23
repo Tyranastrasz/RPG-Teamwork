@@ -256,4 +256,73 @@
   <data name="town" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\town.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="boots_mage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boots_mage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boots_rogue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boots_rogue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boots_warrior" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boots_warrior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chaimail_mage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chaimail_mage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chaimail_rogue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chaimail_rogue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chaimail_warrior" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chaimail_warrior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gloves_mage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gloves_mage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gloves_rogue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gloves_rogue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gloves_warrior" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gloves_warrior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="head_warrior" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\head_warrior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="teleport_scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\teleport_scroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_axe_basic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_axe_basic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_axe_mid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_axe_mid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_axe_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_axe_rare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_dager_basic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_dager_basic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_dager_mid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_dager_mid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_dager_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_dager_rare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_staff_basic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_staff_basic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_staff_mid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_staff_mid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_staff_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_staff_rare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_sword_basic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_sword_basic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_sword_mid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_sword_mid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weapon_sword_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weapon_sword_rare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

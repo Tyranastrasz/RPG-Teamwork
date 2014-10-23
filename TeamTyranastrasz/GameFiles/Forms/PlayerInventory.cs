@@ -243,29 +243,59 @@ namespace RpgGame.Forms
             {
                 case Pictures.HealingPotion:
                     return Properties.Resources.healing_potion;
-                //case Pictures.Staff:
-                //    return Properties.Resources.staff
-                //case Pictures.Sword:
-                //    return Properties.Resources.sword;
-                //case Pictures.Helmet:
-                //    return Properties.Resources.helmet;
-                //case Pictures.Chainmail:
-                //    return Properties.Resources.chainmail;
-                //case Pictures.Gloves:
-                //    return Properties.Resources.gloves;
-                //case Pictures.Axe:
-                //    return Properties.Resources.axe;
-                //case Pictures.Scroll:
-                //    return Properties.Resources.scroll;
-                //case Pictures.Boots:
-                //    return Properties.Resources.boots;
-                case Pictures.TestItem1:
+                case Pictures.Scroll:
+                    return Properties.Resources.teleport_scroll;
+                case Pictures.WarriorHelmet:
+                    return Properties.Resources.head_warrior;
+                case Pictures.MageHelmet:
                     return Properties.Resources.head_mage;
-                case Pictures.TestItem2:
+                case Pictures.RogueHelmet:
                     return Properties.Resources.head_rogue;
+                case Pictures.WarriorChainmail:
+                    return Properties.Resources.chaimail_warrior;
+                case Pictures.MageChainmail:
+                    return Properties.Resources.chaimail_mage;
+                case Pictures.RogueChainmail:
+                    return Properties.Resources.chaimail_rogue;
+                case Pictures.WarriorsGloves:
+                    return Properties.Resources.gloves_warrior;
+                case Pictures.MageGloves:
+                    return Properties.Resources.gloves_mage;
+                case Pictures.RogueGLoves:
+                    return Properties.Resources.gloves_rogue;
+                case Pictures.WarriorBoots:
+                    return Properties.Resources.boots_warrior;
+                case Pictures.MageBoots:
+                    return Properties.Resources.boots_mage;
+                case Pictures.RogueBoots:
+                    return Properties.Resources.boots_rogue;
+                case Pictures.BasickStaff:
+                    return Properties.Resources.weapon_staff_basic;
+                case Pictures.MidStaff:
+                    return Properties.Resources.weapon_staff_mid;
+                case Pictures.RareStaff:
+                    return Properties.Resources.weapon_staff_rare;
+                case Pictures.BasickSword:
+                    return Properties.Resources.weapon_sword_basic;
+                case Pictures.MidSword:
+                    return Properties.Resources.weapon_sword_mid;
+                case Pictures.RareSword:
+                    return Properties.Resources.weapon_sword_rare;
+                case Pictures.BasickAxe:
+                    return Properties.Resources.weapon_axe_basic;
+                case Pictures.MidAxe:
+                    return Properties.Resources.weapon_axe_mid;
+                case Pictures.RareAxe:
+                    return Properties.Resources.weapon_axe_rare;
+                case Pictures.BasickDager:
+                    return Properties.Resources.weapon_dager_basic;
+                case Pictures.MidDager:
+                    return Properties.Resources.weapon_dager_mid;
+                case Pictures.RareDager:
+                    return Properties.Resources.weapon_dager_rare;
                 default:
                     return Properties.Resources.healing_potion;
-                    //throw new NoPictureException();
+                //throw new NoPictureException();
             }
         }
 

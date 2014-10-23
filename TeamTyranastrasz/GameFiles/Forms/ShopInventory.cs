@@ -66,30 +66,30 @@ namespace RpgGame.Forms
             this.inventoryPossitions.Add(new Position(378, 320));
             this.inventoryPossitions.Add(new Position(448, 320));
 
-            this.shopItems.Add(new Weapon("Big Sword", 100, Pictures.Sword, 0, 40, 0, 0, 10, 0, 0, 8, "Big sword for heavy strikes."));
-            this.shopItems.Add(new Weapon("Iron Sword", 5, Pictures.Sword, 0, 5, 0, 0, 0, 0, 0, 1, "Basic battle equipment."));
-            this.shopItems.Add(new Helmet("Iron-horn Helm", 20, Pictures.Helmet, 2, 0, 3, 0, 0, 1, 0, 1, "Basic - but stylis."));
-            this.shopItems.Add(new Gloves("Fighter Gloves", 15, Pictures.Gloves, 1, 0, 2, 0, 1, 0, 0, 1, "Good for melee characters."));
-            this.shopItems.Add(new Boots("Armored Boots", 10, Pictures.Boots, 1, 1, 0, 0, 0, 1, 0, 1, "Heavy and slow."));
-            this.shopItems.Add(new Chainmail("Chainmail", 25, Pictures.Chainmail, 2, 0, 0, 0, 1, 1, 0, 1, "Chainmail armor mekas you more agile."));
+            this.shopItems.Add(new Weapon("Big Sword", 100, Pictures.RareSword, 0, 40, 0, 0, 10, 0, 0, 8, "Big sword for heavy strikes."));
+            this.shopItems.Add(new Weapon("Iron Sword", 5, Pictures.BasickSword, 0, 5, 0, 0, 0, 0, 0, 1, "Basic battle equipment."));
+            this.shopItems.Add(new Helmet("Iron-horn Helm", 20, Pictures.WarriorHelmet, 2, 0, 3, 0, 0, 1, 0, 1, "Basic - but stylis."));
+            this.shopItems.Add(new Gloves("Fighter Gloves", 15, Pictures.WarriorsGloves, 1, 0, 2, 0, 1, 0, 0, 1, "Good for melee characters."));
+            this.shopItems.Add(new Boots("Armored Boots", 10, Pictures.WarriorBoots, 1, 1, 0, 0, 0, 1, 0, 1, "Heavy and slow."));
+            this.shopItems.Add(new Chainmail("Chainmail", 25, Pictures.WarriorChainmail, 2, 0, 0, 0, 1, 1, 0, 1, "Chainmail armor mekas you more agile."));
             this.shopItems.Add(new Potion("Small Health Potion", 20, Pictures.HealingPotion, 0, 0, 0, 0, 0, 0, 0, 1, "Return + 10hp"));
             this.shopItems.Add(new Scroll("Teleport Scroll", 0, Pictures.Scroll, 0, 0, 0, 0, 0, 0, 0, 1, "Use to teleport to location."));
 
-            this.shopItems.Add(new Weapon("Big Sword", 100, Pictures.Sword, 0, 40, 0, 0, 10, 0, 0, 8, "Big sword for heavy strikes."));
-            this.shopItems.Add(new Weapon("Iron Sword", 5, Pictures.Sword, 0, 5, 0, 0, 0, 0, 0, 1, "Basic battle equipment."));
-            this.shopItems.Add(new Helmet("Iron-horn Helm", 20, Pictures.Helmet, 2, 0, 3, 0, 0, 1, 0, 1, "Basic - but stylis."));
-            this.shopItems.Add(new Gloves("Fighter Gloves", 15, Pictures.Gloves, 1, 0, 2, 0, 1, 0, 0, 1, "Good for melee characters."));
-            this.shopItems.Add(new Boots("Armored Boots", 10, Pictures.Boots, 1, 1, 0, 0, 0, 1, 0, 1, "Heavy and slow."));
-            this.shopItems.Add(new Chainmail("Chainmail", 25, Pictures.Chainmail, 2, 0, 0, 0, 1, 1, 0, 1, "Chainmail armor mekas you more agile."));
+            this.shopItems.Add(new Weapon("Big Sword", 100, Pictures.RareSword, 0, 40, 0, 0, 10, 0, 0, 8, "Big sword for heavy strikes."));
+            this.shopItems.Add(new Weapon("Iron Sword", 5, Pictures.BasickSword, 0, 5, 0, 0, 0, 0, 0, 1, "Basic battle equipment."));
+            this.shopItems.Add(new Helmet("Iron-horn Helm", 20, Pictures.WarriorHelmet, 2, 0, 3, 0, 0, 1, 0, 1, "Basic - but stylis."));
+            this.shopItems.Add(new Gloves("Fighter Gloves", 15, Pictures.WarriorsGloves, 1, 0, 2, 0, 1, 0, 0, 1, "Good for melee characters."));
+            this.shopItems.Add(new Boots("Armored Boots", 10, Pictures.WarriorBoots, 1, 1, 0, 0, 0, 1, 0, 1, "Heavy and slow."));
+            this.shopItems.Add(new Chainmail("Chainmail", 25, Pictures.WarriorChainmail, 2, 0, 0, 0, 1, 1, 0, 1, "Chainmail armor mekas you more agile."));
             this.shopItems.Add(new Potion("Small Health Potion", 20, Pictures.HealingPotion, 0, 0, 0, 0, 0, 0, 0, 1, "Return + 10hp"));
             this.shopItems.Add(new Scroll("Teleport Scroll", 0, Pictures.Scroll, 0, 0, 0, 0, 0, 0, 0, 1, "Use to teleport to location."));
 
-            this.shopItems.Add(new Weapon("Big Sword", 100, Pictures.Sword, 0, 40, 0, 0, 10, 0, 0, 8, "Big sword for heavy strikes."));
-            this.shopItems.Add(new Weapon("Iron Sword", 5, Pictures.Sword, 0, 5, 0, 0, 0, 0, 0, 1, "Basic battle equipment."));
-            this.shopItems.Add(new Helmet("Iron-horn Helm", 20, Pictures.Helmet, 2, 0, 3, 0, 0, 1, 0, 1, "Basic - but stylis."));
-            this.shopItems.Add(new Gloves("Fighter Gloves", 15, Pictures.Gloves, 1, 0, 2, 0, 1, 0, 0, 1, "Good for melee characters."));
-            this.shopItems.Add(new Boots("Armored Boots", 10, Pictures.Boots, 1, 1, 0, 0, 0, 1, 0, 1, "Heavy and slow."));
-            this.shopItems.Add(new Chainmail("Chainmail", 25, Pictures.Chainmail, 2, 0, 0, 0, 1, 1, 0, 1, "Chainmail armor mekas you more agile."));
+            this.shopItems.Add(new Weapon("Big Sword", 100, Pictures.RareSword, 0, 40, 0, 0, 10, 0, 0, 8, "Big sword for heavy strikes."));
+            this.shopItems.Add(new Weapon("Iron Sword", 5, Pictures.BasickSword, 0, 5, 0, 0, 0, 0, 0, 1, "Basic battle equipment."));
+            this.shopItems.Add(new Helmet("Iron-horn Helm", 20, Pictures.WarriorHelmet, 2, 0, 3, 0, 0, 1, 0, 1, "Basic - but stylis."));
+            this.shopItems.Add(new Gloves("Fighter Gloves", 15, Pictures.WarriorsGloves, 1, 0, 2, 0, 1, 0, 0, 1, "Good for melee characters."));
+            this.shopItems.Add(new Boots("Armored Boots", 10, Pictures.WarriorBoots, 1, 1, 0, 0, 0, 1, 0, 1, "Heavy and slow."));
+            this.shopItems.Add(new Chainmail("Chainmail", 25, Pictures.WarriorChainmail, 2, 0, 0, 0, 1, 1, 0, 1, "Chainmail armor mekas you more agile."));
             this.shopItems.Add(new Potion("Small Health Potion", 20, Pictures.HealingPotion, 0, 0, 0, 0, 0, 0, 0, 1, "Return + 10hp"));
             this.shopItems.Add(new Scroll("Teleport Scroll", 0, Pictures.Scroll, 0, 0, 0, 0, 0, 0, 0, 1, "Use to teleport to location."));
 
@@ -250,26 +250,56 @@ namespace RpgGame.Forms
             {
                 case Pictures.HealingPotion:
                     return Properties.Resources.healing_potion;
-                //case Pictures.Staff:
-                //    return Properties.Resources.staff
-                //case Pictures.Sword:
-                //    return Properties.Resources.sword;
-                //case Pictures.Helmet:
-                //    return Properties.Resources.helmet;
-                //case Pictures.Chainmail:
-                //    return Properties.Resources.chainmail;
-                //case Pictures.Gloves:
-                //    return Properties.Resources.gloves;
-                //case Pictures.Axe:
-                //    return Properties.Resources.axe;
-                //case Pictures.Scroll:
-                //    return Properties.Resources.scroll;
-                //case Pictures.Boots:
-                //    return Properties.Resources.boots;
-                case Pictures.TestItem1:
+                case Pictures.Scroll:
+                    return Properties.Resources.teleport_scroll;
+                case Pictures.WarriorHelmet:
+                    return Properties.Resources.head_warrior;
+                case Pictures.MageHelmet:
                     return Properties.Resources.head_mage;
-                case Pictures.TestItem2:
+                case Pictures.RogueHelmet:
                     return Properties.Resources.head_rogue;
+                case Pictures.WarriorChainmail:
+                    return Properties.Resources.chaimail_warrior;
+                case Pictures.MageChainmail:
+                    return Properties.Resources.chaimail_mage;
+                case Pictures.RogueChainmail:
+                    return Properties.Resources.chaimail_rogue;
+                case Pictures.WarriorsGloves:
+                    return Properties.Resources.gloves_warrior;
+                case Pictures.MageGloves:
+                    return Properties.Resources.gloves_mage;
+                case Pictures.RogueGLoves:
+                    return Properties.Resources.gloves_rogue;
+                case Pictures.WarriorBoots:
+                    return Properties.Resources.boots_warrior;
+                case Pictures.MageBoots:
+                    return Properties.Resources.boots_mage;
+                case Pictures.RogueBoots:
+                    return Properties.Resources.boots_rogue;
+                case Pictures.BasickStaff:
+                    return Properties.Resources.weapon_staff_basic;
+                case Pictures.MidStaff:
+                    return Properties.Resources.weapon_staff_mid;
+                case Pictures.RareStaff:
+                    return Properties.Resources.weapon_staff_rare;
+                case Pictures.BasickSword:
+                    return Properties.Resources.weapon_sword_basic;
+                case Pictures.MidSword:
+                    return Properties.Resources.weapon_sword_mid;
+                case Pictures.RareSword:
+                    return Properties.Resources.weapon_sword_rare;
+                case Pictures.BasickAxe:
+                    return Properties.Resources.weapon_axe_basic;
+                case Pictures.MidAxe:
+                    return Properties.Resources.weapon_axe_mid;
+                case Pictures.RareAxe:
+                    return Properties.Resources.weapon_axe_rare;
+                case Pictures.BasickDager:
+                    return Properties.Resources.weapon_dager_basic;
+                case Pictures.MidDager:
+                    return Properties.Resources.weapon_dager_mid;
+                case Pictures.RareDager:
+                    return Properties.Resources.weapon_dager_rare;
                 default:
                     return Properties.Resources.healing_potion;
                 //throw new NoPictureException();

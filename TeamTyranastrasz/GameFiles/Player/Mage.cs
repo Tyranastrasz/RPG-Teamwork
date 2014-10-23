@@ -19,11 +19,11 @@ namespace RpgGame.Player
 
         public static readonly List<IItem> MageBaseItems = new List<IItem>()
         {
-            new Helmet("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Weapon("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Chainmail("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Gloves("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Boots("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
+            new Helmet("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
+            new Weapon("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
+            new Chainmail("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
+            new Gloves("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
+            new Boots("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
         };
 
         public Mage(string name)
