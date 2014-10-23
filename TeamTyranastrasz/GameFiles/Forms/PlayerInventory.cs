@@ -313,6 +313,7 @@ namespace RpgGame.Forms
             return itemMeta[itemMeta.Length - 1];
         }
 
+        // This code reduces the flickering when loading the forms.
         protected override CreateParams CreateParams
         {
             get

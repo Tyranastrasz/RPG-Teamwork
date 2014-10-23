@@ -1,6 +1,7 @@
 ﻿namespace RpgGame.Forms
 {
     using System;
+    using System.IO;
     using System.Drawing;
     using System.Windows.Forms;
 
@@ -18,12 +19,19 @@
 
         private void loadGame_Click(object sender, EventArgs e)
         {
-            SaveAndLoad.Load.LoadGame();
-            Map mainMap = new Map();
-            GameEngine.Map = mainMap;
-            mainMap.Show();
-            MessageBox.Show("Game loaded!");
-            this.Hide();
+            try
+            {
+                SaveAndLoad.Load.LoadGame();
+                Map mainMap = new Map();
+                GameEngine.Map = mainMap;
+                mainMap.Show();
+                MessageBox.Show("Game loaded!");
+                this.Hide();
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show("You have no saved games!");
+            }
         }
 
         private void about_Click(object sender, EventArgs e)
@@ -59,7 +67,8 @@
 
             this.Hide();
         }
-        
+
+        // This code reduces the flickering when loading the forms.
         protected override CreateParams CreateParams
         {
             get

@@ -252,6 +252,7 @@ The warrior is born not made, he knows that his soul purpose in life is to serve
             intelligenceProgressBar.Value = 0;
         }
 
+        // This code reduces the flickering when loading the forms.
         protected override CreateParams CreateParams
         {
             get

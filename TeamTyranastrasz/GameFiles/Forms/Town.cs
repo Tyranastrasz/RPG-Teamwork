@@ -97,6 +97,7 @@
             Application.Exit();
         }
 
+        // This code reduces the flickering when loading the forms.
         protected override CreateParams CreateParams
         {
             get
