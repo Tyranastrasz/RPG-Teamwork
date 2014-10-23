@@ -79,8 +79,11 @@ namespace RpgGame.Forms
 
         private void inventoryBtn_Click(object sender, EventArgs e)
         {
-            PlayerInventory inventory = new PlayerInventory();
-            inventory.ShowDialog();
+            if (GameEngine.Inventory == null)
+            {
+                GameEngine.Inventory = new PlayerInventory();
+            }
+            GameEngine.Inventory.ShowDialog();
         }
 
         private void inventoryBtn_MouseEnter(object sender, EventArgs e)

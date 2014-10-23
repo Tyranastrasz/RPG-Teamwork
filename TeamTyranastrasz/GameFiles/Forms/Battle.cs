@@ -122,8 +122,6 @@
 
             if (battle.IsPlayerTurn && battle.CurrentTarget != null && battle.CurrentTargetId > -1)
             {
-
-                mainStatsBox.Text = battle.CurrentTargetId.ToString();
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackDicePoints);
@@ -158,15 +156,10 @@
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            if (GameEngine.Inventory != null)
-            {
-                GameEngine.Inventory.Show();
-            }
-            else
+            if (GameEngine.Inventory == null)
             {
                 GameEngine.Inventory = new PlayerInventory();
             }
-            GameEngine.Inventory.Visible = false;
             GameEngine.Inventory.ShowDialog();
         }
 
