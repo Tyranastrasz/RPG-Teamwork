@@ -1,4 +1,6 @@
-﻿namespace RpgGame.Forms
+﻿using RpgGame.SaveAndLoad;
+
+namespace RpgGame.Forms
 {
     using System;
     using System.Drawing;
@@ -56,8 +58,8 @@
             unitDamage.Hide();
 
             mainStatsBox = new Label();
-            mainStatsBox.Left = 640;
-            mainStatsBox.Top = 650;
+            mainStatsBox.Left = 650;
+            mainStatsBox.Top = 670;
             mainStatsBox.Width = 95;
             mainStatsBox.Height = 120;
             mainStatsBox.BackColor = Color.Transparent;
@@ -107,6 +109,8 @@
             characterPicture.Left = 750;
             characterPicture.Top = 200;
             this.Controls.Add(characterPicture);
+
+            playerName.Text = "Player:  " + GameEngine.PlayerCharacter.Name;
 
             battle.CreateEnemies();
         }

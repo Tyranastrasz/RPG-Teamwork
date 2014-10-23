@@ -15,7 +15,6 @@ namespace RpgGame.Forms
 {
     public partial class CharacterCreation : Form
     {
-
         private PictureBox warriorPicBox;
         private PictureBox roguePicBox;
         private PictureBox magePicBox;

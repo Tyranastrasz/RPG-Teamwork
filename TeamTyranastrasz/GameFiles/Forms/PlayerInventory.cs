@@ -322,5 +322,10 @@ namespace RpgGame.Forms
                 return cp;
             }
         }
+
+        private void welcome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
