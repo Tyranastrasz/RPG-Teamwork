@@ -5,7 +5,6 @@
     using System.Windows.Forms;
     using RpgGame.Interfaces;
     using RpgGame.Exceptions;
-    using System.Threading;
 
     public partial class Battle : Form
     {

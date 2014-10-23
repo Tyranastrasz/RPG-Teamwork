@@ -1,17 +1,9 @@
-﻿using RpgGame.Interfaces;
-using RpgGame.SaveAndLoad;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace RpgGame.Forms
+﻿namespace RpgGame.Forms
 {
+    using RpgGame.SaveAndLoad;
+    using System;
+    using System.Windows.Forms;
+
     public partial class Town : Form
     {
         private ShopInventory itemShop = new ShopInventory();
@@ -63,6 +55,7 @@ namespace RpgGame.Forms
         private void loadBtn_Click(object sender, EventArgs e)
         {
             SaveAndLoad.Load.LoadGame();
+            MessageBox.Show("Game loaded!");
         }
 
         private void loadBtn_MouseEnter(object sender, EventArgs e)

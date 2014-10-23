@@ -1,11 +1,11 @@
-﻿using System;
-using System.Windows.Forms;
-using RpgGame.Interfaces;
-using RpgGame.SaveAndLoad;
-using System.Diagnostics;  
-
-namespace RpgGame.Forms
+﻿namespace RpgGame.Forms
 {
+    using System;
+    using System.Windows.Forms;
+    using RpgGame.Interfaces;
+    using RpgGame.SaveAndLoad;
+    using System.Diagnostics; 
+
     public partial class Map : Form
     {
         public Map()
@@ -34,6 +34,7 @@ namespace RpgGame.Forms
         private void load_Click(object sender, EventArgs e)
         {
             SaveAndLoad.Load.LoadGame();
+            MessageBox.Show("Game loaded!");
         }
 
         private void quit_Click(object sender, EventArgs e)

@@ -64,7 +64,7 @@
             while ((currentLine = file.ReadLine()) != null)
             {
                 // name, price, picture, def, attk, hit, str, dex, vit, int, lvl, desc
-                string[] lineSplitted = currentLine.Split(' ');
+                string[] lineSplitted = currentLine.Split(',');
 
                 LoadItems(lineSplitted, items);
             }
@@ -72,131 +72,40 @@
 
         private static void LoadItems(string[] lineSplitted, List<IItem> items)
         {
-            string name;
-            int price;
-            Pictures picture;
-            int def;
-            int attk;
-            int hit;
-            int str;
-            int dex;
-            int vit;
-            int intl;
-            int lvl;
-            string desc;
+            string name = lineSplitted[1].Trim();
+            int price = int.Parse(lineSplitted[2].Trim());
+            Pictures picture = (Pictures)Enum.Parse(typeof(Pictures), lineSplitted[3].Trim());
+            int def = int.Parse(lineSplitted[4].Trim());
+            int attk = int.Parse(lineSplitted[5].Trim());
+            int hit = int.Parse(lineSplitted[6].Trim());
+            int str = int.Parse(lineSplitted[7].Trim());
+            int dex = int.Parse(lineSplitted[8].Trim());
+            int vit = int.Parse(lineSplitted[9].Trim());
+            int intl = int.Parse(lineSplitted[10].Trim());
+            int lvl = int.Parse(lineSplitted[11].Trim());
+            string desc = lineSplitted[12].Trim();
 
-            switch (lineSplitted[0])
+            switch (lineSplitted[0].Trim())
             {
                 case "Helmet":
-                    name = lineSplitted[1];
-                    price = int.Parse(lineSplitted[2]);
-                    picture = (Pictures) Enum.Parse(typeof (Pictures), lineSplitted[3]);
-                    def = int.Parse(lineSplitted[4]);
-                    attk = int.Parse(lineSplitted[5]);
-                    hit = int.Parse(lineSplitted[6]);
-                    str = int.Parse(lineSplitted[7]);
-                    dex = int.Parse(lineSplitted[8]);
-                    vit = int.Parse(lineSplitted[9]);
-                    intl = int.Parse(lineSplitted[10]);
-                    lvl = int.Parse(lineSplitted[11]);
-                    desc = "Testing";
-
                     items.Add(new Helmet(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
                     break;
                 case "Chainmail":
-                    name = lineSplitted[1];
-                    price = int.Parse(lineSplitted[2]);
-                    picture = (Pictures) Enum.Parse(typeof (Pictures), lineSplitted[3]);
-                    def = int.Parse(lineSplitted[4]);
-                    attk = int.Parse(lineSplitted[5]);
-                    hit = int.Parse(lineSplitted[6]);
-                    str = int.Parse(lineSplitted[7]);
-                    dex = int.Parse(lineSplitted[8]);
-                    vit = int.Parse(lineSplitted[9]);
-                    intl = int.Parse(lineSplitted[10]);
-                    lvl = int.Parse(lineSplitted[11]);
-                    desc = "Testing";
-
                     items.Add(new Chainmail(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
                     break;
                 case "Gloves":
-                    name = lineSplitted[1];
-                    price = int.Parse(lineSplitted[2]);
-                    picture = (Pictures) Enum.Parse(typeof (Pictures), lineSplitted[3]);
-                    def = int.Parse(lineSplitted[4]);
-                    attk = int.Parse(lineSplitted[5]);
-                    hit = int.Parse(lineSplitted[6]);
-                    str = int.Parse(lineSplitted[7]);
-                    dex = int.Parse(lineSplitted[8]);
-                    vit = int.Parse(lineSplitted[9]);
-                    intl = int.Parse(lineSplitted[10]);
-                    lvl = int.Parse(lineSplitted[11]);
-                    desc = "Testing";
-
                     items.Add(new Gloves(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
                     break;
                 case "Weapon":
-                    name = lineSplitted[1];
-                    price = int.Parse(lineSplitted[2]);
-                    picture = (Pictures) Enum.Parse(typeof (Pictures), lineSplitted[3]);
-                    def = int.Parse(lineSplitted[4]);
-                    attk = int.Parse(lineSplitted[5]);
-                    hit = int.Parse(lineSplitted[6]);
-                    str = int.Parse(lineSplitted[7]);
-                    dex = int.Parse(lineSplitted[8]);
-                    vit = int.Parse(lineSplitted[9]);
-                    intl = int.Parse(lineSplitted[10]);
-                    lvl = int.Parse(lineSplitted[11]);
-                    desc = "Testing";
-
                     items.Add(new Weapon(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
                     break;
                 case "Boots":
-                    name = lineSplitted[1];
-                    price = int.Parse(lineSplitted[2]);
-                    picture = (Pictures) Enum.Parse(typeof (Pictures), lineSplitted[3]);
-                    def = int.Parse(lineSplitted[4]);
-                    attk = int.Parse(lineSplitted[5]);
-                    hit = int.Parse(lineSplitted[6]);
-                    str = int.Parse(lineSplitted[7]);
-                    dex = int.Parse(lineSplitted[8]);
-                    vit = int.Parse(lineSplitted[9]);
-                    intl = int.Parse(lineSplitted[10]);
-                    lvl = int.Parse(lineSplitted[11]);
-                    desc = "Testing";
-
                     items.Add(new Boots(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
                     break;
                 case "Potion":
-                    name = lineSplitted[1];
-                    price = int.Parse(lineSplitted[2]);
-                    picture = (Pictures) Enum.Parse(typeof (Pictures), lineSplitted[3]);
-                    def = int.Parse(lineSplitted[4]);
-                    attk = int.Parse(lineSplitted[5]);
-                    hit = int.Parse(lineSplitted[6]);
-                    str = int.Parse(lineSplitted[7]);
-                    dex = int.Parse(lineSplitted[8]);
-                    vit = int.Parse(lineSplitted[9]);
-                    intl = int.Parse(lineSplitted[10]);
-                    lvl = int.Parse(lineSplitted[11]);
-                    desc = "Testing";
-
                     items.Add(new Potion(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
                     break;
                 case "Scroll":
-                    name = lineSplitted[1];
-                    price = int.Parse(lineSplitted[2]);
-                    picture = (Pictures) Enum.Parse(typeof (Pictures), lineSplitted[3]);
-                    def = int.Parse(lineSplitted[4]);
-                    attk = int.Parse(lineSplitted[5]);
-                    hit = int.Parse(lineSplitted[6]);
-                    str = int.Parse(lineSplitted[7]);
-                    dex = int.Parse(lineSplitted[8]);
-                    vit = int.Parse(lineSplitted[9]);
-                    intl = int.Parse(lineSplitted[10]);
-                    lvl = int.Parse(lineSplitted[11]);
-                    desc = "Testing";
-
                     items.Add(new Scroll(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
                     break;
                 default:

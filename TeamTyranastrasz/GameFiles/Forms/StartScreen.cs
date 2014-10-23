@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace RpgGame.Forms
+﻿namespace RpgGame.Forms
 {
+    using System;
+    using System.Drawing;
+    using System.Windows.Forms;
+
     public partial class StartScreen : Form
     {
         public StartScreen()
@@ -26,6 +20,7 @@ namespace RpgGame.Forms
         {
             SaveAndLoad.Load.LoadGame();
             Map mainMap = new Map();
+            GameEngine.Map = mainMap;
             mainMap.Show();
             MessageBox.Show("Game loaded!");
             this.Hide();

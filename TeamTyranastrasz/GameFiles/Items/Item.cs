@@ -1,8 +1,8 @@
-﻿using RpgGame.Interfaces;
-using System;
-
-namespace RpgGame.Items
+﻿namespace RpgGame.Items
 {
+    using RpgGame.Interfaces;
+    using System;
+
     public abstract class Item : GameObject, IItem
     {
         private int strength;
@@ -115,18 +115,18 @@ namespace RpgGame.Items
         // name, price, picture, def, attk, hit, str, dex, vit, int, lvl, desc
         public override string ToString()
         {
-            return "Name" +
-                   " " + this.Price +
-                   " " + this.Picture +
-                   " " + this.DefencePoints +
-                   " " + this.AttackPoints +
-                   " " + this.HitPoints +
-                   " " + this.Strength +
-                   " " + this.Dexterity +
-                   " " + this.Vitality +
-                   " " + this.Intelligence +
-                   " " + this.LevelRequirement +
-                   " testing"  +
+            return this.Name + "," +
+                   this.Price + "," +
+                   this.Picture + "," +
+                   this.DefencePoints + "," +
+                   this.AttackPoints + "," +
+                   this.HitPoints + "," +
+                   this.Strength + "," +
+                   this.Dexterity + "," +
+                   this.Vitality + "," +
+                   this.Intelligence + "," +
+                   this.LevelRequirement + "," +
+                   this.Description  +
                    "\n";
         }
     }

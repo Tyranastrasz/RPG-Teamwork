@@ -64,37 +64,37 @@
         {
             if (item.GetType() == typeof (Helmet))
             {
-                file.Write("Helmet ");
+                file.Write("Helmet,");
                 file.Write(item.ToString());
             }
             if (item.GetType() == typeof (Chainmail))
             {
-                file.Write("Chainmail ");
+                file.Write("Chainmail,");
                 file.Write(item.ToString());
             }
             if (item.GetType() == typeof (Gloves))
             {
-                file.Write("Gloves ");
+                file.Write("Gloves,");
                 file.Write(item.ToString());
             }
             if (item.GetType() == typeof (Weapon))
             {
-                file.Write("Weapon ");
+                file.Write("Weapon,");
                 file.Write(item.ToString());
             }
             if (item.GetType() == typeof (Boots))
             {
-                file.Write("Boots ");
+                file.Write("Boots,");
                 file.Write(item.ToString());
             }
             if (item.GetType() == typeof (Potion))
             {
-                file.Write("Potion ");
+                file.Write("Potion,");
                 file.Write(item.ToString());
             }
             if (item.GetType() == typeof (Scroll))
             {
-                file.Write("Scroll ");
+                file.Write("Scroll,");
                 file.Write(item.ToString());
             }
         }
