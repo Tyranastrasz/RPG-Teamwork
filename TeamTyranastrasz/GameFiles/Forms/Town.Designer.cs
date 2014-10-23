@@ -35,6 +35,10 @@
             this.saveBtn = new System.Windows.Forms.Button();
             this.loadBtn = new System.Windows.Forms.Button();
             this.inventoryBtn = new System.Windows.Forms.Button();
+            this.lblShop = new System.Windows.Forms.Label();
+            this.labelSave = new System.Windows.Forms.Label();
+            this.lblLoad = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // exit
@@ -121,6 +125,62 @@
             this.inventoryBtn.MouseEnter += new System.EventHandler(this.inventoryBtn_MouseEnter);
             this.inventoryBtn.MouseLeave += new System.EventHandler(this.inventoryBtn_MouseLeave);
             // 
+            // lblShop
+            // 
+            this.lblShop.AutoSize = true;
+            this.lblShop.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.lblShop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblShop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShop.Location = new System.Drawing.Point(214, 362);
+            this.lblShop.Name = "lblShop";
+            this.lblShop.Size = new System.Drawing.Size(47, 19);
+            this.lblShop.TabIndex = 16;
+            this.lblShop.Text = "Shop";
+            this.lblShop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblShop.UseMnemonic = false;
+            // 
+            // labelSave
+            // 
+            this.labelSave.AutoSize = true;
+            this.labelSave.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.labelSave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSave.Location = new System.Drawing.Point(399, 423);
+            this.labelSave.Name = "labelSave";
+            this.labelSave.Size = new System.Drawing.Size(46, 19);
+            this.labelSave.TabIndex = 17;
+            this.labelSave.Text = "Save";
+            this.labelSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelSave.UseMnemonic = false;
+            // 
+            // lblLoad
+            // 
+            this.lblLoad.AutoSize = true;
+            this.lblLoad.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.lblLoad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoad.Location = new System.Drawing.Point(546, 288);
+            this.lblLoad.Name = "lblLoad";
+            this.lblLoad.Size = new System.Drawing.Size(46, 19);
+            this.lblLoad.TabIndex = 18;
+            this.lblLoad.Text = "Load";
+            this.lblLoad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLoad.UseMnemonic = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(585, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 19);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Inventory";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.UseMnemonic = false;
+            // 
             // Town
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,6 +189,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblLoad);
+            this.Controls.Add(this.labelSave);
+            this.Controls.Add(this.lblShop);
             this.Controls.Add(this.inventoryBtn);
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.saveBtn);
@@ -143,6 +207,7 @@
             this.Text = "Town";
             this.Load += new System.EventHandler(this.Town_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -154,5 +219,9 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button loadBtn;
         private System.Windows.Forms.Button inventoryBtn;
+        private System.Windows.Forms.Label lblShop;
+        private System.Windows.Forms.Label labelSave;
+        private System.Windows.Forms.Label lblLoad;
+        private System.Windows.Forms.Label label1;
     }
 }
