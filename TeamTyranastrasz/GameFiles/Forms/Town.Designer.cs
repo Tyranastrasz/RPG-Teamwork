@@ -71,11 +71,12 @@
             this.BackgroundImage = global::RpgGame.Properties.Resources.town_map;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.ControlBox = false;
             this.Controls.Add(this.backToMap);
             this.Controls.Add(this.btnShop);
             this.Controls.Add(this.exit);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Town";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

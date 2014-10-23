@@ -88,11 +88,11 @@
             {
                 while (this.EnemyList[this.LastTurnEnemyId].IsAlive == false)
                 {
+                    this.LastTurnEnemyId++;
                     if (this.LastTurnEnemyId == this.EnemyList.Count - 1)
                     {
                         this.LastTurnEnemyId = 0;
                     }
-                    this.LastTurnEnemyId++;
                 }
                 Attack((IUnit)this.EnemyList[this.LastTurnEnemyId], GameEngine.PlayerCharacter);
             }
