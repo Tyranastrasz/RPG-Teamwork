@@ -59,6 +59,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Storage, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Extensions" />
@@ -70,6 +71,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleManager.cs" />
@@ -133,13 +135,10 @@
     <Compile Include="Items\Helmet.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
     <Compile Include="Interfaces\IDefend.cs" />
-    <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Interfaces\ICharacter.cs" />
-    <Compile Include="Interfaces\ITeleportable.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Interfaces\ITrade.cs" />
     <Compile Include="Interfaces\IUsable.cs" />
-    <Compile Include="Location.cs" />
     <Compile Include="Forms\PlayerInventory.cs">
       <SubType>Form</SubType>
     </Compile>

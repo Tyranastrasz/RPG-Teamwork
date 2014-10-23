@@ -3,14 +3,14 @@
   <Class Name="RpgGame.Forms.Map" Collapsed="true">
     <Position X="30" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IgAAACgAAKCAAAAAAACEQAgCQAhAAAECAAQBAAAAAAA=</HashCode>
+      <HashCode>IgAAACAgCKCAACAAAECEAAhCQAAAAAASAAABAAAABBA=</HashCode>
       <FileName>Forms\Map.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.GameObject">
     <Position X="14" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObject.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -24,7 +24,7 @@
   <Class Name="RpgGame.Sound" Collapsed="true">
     <Position X="31.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAQEAAAAAAAAAAAAAAAIAAAAAAQAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAIAAAAAAQAA=</HashCode>
       <FileName>Sound\Sound.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -102,7 +102,7 @@
   <Class Name="RpgGame.Items.Item">
     <Position X="20.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAiIAQAgAAAAAAAABAAIAABAAAAAAAAAAQAAACA=</HashCode>
+      <HashCode>AAAAgAiIAQAgAAAAAAAABAAIAABAAAAAAAAAAQAAACA=</HashCode>
       <FileName>Items\Item.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -131,14 +131,14 @@
   <Class Name="RpgGame.Player.Mage">
     <Position X="0.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAYAADAAAAAAAACAAgAAEAAAAAAAAAAAIAAAAgA=</HashCode>
+      <HashCode>AABAAAYAADAAAAAAAACAAgAAEAAAAAAAAAAAIAACAgA=</HashCode>
       <FileName>Player\Mage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Player.Player">
     <Position X="3" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgIAAgyIQKAACACEQAwAAAAIMIBEAAAhIBAiBwAAQCI=</HashCode>
+      <HashCode>AoIIAgyIQCAACACEQAwAAAAYMIBEAAAhIBAiA4AAQCI=</HashCode>
       <FileName>Player\Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -146,14 +146,14 @@
   <Class Name="RpgGame.Player.Rogue">
     <Position X="2.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAACAQAgAAAAAAgAAQFAAAAAAAAAAAAAQAAAA=</HashCode>
+      <HashCode>AAAAAgAAACAQQgAAAAAAgAAQFAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Player\Rogue.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Player.Warrior">
     <Position X="5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAgCAAAAAIAAAgAAAAEAAAAQAAAIBAAAAEAAA=</HashCode>
+      <HashCode>AAAAAACAgCAAAAAIAAAgAAAAEAAAAQAAAIBAAACEAAA=</HashCode>
       <FileName>Player\Warrior.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -166,42 +166,42 @@
   <Class Name="RpgGame.Enemies.MeleeType.Golem">
     <Position X="6.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\MeleeType\Golem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Enemies.MeleeType.Ork">
     <Position X="8.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Enemies\MeleeType\Ork.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Enemies.MeleeType.Skeleton">
     <Position X="10.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Enemies\MeleeType\Skeleton.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Enemies.RangeType.Drake">
     <Position X="12.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\RangeType\Drake.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Enemies.RangeType.Goblin">
     <Position X="14.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\RangeType\Goblin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Enemies.RangeType.Shade">
     <Position X="16.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Enemies\RangeType\Shade.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -215,7 +215,7 @@
   <Class Name="RpgGame.Properties.Resources" Collapsed="true">
     <Position X="33.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgQAAAAAEAAAEAAAAACBEAEQCQIAAAAAAAgBMAAEAMA=</HashCode>
+      <HashCode>AgRAAAAAEBAAMAIAABSBEMkQgboGAQgAgQgBqEFECMA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Struct Name="RpgGame.Position">
@@ -235,7 +235,7 @@
   <Interface Name="RpgGame.Interfaces.ICharacter">
     <Position X="33.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAyAACAACAAgAAQAAAQIEABAAAABABAgAQAAQCA=</HashCode>
+      <HashCode>AgAAAAyAACAACAAgAAQAAAQIEABAAAABABAgAwAAQCA=</HashCode>
       <FileName>Interfaces\ICharacter.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -244,20 +244,6 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
       <FileName>Interfaces\IDefend.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="RpgGame.Interfaces.IMovable">
-    <Position X="30" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IMovable.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="RpgGame.Interfaces.ITeleportable">
-    <Position X="31.75" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Interfaces\ITeleportable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RpgGame.Interfaces.ITrade">
@@ -270,35 +256,28 @@
   <Interface Name="RpgGame.Interfaces.IUsable">
     <Position X="30" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAAAAAAAgAAAAAIAAAAAAgAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAIAAAAAAAAAAgAAAAAIAAAAAAgAAAAAIAAAAA=</HashCode>
       <FileName>Interfaces\IUsable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="RpgGame.IItem">
+  <Interface Name="RpgGame.Interfaces.IItem">
     <Position X="31.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAiIAQAgAAAAAAAABAAIAABAAAAAAAAAAQAAACA=</HashCode>
+      <HashCode>AAAAgAiIAQAgAAAAAAAABAAIAABAAAAAAAAAAQAAACA=</HashCode>
       <FileName>Interfaces\IItem.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="RpgGame.IEnemy">
+  <Interface Name="RpgGame.Interfaces.IEnemy">
     <Position X="33.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAgAAAAAAAAAAkAAAABAAIAAAAAAAAAAAAAQAAQAA=</HashCode>
       <FileName>Interfaces\IEnemy.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="RpgGame.Location">
-    <Position X="27.5" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Location.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Enum Name="RpgGame.Pictures">
     <Position X="27.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QGAAAAAAAAABAAAAACABAAAAAQAIAAgwAAAgAAIEEAI=</HashCode>
+      <HashCode>QGAgAAAAAAABEAQAACABAAAAASAIAAAwAAAgAAIEEAI=</HashCode>
       <FileName>Pictures.cs</FileName>
     </TypeIdentifier>
   </Enum>

@@ -1,6 +1,7 @@
-﻿using System.Windows.Forms;
-namespace RpgGame
+﻿namespace RpgGame.Interfaces
 {
+    using System.Windows.Forms;
+
     public interface IEnemy
     {
         int HitPoints { get; set; }

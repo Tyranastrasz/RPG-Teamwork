@@ -1,7 +1,10 @@
-﻿using RpgGame.Items;
-using System.Collections.Generic;
+﻿using RpgGame.Interfaces;
+
 namespace RpgGame.Player
 {
+    using RpgGame.Items;
+    using System.Collections.Generic;
+
     public class Mage : Player
     {
         public const int MageStartingStrength = 1;
@@ -14,7 +17,7 @@ namespace RpgGame.Player
         public const int MageVitalityModifier = 2;
         public const int MageIntelligenceModifier = 3;
 
-        public static readonly List<IItem> mageBaseItems = new List<IItem>()
+        public static readonly List<IItem> MageBaseItems = new List<IItem>()
         {
             new Helmet("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
             new Weapon("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
@@ -24,7 +27,7 @@ namespace RpgGame.Player
         };
 
         public Mage(string name)
-            : base(name, MageStartingStrength, MageStartingDexterity, MageStartingVitality, MageStartingIntelligence, MageStrengthModifier, MageDexterityModifier, MageVitalityModifier, MageIntelligenceModifier, mageBaseItems)
+            : base(name, MageStartingStrength, MageStartingDexterity, MageStartingVitality, MageStartingIntelligence, MageStrengthModifier, MageDexterityModifier, MageVitalityModifier, MageIntelligenceModifier, MageBaseItems)
         {
         }
 

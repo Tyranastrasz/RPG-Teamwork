@@ -1,7 +1,10 @@
-﻿using RpgGame.Items;
-using System.Collections.Generic;
+﻿using RpgGame.Interfaces;
+
 namespace RpgGame.Player
 {
+    using RpgGame.Items;
+    using System.Collections.Generic;
+
     public class Rogue : Player
     {
         public const int RogueStartingStrength = 10;
@@ -14,7 +17,7 @@ namespace RpgGame.Player
         public const int RogueVitalityModifier = 1;
         public const int RogueIntelligenceModifier = 2;
 
-        public static readonly List<IItem> rogueBaseItems = new List<IItem>()
+        public static readonly List<IItem> RogueBaseItems = new List<IItem>()
         {
             new Helmet("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
             new Weapon("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
@@ -24,7 +27,7 @@ namespace RpgGame.Player
         };
 
         public Rogue(string name)
-            : base(name, RogueStartingStrength, RogueStartingDexterity, RogueStartingVitality, RogueStartingIntelligence, RogueStrengthModifier, RogueDexterityModifier, RogueVitalityModifier, RogueIntelligenceModifier, rogueBaseItems)
+            : base(name, RogueStartingStrength, RogueStartingDexterity, RogueStartingVitality, RogueStartingIntelligence, RogueStrengthModifier, RogueDexterityModifier, RogueVitalityModifier, RogueIntelligenceModifier, RogueBaseItems)
         {
         }
 

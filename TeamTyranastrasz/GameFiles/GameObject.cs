@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace RpgGame
+﻿namespace RpgGame
 {
     public abstract class GameObject
     {
@@ -10,7 +8,5 @@ namespace RpgGame
         }
 
         public string Name { get; set; }
-
-        Position Position { get; set; }
     }
 }

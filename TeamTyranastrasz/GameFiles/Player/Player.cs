@@ -5,14 +5,15 @@
     using System.Linq;
     using RpgGame.Interfaces;
 
-    public abstract class Player : Unit, IMovable, ITeleportable, IUsable, ITrade, ICharacter
+    public abstract class Player : Unit, ITrade, ICharacter
     {
         public readonly int StrengthModifier;
         public readonly int DexterityModifier;
         public readonly int VitalityModifier;
         public readonly int IntelligenceModifier;
 
-        protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier, List<IItem> baseItems) : base(name)
+        protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier, List<IItem> baseItems) 
+            : base(name)
         {
             this.Strength = str;
             this.Dexterity = dex;
@@ -23,7 +24,6 @@
             this.VitalityModifier = vitalityModifier;
             this.IntelligenceModifier = intelligenceModifier;
             this.Position = new Position();
-            //this.PicBox = new PictureBox();
             this.Level = 1;
             this.Inventory = new List<IItem>();
             this.Equiped = new List<IItem>();
@@ -153,16 +153,6 @@
             return defence;
         }
 
-        public virtual void Move()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Teleport()
-        {
-            throw new NotImplementedException();
-        }
-
         public void Consume(IItem item)
         {
             if (item.IsConsumable)
@@ -172,11 +162,11 @@
             }
         }
 
-        public void Equip(IItem item, int id, bool IsNew = false)
+        public void Equip(IItem item, int id, bool isNew = false)
         {
             if (this.Equiped != null)
             {
-                if (IsNew)
+                if (isNew)
                 {
                     this.Equiped.Add(item);
                 }

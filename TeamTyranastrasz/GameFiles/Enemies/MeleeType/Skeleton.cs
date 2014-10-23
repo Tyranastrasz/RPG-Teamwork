@@ -2,15 +2,11 @@
 {
     public class Skeleton : Melee
     {
-        public const int experience = 50;
+        public const int SkeletonExperience = 50;
 
         public Skeleton(string name, int hitPoints, int attackPoints, int defensePoints, Pictures picture)
-            : base(name, hitPoints, defensePoints, attackPoints, picture, experience)
+            : base(name, hitPoints, defensePoints, attackPoints, picture, SkeletonExperience)
         {
         }
-
-        //public override int HitPoints { get; set; }
-        //public override int DefensePoints { get; set; }
-        //public override int AttackPoints { get; set; }
     }
 }

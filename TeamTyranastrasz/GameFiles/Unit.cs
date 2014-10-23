@@ -1,6 +1,4 @@
-﻿using RpgGame.Interfaces;
-
-namespace RpgGame
+﻿namespace RpgGame
 {
     public abstract class Unit : GameObject
     {

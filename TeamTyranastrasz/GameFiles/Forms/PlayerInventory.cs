@@ -30,22 +30,22 @@ namespace RpgGame.Forms
         {
             InitializeComponent();
             
-            this.equippedItemPositions.Add(new Position(82, 10)); // head
-            this.equippedItemPositions.Add(new Position(12, 80)); // weapon
-            this.equippedItemPositions.Add(new Position(82, 80)); // chainmail
-            this.equippedItemPositions.Add(new Position(152, 80)); // gloves
-            this.equippedItemPositions.Add(new Position(82, 150)); // boots
+            this.equippedItemPositions.Add(new Position(x: 82, y: 10)); // head
+            this.equippedItemPositions.Add(new Position(x: 12, y: 80)); // weapon
+            this.equippedItemPositions.Add(new Position(x: 82, y: 80)); // chainmail
+            this.equippedItemPositions.Add(new Position(x: 152, y: 80)); // gloves
+            this.equippedItemPositions.Add(new Position(x: 82, y: 150)); // boots
             
-            this.inventoryItemPositions.Add(new Position(12, 220));
-            this.inventoryItemPositions.Add(new Position(82, 220));
-            this.inventoryItemPositions.Add(new Position(152, 220));
-            this.inventoryItemPositions.Add(new Position(222, 220));
-            this.inventoryItemPositions.Add(new Position(292, 220));
-            this.inventoryItemPositions.Add(new Position(12, 290));
-            this.inventoryItemPositions.Add(new Position(82, 290));
-            this.inventoryItemPositions.Add(new Position(152, 290));
-            this.inventoryItemPositions.Add(new Position(222, 290));
-            this.inventoryItemPositions.Add(new Position(292, 290));
+            this.inventoryItemPositions.Add(new Position(x: 12, y: 220));
+            this.inventoryItemPositions.Add(new Position(x: 82, y: 220));
+            this.inventoryItemPositions.Add(new Position(x: 152, y: 220));
+            this.inventoryItemPositions.Add(new Position(x: 222, y: 220));
+            this.inventoryItemPositions.Add(new Position(x: 292, y: 220));
+            this.inventoryItemPositions.Add(new Position(x: 12, y: 290));
+            this.inventoryItemPositions.Add(new Position(x: 82, y: 290));
+            this.inventoryItemPositions.Add(new Position(x: 152, y: 290));
+            this.inventoryItemPositions.Add(new Position(x: 222, y: 290));
+            this.inventoryItemPositions.Add(new Position(x: 292, y: 290));
 
             playerStats = new Label();
             playerStats.Left = 250;

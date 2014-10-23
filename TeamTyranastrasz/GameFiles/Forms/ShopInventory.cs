@@ -103,7 +103,6 @@ namespace RpgGame.Forms
             statsBox.BackColor = Color.FromArgb(150, 0, 0, 0);
             Controls.Add(statsBox);
             statsBox.Hide();
-
         }
 
         private void ShopInventory_Load(object sender, EventArgs e)

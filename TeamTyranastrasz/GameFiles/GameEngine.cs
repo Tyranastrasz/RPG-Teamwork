@@ -21,6 +21,7 @@
             Town town = new Town();
             Application.Run(town);
         }
+
         public static void CreateNewPlayer(string characterClass, string characterName)
         {
             switch (characterClass)
@@ -44,22 +45,6 @@
             BattleScreen = new Battle();
             BattleScreen.Show();
             Sound.PlayBattleSound();
-        }
-
-        private void GenerateEnemies()
-        {
-        }
-
-        private void CalculateBattleOutcome()
-        {
-        }
-
-        private void SaveGame()
-        {
-        }
-
-        private void LoadGame()
-        {
         }
     }
 }

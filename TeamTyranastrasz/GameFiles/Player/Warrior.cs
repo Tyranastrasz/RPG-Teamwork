@@ -1,4 +1,5 @@
-﻿using RpgGame.Items;
+﻿using RpgGame.Interfaces;
+using RpgGame.Items;
 using System.Collections.Generic;
 
 namespace RpgGame.Player
@@ -15,7 +16,7 @@ namespace RpgGame.Player
         public const int WarriorVitalityModifier = 3;
         public const int WarriorIntelligenceModifier = 1;
 
-        public static readonly List<IItem> warriorBaseItems = new List<IItem>()
+        public static readonly List<IItem> WarriorBaseItems = new List<IItem>()
         {
             new Helmet("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
             new Weapon("Iron Sword", 5, Pictures.Sword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
@@ -25,7 +26,7 @@ namespace RpgGame.Player
         };
 
         public Warrior(string name)
-            : base(name, WarriorStartingStrength, WarriorStartingDexterity, WarriorStartingVitality, WarriorStartingIntelligence, WarriorStrengthModifier, WarriorDexterityModifier, WarriorVitalityModifier, WarriorIntelligenceModifier, warriorBaseItems)
+            : base(name, WarriorStartingStrength, WarriorStartingDexterity, WarriorStartingVitality, WarriorStartingIntelligence, WarriorStrengthModifier, WarriorDexterityModifier, WarriorVitalityModifier, WarriorIntelligenceModifier, WarriorBaseItems)
         {
         }
 
