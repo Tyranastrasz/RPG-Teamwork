@@ -37,10 +37,6 @@
             this.Btn_Warrior = new System.Windows.Forms.RadioButton();
             this.exit = new System.Windows.Forms.Button();
             this.createHero = new System.Windows.Forms.Button();
-            this.warriorPic1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.arrowRight = new System.Windows.Forms.PictureBox();
-            this.arrowLeft = new System.Windows.Forms.PictureBox();
             this.DescriptionPanel = new System.Windows.Forms.Panel();
             this.CharacterType = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,10 +50,6 @@
             this.strengthProgressBar = new System.Windows.Forms.ProgressBar();
             this.HeroDescription = new System.Windows.Forms.TextBox();
             this.ChooseCharacterClass.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.warriorPic1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowLeft)).BeginInit();
             this.DescriptionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,52 +167,6 @@
             this.createHero.Text = "Create Character";
             this.createHero.UseVisualStyleBackColor = false;
             this.createHero.Click += new System.EventHandler(this.about_Click);
-            // 
-            // warriorPic1
-            // 
-            this.warriorPic1.BackColor = System.Drawing.Color.Transparent;
-            this.warriorPic1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.warriorPic1.Image = ((System.Drawing.Image)(resources.GetObject("warriorPic1.Image")));
-            this.warriorPic1.Location = new System.Drawing.Point(74, 216);
-            this.warriorPic1.Name = "warriorPic1";
-            this.warriorPic1.Size = new System.Drawing.Size(361, 282);
-            this.warriorPic1.TabIndex = 6;
-            this.warriorPic1.TabStop = false;
-            this.warriorPic1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Location = new System.Drawing.Point(176, 461);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(196, 50);
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // arrowRight
-            // 
-            this.arrowRight.BackColor = System.Drawing.Color.Transparent;
-            this.arrowRight.BackgroundImage = global::RpgGame.Properties.Resources.arrow_right;
-            this.arrowRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.arrowRight.Location = new System.Drawing.Point(478, 334);
-            this.arrowRight.Name = "arrowRight";
-            this.arrowRight.Size = new System.Drawing.Size(38, 50);
-            this.arrowRight.TabIndex = 14;
-            this.arrowRight.TabStop = false;
-            this.arrowRight.Click += new System.EventHandler(this.arrowRight_Click);
-            // 
-            // arrowLeft
-            // 
-            this.arrowLeft.BackColor = System.Drawing.Color.Transparent;
-            this.arrowLeft.BackgroundImage = global::RpgGame.Properties.Resources.arrow_left;
-            this.arrowLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.arrowLeft.Location = new System.Drawing.Point(31, 334);
-            this.arrowLeft.Name = "arrowLeft";
-            this.arrowLeft.Size = new System.Drawing.Size(38, 50);
-            this.arrowLeft.TabIndex = 15;
-            this.arrowLeft.TabStop = false;
-            this.arrowLeft.Click += new System.EventHandler(this.arrowLeft_Click);
             // 
             // DescriptionPanel
             // 
@@ -377,15 +323,11 @@
             this.ClientSize = new System.Drawing.Size(972, 730);
             this.ControlBox = false;
             this.Controls.Add(this.DescriptionPanel);
-            this.Controls.Add(this.arrowLeft);
-            this.Controls.Add(this.arrowRight);
-            this.Controls.Add(this.warriorPic1);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.lblCharName);
             this.Controls.Add(this.createHero);
             this.Controls.Add(this.inputCharName);
             this.Controls.Add(this.ChooseCharacterClass);
-            this.Controls.Add(this.pictureBox3);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -397,10 +339,6 @@
             this.Load += new System.EventHandler(this.CharacterCreation_Load);
             this.ChooseCharacterClass.ResumeLayout(false);
             this.ChooseCharacterClass.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.warriorPic1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowLeft)).EndInit();
             this.DescriptionPanel.ResumeLayout(false);
             this.DescriptionPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -412,16 +350,12 @@
 
         private System.Windows.Forms.Label lblCharName;
         private System.Windows.Forms.TextBox inputCharName;
-        private System.Windows.Forms.PictureBox warriorPic1;
         private System.Windows.Forms.GroupBox ChooseCharacterClass;
         private System.Windows.Forms.RadioButton Btn_Rogue;
         private System.Windows.Forms.RadioButton Btn_Mage;
         private System.Windows.Forms.RadioButton Btn_Warrior;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Button createHero;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox arrowRight;
-        private System.Windows.Forms.PictureBox arrowLeft;
         private System.Windows.Forms.Panel DescriptionPanel;
         private System.Windows.Forms.TextBox HeroDescription;
         private System.Windows.Forms.ProgressBar strengthProgressBar;

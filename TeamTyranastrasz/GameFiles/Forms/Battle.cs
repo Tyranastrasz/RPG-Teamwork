@@ -174,22 +174,6 @@
 
         private void btnEndTurn_Click(object sender, EventArgs e)
         {
-            if (battle.IsAttackBuffUsed)
-            {
-                GameEngine.PlayerCharacter.ClearBuff("attack");
-                battle.IsAttackBuffUsed = false;
-            }
-            if (battle.IsDefenceBuffUsed)
-            {
-                GameEngine.PlayerCharacter.ClearBuff("defence");
-                battle.IsDefenceBuffUsed = false;
-            }
-            if (battle.IsHealthBuffUsed)
-            {
-                GameEngine.PlayerCharacter.ClearBuff("health");
-                battle.IsHealthBuffUsed = false;
-            }
-
             battle.EnemyTurn();
         }
 

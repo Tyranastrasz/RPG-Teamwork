@@ -45,6 +45,8 @@
 
         public BattleManager()
         {
+            GameEngine.PlayerCharacter.CurrentHitPoints = GameEngine.PlayerCharacter.MaxHitPoints;
+
             this.IsPlayerTurn = true;
             this.IsBattleEnd = false;
             this.EnemyList = new List<IEnemy>();
@@ -86,6 +88,10 @@
             {
                 while (this.EnemyList[this.LastTurnEnemyId].IsAlive == false)
                 {
+                    if (this.LastTurnEnemyId == this.EnemyList.Count - 1)
+                    {
+                        this.LastTurnEnemyId = 0;
+                    }
                     this.LastTurnEnemyId++;
                 }
                 Attack((IUnit)this.EnemyList[this.LastTurnEnemyId], GameEngine.PlayerCharacter);
@@ -94,8 +100,7 @@
             {
                 MessageBox.Show("You have died!");
                 GameEngine.BattleScreen.Close();
-                Map mapScreen = new Map();
-                mapScreen.Show();
+                GameEngine.Map.Show();
             }
 
             if (this.IsDefendUsed)
@@ -103,6 +108,21 @@
                 GameEngine.PlayerCharacter.BonusDefencePoints -= 2;
                 this.IsDefendUsed = false;
             }
+            if (this.IsAttackBuffUsed)
+            {
+                GameEngine.PlayerCharacter.ClearBuff("attack");
+                this.IsAttackBuffUsed = false;
+            }
+            if (this.IsDefenceBuffUsed)
+            {
+                GameEngine.PlayerCharacter.ClearBuff("defence");
+                this.IsDefenceBuffUsed = false;
+            }
+            if (this.IsHealthBuffUsed)
+            {
+                this.IsHealthBuffUsed = false;
+            }
+
             PlayerTurn();
         }
 
@@ -153,6 +173,10 @@
                     if (GameEngine.PlayerCharacter.Experience >= GameEngine.BattleScreen.experienceBar.Maximum)
                     {
                         GameEngine.PlayerCharacter.Level++;
+                        GameEngine.PlayerCharacter.Strength++;
+                        GameEngine.PlayerCharacter.Intelligence++;
+                        GameEngine.PlayerCharacter.Dexterity++;
+                        GameEngine.PlayerCharacter.Vitality++;
                         GameEngine.BattleScreen.experienceBar.Maximum = GameEngine.PlayerCharacter.CalculateExperience(GameEngine.PlayerCharacter.Level);
                         GameEngine.PlayerCharacter.Experience = 0;
                         GameEngine.BattleScreen.experienceBar.Value = 0;
@@ -160,6 +184,23 @@
                     else
                     {
                         GameEngine.BattleScreen.experienceBar.Value = GameEngine.PlayerCharacter.Experience;
+                    }
+
+                    bool aliveEnemies = false;
+
+                    foreach(IEnemy enemy in this.EnemyList) {
+                        if (enemy.IsAlive)
+                        {
+                            aliveEnemies = true;
+                            break;
+                        }
+                    }
+
+                    if (aliveEnemies == false)
+                    {
+                        MessageBox.Show("VICTORY!");
+                        GameEngine.BattleScreen.Close();
+                        GameEngine.Map.Show();
                     }
                 }
                 else

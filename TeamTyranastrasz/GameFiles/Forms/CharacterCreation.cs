@@ -15,8 +15,43 @@ namespace RpgGame.Forms
 {
     public partial class CharacterCreation : Form
     {
+
+        private PictureBox warriorPicBox;
+        private PictureBox roguePicBox;
+        private PictureBox magePicBox;
+
         public CharacterCreation()
         {
+
+            warriorPicBox = new PictureBox();
+            warriorPicBox.Image = Properties.Resources.warrior;
+            warriorPicBox.Width = 250;
+            warriorPicBox.Height = 250;
+            warriorPicBox.BackColor = Color.Transparent;
+            warriorPicBox.Left = 190;
+            warriorPicBox.Top = 240;
+            this.Controls.Add(warriorPicBox);
+
+            roguePicBox = new PictureBox();
+            roguePicBox.Image = Properties.Resources.rogue;
+            roguePicBox.Width = 250;
+            roguePicBox.Height = 250;
+            roguePicBox.BackColor = Color.Transparent;
+            roguePicBox.Left = 190;
+            roguePicBox.Top = 240;
+            this.Controls.Add(roguePicBox);
+            roguePicBox.Hide();
+
+            magePicBox = new PictureBox();
+            magePicBox.Image = Properties.Resources.mage;
+            magePicBox.Width = 250;
+            magePicBox.Height = 250;
+            magePicBox.BackColor = Color.Transparent;
+            magePicBox.Left = 190;
+            magePicBox.Top = 240;
+            this.Controls.Add(magePicBox);
+            magePicBox.Hide();
+
             InitializeComponent();
 
             //TODO: This will be moved on checked event, but for now, lets load bars here:
@@ -110,12 +145,10 @@ namespace RpgGame.Forms
 
         private void arrowRight_Click(object sender, EventArgs e)
         {
-            warriorPic1.Hide();
         }
 
         private void arrowLeft_Click(object sender, EventArgs e)
         {
-            warriorPic1.Show();
         }
 
         private void about_Click(object sender, EventArgs e)
@@ -163,13 +196,20 @@ namespace RpgGame.Forms
         private void Btn_Mage_CheckedChanged_1(object sender, EventArgs e)
         {
             ResetProgressBars();
-            strengthProgressBar.Increment(1);
-            dexterityProgressBar.Increment(3);
-            vitalityProgressBar.Increment(5);
+            strengthProgressBar.Increment(3);
+            dexterityProgressBar.Increment(5);
+            vitalityProgressBar.Increment(7);
             intelligenceProgressBar.Increment(10);
+            warriorPicBox.Hide();
+            roguePicBox.Hide();
+            magePicBox.Show();
 
             CharacterType.Text = "Mage";
-            HeroDescription.Text = @"Lorem ipsum...";
+            HeroDescription.Text = @"The mage is the loyal soldier, the man that stands up for what is right. The warrior is the guy that gets things done his own way.
+
+The warrior has no time for childish games, but he doesn't let his personal life get in the way of his mission. The warrior is often a hero in the making on the verge of doing something great, a warrior is miss understood at times but he always pulls threw.
+
+The warrior is born not made, he knows that his soul purpose in life is to serve and fight. ";
         }
 
         private void Btn_Warrior_CheckedChanged(object sender, EventArgs e)
@@ -177,10 +217,13 @@ namespace RpgGame.Forms
             ResetProgressBars();
 
             // Warrior base stats
-            strengthProgressBar.Increment(4);
-            dexterityProgressBar.Increment(3);
-            vitalityProgressBar.Increment(10);
+            strengthProgressBar.Increment(5);
+            dexterityProgressBar.Increment(2);
+            vitalityProgressBar.Increment(8);
             intelligenceProgressBar.Increment(2);
+            warriorPicBox.Show();
+            roguePicBox.Hide();
+            magePicBox.Hide();
 
             CharacterType.Text = "Warrior";
             HeroDescription.Text = @"The warrior is the loyal soldier, the man that stands up for what is right. The warrior is the guy that gets things done his own way.
@@ -195,12 +238,19 @@ The warrior is born not made, he knows that his soul purpose in life is to serve
             ResetProgressBars();
 
             strengthProgressBar.Increment(10);
-            dexterityProgressBar.Increment(2);
+            dexterityProgressBar.Increment(4);
             vitalityProgressBar.Increment(10);
             intelligenceProgressBar.Increment(5);
+            warriorPicBox.Hide();
+            roguePicBox.Show();
+            magePicBox.Hide();
 
             CharacterType.Text = "Rogue";
-            HeroDescription.Text = @"Lorem ipsum...";
+            HeroDescription.Text = @"The rogue is the loyal soldier, the man that stands up for what is right. The warrior is the guy that gets things done his own way.
+
+The warrior has no time for childish games, but he doesn't let his personal life get in the way of his mission. The warrior is often a hero in the making on the verge of doing something great, a warrior is miss understood at times but he always pulls threw.
+
+The warrior is born not made, he knows that his soul purpose in life is to serve and fight. ";
         }
 
         private void ResetProgressBars()

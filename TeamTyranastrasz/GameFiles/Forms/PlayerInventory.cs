@@ -107,34 +107,41 @@ namespace RpgGame.Forms
                         break;
                 }
 
-                IItem tempItem;
+                try
+                {
+                    GameEngine.PlayerCharacter.Equip(inventory[id], slot, false);
+                    GameEngine.PlayerCharacter.UnEquip(equipped[slot]);
 
-                tempItem = equipped[slot];
-                equipped[slot] = inventory[id];
-                inventory[id] = tempItem;
+                    IItem tempItem;
 
-                PictureBox tempPic;
+                    tempItem = equipped[slot];
+                    equipped[slot] = inventory[id];
+                    inventory[id] = tempItem;
 
-                tempPic = equippedPics[slot];
-                equippedPics[slot] = inventoryPics[id];
-                inventoryPics[id] = tempPic;
+                    PictureBox tempPic;
 
-                int tempX = equippedPics[slot].Left;
-                int tempY = equippedPics[slot].Top;
+                    tempPic = equippedPics[slot];
+                    equippedPics[slot] = inventoryPics[id];
+                    inventoryPics[id] = tempPic;
 
-                equippedPics[slot].Left = inventoryPics[id].Left;
-                equippedPics[slot].Top = inventoryPics[id].Top;
-                inventoryPics[id].Left = tempX;
-                inventoryPics[id].Top = tempY;
+                    int tempX = equippedPics[slot].Left;
+                    int tempY = equippedPics[slot].Top;
 
-                equippedPics[slot].Name = "equipped-" + slot;
-                inventoryPics[id].Name = "inventory-" + id;
+                    equippedPics[slot].Left = inventoryPics[id].Left;
+                    equippedPics[slot].Top = inventoryPics[id].Top;
+                    inventoryPics[id].Left = tempX;
+                    inventoryPics[id].Top = tempY;
 
-                GameEngine.PlayerCharacter.Equip(equipped[slot], slot, false);
-                GameEngine.PlayerCharacter.UnEquip(inventory[id]);
+                    equippedPics[slot].Name = "equipped-" + slot;
+                    inventoryPics[id].Name = "inventory-" + id;
 
-                GameEngine.PlayerCharacter.Inventory = inventory;
-                GameEngine.PlayerCharacter.Equiped = equipped;
+                    GameEngine.PlayerCharacter.Inventory = inventory;
+                    GameEngine.PlayerCharacter.Equiped = equipped;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("You don't have required level for this item!");
+                }
 
                 if (GameEngine.BattleScreen != null)
                 {

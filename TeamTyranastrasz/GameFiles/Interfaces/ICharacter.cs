@@ -4,15 +4,15 @@
 
     public interface ICharacter : IUnit, IUsable
     {
-        string Name { get; }
+        string Name { get; set; }
 
-        int Strength { get; }
+        int Strength { get; set; }
 
-        int Dexterity { get; }
+        int Dexterity { get; set; }
 
-        int Vitality { get; }
+        int Vitality { get; set; }
 
-        int Intelligence { get; }
+        int Intelligence { get; set; }
 
         int AttackPoints { get; }
 

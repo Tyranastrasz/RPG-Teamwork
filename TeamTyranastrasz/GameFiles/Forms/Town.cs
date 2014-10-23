@@ -48,6 +48,7 @@ namespace RpgGame.Forms
 
         private void backToMap_Click(object sender, EventArgs e)
         {
+            this.Close();
             GameEngine.Map.Show();
         }
     }

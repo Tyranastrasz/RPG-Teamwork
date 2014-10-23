@@ -272,19 +272,26 @@
         {
             if (this.Equiped != null)
             {
-                if (isNew)
+                if (item.LevelRequirement <= this.Level)
                 {
-                    this.Equiped.Add(item);
+                    if (isNew)
+                    {
+                        this.Equiped.Add(item);
+                    }
+                    else
+                    {
+                        this.Equiped[id] = item;
+                    }
+
+                    this.Strength += item.Strength;
+                    this.Intelligence += item.Intelligence;
+                    this.Dexterity += item.Dexterity;
+                    this.Vitality += item.Vitality;
                 }
                 else
                 {
-                    this.Equiped[id] = item;
+                    throw new ArgumentOutOfRangeException();
                 }
-
-                this.Strength += item.Strength;
-                this.Intelligence += item.Intelligence;
-                this.Dexterity += item.Dexterity;
-                this.Vitality += item.Vitality;
             }
             else
             {

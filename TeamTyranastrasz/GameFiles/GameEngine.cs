@@ -15,10 +15,10 @@
 
         public void Run()
         {
-            //Application.Run(new StartScreen());
-            CreateNewPlayer("warrior", "asd");
-            CreateBattleScreen();
-            Application.Run(BattleScreen);
+            Application.Run(new StartScreen());
+            //CreateNewPlayer("warrior", "asd");
+            //CreateBattleScreen();
+            //Application.Run(new Map());
         }
 
         public static void CreateNewPlayer(string characterClass, string characterName)

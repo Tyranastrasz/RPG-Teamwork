@@ -66,13 +66,10 @@ namespace RpgGame.Player
             switch (type)
             {
                 case "attack":
-                    this.Strength -= (int)((double)this.Strength * 0.1);
+                    this.Strength -= (int)((double)this.Strength * 0.09);
                     break;
                 case "defence":
-                    this.Dexterity -= (int)((double)this.Dexterity * 0.05);
-                    break;
-                case "health":
-                    this.Vitality -= (int)((double)this.Vitality * 0.2);
+                    this.Dexterity -= (int)((double)this.Dexterity * 0.0525);
                     break;
             }
         }

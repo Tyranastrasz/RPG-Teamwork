@@ -102,9 +102,9 @@ namespace RpgGame.Forms
             // 
             this.battleTower.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.battleTower.Image = global::RpgGame.Properties.Resources.battle;
-            this.battleTower.Location = new System.Drawing.Point(598, 386);
+            this.battleTower.Location = new System.Drawing.Point(597, 386);
             this.battleTower.Name = "battleTower";
-            this.battleTower.Size = new System.Drawing.Size(199, 201);
+            this.battleTower.Size = new System.Drawing.Size(199, 202);
             this.battleTower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.battleTower.TabIndex = 7;
             this.battleTower.TabStop = false;
