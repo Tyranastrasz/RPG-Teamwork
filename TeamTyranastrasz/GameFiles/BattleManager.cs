@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
+    using System.Linq;
     using RpgGame.Enemies.MeleeType;
     using RpgGame.Enemies.RangeType;
     using RpgGame.Forms;
@@ -76,23 +77,25 @@
 
         public void EnemyTurn()
         {
+            List<IEnemy> aliveEnemies = this.EnemyList.Where(enemy => enemy.IsAlive).ToList();
+
             // use thread.sleep
             this.IsPlayerTurn = false;
-            if (this.LastTurnEnemyId > this.EnemyList.Count - 1)
+            if (this.LastTurnEnemyId > aliveEnemies.Count - 1)
             {
                 this.LastTurnEnemyId = 0;
             }
 
             try
             {
-                for (int i = this.LastTurnEnemyId; i < this.EnemyList.Count; i++)
+                for (int i = this.LastTurnEnemyId; i < aliveEnemies.Count; i++)
                 {
                     if (this.EnemyList[i].IsAlive == true)
                     {
                         this.LastTurnEnemyId = i;
                     }
                 }
-                Attack((IUnit)this.EnemyList[this.LastTurnEnemyId], GameEngine.PlayerCharacter);
+                Attack((IUnit)aliveEnemies[this.LastTurnEnemyId], GameEngine.PlayerCharacter);
             }
             catch (EndBattleException)
             {
@@ -169,6 +172,8 @@
                     this.EnemyList[this.CurrentTargetId].PicBox.Hide();
                     this.EnemyList[this.CurrentTargetId].IsAlive = false;
                     GameEngine.PlayerCharacter.Experience += this.EnemyList[this.CurrentTargetId].Experience;
+                    this.CurrentTargetId = -1;
+                    GameEngine.BattleScreen.targetBox.Hide();
                     
                     if (GameEngine.PlayerCharacter.Experience >= GameEngine.BattleScreen.experienceBar.Maximum)
                     {
@@ -198,6 +203,7 @@
 
                     if (aliveEnemies == false)
                     {
+                        GameEngine.PlayerCharacter.Cash += this.EnemyList.Count * 5;
                         MessageBox.Show("VICTORY!");
                         GameEngine.BattleScreen.Close();
                         GameEngine.Map.Show();
@@ -208,6 +214,13 @@
                     throw new EndBattleException();
                 }
             }
+            else
+            {
+                if (this.CurrentTargetId != -1)
+                {
+                    GameEngine.BattleScreen.showTargetBox(GameEngine.BattleScreen.targetBox, (IUnit)this.EnemyList[this.CurrentTargetId]);
+                }
+            }
         }
 
         public void Defend()
@@ -215,6 +228,7 @@
             if (!this.IsDefendUsed)
             {
                 GameEngine.PlayerCharacter.BonusDefencePoints += 2;
+                GameEngine.BattleScreen.ShowDamageBox(2, Color.Blue, GameEngine.BattleScreen.characterPicture);
                 this.IsDefendUsed = true;
             }
         }

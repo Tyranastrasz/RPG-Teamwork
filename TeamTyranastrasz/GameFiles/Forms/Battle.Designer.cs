@@ -48,6 +48,7 @@
             this.healthBuffPb = new System.Windows.Forms.ProgressBar();
             this.attackPb = new System.Windows.Forms.ProgressBar();
             this.defendPb = new System.Windows.Forms.ProgressBar();
+            this.Click += new System.EventHandler(this.empty_Click);
             this.SuspendLayout();
             // 
             // btnAttack

@@ -11,7 +11,7 @@
     {
         private BattleManager battle = new BattleManager();
 
-        private Label targetBox;
+        public Label targetBox;
         private Label unitDamage;
         private Label mainStatsBox;
         private Label subStatsBox;
@@ -120,16 +120,14 @@
         private void btnAttack_Click(object sender, EventArgs e)
         {
 
-            if (battle.IsPlayerTurn && battle.CurrentTarget != null)
+            if (battle.IsPlayerTurn && battle.CurrentTarget != null && battle.CurrentTargetId > -1)
             {
+
+                mainStatsBox.Text = battle.CurrentTargetId.ToString();
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackDicePoints);
                     battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
-                    if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
-                    {
-                        showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
-                    }
                     RefreshStats();
                     Sound.PlayAttackSound();
                 }
@@ -179,7 +177,7 @@
 
         private void btnAttackSkillLow_Click(object sender, EventArgs e)
         {
-            if (battle.IsPlayerTurn && battle.CurrentTarget != null)
+            if (battle.IsPlayerTurn && battle.CurrentTarget != null && battle.CurrentTargetId > -1)
             {
                 try
                 {
@@ -187,10 +185,6 @@
                     GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("low");
                     battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("low");
-                    if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
-                    {
-                        showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
-                    }
                     Sound.PlayFirstSpellSound();
                     RefreshStats();
                 }
@@ -203,7 +197,7 @@
 
         private void btnAttackSkillMed_Click(object sender, EventArgs e)
         {
-            if (battle.IsPlayerTurn && battle.CurrentTarget != null)
+            if (battle.IsPlayerTurn && battle.CurrentTarget != null && battle.CurrentTargetId > -1)
             {
                 try
                 {
@@ -211,10 +205,6 @@
                     GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("medium");
                     battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("medium");
-                    if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
-                    {
-                        showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
-                    }
                     Sound.PlaySecondSpellSound();
                     RefreshStats();
                 }
@@ -227,7 +217,7 @@
 
         private void btnAttackSkillHigh_Click(object sender, EventArgs e)
         {
-            if (battle.IsPlayerTurn && battle.CurrentTarget != null)
+            if (battle.IsPlayerTurn && battle.CurrentTarget != null && battle.CurrentTargetId > -1)
             {
                 try
                 {
@@ -235,10 +225,6 @@
                     GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("heavy");
                     battle.Attack((IUnit)GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("heavy");
-                    if (battle.EnemyList[battle.CurrentTargetId].IsAlive)
-                    {
-                        showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
-                    }
                     Sound.PlayThirdSpellSound();
                     RefreshStats();
                 }
@@ -256,7 +242,10 @@
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackBuffDicePoints);
+                    int attDiff = GameEngine.PlayerCharacter.Attack();
                     GameEngine.PlayerCharacter.CastBuff("attack");
+                    attDiff = GameEngine.PlayerCharacter.Attack() - attDiff;
+                    ShowDamageBox(attDiff, Color.Yellow, characterPicture);
                     battle.IsAttackBuffUsed = true;
                     RefreshStats();
                     Sound.PlayAttackBuffSound();
@@ -275,7 +264,10 @@
                 try
                 {
                     battle.CheckDicePoints(BattleManager.DefenceBuffDicePoints);
+                    int defDiff = GameEngine.PlayerCharacter.Defend();
                     GameEngine.PlayerCharacter.CastBuff("defence");
+                    defDiff = GameEngine.PlayerCharacter.Defend() - defDiff;
+                    ShowDamageBox(defDiff, Color.Blue, characterPicture);
                     battle.IsDefenceBuffUsed = true;
                     RefreshStats();
                     Sound.playDefenseBuffSound();
@@ -294,7 +286,10 @@
                 try
                 {
                     battle.CheckDicePoints(BattleManager.HealthDicePoints);
+                    int hpDiff = GameEngine.PlayerCharacter.CurrentHitPoints;
                     GameEngine.PlayerCharacter.CastBuff("health");
+                    hpDiff = GameEngine.PlayerCharacter.CurrentHitPoints - hpDiff;
+                    ShowDamageBox(hpDiff, Color.LightGreen, characterPicture);
                     battle.IsHealthBuffUsed = true;
                     RefreshStats();
                     Sound.PlayHealSound();
@@ -339,7 +334,7 @@
             }
         }
 
-        private void showTargetBox(Label box, IUnit enemy)
+        public void showTargetBox(Label box, IUnit enemy)
         {
             box.Show();
             box.Text = "\nAttack: " + enemy.Attack()
@@ -393,7 +388,12 @@
         public void ShowDamageBox(int num, Color color, PictureBox picBox)
         {
             unitDamage.ForeColor = color;
-            unitDamage.Text = num.ToString();
+            string prefix = "";
+            if (num > 0)
+            {
+                prefix = "+";
+            }
+            unitDamage.Text = prefix + num.ToString();
             unitDamage.Left = 0;
             unitDamage.Top = 40;
             unitDamage.Parent = picBox;
@@ -413,6 +413,11 @@
                               + "\n\nLevel: " + GameEngine.PlayerCharacter.Level;
 
             this.dicePointsBox.Text = battle.DicePoints.ToString();
+        }
+
+        private void empty_Click(object sender, EventArgs e)
+        {
+            targetBox.Hide();
         }
 
         // temp usage to close the form

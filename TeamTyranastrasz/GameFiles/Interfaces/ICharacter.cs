@@ -26,7 +26,7 @@
 
         int Experience { get; set; }
 
-        int Cash { get; }
+        int Cash { get; set; }
 
         int Range { get; }
 
