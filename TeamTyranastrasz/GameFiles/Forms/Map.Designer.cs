@@ -31,39 +31,17 @@ namespace RpgGame.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Map));
-            this.inventory = new System.Windows.Forms.Button();
-            this.quests = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
             this.load = new System.Windows.Forms.Button();
             this.quit = new System.Windows.Forms.Button();
             this.battleTower = new System.Windows.Forms.PictureBox();
             this.secretPlace = new System.Windows.Forms.PictureBox();
             this.townSelected = new System.Windows.Forms.PictureBox();
+            this.inventory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.battleTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secretPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.townSelected)).BeginInit();
             this.SuspendLayout();
-            // 
-            // inventory
-            // 
-            this.inventory.Cursor = System.Windows.Forms.Cursors.Default;
-            this.inventory.Location = new System.Drawing.Point(78, 64);
-            this.inventory.Name = "inventory";
-            this.inventory.Size = new System.Drawing.Size(75, 23);
-            this.inventory.TabIndex = 2;
-            this.inventory.Text = "Inventory";
-            this.inventory.UseVisualStyleBackColor = true;
-            this.inventory.Click += new System.EventHandler(this.inventory_Click);
-            // 
-            // quests
-            // 
-            this.quests.Cursor = System.Windows.Forms.Cursors.Default;
-            this.quests.Location = new System.Drawing.Point(78, 129);
-            this.quests.Name = "quests";
-            this.quests.Size = new System.Drawing.Size(75, 23);
-            this.quests.TabIndex = 3;
-            this.quests.Text = "Quests";
-            this.quests.UseVisualStyleBackColor = true;
             // 
             // save
             // 
@@ -135,6 +113,24 @@ namespace RpgGame.Forms
             this.townSelected.Visible = false;
             this.townSelected.Click += new System.EventHandler(this.townSelected_Click);
             // 
+            // inventory
+            // 
+            this.inventory.BackColor = System.Drawing.Color.Transparent;
+            this.inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.inventory.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.inventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
+            this.inventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inventory.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.inventory.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.inventory.Location = new System.Drawing.Point(48, 57);
+            this.inventory.Name = "inventory";
+            this.inventory.Size = new System.Drawing.Size(165, 49);
+            this.inventory.TabIndex = 10;
+            this.inventory.Text = "Inventory";
+            this.inventory.UseVisualStyleBackColor = false;
+            this.inventory.Click += new System.EventHandler(this.inventory_Click);
+            // 
             // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,14 +140,13 @@ namespace RpgGame.Forms
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1022, 766);
             this.ControlBox = false;
+            this.Controls.Add(this.inventory);
             this.Controls.Add(this.townSelected);
             this.Controls.Add(this.secretPlace);
             this.Controls.Add(this.battleTower);
             this.Controls.Add(this.quit);
             this.Controls.Add(this.load);
             this.Controls.Add(this.save);
-            this.Controls.Add(this.quests);
-            this.Controls.Add(this.inventory);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -168,14 +163,13 @@ namespace RpgGame.Forms
 
         #endregion
 
-        private System.Windows.Forms.Button inventory;
-        private System.Windows.Forms.Button quests;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button load;
         private System.Windows.Forms.Button quit;
         private System.Windows.Forms.PictureBox battleTower;
         private System.Windows.Forms.PictureBox secretPlace;
         private System.Windows.Forms.PictureBox townSelected;
+        private System.Windows.Forms.Button inventory;
     }
 }
 
