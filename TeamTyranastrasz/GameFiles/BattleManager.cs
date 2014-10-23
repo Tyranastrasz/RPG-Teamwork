@@ -164,64 +164,41 @@
 
             Random rnd = new Random();
             int enemiesCount = rnd.Next(2, 7);
-            int mele = rnd.Next(0, enemiesCount + 1);
-            int range = enemiesCount - mele;
+            int meleCount = rnd.Next(0, enemiesCount + 1);
+            int rangeCount = enemiesCount - meleCount;
+
+            IEnemy[] meleTypes =
+            {
+                new Skeleton("Skeleton", 85, 35, 5, Pictures.Skeleton),
+                new Ork("Ork", 85, 35, 5, Pictures.Ork),
+                new Golem("Golem", 85, 35, 5, Pictures.Golem)
+            };
+
+            IEnemy[] rangeTypes =
+            {
+                new Goblin("Goblin", 85, 35, 5, Pictures.Goblin),
+                new Shade("Shade", 85, 35, 5, Pictures.Shade),
+                new Drake("Drake", 85, 35, 5, Pictures.Drake)
+            };
 
             int possitionCounter = 0;
 
-            if (GameEngine.PlayerCharacter.Level >= 1 && GameEngine.PlayerCharacter.Level <= 4)
+            for (int i = 0; i < meleCount; i++)
             {
-                for (int i = 0; i < mele; i++)
-                {
-                    IEnemy enemy = new Skeleton("Skeleton", 85, 35, 5, Pictures.Skeleton);
-                    enemy.Position = this.enemiesPossitions[possitionCounter];
-                    possitionCounter++;
-                    this.EnemyList.Add(enemy);
-                }
-
-                for (int i = 0; i < range; i++)
-                {
-                    IEnemy enemy = new Goblin("Goblin", 85, 35, 5, Pictures.Goblin);
-                    enemy.Position = this.enemiesPossitions[possitionCounter];
-                    possitionCounter++;
-                    this.EnemyList.Add(enemy);
-                }
+                int meleType = rnd.Next(0, meleTypes.Length);
+                IEnemy enemy = meleTypes[meleType];
+                enemy.Position = this.enemiesPossitions[possitionCounter];
+                possitionCounter++;
+                this.EnemyList.Add(enemy);
             }
-            else if (GameEngine.PlayerCharacter.Level > 4 && GameEngine.PlayerCharacter.Level <= 8)
-            {
-                for (int i = 0; i < mele; i++)
-                {
-                    IEnemy enemy = new Ork("Ork", 85, 35, 5, Pictures.Ork);
-                    enemy.Position = this.enemiesPossitions[possitionCounter];
-                    possitionCounter++;
-                    this.EnemyList.Add(enemy);
-                }
 
-                for (int i = 0; i < range; i++)
-                {
-                    IEnemy enemy = new Shade("Shade", 85, 35, 5, Pictures.Shade);
-                    enemy.Position = this.enemiesPossitions[possitionCounter];
-                    possitionCounter++;
-                    this.EnemyList.Add(enemy);
-                }
-            }
-            else if (GameEngine.PlayerCharacter.Level > 8 && GameEngine.PlayerCharacter.Level <= 10)
+            for (int i = 0; i < rangeCount; i++)
             {
-                for (int i = 0; i < mele; i++)
-                {
-                    IEnemy enemy = new Golem("Golem", 85, 35, 5, Pictures.Golem);
-                    enemy.Position = this.enemiesPossitions[possitionCounter];
-                    possitionCounter++;
-                    this.EnemyList.Add(enemy);
-                }
-
-                for (int i = 0; i < range; i++)
-                {
-                    IEnemy enemy = new Drake("Drake", 85, 35, 5, Pictures.Drake);
-                    enemy.Position = this.enemiesPossitions[possitionCounter];
-                    possitionCounter++;
-                    this.EnemyList.Add(enemy);
-                }
+                int rangeType = rnd.Next(0, rangeTypes.Length);
+                IEnemy enemy = rangeTypes[rangeType];
+                enemy.Position = this.enemiesPossitions[possitionCounter];
+                possitionCounter++;
+                this.EnemyList.Add(enemy);
             }
         }
     }

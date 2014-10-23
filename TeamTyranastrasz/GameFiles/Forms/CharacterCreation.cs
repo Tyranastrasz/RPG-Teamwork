@@ -151,8 +151,8 @@ namespace RpgGame.Forms
             }
 
             this.Close();
-            Map mainMap = new Map();
-            mainMap.Show();
+            GameEngine.Map = new Map();
+            GameEngine.Map.Show();
         }
 
         private void strengthProgressBar_Click(object sender, EventArgs e)

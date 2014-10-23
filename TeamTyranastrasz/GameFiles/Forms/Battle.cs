@@ -15,6 +15,7 @@
         private Label subStatsBox;
         private Label dicePointsBox;
         public ProgressBar experienceBar;
+        private PictureBox characterPicture;
 
         public Battle()
         {
@@ -85,6 +86,15 @@
             experienceBar.ForeColor = ColorTranslator.FromHtml("#04252d");
             experienceBar.Style = ProgressBarStyle.Continuous;
             Controls.Add(experienceBar);
+
+            characterPicture = new PictureBox();
+            characterPicture.Image = getCharacterImage(GetCharacterClass(GameEngine.PlayerCharacter));
+            characterPicture.Width = 250;
+            characterPicture.Height = 250;
+            characterPicture.BackColor = Color.Transparent;
+            characterPicture.Left = 750;
+            characterPicture.Top = 200;
+            this.Controls.Add(characterPicture);
 
             battle.CreateEnemies();
         }
@@ -355,6 +365,27 @@
                     throw new NoPictureException();
             }
         }
+
+        private static string GetCharacterClass(ICharacter character)
+        {
+            string[] characterMeta = character.ToString().Split('.');
+            return characterMeta[characterMeta.Length - 1];
+        }
+
+        private Image getCharacterImage(string characterClass)
+        {
+            switch (characterClass)
+            {
+                case "Warrior":
+                    return Properties.Resources.warrior;
+                case "Rogue":
+                    return Properties.Resources.rogue;
+                case "Mage":
+                    return Properties.Resources.mage;
+                default:
+                    throw new NoPictureException();
+            }
+        } 
 
         public void RefreshStats()
         {

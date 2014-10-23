@@ -11,15 +11,14 @@
         public static ICharacter PlayerCharacter { get; set; }
         public static Battle BattleScreen { get; set; }
         public static PlayerInventory Inventory { get; set; }
+        public static Map Map { get; set; }
 
         public void Run()
         {
-            //Application.Run(new StartScreen());
-            CreateNewPlayer("warrior", "asd");
+            Application.Run(new StartScreen());
+            //CreateNewPlayer("warrior", "asd");
             //CreateBattleScreen();
             //Application.Run(BattleScreen);
-            Town town = new Town();
-            Application.Run(town);
         }
 
         public static void CreateNewPlayer(string characterClass, string characterName)

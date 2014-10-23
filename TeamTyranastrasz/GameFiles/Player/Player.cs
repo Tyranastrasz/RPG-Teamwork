@@ -25,6 +25,7 @@
             this.IntelligenceModifier = intelligenceModifier;
             this.Position = new Position();
             this.Level = 1;
+            this.Cash = 52352345;
             this.Inventory = new List<IItem>();
             this.Equiped = new List<IItem>();
             InitialItemEquip(baseItems);
@@ -245,12 +246,5 @@
         public abstract void CastBuff(string type);
 
         public abstract void ClearBuff(string type);
-
-        public override string ToString()
-        {
-            return "Att: " + this.Attack()
-                    + "Def: " + this.Defend()
-                    + "Hp: " + this.CurrentHitPoints;
-        }
     }
 }

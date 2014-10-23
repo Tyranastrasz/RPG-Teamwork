@@ -45,5 +45,10 @@ namespace RpgGame.Forms
                 return cp;
             }
         }
+
+        private void backToMap_Click(object sender, EventArgs e)
+        {
+            GameEngine.Map.Show();
+        }
     }
 }

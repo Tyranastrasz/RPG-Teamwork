@@ -230,6 +230,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Images\battle_temp_img.jpg" />
     <Content Include="Images\golem.png" />
+    <None Include="Resources\rogue.png" />
+    <None Include="Resources\mage.png" />
+    <None Include="Resources\warrior.png" />
     <None Include="Resources\weapon_sword_rare.png" />
     <None Include="Resources\weapon_sword_mid.png" />
     <None Include="Resources\weapon_sword_basic.png" />

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Town));
             this.exit = new System.Windows.Forms.Button();
             this.btnShop = new System.Windows.Forms.Button();
+            this.backToMap = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // exit
@@ -53,6 +54,16 @@
             this.btnShop.UseVisualStyleBackColor = true;
             this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
             // 
+            // backToMap
+            // 
+            this.backToMap.Location = new System.Drawing.Point(828, 13);
+            this.backToMap.Name = "backToMap";
+            this.backToMap.Size = new System.Drawing.Size(75, 36);
+            this.backToMap.TabIndex = 12;
+            this.backToMap.Text = "Map";
+            this.backToMap.UseVisualStyleBackColor = true;
+            this.backToMap.Click += new System.EventHandler(this.backToMap_Click);
+            // 
             // Town
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -60,6 +71,7 @@
             this.BackgroundImage = global::RpgGame.Properties.Resources.town_map;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.backToMap);
             this.Controls.Add(this.btnShop);
             this.Controls.Add(this.exit);
             this.DoubleBuffered = true;
@@ -77,5 +89,6 @@
 
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Button btnShop;
+        private System.Windows.Forms.Button backToMap;
     }
 }
