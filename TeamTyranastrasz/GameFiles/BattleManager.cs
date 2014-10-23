@@ -242,19 +242,19 @@
             for (int i = 0; i < rangeCount; i++)
             {
                 int rangeType = rnd.Next(0, 3);
-                IEnemy enemy = new Drake("Drake", 85, 35, 5, Pictures.Drake);
+                IEnemy enemy = new Drake("Drake", 50, 27, 6, Pictures.Drake);
                 for (int k = 0; k < rangeType; k++)
                 {
                     switch (k)
                     {
                         case 0:
-                            enemy = new Goblin("Goblin", 85, 35, 5, Pictures.Goblin);
+                            enemy = new Goblin("Goblin", 40, 23, 4, Pictures.Goblin);
                             break;
                         case 1:
-                            enemy = new Shade("Shade", 85, 35, 5, Pictures.Shade);
+                            enemy = new Shade("Shade", 45, 25, 5, Pictures.Shade);
                             break;
                         case 2:
-                            enemy = new Drake("Drake", 85, 35, 5, Pictures.Drake);
+                            enemy = new Drake("Drake", 50, 27, 6, Pictures.Drake);
                             break;
                     }
                 }
@@ -266,19 +266,19 @@
             for (int i = 0; i < meleCount; i++)
             {
                 int meleType = rnd.Next(0, 3);
-                IEnemy enemy = new Golem("Golem", 85, 35, 5, Pictures.Golem);
+                IEnemy enemy = new Golem("Golem", 60, 24, 7, Pictures.Golem);
                 for (int k = 0; k < meleType; k++)
                 {
                     switch (k)
                     {
                         case 0:
-                            enemy = new Skeleton("Skeleton", 85, 35, 5, Pictures.Skeleton);
+                            enemy = new Skeleton("Skeleton", 45, 20, 5, Pictures.Skeleton);
                             break;
                         case 1:
-                            enemy = new Ork("Ork", 85, 35, 5, Pictures.Ork);
+                            enemy = new Ork("Ork", 55, 22, 6, Pictures.Ork);
                             break;
                         case 2:
-                            enemy = new Drake("Drake", 85, 35, 5, Pictures.Drake);
+                            enemy = new Golem("Golem", 60, 24, 7, Pictures.Golem);
                             break;
                     }
                 }
