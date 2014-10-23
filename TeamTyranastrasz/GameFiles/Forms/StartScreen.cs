@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,11 +25,19 @@ namespace RpgGame.Forms
 
         private void loadGame_Click(object sender, EventArgs e)
         {
-            SaveAndLoad.Load.LoadGame();
-            Map mainMap = new Map();
-            mainMap.Show();
-            MessageBox.Show("Game loaded!");
-            this.Hide();
+            try
+            {
+                SaveAndLoad.Load.LoadGame();
+                Map mainMap = new Map();
+                mainMap.Show();
+                MessageBox.Show("Game loaded!");
+                this.Hide();
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show("You have no saved games!");
+                //throw;
+            }
         }
 
         private void about_Click(object sender, EventArgs e)
