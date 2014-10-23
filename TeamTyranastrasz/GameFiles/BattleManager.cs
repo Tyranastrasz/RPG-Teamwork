@@ -8,6 +8,7 @@
     using RpgGame.Forms;
     using RpgGame.Interfaces;
     using RpgGame.Exceptions;
+    using System.Drawing;
 
     public class BattleManager
     {
@@ -76,8 +77,17 @@
             // use thread.sleep
             this.IsPlayerTurn = false;
             this.LastTurnEnemyId++;
+            if (this.LastTurnEnemyId > this.EnemyList.Count - 1)
+            {
+                this.LastTurnEnemyId = 0;
+            }
+
             try
             {
+                while (this.EnemyList[this.LastTurnEnemyId].IsAlive == false)
+                {
+                    this.LastTurnEnemyId++;
+                }
                 Attack((IUnit)this.EnemyList[this.LastTurnEnemyId], GameEngine.PlayerCharacter);
             }
             catch (EndBattleException)
@@ -122,6 +132,14 @@
             if (damage > 0)
             {
                 target.CurrentHitPoints -= damage;
+                if (this.IsPlayerTurn)
+                {
+                    GameEngine.BattleScreen.ShowDamageBox(-damage, Color.Red, this.CurrentTarget.PicBox);
+                }
+                else
+                {
+                    GameEngine.BattleScreen.ShowDamageBox(-damage, Color.Red, GameEngine.BattleScreen.characterPicture);
+                }
             }
 
             if (target.CurrentHitPoints <= 0)
@@ -131,7 +149,18 @@
                     this.EnemyList[this.CurrentTargetId].PicBox.Hide();
                     this.EnemyList[this.CurrentTargetId].IsAlive = false;
                     GameEngine.PlayerCharacter.Experience += this.EnemyList[this.CurrentTargetId].Experience;
-                    GameEngine.BattleScreen.experienceBar.Value = GameEngine.PlayerCharacter.Experience;
+                    
+                    if (GameEngine.PlayerCharacter.Experience >= GameEngine.BattleScreen.experienceBar.Maximum)
+                    {
+                        GameEngine.PlayerCharacter.Level++;
+                        GameEngine.BattleScreen.experienceBar.Maximum = GameEngine.PlayerCharacter.CalculateExperience(GameEngine.PlayerCharacter.Level);
+                        GameEngine.PlayerCharacter.Experience = 0;
+                        GameEngine.BattleScreen.experienceBar.Value = 0;
+                    }
+                    else
+                    {
+                        GameEngine.BattleScreen.experienceBar.Value = GameEngine.PlayerCharacter.Experience;
+                    }
                 }
                 else
                 {
@@ -167,38 +196,54 @@
             int meleCount = rnd.Next(0, enemiesCount + 1);
             int rangeCount = enemiesCount - meleCount;
 
-            IEnemy[] meleTypes =
-            {
-                new Skeleton("Skeleton", 85, 35, 5, Pictures.Skeleton),
-                new Ork("Ork", 85, 35, 5, Pictures.Ork),
-                new Golem("Golem", 85, 35, 5, Pictures.Golem)
-            };
-
-            IEnemy[] rangeTypes =
-            {
-                new Goblin("Goblin", 85, 35, 5, Pictures.Goblin),
-                new Shade("Shade", 85, 35, 5, Pictures.Shade),
-                new Drake("Drake", 85, 35, 5, Pictures.Drake)
-            };
-
             int possitionCounter = 0;
-
-            for (int i = 0; i < meleCount; i++)
-            {
-                int meleType = rnd.Next(0, meleTypes.Length);
-                IEnemy enemy = meleTypes[meleType];
-                enemy.Position = this.enemiesPossitions[possitionCounter];
-                possitionCounter++;
-                this.EnemyList.Add(enemy);
-            }
 
             for (int i = 0; i < rangeCount; i++)
             {
-                int rangeType = rnd.Next(0, rangeTypes.Length);
-                IEnemy enemy = rangeTypes[rangeType];
+                int rangeType = rnd.Next(0, 3);
+                IEnemy enemy = new Drake("Drake", 85, 35, 5, Pictures.Drake);
+                for (int k = 0; k < rangeType; k++)
+                {
+                    switch (k)
+                    {
+                        case 0:
+                            enemy = new Goblin("Goblin", 85, 35, 5, Pictures.Goblin);
+                            break;
+                        case 1:
+                            enemy = new Shade("Shade", 85, 35, 5, Pictures.Shade);
+                            break;
+                        case 2:
+                            enemy = new Drake("Drake", 85, 35, 5, Pictures.Drake);
+                            break;
+                    }
+                }
                 enemy.Position = this.enemiesPossitions[possitionCounter];
-                possitionCounter++;
                 this.EnemyList.Add(enemy);
+                possitionCounter++;
+            }
+
+            for (int i = 0; i < meleCount; i++)
+            {
+                int meleType = rnd.Next(0, 3);
+                IEnemy enemy = new Golem("Golem", 85, 35, 5, Pictures.Golem);
+                for (int k = 0; k < meleType; k++)
+                {
+                    switch (k)
+                    {
+                        case 0:
+                            enemy = new Skeleton("Skeleton", 85, 35, 5, Pictures.Skeleton);
+                            break;
+                        case 1:
+                            enemy = new Ork("Ork", 85, 35, 5, Pictures.Ork);
+                            break;
+                        case 2:
+                            enemy = new Drake("Drake", 85, 35, 5, Pictures.Drake);
+                            break;
+                    }
+                }
+                enemy.Position = this.enemiesPossitions[possitionCounter];
+                this.EnemyList.Add(enemy);
+                possitionCounter++;
             }
         }
     }

@@ -89,7 +89,7 @@
                     throw new InvalidOperationException("This value can not be negative!");
                 }
 
-                this.strength = value;
+                this.dexterity = value;
             }
         }
 
@@ -103,7 +103,7 @@
                     throw new InvalidOperationException("This value can not be negative!");
                 }
 
-                this.strength = value;
+                this.vitality = value;
             }
         }
 
@@ -117,7 +117,7 @@
                     throw new InvalidOperationException("This value can not be negative!");
                 }
 
-                this.strength = value;
+                this.intelligence = value;
             }
         }
 
@@ -131,7 +131,7 @@
                     throw new InvalidOperationException("This value can not be negative!");
                 }
 
-                this.strength = value;
+                this.maxHitPoints = value;
             }
         }
 
@@ -153,7 +153,7 @@
                     throw new InvalidOperationException("This value can not be negative!");
                 }
 
-                this.strength = value;
+                this.experience = value;
             }
         }
 
@@ -167,7 +167,7 @@
                     throw new InvalidOperationException("This value can not be negative!");
                 }
 
-                this.strength = value;
+                this.cash = value;
             }
         }
 
@@ -183,7 +183,7 @@
                     throw new InvalidOperationException("This value can not be negative!");
                 }
 
-                this.strength = value;
+                this.level = value;
             }
         }
 
@@ -351,5 +351,17 @@
         public abstract void CastBuff(string type);
 
         public abstract void ClearBuff(string type);
+
+        public int CalculateExperience(int level)
+        {
+            double xp = 100;
+
+            for (int i = 2; i <= level; i++)
+            {
+                xp += xp * 0.5;
+            }
+
+            return (int)xp;
+        }
     }
 }

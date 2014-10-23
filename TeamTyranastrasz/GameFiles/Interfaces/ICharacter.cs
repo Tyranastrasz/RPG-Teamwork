@@ -30,7 +30,7 @@
 
         int Range { get; }
 
-        int Level { get; }
+        int Level { get; set; }
 
         List<IItem> Inventory { get; set; }
 
@@ -47,5 +47,7 @@
         void CastBuff(string type);
         
         void ClearBuff(string type);
+
+        int CalculateExperience(int level);
     }
 }

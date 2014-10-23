@@ -51,7 +51,7 @@ namespace RpgGame.Items
                     throw new InvalidOperationException("This value can not be negative!");
                 }
 
-                this.strength = value;
+                this.dexterity = value;
             }
         }
 
@@ -65,7 +65,7 @@ namespace RpgGame.Items
                     throw new InvalidOperationException("This value can not be negative!");
                 }
 
-                this.strength = value;
+                this.vitality = value;
             }
         }
 
@@ -80,7 +80,7 @@ namespace RpgGame.Items
                     throw new InvalidOperationException("This value can not be negative!");
                 }
 
-                this.strength = value;
+                this.intelligence = value;
             }
         }
 
@@ -102,7 +102,7 @@ namespace RpgGame.Items
                     throw new InvalidOperationException("This value can not be negative!");
                 }
 
-                this.strength = value;
+                this.price = value;
             }
         }
 

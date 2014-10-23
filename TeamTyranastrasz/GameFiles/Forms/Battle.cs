@@ -5,17 +5,19 @@
     using System.Windows.Forms;
     using RpgGame.Interfaces;
     using RpgGame.Exceptions;
+    using System.Threading;
 
     public partial class Battle : Form
     {
         private BattleManager battle = new BattleManager();
 
         private Label targetBox;
+        private Label unitDamage;
         private Label mainStatsBox;
         private Label subStatsBox;
         private Label dicePointsBox;
         public ProgressBar experienceBar;
-        private PictureBox characterPicture;
+        public PictureBox characterPicture;
 
         public Battle()
         {
@@ -42,6 +44,16 @@
             targetBox.Font = new Font("Microsoft Sans Serif", 8);
             Controls.Add(targetBox);
             targetBox.Hide();
+
+            unitDamage = new Label();
+            unitDamage.Width = 150;
+            unitDamage.Height = 70;
+            unitDamage.AutoSize = true;
+            unitDamage.BackColor = Color.Transparent;
+            unitDamage.Font = new Font("Microsoft Sans Serif", 35, FontStyle.Bold);
+            unitDamage.TextAlign = ContentAlignment.MiddleCenter;
+            Controls.Add(unitDamage);
+            unitDamage.Hide();
 
             mainStatsBox = new Label();
             mainStatsBox.Left = 640;
@@ -80,7 +92,7 @@
             experienceBar.Name = "experienceBar";
             experienceBar.Size = new System.Drawing.Size(296, 24);
             experienceBar.TabIndex = 14;
-            experienceBar.Maximum = 1000;
+            experienceBar.Maximum = GameEngine.PlayerCharacter.CalculateExperience(GameEngine.PlayerCharacter.Level);
             experienceBar.Value = GameEngine.PlayerCharacter.Experience;
             experienceBar.BackColor = ColorTranslator.FromHtml("#b0b0b1");
             experienceBar.ForeColor = ColorTranslator.FromHtml("#04252d");
@@ -323,7 +335,7 @@
         private void DrawImages(PictureBox pictureBox, IEnemy enemy, Image image, string id)
         {
             pictureBox.Image = image;
-            pictureBox.Width = image.Width;
+            pictureBox.Width = 140;
             pictureBox.Height = image.Height;
             pictureBox.BackColor = Color.Transparent;
             pictureBox.Left = enemy.Position.X;
@@ -392,7 +404,17 @@
                 default:
                     throw new NoPictureException();
             }
-        } 
+        }
+
+        public void ShowDamageBox(int num, Color color, PictureBox picBox)
+        {
+            unitDamage.ForeColor = color;
+            unitDamage.Text = num.ToString();
+            unitDamage.Left = 0;
+            unitDamage.Top = 40;
+            unitDamage.Parent = picBox;
+            unitDamage.Show();
+        }
 
         public void RefreshStats()
         {
