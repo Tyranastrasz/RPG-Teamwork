@@ -7,9 +7,9 @@ namespace RpgGame.Player
 
     public class Mage : Player
     {
-        public const int MageStartingStrength = 1;
-        public const int MageStartingDexterity = 3;
-        public const int MageStartingVitality = 5;
+        public const int MageStartingStrength = 3;
+        public const int MageStartingDexterity = 5;
+        public const int MageStartingVitality = 7;
         public const int MageStartingIntelligence = 10;
 
         public const int MageStrengthModifier = 1;
@@ -19,11 +19,12 @@ namespace RpgGame.Player
 
         public static readonly List<IItem> MageBaseItems = new List<IItem>()
         {
-            new Helmet("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Weapon("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Chainmail("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Gloves("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Boots("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
+            // name, price, picture, def, attk, hit, str, dex, vit, int, lvl, desc
+            new Helmet("Apprentice Hat", 10, Pictures.MageHelmet, 1, 0, 3, 0, 1, 1, 0, 1, "Basic wizard hat - for new wizards."),
+            new Weapon("Wooden Staff", 15, Pictures.BasickStaff, 0, 5, 0, 0, 0, 0, 3, 1, "Basic wizard weapon."),
+            new Chainmail("Battle Robe", 25, Pictures.MageChainmail, 2, 0, 4, 0, 2, 2, 0, 1, "Sturdy and durable - good for adventurers."),
+            new Gloves("Encated Gloves", 15, Pictures.MageGloves, 2, 0, 1, 0, 0, 1, 2, 1,"Have small enchantment for better magick casting."),
+            new Boots("Simple Boots", 10, Pictures.MageBoots, 1, 0, 1, 0, 0, 2, 0, 1, "Simple and cheap, good for walking."),
         };
 
         public Mage(string name)

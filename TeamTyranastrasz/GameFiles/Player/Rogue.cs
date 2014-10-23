@@ -8,7 +8,7 @@ namespace RpgGame.Player
     public class Rogue : Player
     {
         public const int RogueStartingStrength = 10;
-        public const int RogueStartingDexterity = 2;
+        public const int RogueStartingDexterity = 4;
         public const int RogueStartingVitality = 10;
         public const int RogueStartingIntelligence = 5;
 
@@ -19,11 +19,12 @@ namespace RpgGame.Player
 
         public static readonly List<IItem> RogueBaseItems = new List<IItem>()
         {
-            new Helmet("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Weapon("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Chainmail("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Gloves("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
-            new Boots("Iron Sword", 5, Pictures.BasickSword, 1, 5, 0, 0, 0, 20, 0, 1, "Basic battle equipment."),
+            // name, price, picture, def, attk, hit, str, dex, vit, int, lvl, desc
+            new Helmet( "Leather Cap", 15, Pictures.RogueHelmet, 2, 0, 3, 0, 2, 1, 0, 1, "Light, with medium defence."),
+            new Weapon("Rusty Dagger", 10, Pictures.BasickDager, 0, 6, 0, 2, 0, 0, 1, 1, "The rust helps - infects targets."),
+            new Chainmail("Armored Jacket", 20, Pictures.RogueChainmail, 3, 0, 3, 0, 2, 1, 0, 1, "Light armored."),
+            new Gloves("Dark-Skin Gloves", 20, Pictures.RogueGLoves, 2, 0, 2, 0, 1, 2, 0, 1, "Good gloves, for skillful hands."),
+            new Boots("Speed boots", 10, Pictures.RogueBoots, 1, 0, 2, 0, 0, 1, 0, 1, "Light and very fast."),
         };
 
         public Rogue(string name)
