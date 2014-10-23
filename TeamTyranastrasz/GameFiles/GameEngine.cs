@@ -43,7 +43,7 @@
         {
             BattleScreen = new Battle();
             BattleScreen.Show();
-            Sound.PlayBattleSound();
+            Sound.Sound.PlayBattleSound();
         }
     }
 }

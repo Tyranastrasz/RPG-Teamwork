@@ -1,6 +1,4 @@
-﻿
-
-namespace RpgGame.SaveAndLoad
+﻿namespace RpgGame.SaveAndLoad
 {
     using System;
     using System.IO;

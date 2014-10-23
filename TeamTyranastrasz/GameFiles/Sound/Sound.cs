@@ -1,28 +1,12 @@
-﻿using System.CodeDom.Compiler;
-
-namespace RpgGame
+﻿namespace RpgGame.Sound
 {
     using System;
     using System.IO;
     using System.Media;
     using System.Reflection;
-    using System.Runtime.InteropServices;
-    using System.Text;
-
 
     public class Sound
     {
-        //[DllImport("winmm.dll")]
-        //static extern Int32 mciSendString(string command, StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
-
-        //private void PlayWorker()
-        //{
-        //    StringBuilder sb = new StringBuilder();
-        //    mciSendString("open \"" + FileName + "\" alias " + this.TrackName, sb, 0, IntPtr.Zero);
-        //    mciSendString("play " + this.TrackName, sb, 0, IntPtr.Zero);
-        //    IsBeingPlayed = true;
-        //}
-
         public static string GeneratePathToFile(string fileName)
         {
             string additionalPath = "Sound\\SoundFiles\\" + fileName;
@@ -58,34 +42,6 @@ namespace RpgGame
                 throw new InvalidOperationException();
             }
         }
-
-        //public static void PlayTownSound()
-        //{
-        //    string path = Assembly.GetExecutingAssembly().Location;
-        //    path = Path.GetDirectoryName(path);
-        //    try
-        //    {
-        //        var attackSound = new System.Windows.Media.MediaPlayer();
-        //        attackSound.Open(new System.Uri());
-        //        attackSound.Play();
-        //    }
-        //    catch (FileNotFoundException)
-        //    {
-        //        throw new FileNotFoundException();
-        //    }
-        //    catch (DirectoryNotFoundException)
-        //    {
-        //        throw new DirectoryNotFoundException("The path to the file is incorrect!");
-        //    }
-        //    catch (IOException)
-        //    {
-        //        throw new IOException("Cannot read from file!");
-        //    }
-        //    catch (InvalidOperationException)
-        //    {
-        //        throw new InvalidOperationException();
-        //    }
-        //}
 
         public static void PlayBattleSound()
         {

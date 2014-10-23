@@ -127,7 +127,7 @@
                     battle.CheckDicePoints(BattleManager.AttackDicePoints);
                     battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     RefreshStats();
-                    Sound.PlayAttackSound();
+                    Sound.Sound.PlayAttackSound();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -145,7 +145,7 @@
                     battle.CheckDicePoints(BattleManager.DefendDicePoints);
                     battle.Defend();
                     RefreshStats();
-                    Sound.PlayDefendSound();
+                    Sound.Sound.PlayDefendSound();
                 }
                 catch(NotEnoughDicePointsException)
                 {
@@ -178,7 +178,7 @@
                     GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("low");
                     battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("low");
-                    Sound.PlayFirstSpellSound();
+                    Sound.Sound.PlayFirstSpellSound();
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
@@ -198,7 +198,7 @@
                     GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("medium");
                     battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("medium");
-                    Sound.PlaySecondSpellSound();
+                    Sound.Sound.PlaySecondSpellSound();
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
@@ -218,7 +218,7 @@
                     GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("heavy");
                     battle.Attack((IUnit)GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("heavy");
-                    Sound.PlayThirdSpellSound();
+                    Sound.Sound.PlayThirdSpellSound();
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
@@ -241,7 +241,7 @@
                     ShowDamageBox(attDiff, Color.Yellow, characterPicture);
                     battle.IsAttackBuffUsed = true;
                     RefreshStats();
-                    Sound.PlayAttackBuffSound();
+                    Sound.Sound.PlayAttackBuffSound();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -263,7 +263,7 @@
                     ShowDamageBox(defDiff, Color.Blue, characterPicture);
                     battle.IsDefenceBuffUsed = true;
                     RefreshStats();
-                    Sound.playDefenseBuffSound();
+                    Sound.Sound.playDefenseBuffSound();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -285,7 +285,7 @@
                     ShowDamageBox(hpDiff, Color.LightGreen, characterPicture);
                     battle.IsHealthBuffUsed = true;
                     RefreshStats();
-                    Sound.PlayHealSound();
+                    Sound.Sound.PlayHealSound();
                 }
                 catch (NotEnoughDicePointsException)
                 {
