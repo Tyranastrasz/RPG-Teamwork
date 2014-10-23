@@ -175,7 +175,7 @@
                         + "\nAttack: " + item.AttackPoints
                         + "\nDefence: " + item.DefencePoints
                         + "\nHP: " + item.HitPoints
-                        + "\nProce: " + item.Price
+                        + "\nPrice: " + item.Price
                         + "\nReq. Level: " + item.LevelRequirement;
         }
 

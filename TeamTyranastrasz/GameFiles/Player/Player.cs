@@ -233,7 +233,7 @@
             return this.DefencePoints;
         }
 
-        private int CalculateHitPoints()
+        public int CalculateHitPoints()
         {
             this.MaxHitPoints = this.Vitality * this.VitalityModifier;
             return this.MaxHitPoints;
@@ -359,11 +359,11 @@
 
         public abstract void ClearBuff(string type);
 
-        public int CalculateExperience(int level)
+        public int CalculateExperience(int lvl)
         {
             double xp = 100;
 
-            for (int i = 2; i <= level; i++)
+            for (int i = 2; i <= lvl; i++)
             {
                 xp += xp * 0.5;
             }

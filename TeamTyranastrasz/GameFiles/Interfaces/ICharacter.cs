@@ -49,5 +49,7 @@
         void ClearBuff(string type);
 
         int CalculateExperience(int level);
+
+        int CalculateHitPoints();
     }
 }

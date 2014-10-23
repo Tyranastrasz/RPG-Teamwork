@@ -180,6 +180,7 @@
                         GameEngine.PlayerCharacter.Dexterity++;
                         GameEngine.PlayerCharacter.Vitality++;
                         GameEngine.BattleScreen.experienceBar.Maximum = GameEngine.PlayerCharacter.CalculateExperience(GameEngine.PlayerCharacter.Level);
+                        GameEngine.PlayerCharacter.CalculateHitPoints();
                         GameEngine.PlayerCharacter.Experience = 0;
                         GameEngine.BattleScreen.experienceBar.Value = 0;
                     }
