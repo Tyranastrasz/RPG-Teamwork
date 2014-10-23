@@ -127,6 +127,7 @@
                     battle.CheckDicePoints(BattleManager.DefendDicePoints);
                     battle.Defend();
                     RefreshStats();
+                    Sound.PlayDefendSound();
                 }
                 catch(NotEnoughDicePointsException)
                 {
@@ -184,6 +185,7 @@
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
                     }
+                    Sound.PlayFirstSpellSound();
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
@@ -207,6 +209,7 @@
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
                     }
+                    Sound.PlaySecondSpellSound();
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
@@ -230,6 +233,7 @@
                     {
                         showTargetBox(targetBox, (IUnit)battle.EnemyList[battle.CurrentTargetId]);
                     }
+                    Sound.PlayThirdSpellSound();
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
@@ -249,6 +253,7 @@
                     GameEngine.PlayerCharacter.CastBuff("attack");
                     battle.IsAttackBuffUsed = true;
                     RefreshStats();
+                    Sound.PlayAttackBuffSound();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -267,6 +272,7 @@
                     GameEngine.PlayerCharacter.CastBuff("defence");
                     battle.IsDefenceBuffUsed = true;
                     RefreshStats();
+                    Sound.playDefenseBuffSound();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -285,6 +291,7 @@
                     GameEngine.PlayerCharacter.CastBuff("health");
                     battle.IsHealthBuffUsed = true;
                     RefreshStats();
+                    Sound.PlayHealSound();
                 }
                 catch (NotEnoughDicePointsException)
                 {

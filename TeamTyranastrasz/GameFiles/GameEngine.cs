@@ -14,8 +14,8 @@
 
         public void Run()
         {
-            //Application.Run(new StartScreen());
-            CreateNewPlayer("warrior", "asd");
+            Application.Run(new StartScreen());
+            //CreateNewPlayer("warrior", "asd");
             //CreateBattleScreen();
             //Application.Run(BattleScreen);
             Town town = new Town();
