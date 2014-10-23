@@ -4,6 +4,8 @@ namespace RpgGame.Interfaces
 {
     public interface IItem
     {
+        string Name { get; set; }
+
         int Strength { get; }
 
         int Dexterity { get; }

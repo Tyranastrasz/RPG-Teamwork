@@ -181,7 +181,7 @@ namespace RpgGame.Forms
             statsBox.Left = pos.X - 20;
             statsBox.Show();
 
-            statsBox.Text = GetItemType(item)
+            statsBox.Text = item.Name
                         + "\nStr: " + item.Strength
                         + "\nInt: " + item.Intelligence
                         + "\nDex: " + item.Dexterity
@@ -308,7 +308,8 @@ namespace RpgGame.Forms
 
         private static string GetItemType(IItem item)
         {
-            string[] itemMeta = item.ToString().Split('.');
+            string type = item.GetType().ToString();
+            string[] itemMeta = type.Split('.');
             return itemMeta[itemMeta.Length - 1];
         }
 

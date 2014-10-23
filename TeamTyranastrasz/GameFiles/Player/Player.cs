@@ -34,6 +34,7 @@
             this.IntelligenceModifier = intelligenceModifier;
             this.Position = new Position();
             this.Level = 1;
+            this.Cash = 500;
             this.Inventory = new List<IItem>();
             this.Equiped = new List<IItem>();
             InitialItemEquip(baseItems);
