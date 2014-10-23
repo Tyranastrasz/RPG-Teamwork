@@ -32,8 +32,16 @@
                     RecreateItems(secondFile, loadedInventory);
                     RecreateItems(thirdFile, loadedEquipedItems);
 
-                    GameEngine.PlayerCharacter.Inventory = loadedInventory;
-                    GameEngine.PlayerCharacter.Equiped = loadedEquipedItems;
+                    if (loadedInventory.Count > 0)
+                    {
+                        GameEngine.PlayerCharacter.Inventory = loadedInventory;
+                    }
+
+                    if (loadedEquipedItems.Count > 0)
+                    {
+                        GameEngine.PlayerCharacter.Equiped = loadedEquipedItems;
+                    }
+                    
                 }
             }
             catch (FileLoadException)
@@ -116,56 +124,63 @@
         private static void CreatePlayerFromSavedGame(string playerClass, 
             string saveGameContent)
         {
-            if (playerClass == "Warrior")
+            var jsonSerializer = new JavaScriptSerializer();
+            switch (playerClass)
             {
-                SnapshotOfCharacter loadedCharacter = new JavaScriptSerializer().Deserialize<SnapshotOfCharacter>(saveGameContent);
-                GameEngine.PlayerCharacter = new Warrior(
-                    loadedCharacter.Name,
-                    loadedCharacter.Strength,
-                    loadedCharacter.Dexterity,
-                    loadedCharacter.Vitality,
-                    loadedCharacter.Intelligence,
-                    loadedCharacter.MaxHitPoints,
-                    loadedCharacter.Experience,
-                    loadedCharacter.Cash,
-                    loadedCharacter.Level,
-                    loadedCharacter.Inventory,
-                    loadedCharacter.Equiped,
-                    loadedCharacter.Position);
-            }
-            else if (playerClass == "Mage")
-            {
-                SnapshotOfCharacter loadedCharacter = new JavaScriptSerializer().Deserialize<SnapshotOfCharacter>(saveGameContent);
-                GameEngine.PlayerCharacter = new Mage(
-                    loadedCharacter.Name,
-                    loadedCharacter.Strength,
-                    loadedCharacter.Dexterity,
-                    loadedCharacter.Vitality,
-                    loadedCharacter.Intelligence,
-                    loadedCharacter.MaxHitPoints,
-                    loadedCharacter.Experience,
-                    loadedCharacter.Cash,
-                    loadedCharacter.Level,
-                    loadedCharacter.Inventory,
-                    loadedCharacter.Equiped,
-                    loadedCharacter.Position);
-            }
-            else if (playerClass == "Mage")
-            {
-                SnapshotOfCharacter loadedCharacter = new JavaScriptSerializer().Deserialize<SnapshotOfCharacter>(saveGameContent);
-                GameEngine.PlayerCharacter = new Rogue(
-                    loadedCharacter.Name,
-                    loadedCharacter.Strength,
-                    loadedCharacter.Dexterity,
-                    loadedCharacter.Vitality,
-                    loadedCharacter.Intelligence,
-                    loadedCharacter.MaxHitPoints,
-                    loadedCharacter.Experience,
-                    loadedCharacter.Cash,
-                    loadedCharacter.Level,
-                    loadedCharacter.Inventory,
-                    loadedCharacter.Equiped,
-                    loadedCharacter.Position);
+                case "Warrior":
+                {
+                    SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
+                    GameEngine.PlayerCharacter = new Warrior(
+                        loadedCharacter.Name,
+                        loadedCharacter.Strength,
+                        loadedCharacter.Dexterity,
+                        loadedCharacter.Vitality,
+                        loadedCharacter.Intelligence,
+                        loadedCharacter.MaxHitPoints,
+                        loadedCharacter.Experience,
+                        loadedCharacter.Cash,
+                        loadedCharacter.Level,
+                        loadedCharacter.Inventory,
+                        loadedCharacter.Equiped,
+                        loadedCharacter.Position);
+                }
+                    break;
+                case "Mage":
+                {
+                    SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
+                    GameEngine.PlayerCharacter = new Mage(
+                        loadedCharacter.Name,
+                        loadedCharacter.Strength,
+                        loadedCharacter.Dexterity,
+                        loadedCharacter.Vitality,
+                        loadedCharacter.Intelligence,
+                        loadedCharacter.MaxHitPoints,
+                        loadedCharacter.Experience,
+                        loadedCharacter.Cash,
+                        loadedCharacter.Level,
+                        loadedCharacter.Inventory,
+                        loadedCharacter.Equiped,
+                        loadedCharacter.Position);
+                }
+                    break;
+                case "Rogue":
+                {
+                    SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
+                    GameEngine.PlayerCharacter = new Rogue(
+                        loadedCharacter.Name,
+                        loadedCharacter.Strength,
+                        loadedCharacter.Dexterity,
+                        loadedCharacter.Vitality,
+                        loadedCharacter.Intelligence,
+                        loadedCharacter.MaxHitPoints,
+                        loadedCharacter.Experience,
+                        loadedCharacter.Cash,
+                        loadedCharacter.Level,
+                        loadedCharacter.Inventory,
+                        loadedCharacter.Equiped,
+                        loadedCharacter.Position);
+                }
+                    break;
             }
         }
 

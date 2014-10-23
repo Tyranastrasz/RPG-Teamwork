@@ -3,7 +3,7 @@
   <Class Name="RpgGame.Forms.Map" Collapsed="true">
     <Position X="30" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IgAAACAgCKCAACAAAECEAAhCQAAAAAASAAABAAAABBA=</HashCode>
+      <HashCode>IgAAAAAgCKCAACAAAECEAAhCQAAAAAASAAABAAAABBA=</HashCode>
       <FileName>Forms\Map.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Sound.Sound">
-    <Position X="35.75" Y="3.25" Width="1.5" />
+    <Position X="37.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAACAAAAAgAAAQEBIQAAAAAEAAAAAAIAAAAAAQAA=</HashCode>
       <FileName>Sound\Sound.cs</FileName>
@@ -72,14 +72,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Items.Boots">
-    <Position X="18.5" Y="8.5" Width="1.5" />
+    <Position X="18" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Boots.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Items.Chainmail">
-    <Position X="20" Y="8.5" Width="1.5" />
+    <Position X="19.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Chainmail.cs</FileName>
@@ -93,7 +93,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="RpgGame.Items.Helmet">
-    <Position X="23" Y="8.5" Width="1.5" />
+    <Position X="23.25" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Helmet.cs</FileName>
@@ -233,66 +233,73 @@
     </TypeIdentifier>
   </Class>
   <Struct Name="RpgGame.Position">
-    <Position X="25.5" Y="0.5" Width="1.5" />
+    <Position X="37.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>Position.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="RpgGame.SaveAndLoad.SnapshotOfCharacter">
-    <Position X="39.5" Y="1.75" Width="1.5" />
+    <Position X="39.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CgAIIAyAAAAEgAAgAAAAIAQQAAFEAAADQBBAAgJQQCA=</HashCode>
       <FileName>SaveAndLoad\SnapshotOfCharacter.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="RpgGame.Interfaces.IAttack">
-    <Position X="30" Y="2.75" Width="1.5" />
+    <Position X="35.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IAttack.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RpgGame.Interfaces.ICharacter">
-    <Position X="33.5" Y="6.75" Width="1.5" />
+    <Position X="33" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgIAAAyCACAACAAgQAQAAAQIEABAAAABABAgAwAAQCA=</HashCode>
       <FileName>Interfaces\ICharacter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RpgGame.Interfaces.IDefend">
-    <Position X="33.5" Y="2.75" Width="1.5" />
+    <Position X="30.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
       <FileName>Interfaces\IDefend.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RpgGame.Interfaces.ITrade">
-    <Position X="31.75" Y="4" Width="1.5" />
+    <Position X="35.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\ITrade.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RpgGame.Interfaces.IUsable">
-    <Position X="30" Y="5.25" Width="1.5" />
+    <Position X="35.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAgAAAAAIAAAAAAgAAAAAIAAAAA=</HashCode>
       <FileName>Interfaces\IUsable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RpgGame.Interfaces.IItem">
-    <Position X="31.75" Y="5.75" Width="1.5" />
+    <Position X="30.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAiIAQAgAAAAAAAABAQIAABAAAAAAAAAAQAAACA=</HashCode>
       <FileName>Interfaces\IItem.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RpgGame.Interfaces.IEnemy">
-    <Position X="33.5" Y="4" Width="1.5" />
+    <Position X="30.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAgAAAAAAAAAAkAAAABAAIAAAAAAAAAAAAAQAAQAA=</HashCode>
       <FileName>Interfaces\IEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RpgGame.Interfaces.IUnit">
+    <Position X="33" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IUnit.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="RpgGame.Pictures">
