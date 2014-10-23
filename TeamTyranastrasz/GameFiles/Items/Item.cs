@@ -1,9 +1,16 @@
 ﻿using RpgGame.Interfaces;
+using System;
 
 namespace RpgGame.Items
 {
     public abstract class Item : GameObject, IItem
     {
+        private int strength;
+        private int dexterity;
+        private int vitality;
+        private int intelligence;
+        private int price;
+
         protected Item(string name, int price, Pictures picture, int defencePoints = 0, int attackPoints = 0, int hitPoints = 0, int str = 0, int dex = 0, int vit = 0, int intl = 0, int level = 0, string description = null)
             : base(name)
         {
@@ -20,13 +27,62 @@ namespace RpgGame.Items
             this.Picture = picture;
         }
 
-        public int Strength { get; set; }
+        public int Strength { 
+            get { return this.strength; }
 
-        public int Dexterity { get; set; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
 
-        public int Vitality { get; set; }
+                this.strength = value;
+            }
+        }
 
-        public int Intelligence { get; set; }
+        public int Dexterity {
+            get { return this.dexterity; }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
+
+                this.strength = value;
+            }
+        }
+
+        public int Vitality {
+            get { return this.vitality; }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
+
+                this.strength = value;
+            }
+        }
+
+        public int Intelligence
+        {
+            get { return this.intelligence; }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
+
+                this.strength = value;
+            }
+        }
 
         public int AttackPoints { get; protected set; }
         
@@ -36,7 +92,19 @@ namespace RpgGame.Items
 
         public int LevelRequirement { get; set; }
 
-        public int Price { get; set; }
+        public int Price {
+            get { return this.price; }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
+
+                this.strength = value;
+            }
+        }
 
         public string Description { get; protected set; }
 

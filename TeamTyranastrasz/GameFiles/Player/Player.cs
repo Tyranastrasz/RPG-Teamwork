@@ -12,6 +12,15 @@
         public readonly int VitalityModifier;
         public readonly int IntelligenceModifier;
 
+        private int strength;
+        private int dexterity;
+        private int vitality;
+        private int intelligence;
+        private int maxHitPoints;
+        private int cash;
+        private int experience;
+        private int level;
+
         protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier, List<IItem> baseItems) 
             : base(name)
         {
@@ -55,15 +64,75 @@
             this.IntelligenceModifier = intelligenceModifier;
         }
 
-        public int Strength { get; set; }
+        public int Strength { 
+            get { return this.strength; }
 
-        public int Dexterity { get; set; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
 
-        public int Vitality { get; set; }
+                this.strength = value;
+            }
+        }
 
-        public int Intelligence { get; set; }
+        public int Dexterity {
+            get { return this.dexterity; }
 
-        public int MaxHitPoints { get; set; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
+
+                this.strength = value;
+            }
+        }
+
+        public int Vitality {
+            get { return this.vitality; }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
+
+                this.strength = value;
+            }
+        }
+
+        public int Intelligence {
+            get { return this.intelligence; }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
+
+                this.strength = value;
+            }
+        }
+
+        public int MaxHitPoints {
+            get { return this.maxHitPoints; }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
+
+                this.strength = value;
+            }
+        }
 
         public int DefencePoints { get; set; }
 
@@ -73,13 +142,49 @@
 
         public int BonusAttackPoints { get; set; }
 
-        public int Experience { get; set; }
+        public int Experience {
+            get { return this.experience; }
 
-        public int Cash { get; set; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
+
+                this.strength = value;
+            }
+        }
+
+        public int Cash {
+            get { return this.cash; }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
+
+                this.strength = value;
+            }
+        }
 
         public int Range { get; set; }
 
-        public int Level { get; set; }
+        public int Level {
+            get { return this.level; }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new InvalidOperationException("This value can not be negative!");
+                }
+
+                this.strength = value;
+            }
+        }
 
         public List<IItem> Inventory { get; set; }
 
