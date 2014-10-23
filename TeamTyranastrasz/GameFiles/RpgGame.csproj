@@ -230,6 +230,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Images\battle_temp_img.jpg" />
     <Content Include="Images\golem.png" />
+    <None Include="Resources\town_shop_hover.png" />
+    <None Include="Resources\town_save_hover.png" />
+    <None Include="Resources\town_load_hover.png" />
+    <None Include="Resources\town_inventory_hover.png" />
     <None Include="Resources\rogue.png" />
     <None Include="Resources\mage.png" />
     <None Include="Resources\warrior.png" />

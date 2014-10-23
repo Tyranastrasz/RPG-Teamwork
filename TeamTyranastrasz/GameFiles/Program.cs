@@ -53,8 +53,8 @@ namespace RpgGame
 
             // start from the start screen
 
-            //GameEngine game = new GameEngine();
-            //game.Run();
+            GameEngine game = new GameEngine();
+            game.Run();
 
             //string[] filesInDirectory = System.IO.Directory.GetFiles("..\\..\\SaveAndLoad\\");
 
@@ -76,7 +76,7 @@ namespace RpgGame
             // start from the town
             //Application.Run(new Town());
 
-            Application.Run(new StartScreen());
+            //Application.Run(new StartScreen());
         }
     }
 }

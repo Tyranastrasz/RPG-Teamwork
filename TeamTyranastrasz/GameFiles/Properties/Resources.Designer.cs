@@ -613,9 +613,49 @@ namespace RpgGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap town_inventory_hover {
+            get {
+                object obj = ResourceManager.GetObject("town_inventory_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap town_load_hover {
+            get {
+                object obj = ResourceManager.GetObject("town_load_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap town_map {
             get {
                 object obj = ResourceManager.GetObject("town_map", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap town_save_hover {
+            get {
+                object obj = ResourceManager.GetObject("town_save_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap town_shop_hover {
+            get {
+                object obj = ResourceManager.GetObject("town_shop_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

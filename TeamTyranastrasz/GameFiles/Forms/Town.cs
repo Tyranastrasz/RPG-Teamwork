@@ -1,4 +1,5 @@
 ﻿using RpgGame.Interfaces;
+using RpgGame.SaveAndLoad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,70 @@ namespace RpgGame.Forms
         private void btnShop_Click(object sender, EventArgs e)
         {
             itemShop.ShowDialog();
+        }
+
+        private void btnShop_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnShop.Image = Properties.Resources.town_shop_hover;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void btnShop_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnShop.Image = null;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            Save.SaveGame();
+        }
+
+        private void saveBtn_MouseEnter(object sender, EventArgs e)
+        {
+            this.saveBtn.Image = Properties.Resources.town_save_hover;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void saveBtn_MouseLeave(object sender, EventArgs e)
+        {
+            this.saveBtn.Image = null;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void loadBtn_Click(object sender, EventArgs e)
+        {
+            SaveAndLoad.Load.LoadGame();
+        }
+
+        private void loadBtn_MouseEnter(object sender, EventArgs e)
+        {
+            this.loadBtn.Image = Properties.Resources.town_load_hover;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void loadBtn_MouseLeave(object sender, EventArgs e)
+        {
+            this.loadBtn.Image = null;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void inventoryBtn_Click(object sender, EventArgs e)
+        {
+            PlayerInventory inventory = new PlayerInventory();
+            inventory.ShowDialog();
+        }
+
+        private void inventoryBtn_MouseEnter(object sender, EventArgs e)
+        {
+            this.inventoryBtn.Image = Properties.Resources.town_inventory_hover;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void inventoryBtn_MouseLeave(object sender, EventArgs e)
+        {
+            this.inventoryBtn.Image = null;
+            this.Cursor = Cursors.Default;
         }
         
         // temp ussage to close the form
