@@ -50,7 +50,7 @@
             this.IsPlayerTurn = true;
             this.IsBattleEnd = false;
             this.EnemyList = new List<IEnemy>();
-            this.LastTurnEnemyId = -1;
+            this.LastTurnEnemyId = 0;
 
             this.IsAttackBuffUsed = false;
             this.IsDefenceBuffUsed = false;
@@ -78,7 +78,6 @@
         {
             // use thread.sleep
             this.IsPlayerTurn = false;
-            this.LastTurnEnemyId++;
             if (this.LastTurnEnemyId > this.EnemyList.Count - 1)
             {
                 this.LastTurnEnemyId = 0;
@@ -86,12 +85,11 @@
 
             try
             {
-                while (this.EnemyList[this.LastTurnEnemyId].IsAlive == false)
+                for (int i = this.LastTurnEnemyId; i < this.EnemyList.Count; i++)
                 {
-                    this.LastTurnEnemyId++;
-                    if (this.LastTurnEnemyId == this.EnemyList.Count - 1)
+                    if (this.EnemyList[i].IsAlive == true)
                     {
-                        this.LastTurnEnemyId = 0;
+                        this.LastTurnEnemyId = i;
                     }
                 }
                 Attack((IUnit)this.EnemyList[this.LastTurnEnemyId], GameEngine.PlayerCharacter);
@@ -122,6 +120,8 @@
             {
                 this.IsHealthBuffUsed = false;
             }
+
+            this.LastTurnEnemyId++;
 
             PlayerTurn();
         }
