@@ -137,6 +137,7 @@ namespace RpgGame.Forms
             this.load.TabIndex = 12;
             this.load.Text = "LOAD";
             this.load.UseVisualStyleBackColor = false;
+            this.load.Click += new System.EventHandler(this.load_Click);
             // 
             // save
             // 
@@ -155,6 +156,7 @@ namespace RpgGame.Forms
             this.save.TabIndex = 13;
             this.save.Text = "SAVE";
             this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // welcome
             // 

@@ -315,6 +315,14 @@
 
         private void exit_Click(object sender, EventArgs e)
         {
+
+            GameEngine.Inventory = new PlayerInventory();
+
+            GameEngine.Inventory.inventory = this.inventory;
+
+            //PlayerInventory.inventory = this.inventory;
+            //GameEngine.Inventory.inventory = this.inventory;
+            //PlayerInventory.SynchronizeItems(this.inventory);
             this.Close();
         }
     }

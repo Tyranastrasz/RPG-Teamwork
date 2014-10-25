@@ -50,17 +50,6 @@
             GameEngine.Inventory.ShowDialog();
         }
 
-        private void save_Click(object sender, EventArgs e)
-        {
-            Save.SaveGame();
-        }
-
-        private void load_Click(object sender, EventArgs e)
-        {
-            SaveAndLoad.Load.LoadGame();
-            MessageBox.Show("Game loaded!");
-        }
-
         private void quit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -161,6 +150,17 @@
         private void Map_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            Save.SaveGame();
+        }
+
+        private void load_Click(object sender, EventArgs e)
+        {
+            SaveAndLoad.Load.LoadGame();
+            MessageBox.Show("Game loaded!");
         }
     }
 }

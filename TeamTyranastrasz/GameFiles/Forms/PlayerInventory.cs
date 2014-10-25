@@ -8,18 +8,19 @@
 
     public partial class PlayerInventory : Form
     {
+        private ShopInventory itemShop;
+        private Label playerStats;
+        private Label statsBox;
+
         public List<Position> inventoryItemPositions = new List<Position>();
         public List<Position> equippedItemPositions = new List<Position>();
 
-        private List<IItem> inventory = GameEngine.PlayerCharacter.Inventory;
+        public List<IItem> inventory = GameEngine.PlayerCharacter.Inventory;
         private List<IItem> equipped = GameEngine.PlayerCharacter.Equiped;
 
         private List<PictureBox> inventoryPics = new List<PictureBox>();
         private List<PictureBox> equippedPics = new List<PictureBox>();
 
-        private Label playerStats;
-        private Label statsBox;
-        
         public PlayerInventory()
         {
             InitializeComponent();
@@ -216,9 +217,9 @@
         private void DrawItems()
         {
             int counter = 0;
-            if (this.inventory != null)
+            if (inventory != null)
             {
-                foreach (IItem item in this.inventory)
+                foreach (IItem item in inventory)
                 {
                     PictureBox pic = new PictureBox();
                     inventoryPics.Add(pic);

@@ -6,7 +6,7 @@
 
     public partial class Town : Form
     {
-        private ShopInventory itemShop = new ShopInventory();
+        private ShopInventory itemShop;
 
         public Town()
         {
@@ -20,6 +20,7 @@
 
         private void btnShop_Click(object sender, EventArgs e)
         {
+            this.itemShop = new ShopInventory();
             itemShop.ShowDialog();
         }
 

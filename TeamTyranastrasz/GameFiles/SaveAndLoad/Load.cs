@@ -1,4 +1,6 @@
-﻿namespace RpgGame.SaveAndLoad
+﻿using RpgGame.Forms;
+
+namespace RpgGame.SaveAndLoad
 {
     using System;
     using System.IO;
@@ -24,15 +26,15 @@
                     "..\\..\\SaveAndLoad\\" + playerClass + "saveequipeditems.txt"))
                 {
                     var saveGameContent = firstFile.ReadToEnd();
-                    //var jsonSerializer = new JavaScriptSerializer();
                     ICharacter recreatedCharacter = CreatePlayerFromSavedGame(playerClass, saveGameContent);
                     recreatedCharacter.Inventory = new List<IItem>();
                     recreatedCharacter.Equiped = new List<IItem>();
 
                     RecreateItems(secondFile, recreatedCharacter.Inventory);
                     RecreateItems(thirdFile, recreatedCharacter.Equiped);
-
+                    
                     GameEngine.PlayerCharacter = recreatedCharacter;
+                    GameEngine.Inventory = new PlayerInventory();
                 }
             }
             catch (FileLoadException)
