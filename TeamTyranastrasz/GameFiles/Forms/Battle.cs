@@ -65,7 +65,7 @@
 
             subStatsBox = new Label();
             subStatsBox.Left = 735;
-            subStatsBox.Top = 650;
+            subStatsBox.Top = 670;
             subStatsBox.Width = 80;
             subStatsBox.Height = 120;
             subStatsBox.BackColor = Color.Transparent;

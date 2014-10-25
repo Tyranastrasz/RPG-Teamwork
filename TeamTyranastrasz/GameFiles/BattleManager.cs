@@ -200,7 +200,7 @@
 
                     if (aliveEnemies == false)
                     {
-                        MessageBox.Show("VICTORY!");
+                        MessageBox.Show("YOU ARE VICTORIOUS!");
                         GameEngine.BattleScreen.Close();
                         GameEngine.Map.Show();
                         Sound.Sound.PlayMapSound();
