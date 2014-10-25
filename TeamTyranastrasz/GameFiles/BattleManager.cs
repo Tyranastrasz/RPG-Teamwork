@@ -203,6 +203,7 @@
                         MessageBox.Show("VICTORY!");
                         GameEngine.BattleScreen.Close();
                         GameEngine.Map.Show();
+                        Sound.Sound.PlayMapSound();
                     }
                 }
                 else

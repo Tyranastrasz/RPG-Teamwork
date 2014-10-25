@@ -1,9 +1,9 @@
-﻿using RpgGame.Interfaces;
-using RpgGame.Items;
-using System.Collections.Generic;
-
-namespace RpgGame.Player
+﻿namespace RpgGame.Player
 {
+    using RpgGame.Interfaces;
+    using RpgGame.Items;
+    using System.Collections.Generic;
+
     public class Warrior : Player
     {
         public const int WarriorStartingStrength = 5;
@@ -31,8 +31,8 @@ namespace RpgGame.Player
         {
         }
 
-        public Warrior(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position)
-            : base(name, strength, dexterity, vitality, intelligence, maxHitPoints, experience, cash, level, inventory, equiped, position, WarriorStrengthModifier, WarriorDexterityModifier, WarriorVitalityModifier, WarriorIntelligenceModifier)
+        public Warrior(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, Position position)
+            : base(name, strength, dexterity, vitality, intelligence, maxHitPoints, experience, cash, level, position, WarriorStrengthModifier, WarriorDexterityModifier, WarriorVitalityModifier, WarriorIntelligenceModifier)
         {
         }
 

@@ -1,6 +1,4 @@
-﻿using RpgGame.SaveAndLoad;
-
-namespace RpgGame.Forms
+﻿namespace RpgGame.Forms
 {
     using System;
     using System.Drawing;
@@ -89,9 +87,9 @@ namespace RpgGame.Forms
             Controls.Add(dicePointsBox);
 
             experienceBar = new ProgressBar();
-            experienceBar.Location = new System.Drawing.Point(294, 739);
+            experienceBar.Location = new Point(294, 739);
             experienceBar.Name = "experienceBar";
-            experienceBar.Size = new System.Drawing.Size(296, 24);
+            experienceBar.Size = new Size(296, 24);
             experienceBar.TabIndex = 14;
             experienceBar.Maximum = GameEngine.PlayerCharacter.CalculateExperience(GameEngine.PlayerCharacter.Level);
             experienceBar.Value = GameEngine.PlayerCharacter.Experience;
@@ -101,7 +99,7 @@ namespace RpgGame.Forms
             Controls.Add(experienceBar);
 
             characterPicture = new PictureBox();
-            characterPicture.Image = getCharacterImage(GetCharacterClass(GameEngine.PlayerCharacter));
+            characterPicture.Image = GetCharacterImage(GetCharacterClass(GameEngine.PlayerCharacter));
             characterPicture.Width = 250;
             characterPicture.Height = 250;
             characterPicture.BackColor = Color.Transparent;
@@ -159,10 +157,7 @@ namespace RpgGame.Forms
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            if (GameEngine.Inventory == null)
-            {
-                GameEngine.Inventory = new PlayerInventory();
-            }
+            GameEngine.Inventory = new PlayerInventory();
             GameEngine.Inventory.ShowDialog();
         }
 
@@ -304,7 +299,7 @@ namespace RpgGame.Forms
 
             battle.CurrentTarget = battle.EnemyList[id];
             battle.CurrentTargetId = id;
-            showTargetBox(targetBox, (IUnit)battle.EnemyList[id]);
+            ShowTargetBox(targetBox, (IUnit)battle.EnemyList[id]);
         }
 
         private void DrawImages(PictureBox pictureBox, IEnemy enemy, Image image, string id)
@@ -325,12 +320,12 @@ namespace RpgGame.Forms
             int counter = 0;
             foreach (IEnemy enemy in battle.EnemyList)
             {
-                DrawImages(enemy.PicBox, enemy, getImage(enemy), counter.ToString());
+                DrawImages(enemy.PicBox, enemy, GetImage(enemy), counter.ToString());
                 counter++;
             }
         }
 
-        public void showTargetBox(Label box, IUnit enemy)
+        public void ShowTargetBox(Label box, IUnit enemy)
         {
             box.Show();
             box.Text = "\nAttack: " + enemy.Attack()
@@ -338,7 +333,7 @@ namespace RpgGame.Forms
                         + "\nHitpoints: " + enemy.CurrentHitPoints;
         }
 
-        private Image getImage(IEnemy enemy)
+        private Image GetImage(IEnemy enemy)
         {
             switch (enemy.Picture)
             {
@@ -366,7 +361,7 @@ namespace RpgGame.Forms
             return characterMeta[characterMeta.Length - 1];
         }
 
-        private Image getCharacterImage(string characterClass)
+        private Image GetCharacterImage(string characterClass)
         {
             switch (characterClass)
             {
@@ -389,7 +384,7 @@ namespace RpgGame.Forms
             {
                 prefix = "+";
             }
-            unitDamage.Text = prefix + num.ToString();
+            unitDamage.Text = prefix + num;
             unitDamage.Left = 0;
             unitDamage.Top = 40;
             unitDamage.Parent = picBox;

@@ -44,7 +44,7 @@
             this.CurrentHitPoints = this.MaxHitPoints;
         }
 
-        protected Player(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier)
+        protected Player(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, Position position, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier)
             : base(name)
         {
             this.Strength = strength;
@@ -56,8 +56,6 @@
             this.Experience = experience;
             this.Cash = cash;
             this.Level = level;
-            CloneInventory(inventory);
-            CloneEquipedItems(equiped);
             this.Position = position;
             this.StrengthModifier = strengthModifier;
             this.DexterityModifier = dexterityModifier;
@@ -196,28 +194,6 @@
             for (int i = 0; i < baseItems.Count(); i++)
             {
                 this.Equip(baseItems[i], i, true);
-            }
-        }
-
-        private void CloneInventory(List<IItem> inventory)
-        {
-            if (inventory != null)
-            {
-                foreach (var item in inventory)
-                {
-                    this.Inventory.Add(item);
-                }
-            }
-        }
-
-        private void CloneEquipedItems(List<IItem> equiped)
-        {
-            if (equiped != null)
-            {
-                foreach (var item in equiped)
-                {
-                    this.Equiped.Add(item);
-                }
             }
         }
 

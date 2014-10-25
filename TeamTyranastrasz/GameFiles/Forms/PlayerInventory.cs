@@ -66,8 +66,8 @@
 
         private void PlayerInventory_Load(object sender, EventArgs e)
         {
-            DrawItems();
             RefreshPlayerStats();
+            DrawItems();
         }
 
         private void PictureBox_Click(object sender, EventArgs e)
@@ -104,7 +104,8 @@
 
                 try
                 {
-                    GameEngine.PlayerCharacter.Equip(inventory[id], slot, false);
+                    // The last parameter seems redundant. It can never be false and the method should be changed.
+                    GameEngine.PlayerCharacter.Equip(inventory[id], slot, true);
                     GameEngine.PlayerCharacter.UnEquip(equipped[slot]);
 
                     IItem tempItem;
@@ -171,6 +172,7 @@
             }
         }
 
+        // The last two parameters are never used?
         private void RefreshStatsBox(IItem item, Position pos, string type, int id)
         {
             statsBox.Left = pos.X - 20;

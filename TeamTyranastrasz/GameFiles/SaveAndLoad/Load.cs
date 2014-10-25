@@ -133,8 +133,6 @@ namespace RpgGame.SaveAndLoad
                         loadedCharacter.Experience,
                         loadedCharacter.Cash,
                         loadedCharacter.Level,
-                        loadedCharacter.Inventory,
-                        loadedCharacter.Equiped,
                         loadedCharacter.Position);
                     return recreatedCharacter;
                 }
@@ -151,8 +149,6 @@ namespace RpgGame.SaveAndLoad
                         loadedCharacter.Experience,
                         loadedCharacter.Cash,
                         loadedCharacter.Level,
-                        loadedCharacter.Inventory,
-                        loadedCharacter.Equiped,
                         loadedCharacter.Position);
                     return recreatedCharacter;
                 }
@@ -169,8 +165,6 @@ namespace RpgGame.SaveAndLoad
                         loadedCharacter.Experience,
                         loadedCharacter.Cash,
                         loadedCharacter.Level,
-                        loadedCharacter.Inventory,
-                        loadedCharacter.Equiped,
                         loadedCharacter.Position);
                     return recreatedCharacter;
                 }

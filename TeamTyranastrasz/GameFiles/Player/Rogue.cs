@@ -1,8 +1,7 @@
-﻿using RpgGame.Interfaces;
-
-namespace RpgGame.Player
+﻿namespace RpgGame.Player
 {
     using RpgGame.Items;
+    using RpgGame.Interfaces;
     using System.Collections.Generic;
 
     public class Rogue : Player
@@ -32,8 +31,8 @@ namespace RpgGame.Player
         {
         }
 
-        public Rogue(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, List<IItem> inventory, List<IItem> equiped, Position position)
-            : base(name, strength, dexterity, vitality, intelligence, maxHitPoints, experience, cash, level, inventory, equiped, position, RogueStrengthModifier, RogueDexterityModifier, RogueVitalityModifier, RogueIntelligenceModifier)
+        public Rogue(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, Position position)
+            : base(name, strength, dexterity, vitality, intelligence, maxHitPoints, experience, cash, level, position, RogueStrengthModifier, RogueDexterityModifier, RogueVitalityModifier, RogueIntelligenceModifier)
         {
         }
 

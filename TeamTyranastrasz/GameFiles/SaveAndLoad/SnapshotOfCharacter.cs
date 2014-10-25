@@ -1,7 +1,5 @@
 ﻿namespace RpgGame.SaveAndLoad
 {
-    using System.Collections.Generic;
-    using System.Linq;
     using RpgGame.Interfaces;
 
     public struct SnapshotOfCharacter
@@ -15,8 +13,6 @@
         private int experience;
         private int cash;
         private int level;
-        private List<IItem> inventory;
-        private List<IItem> equiped;
         private Position position;
 
         public SnapshotOfCharacter(ICharacter currentPlayerState)
@@ -31,11 +27,7 @@
             this.experience = currentPlayerState.Experience;
             this.cash = currentPlayerState.Cash;
             this.level = currentPlayerState.Level;
-            this.inventory = new List<IItem>();
-            this.equiped = new List<IItem>();
             this.position = currentPlayerState.Position;
-            CloneInventory(currentPlayerState);
-            CloneEquipedItems(currentPlayerState);
         }
 
         public string Name
@@ -100,59 +92,10 @@
             set { this.level = value; }
         }
 
-        public List<IItem> Inventory
-        {
-            get { return this.inventory; } 
-            
-            set { this.inventory = value.ToList(); }
-        }
-
-        public List<IItem> Equiped
-        {
-            get { return this.equiped; }
-            
-            set { this.equiped = value.ToList(); }
-        }
-
         public Position Position
         {
             get { return this.position; } 
             set { this.position = value; }
-        }
-
-        private int CheckPlayersInventory(ICharacter currentPlayerState)
-        {
-            int countItemsInInventory = 0;
-            if (currentPlayerState.Inventory != null)
-            {
-                return countItemsInInventory += currentPlayerState.Inventory.Count;
-            }
-            else
-            {
-                return countItemsInInventory;
-            }
-        }
-
-        private void CloneInventory(ICharacter currentPlayerState)
-        {
-            if (currentPlayerState.Inventory != null)
-            {
-                foreach (var item in currentPlayerState.Inventory)
-                {
-                    this.inventory.Add(item);
-                }
-            }
-        }
-
-        private void CloneEquipedItems(ICharacter currentPlayerState)
-        {
-            if (currentPlayerState.Equiped != null)
-            {
-                foreach (var item in currentPlayerState.Equiped)
-                {
-                    this.equiped.Add(item);
-                }
-            }
         }
     }
 }

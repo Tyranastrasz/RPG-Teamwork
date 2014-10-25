@@ -43,27 +43,13 @@
 
         private void inventory_Click(object sender, EventArgs e)
         {
-            if (GameEngine.Inventory == null)
-            {
-                GameEngine.Inventory = new PlayerInventory();
-            }
+            GameEngine.Inventory = new PlayerInventory();
             GameEngine.Inventory.ShowDialog();
         }
 
         private void quit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        // This code reduces the flickering when loading the forms.
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
-                return cp;
-            }
         }
 
         private void battleTower_Click(object sender, EventArgs e)
@@ -161,6 +147,17 @@
         {
             SaveAndLoad.Load.LoadGame();
             MessageBox.Show("Game loaded!");
+        }
+
+        // This code reduces the flickering when loading the forms.
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
         }
     }
 }

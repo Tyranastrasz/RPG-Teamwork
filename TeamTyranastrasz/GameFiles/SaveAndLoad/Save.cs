@@ -15,8 +15,6 @@
         {
             ICharacter currentPlayerState = GameEngine.PlayerCharacter;
             SnapshotOfCharacter saveSnapshotOfCharacter = new SnapshotOfCharacter(currentPlayerState);
-            saveSnapshotOfCharacter.Inventory = new List<IItem>();
-            saveSnapshotOfCharacter.Equiped = new List<IItem>();
             var jsonSerializer = new JavaScriptSerializer();
             var savedData = jsonSerializer.Serialize(saveSnapshotOfCharacter);
             string currentPlayerClass = CheckCurrentPlayerClass(currentPlayerState);

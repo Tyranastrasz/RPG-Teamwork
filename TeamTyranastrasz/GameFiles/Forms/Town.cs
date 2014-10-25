@@ -73,10 +73,7 @@
 
         private void inventoryBtn_Click(object sender, EventArgs e)
         {
-            if (GameEngine.Inventory == null)
-            {
-                GameEngine.Inventory = new PlayerInventory();
-            }
+            GameEngine.Inventory = new PlayerInventory();
             GameEngine.Inventory.ShowDialog();
         }
 
@@ -98,6 +95,12 @@
             Application.Exit();
         }
 
+        private void backToMap_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            GameEngine.Map.Show();
+        }
+
         // This code reduces the flickering when loading the forms.
         protected override CreateParams CreateParams
         {
@@ -107,12 +110,6 @@
                 cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
                 return cp;
             }
-        }
-
-        private void backToMap_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            GameEngine.Map.Show();
         }
     }
 }
