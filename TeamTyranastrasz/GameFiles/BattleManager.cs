@@ -5,7 +5,6 @@
     using System.Windows.Forms;
     using RpgGame.Enemies.MeleeType;
     using RpgGame.Enemies.RangeType;
-    using RpgGame.Forms;
     using RpgGame.Interfaces;
     using RpgGame.Exceptions;
     using System.Drawing;

@@ -62,22 +62,22 @@
             this.inventoryPossitions.Add(new Position(448, 320));
 
             //name, price, picture, def, attk, hit, str, dex, vit, int, lvl
-            this.shopItems.Add(new Weapon("Lightnig Dagger", 45, Pictures.RareDager, 0, 5, 0, 0, 0, 0, 10, 4, "This dagger is creted for mage users."));
+            this.shopItems.Add(new Weapon("Lightnig Dagger", 45, Pictures.RareDager, 0, 5, 0, 0, 0, 0, 10, 4, "This dagger is created for mage users."));
             this.shopItems.Add(new Weapon("Big Sword", 100, Pictures.RareSword, 0, 22, 0, 0, 10, 0, 0, 8, "Big sword for heavy strikes."));
             this.shopItems.Add(new Weapon("Iron Sword", 5, Pictures.BasickSword, 0, 7, 0, 1, 0, 0, 0, 2, "Basic battle equipment."));
             this.shopItems.Add(new Helmet("Iron-horn Helm", 20, Pictures.WarriorHelmet, 2, 0, 3, 1, 0, 1, 0, 3, "Basic - but stylish."));
             this.shopItems.Add(new Gloves("Fighter Gloves", 15, Pictures.WarriorsGloves, 1, 2, 1, 0, 1, 0, 0, 1, "Good for melee characters."));
             this.shopItems.Add(new Boots("Armored Boots", 10, Pictures.WarriorBoots, 2, 2, 0, 0, 0, 1, 0, 2, "Heavy and slow."));
-            this.shopItems.Add(new Chainmail("Chainmail", 25, Pictures.WarriorChainmail, 2, 0, 0, 0, 1, 1, 0, 1, "Chainmail armor mekas you more agile."));
+            this.shopItems.Add(new Chainmail("Chainmail", 25, Pictures.WarriorChainmail, 2, 0, 0, 0, 1, 1, 0, 1, "Chainmail armor makes you more agile."));
             this.shopItems.Add(new Potion("Small Health Potion", 20, Pictures.HealingPotion, 0, 0, 0, 0, 0, 0, 0, 1, "Return + 10hp"));
             this.shopItems.Add(new Scroll("Teleport Scroll", 0, Pictures.Scroll, 0, 0, 0, 0, 0, 0, 0, 1, "Use to teleport to location."));
 
             this.shopItems.Add(new Weapon("Stone Axe", 35, Pictures.BasickAxe, 0, 7, 0, 0, 3, 0, 0, 4, "Made from solid granit."));
             this.shopItems.Add(new Weapon("Golden Staff", 75, Pictures.RareStaff, 0, 1, 0, 0, 0, 2, 4, 5, "Powered by the sun."));
             this.shopItems.Add(new Helmet("Wizards Hat", 50, Pictures.MageHelmet, 2, 0, 1, 0, 0, 1, 2, 3, "No wizard go out without his hat."));
-            this.shopItems.Add(new Gloves("Assasin Gloves", 15, Pictures.RogueGLoves, 1, 0, 3, 0, 1, 0, 1, 3, "Deadly on the right heands."));
-            this.shopItems.Add(new Boots("Golden Sandals", 170, Pictures.RogueBoots, 1, 1, 1, 1, 1, 1, 1, 1, "One quality item."));
-            this.shopItems.Add(new Chainmail("Wool Robe", 25, Pictures.MageChainmail, 2, 0, 0, 0, 2, 1, 0, 1, "Your best frend in cold winter nights."));
+            this.shopItems.Add(new Gloves("Assassin Gloves", 15, Pictures.RogueGLoves, 1, 0, 3, 0, 1, 0, 1, 3, "Deadly in the right hands."));
+            this.shopItems.Add(new Boots("Golden Sandals", 170, Pictures.RogueBoots, 1, 1, 1, 1, 1, 1, 1, 1, "One hell of a quality item."));
+            this.shopItems.Add(new Chainmail("Wool Robe", 25, Pictures.MageChainmail, 2, 0, 0, 0, 2, 1, 0, 1, "Your best friend in cold winter nights."));
 
             this.shopItems.Add(new Weapon("Sacura Staff", 45, Pictures.MidStaff, 0, 7, 0, 0, 0, 1, 2, 4, "Eastern mistery."));
             this.shopItems.Add(new Weapon("Colibri", 55, Pictures.MidDager, 0, 8, 0, 1, 0, 0, 0, 2, "Dual strike - very fast"));

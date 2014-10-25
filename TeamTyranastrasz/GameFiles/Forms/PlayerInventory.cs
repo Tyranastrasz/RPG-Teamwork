@@ -226,7 +226,7 @@ namespace RpgGame.Forms
             {
                 PictureBox pic = new PictureBox();
                 inventoryPics.Add(pic);
-                DrawImages(pic, item, getImage(item), inventoryItemPositions[counter], "inventory-" + counter);
+                DrawImages(pic, item, GetImage(item), inventoryItemPositions[counter], "inventory-" + counter);
                 counter++;
             }
             counter = 0;
@@ -234,7 +234,7 @@ namespace RpgGame.Forms
             {
                 PictureBox pic = new PictureBox();
                 equippedPics.Add(pic);
-                DrawImages(pic, item, getImage(item), equippedItemPositions[counter], "equipped-" + counter);
+                DrawImages(pic, item, GetImage(item), equippedItemPositions[counter], "equipped-" + counter);
                 counter++;
             }
         }
@@ -244,7 +244,7 @@ namespace RpgGame.Forms
             this.Hide();
         }
 
-        private Image getImage(IItem item)
+        private Image GetImage(IItem item)
         {
             switch (item.Picture)
             {
