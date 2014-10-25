@@ -9,7 +9,7 @@
     {
         public static string GeneratePathToFile(string fileName)
         {
-            string additionalPath = "Sound\\SoundFiles\\" + fileName;
+            //string additionalPath = "Sound\\SoundFiles\\" + fileName;
             string path = Assembly.GetExecutingAssembly().Location;
             path = Path.GetDirectoryName(path);
             path = Path.Combine(path, "BattleAxeSwing.wav");
@@ -22,8 +22,11 @@
 
             try
             {
-                SoundPlayer mapSound = new SoundPlayer("..\\..\\Sound\\SoundFiles\\DiabloTristramVillage.wav");
-                mapSound.PlayLooping();
+                using (SoundPlayer mapSound = new SoundPlayer("..\\..\\Sound\\SoundFiles\\DiabloTristramVillage.wav"))
+                {
+                    mapSound.PlayLooping();
+                }
+                
             }
             catch (FileNotFoundException)
             {
@@ -47,8 +50,10 @@
         {
             try
             {
-                SoundPlayer battleSound = new SoundPlayer("..\\..\\Sound\\SoundFiles\\TheBattle.wav");
-                battleSound.PlayLooping();
+                using (SoundPlayer battleSound = new SoundPlayer("..\\..\\Sound\\SoundFiles\\TheBattle.wav"))
+                {
+                    battleSound.PlayLooping();
+                }
             }
             catch (FileNotFoundException)
             {
@@ -73,7 +78,7 @@
             try
             {
                 var firstSpellSound = new System.Windows.Media.MediaPlayer();
-                firstSpellSound.Open(new System.Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
+                firstSpellSound.Open(new Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
                                     @"\Sound\SoundFiles\Spell1Sound.wav"));
                 firstSpellSound.Play();
             }
@@ -100,7 +105,7 @@
             try
             {
                 var secondSpellSound = new System.Windows.Media.MediaPlayer();
-                secondSpellSound.Open(new System.Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
+                secondSpellSound.Open(new Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
                                     @"\Sound\SoundFiles\Spell2Sound.wav"));
                 secondSpellSound.Play();
             }
@@ -127,7 +132,7 @@
             try
             {
                 var thirdSpellSound = new System.Windows.Media.MediaPlayer();
-                thirdSpellSound.Open(new System.Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
+                thirdSpellSound.Open(new Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
                                     @"\Sound\SoundFiles\Spell3Sound.wav"));
                 thirdSpellSound.Play();
             }
@@ -154,7 +159,7 @@
             try
             {
                 var healSound = new System.Windows.Media.MediaPlayer();
-                healSound.Open(new System.Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
+                healSound.Open(new Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
                                     @"\Sound\SoundFiles\Heal.mp3"));
                 healSound.Play();
             }
@@ -181,7 +186,7 @@
             try
             {
                 var attackBuffSound = new System.Windows.Media.MediaPlayer();
-                attackBuffSound.Open(new System.Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
+                attackBuffSound.Open(new Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
                                     @"\Sound\SoundFiles\AttackBuff.wav"));
                 attackBuffSound.Play();
             }
@@ -203,12 +208,12 @@
             }
         }
 
-        public static void playDefenseBuffSound()
+        public static void PlayDefenseBuffSound()
         {
             try
             {
                 var defenseBuffSound = new System.Windows.Media.MediaPlayer();
-                defenseBuffSound.Open(new System.Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
+                defenseBuffSound.Open(new Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
                                     @"\Sound\SoundFiles\DefenseBuff.flac"));
                 defenseBuffSound.Play();
             }
@@ -235,7 +240,7 @@
             try
             {
                 var attackBuffSound = new System.Windows.Media.MediaPlayer();
-                attackBuffSound.Open(new System.Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
+                attackBuffSound.Open(new Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
                                     @"\Sound\SoundFiles\BattleAxeSwing.wav"));
                 attackBuffSound.Play();
             }
@@ -262,7 +267,7 @@
             try
             {
                 var defendSound = new System.Windows.Media.MediaPlayer();
-                defendSound.Open(new System.Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
+                defendSound.Open(new Uri(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()) +
                                     @"\Sound\SoundFiles\DefendSound.wav"));
                 defendSound.Play();
             }

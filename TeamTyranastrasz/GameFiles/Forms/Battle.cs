@@ -261,7 +261,7 @@
                     ShowDamageBox(defDiff, Color.Blue, characterPicture);
                     battle.IsDefenceBuffUsed = true;
                     RefreshStats();
-                    Sound.Sound.playDefenseBuffSound();
+                    Sound.Sound.PlayDefenseBuffSound();
                 }
                 catch (NotEnoughDicePointsException)
                 {
