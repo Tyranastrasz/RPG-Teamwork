@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using RpgGame.Interfaces;
-using RpgGame.Items;
-
-namespace RpgGame.Forms
+﻿namespace RpgGame.Forms
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Windows.Forms;
+    using RpgGame.Interfaces;
+
     public partial class PlayerInventory : Form
     {
         public List<Position> inventoryItemPositions = new List<Position>();
@@ -222,20 +216,27 @@ namespace RpgGame.Forms
         private void DrawItems()
         {
             int counter = 0;
-            foreach (IItem item in this.inventory)
+            if (this.inventory != null)
             {
-                PictureBox pic = new PictureBox();
-                inventoryPics.Add(pic);
-                DrawImages(pic, item, GetImage(item), inventoryItemPositions[counter], "inventory-" + counter);
-                counter++;
+                foreach (IItem item in this.inventory)
+                {
+                    PictureBox pic = new PictureBox();
+                    inventoryPics.Add(pic);
+                    DrawImages(pic, item, GetImage(item), inventoryItemPositions[counter], "inventory-" + counter);
+                    counter++;
+                }
             }
+            
             counter = 0;
-            foreach (IItem item in this.equipped)
+            if (this.equipped != null)
             {
-                PictureBox pic = new PictureBox();
-                equippedPics.Add(pic);
-                DrawImages(pic, item, GetImage(item), equippedItemPositions[counter], "equipped-" + counter);
-                counter++;
+                foreach (IItem item in this.equipped)
+                {
+                    PictureBox pic = new PictureBox();
+                    equippedPics.Add(pic);
+                    DrawImages(pic, item, GetImage(item), equippedItemPositions[counter], "equipped-" + counter);
+                    counter++;
+                }
             }
         }
 
@@ -322,6 +323,11 @@ namespace RpgGame.Forms
                 cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
                 return cp;
             }
+        }
+
+        private void welcome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

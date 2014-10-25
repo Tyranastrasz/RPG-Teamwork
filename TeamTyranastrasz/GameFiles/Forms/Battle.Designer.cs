@@ -48,7 +48,7 @@
             this.healthBuffPb = new System.Windows.Forms.ProgressBar();
             this.attackPb = new System.Windows.Forms.ProgressBar();
             this.defendPb = new System.Windows.Forms.ProgressBar();
-            this.Click += new System.EventHandler(this.empty_Click);
+            this.playerName = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAttack
@@ -282,6 +282,23 @@
             this.defendPb.Size = new System.Drawing.Size(51, 13);
             this.defendPb.TabIndex = 21;
             // 
+            // playerName
+            // 
+            this.playerName.BackColor = System.Drawing.Color.Transparent;
+            this.playerName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.playerName.FlatAppearance.BorderSize = 0;
+            this.playerName.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.playerName.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.playerName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.playerName.ForeColor = System.Drawing.Color.White;
+            this.playerName.Location = new System.Drawing.Point(647, 638);
+            this.playerName.Name = "playerName";
+            this.playerName.Size = new System.Drawing.Size(165, 23);
+            this.playerName.TabIndex = 22;
+            this.playerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.playerName.UseVisualStyleBackColor = false;
+            // 
             // Battle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +306,7 @@
             this.BackgroundImage = global::RpgGame.Properties.Resources.BattleScreenBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.playerName);
             this.Controls.Add(this.defendPb);
             this.Controls.Add(this.attackPb);
             this.Controls.Add(this.healthBuffPb);
@@ -315,6 +333,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Battle";
             this.Load += new System.EventHandler(this.Battle_Load);
+            this.Click += new System.EventHandler(this.empty_Click);
             this.ResumeLayout(false);
 
         }
@@ -340,5 +359,6 @@
         private System.Windows.Forms.ProgressBar healthBuffPb;
         private System.Windows.Forms.ProgressBar attackPb;
         private System.Windows.Forms.ProgressBar defendPb;
+        private System.Windows.Forms.Button playerName;
     }
 }

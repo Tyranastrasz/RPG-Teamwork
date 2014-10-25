@@ -201,7 +201,7 @@
             {
                 PictureBox pic = new PictureBox();
                 inventoryPics.Add(pic);
-                DrawImages(pic, item, getImage(item), inventoryPossitions[counter], "inventory-" + counter);
+                DrawImages(pic, item, GetImage(item), inventoryPossitions[counter], "inventory-" + counter);
                 counter++;
             }
         }
@@ -223,7 +223,7 @@
             {
                 PictureBox pic = new PictureBox();
                 shopItemsPics.Add(pic);
-                DrawImages(pic, item, getImage(item), shopItemsPossitions[counter], "shop-" + counter);
+                DrawImages(pic, item, GetImage(item), shopItemsPossitions[counter], "shop-" + counter);
                 counter++;
             }
         }
@@ -233,7 +233,7 @@
             this.goldBox.Text = GameEngine.PlayerCharacter.Cash.ToString();
         }
 
-        private Image getImage(IItem item)
+        private Image GetImage(IItem item)
         {
             switch (item.Picture)
             {

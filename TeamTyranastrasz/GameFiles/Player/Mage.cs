@@ -23,7 +23,7 @@ namespace RpgGame.Player
             new Helmet("Apprentice Hat", 10, Pictures.MageHelmet, 1, 0, 3, 0, 1, 1, 0, 1, "Basic wizard hat - for new wizards."),
             new Weapon("Wooden Staff", 15, Pictures.BasickStaff, 0, 5, 0, 0, 0, 0, 3, 1, "Basic wizard weapon."),
             new Chainmail("Battle Robe", 25, Pictures.MageChainmail, 2, 0, 4, 0, 2, 2, 0, 1, "Sturdy and durable - good for adventurers."),
-            new Gloves("Encated Gloves", 15, Pictures.MageGloves, 2, 0, 1, 0, 0, 1, 2, 1,"Have small enchantment for better magick casting."),
+            new Gloves("Encated Gloves", 15, Pictures.MageGloves, 2, 0, 1, 0, 0, 1, 2, 1,"Have small enchantment for better magic casting."),
             new Boots("Simple Boots", 10, Pictures.MageBoots, 1, 0, 1, 0, 0, 2, 0, 1, "Simple and cheap, good for walking."),
         };
 

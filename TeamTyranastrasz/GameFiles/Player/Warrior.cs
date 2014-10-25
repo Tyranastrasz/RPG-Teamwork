@@ -21,8 +21,8 @@ namespace RpgGame.Player
             // name, price, picture, def, attk, hit, str, dex, vit, int, lvl, desc
             new Helmet("Mail Helmet", 25, Pictures.WarriorHelmet, 2, 0, 3, 0, 1, 1, 0, 1, "Metal helmet is the best helmet;"),
             new Weapon("Old Dulled Axe", 5, Pictures.BasickSword, 0, 5, 0, 0, 0, 0, 0, 1, "Basic battle equipment."),
-            new Chainmail("Battle Aromor", 25, Pictures.WarriorChainmail, 2, 0, 3, 0, 1, 1, 0, 1, "It will save your life."),
-            new Gloves("Steel Gloves", 20, Pictures.WarriorsGloves, 1, 0, 2, 0, 1, 2, 0, 1, "Very heavy - olny for strong warriors."),
+            new Chainmail("Battle Armor", 25, Pictures.WarriorChainmail, 2, 0, 3, 0, 1, 1, 0, 1, "It will save your life."),
+            new Gloves("Steel Gloves", 20, Pictures.WarriorsGloves, 1, 0, 2, 0, 1, 2, 0, 1, "Very heavy - only for strong warriors."),
             new Boots("Heavy Boots", 10, Pictures.WarriorBoots, 1, 0, 2, 0, 0, 1, 0, 1, "Make you very slow."),
         };
 

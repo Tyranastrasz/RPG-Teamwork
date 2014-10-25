@@ -25,23 +25,14 @@
                 {
                     var saveGameContent = firstFile.ReadToEnd();
                     //var jsonSerializer = new JavaScriptSerializer();
-                    CreatePlayerFromSavedGame(playerClass, saveGameContent);
-                    List<IItem> loadedInventory = new List<IItem>();
-                    List<IItem> loadedEquipedItems = new List<IItem>();
+                    ICharacter recreatedCharacter = CreatePlayerFromSavedGame(playerClass, saveGameContent);
+                    recreatedCharacter.Inventory = new List<IItem>();
+                    recreatedCharacter.Equiped = new List<IItem>();
 
-                    RecreateItems(secondFile, loadedInventory);
-                    RecreateItems(thirdFile, loadedEquipedItems);
+                    RecreateItems(secondFile, recreatedCharacter.Inventory);
+                    RecreateItems(thirdFile, recreatedCharacter.Equiped);
 
-                    if (loadedInventory.Count > 0)
-                    {
-                        GameEngine.PlayerCharacter.Inventory = loadedInventory;
-                    }
-
-                    if (loadedEquipedItems.Count > 0)
-                    {
-                        GameEngine.PlayerCharacter.Equiped = loadedEquipedItems;
-                    }
-                    
+                    GameEngine.PlayerCharacter = recreatedCharacter;
                 }
             }
             catch (FileLoadException)
@@ -121,7 +112,7 @@
             }
         }
 
-        private static void CreatePlayerFromSavedGame(string playerClass, 
+        private static ICharacter CreatePlayerFromSavedGame(string playerClass, 
             string saveGameContent)
         {
             var jsonSerializer = new JavaScriptSerializer();
@@ -130,7 +121,7 @@
                 case "Warrior":
                 {
                     SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
-                    GameEngine.PlayerCharacter = new Warrior(
+                    ICharacter recreatedCharacter = new Warrior(
                         loadedCharacter.Name,
                         loadedCharacter.Strength,
                         loadedCharacter.Dexterity,
@@ -143,12 +134,12 @@
                         loadedCharacter.Inventory,
                         loadedCharacter.Equiped,
                         loadedCharacter.Position);
+                    return recreatedCharacter;
                 }
-                    break;
                 case "Mage":
                 {
                     SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
-                    GameEngine.PlayerCharacter = new Mage(
+                    ICharacter recreatedCharacter = new Mage(
                         loadedCharacter.Name,
                         loadedCharacter.Strength,
                         loadedCharacter.Dexterity,
@@ -161,12 +152,12 @@
                         loadedCharacter.Inventory,
                         loadedCharacter.Equiped,
                         loadedCharacter.Position);
+                    return recreatedCharacter;
                 }
-                    break;
                 case "Rogue":
                 {
                     SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
-                    GameEngine.PlayerCharacter = new Rogue(
+                    ICharacter recreatedCharacter = new Rogue(
                         loadedCharacter.Name,
                         loadedCharacter.Strength,
                         loadedCharacter.Dexterity,
@@ -179,8 +170,10 @@
                         loadedCharacter.Inventory,
                         loadedCharacter.Equiped,
                         loadedCharacter.Position);
+                    return recreatedCharacter;
                 }
-                    break;
+                default:
+                    throw new InvalidCharacterTypeException();
             }
         }
 

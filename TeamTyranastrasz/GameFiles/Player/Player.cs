@@ -310,7 +310,7 @@
 
         public void AddToInventory(IItem item)
         {
-            if (this.Inventory != null || this.Inventory.Count < 10)
+            if (this.Inventory != null && this.Inventory.Count < 10)
             {
                 this.Inventory.Add(item);
             }

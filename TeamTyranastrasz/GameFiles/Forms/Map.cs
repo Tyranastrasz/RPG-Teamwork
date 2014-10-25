@@ -4,17 +4,41 @@
     using System.Windows.Forms;
     using RpgGame.Interfaces;
     using RpgGame.SaveAndLoad;
-    using System.Diagnostics; 
+    using System.Diagnostics;
+    using System.Drawing;
+    using RpgGame.Exceptions;
 
     public partial class Map : Form
     {
         public Map()
         {
             InitializeComponent();
-            ICharacter playerCharacter = GameEngine.PlayerCharacter;
+            
+            //ICharacter playerCharacter = GameEngine.PlayerCharacter;
+            welcome.Text = "Welcome, " + GameEngine.PlayerCharacter.Name + " !";
+            theChoosenOne.Image = GetCharacterImage(GetCharacterClass(GameEngine.PlayerCharacter));
             Sound.Sound.PlayMapSound();
+        }
 
-            // TODO: Make buttons transperant with no text, but on hover the objects are sparkling (photoshoped layers for each location)
+        private Image GetCharacterImage(string characterClass)
+        {
+            switch (characterClass)
+            {
+                case "Warrior":
+                    return Properties.Resources.warrior;
+                case "Rogue":
+                    return Properties.Resources.rogue;
+                case "Mage":
+                    return Properties.Resources.mage;
+                default:
+                    throw new NoPictureException();
+            }
+        }
+
+        private static string GetCharacterClass(ICharacter character)
+        {
+            string[] characterMeta = character.ToString().Split('.');
+            return characterMeta[characterMeta.Length - 1];
         }
 
         private void inventory_Click(object sender, EventArgs e)
@@ -57,11 +81,6 @@
         {
             GameEngine.CreateBattleScreen();
             this.Hide();
-        }
-
-        private void Map_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Map_MouseMove(object sender, MouseEventArgs e)
@@ -132,6 +151,16 @@
             Town enterTown = new Town();
             enterTown.Show();
             this.Hide();
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Map_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

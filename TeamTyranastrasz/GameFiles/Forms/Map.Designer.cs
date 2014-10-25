@@ -31,50 +31,20 @@ namespace RpgGame.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Map));
-            this.save = new System.Windows.Forms.Button();
-            this.load = new System.Windows.Forms.Button();
-            this.quit = new System.Windows.Forms.Button();
             this.battleTower = new System.Windows.Forms.PictureBox();
             this.secretPlace = new System.Windows.Forms.PictureBox();
             this.townSelected = new System.Windows.Forms.PictureBox();
             this.inventory = new System.Windows.Forms.Button();
+            this.exit = new System.Windows.Forms.Button();
+            this.load = new System.Windows.Forms.Button();
+            this.save = new System.Windows.Forms.Button();
+            this.welcome = new System.Windows.Forms.Button();
+            this.theChoosenOne = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.battleTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secretPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.townSelected)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theChoosenOne)).BeginInit();
             this.SuspendLayout();
-            // 
-            // save
-            // 
-            this.save.Cursor = System.Windows.Forms.Cursors.Default;
-            this.save.Location = new System.Drawing.Point(284, 674);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(75, 23);
-            this.save.TabIndex = 4;
-            this.save.Text = "Save";
-            this.save.UseVisualStyleBackColor = true;
-            this.save.Click += new System.EventHandler(this.save_Click);
-            // 
-            // load
-            // 
-            this.load.Cursor = System.Windows.Forms.Cursors.Default;
-            this.load.Location = new System.Drawing.Point(396, 674);
-            this.load.Name = "load";
-            this.load.Size = new System.Drawing.Size(75, 23);
-            this.load.TabIndex = 5;
-            this.load.Text = "Load";
-            this.load.UseVisualStyleBackColor = true;
-            this.load.Click += new System.EventHandler(this.load_Click);
-            // 
-            // quit
-            // 
-            this.quit.Cursor = System.Windows.Forms.Cursors.Default;
-            this.quit.Location = new System.Drawing.Point(921, 12);
-            this.quit.Name = "quit";
-            this.quit.Size = new System.Drawing.Size(75, 23);
-            this.quit.TabIndex = 6;
-            this.quit.Text = "Quit";
-            this.quit.UseVisualStyleBackColor = true;
-            this.quit.Click += new System.EventHandler(this.quit_Click);
             // 
             // battleTower
             // 
@@ -123,13 +93,94 @@ namespace RpgGame.Forms
             this.inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.inventory.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.inventory.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.inventory.Location = new System.Drawing.Point(48, 57);
+            this.inventory.Location = new System.Drawing.Point(287, 674);
             this.inventory.Name = "inventory";
-            this.inventory.Size = new System.Drawing.Size(165, 49);
+            this.inventory.Size = new System.Drawing.Size(134, 49);
             this.inventory.TabIndex = 10;
             this.inventory.Text = "Inventory";
             this.inventory.UseVisualStyleBackColor = false;
             this.inventory.Click += new System.EventHandler(this.inventory_Click);
+            // 
+            // exit
+            // 
+            this.exit.BackColor = System.Drawing.Color.Transparent;
+            this.exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.exit.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
+            this.exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.exit.Location = new System.Drawing.Point(840, 674);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(134, 48);
+            this.exit.TabIndex = 11;
+            this.exit.Text = "EXIT";
+            this.exit.UseVisualStyleBackColor = false;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
+            // load
+            // 
+            this.load.BackColor = System.Drawing.Color.Transparent;
+            this.load.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.load.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.load.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.load.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
+            this.load.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.load.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.load.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.load.Location = new System.Drawing.Point(662, 674);
+            this.load.Name = "load";
+            this.load.Size = new System.Drawing.Size(134, 48);
+            this.load.TabIndex = 12;
+            this.load.Text = "LOAD";
+            this.load.UseVisualStyleBackColor = false;
+            // 
+            // save
+            // 
+            this.save.BackColor = System.Drawing.Color.Transparent;
+            this.save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.save.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.save.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
+            this.save.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSlateGray;
+            this.save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.save.Location = new System.Drawing.Point(481, 674);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(134, 48);
+            this.save.TabIndex = 13;
+            this.save.Text = "SAVE";
+            this.save.UseVisualStyleBackColor = false;
+            // 
+            // welcome
+            // 
+            this.welcome.BackColor = System.Drawing.Color.Transparent;
+            this.welcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.welcome.FlatAppearance.BorderSize = 0;
+            this.welcome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.welcome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.welcome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.welcome.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.welcome.ForeColor = System.Drawing.Color.White;
+            this.welcome.Location = new System.Drawing.Point(24, 12);
+            this.welcome.Name = "welcome";
+            this.welcome.Size = new System.Drawing.Size(212, 65);
+            this.welcome.TabIndex = 23;
+            this.welcome.UseVisualStyleBackColor = false;
+            // 
+            // theChoosenOne
+            // 
+            this.theChoosenOne.BackColor = System.Drawing.Color.Transparent;
+            this.theChoosenOne.Location = new System.Drawing.Point(12, 83);
+            this.theChoosenOne.Name = "theChoosenOne";
+            this.theChoosenOne.Size = new System.Drawing.Size(237, 263);
+            this.theChoosenOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.theChoosenOne.TabIndex = 24;
+            this.theChoosenOne.TabStop = false;
             // 
             // Map
             // 
@@ -140,13 +191,15 @@ namespace RpgGame.Forms
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1022, 766);
             this.ControlBox = false;
+            this.Controls.Add(this.theChoosenOne);
+            this.Controls.Add(this.welcome);
+            this.Controls.Add(this.save);
+            this.Controls.Add(this.load);
+            this.Controls.Add(this.exit);
             this.Controls.Add(this.inventory);
             this.Controls.Add(this.townSelected);
             this.Controls.Add(this.secretPlace);
             this.Controls.Add(this.battleTower);
-            this.Controls.Add(this.quit);
-            this.Controls.Add(this.load);
-            this.Controls.Add(this.save);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -157,19 +210,22 @@ namespace RpgGame.Forms
             ((System.ComponentModel.ISupportInitialize)(this.battleTower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secretPlace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.townSelected)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theChoosenOne)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button save;
-        private System.Windows.Forms.Button load;
-        private System.Windows.Forms.Button quit;
         private System.Windows.Forms.PictureBox battleTower;
         private System.Windows.Forms.PictureBox secretPlace;
         private System.Windows.Forms.PictureBox townSelected;
         private System.Windows.Forms.Button inventory;
+        private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.Button load;
+        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button welcome;
+        private System.Windows.Forms.PictureBox theChoosenOne;
     }
 }
 
