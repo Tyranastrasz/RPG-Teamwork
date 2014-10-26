@@ -126,9 +126,9 @@
                 try
                 {
                     battle.CheckDicePoints(BattleManager.AttackDicePoints);
+                    Sound.Sound.PlayAttackSound();
                     battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     RefreshStats();
-                    Sound.Sound.PlayAttackSound();
                 }
                 catch (NotEnoughDicePointsException)
                 {
@@ -174,9 +174,9 @@
                 {
                     battle.CheckDicePoints(BattleManager.AttackSkill1DicePoints);
                     GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("low");
+                    Sound.Sound.PlayFirstSpellSound();
                     battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("low");
-                    Sound.Sound.PlayFirstSpellSound();
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
@@ -194,9 +194,9 @@
                 {
                     battle.CheckDicePoints(BattleManager.AttackSkill2DicePoints);
                     GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("medium");
+                    Sound.Sound.PlaySecondSpellSound();
                     battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
                     GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("medium");
-                    Sound.Sound.PlaySecondSpellSound();
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
@@ -214,9 +214,9 @@
                 {
                     battle.CheckDicePoints(BattleManager.AttackSkill3DicePoints);
                     GameEngine.PlayerCharacter.BonusAttackPoints += GameEngine.PlayerCharacter.CalculateSkillStats("heavy");
-                    battle.Attack((IUnit)GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
-                    GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("heavy");
                     Sound.Sound.PlayThirdSpellSound();
+                    battle.Attack(GameEngine.PlayerCharacter, (IUnit)battle.CurrentTarget);
+                    GameEngine.PlayerCharacter.BonusAttackPoints -= GameEngine.PlayerCharacter.CalculateSkillStats("heavy");
                     RefreshStats();
                 }
                 catch (NotEnoughDicePointsException)
