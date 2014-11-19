@@ -59,7 +59,7 @@ namespace RpgGame.SaveAndLoad
             }
         }
 
-        private static void RecreateItems(StreamReader file, List<IItem> items)
+        private static void RecreateItems(StreamReader file, IList<IItem> items)
         {
             string currentLine;
             while ((currentLine = file.ReadLine()) != null)
@@ -71,7 +71,7 @@ namespace RpgGame.SaveAndLoad
             }
         }
 
-        private static void LoadItems(string[] lineSplitted, List<IItem> items)
+        private static void LoadItems(string[] lineSplitted, IList<IItem> items)
         {
             string name = lineSplitted[1].Trim();
             int price = int.Parse(lineSplitted[2].Trim());

@@ -9,14 +9,14 @@
 
     public partial class ShopInventory : Form
     {
-        public List<IItem> inventory = GameEngine.PlayerCharacter.Inventory;
-        public List<IItem> shopItems = new List<IItem>(); 
+        public IList<IItem> inventory = GameEngine.PlayerCharacter.Inventory;
+        public IList<IItem> shopItems = new List<IItem>(); 
         
-        public List<Position> shopItemsPossitions = new List<Position>();
-        public List<Position> inventoryPossitions = new List<Position>();
+        public IList<Position> shopItemsPossitions = new List<Position>();
+        public IList<Position> inventoryPossitions = new List<Position>();
 
-        public List<PictureBox> shopItemsPics = new List<PictureBox>();
-        public List<PictureBox> inventoryPics = new List<PictureBox>();
+        public IList<PictureBox> shopItemsPics = new List<PictureBox>();
+        public IList<PictureBox> inventoryPics = new List<PictureBox>();
 
         private Label statsBox;
 

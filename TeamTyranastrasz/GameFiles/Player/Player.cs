@@ -1,9 +1,9 @@
 ﻿namespace RpgGame.Player
 {
+    using RpgGame.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using RpgGame.Interfaces;
 
     public abstract class Player : Unit, ITrade, ICharacter
     {
@@ -38,8 +38,8 @@
             this.Inventory = new List<IItem>();
             this.Equiped = new List<IItem>();
             InitialItemEquip(baseItems);
-            CalculateAttackPoints();
-            CalculateDefencePoints();
+            //CalculateAttackPoints();
+            //CalculateDefencePoints();
             CalculateHitPoints();
             this.CurrentHitPoints = this.MaxHitPoints;
         }
@@ -169,8 +169,6 @@
             }
         }
 
-        public int Range { get; set; }
-
         public int Level {
             get { return this.level; }
 
@@ -185,9 +183,9 @@
             }
         }
 
-        public List<IItem> Inventory { get; set; }
+        public IList<IItem> Inventory { get; set; }
 
-        public List<IItem> Equiped { get; set; }
+        public IList<IItem> Equiped { get; set; }
 
         private void InitialItemEquip(List<IItem> baseItems)
         {
@@ -331,10 +329,6 @@
             }
         }
 
-        public abstract void CastBuff(string type);
-
-        public abstract void ClearBuff(string type);
-
         public int CalculateExperience(int lvl)
         {
             double xp = 100;
@@ -346,5 +340,9 @@
 
             return (int)xp;
         }
+
+        public abstract void CastBuff(string type);
+
+        public abstract void ClearBuff(string type);
     }
 }

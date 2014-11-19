@@ -48,7 +48,7 @@
             this.welcome.Text = "X";
             this.welcome.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.welcome.UseVisualStyleBackColor = false;
-            this.welcome.Click += new System.EventHandler(this.welcome_Click);
+            this.welcome.Click += new System.EventHandler(this.Exit_Click);
             // 
             // PlayerInventory
             // 

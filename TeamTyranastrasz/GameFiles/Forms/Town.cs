@@ -1,4 +1,6 @@
-﻿namespace RpgGame.Forms
+﻿using System.Threading;
+
+namespace RpgGame.Forms
 {
     using RpgGame.SaveAndLoad;
     using System;
@@ -74,6 +76,7 @@
         private void inventoryBtn_Click(object sender, EventArgs e)
         {
             GameEngine.Inventory = new PlayerInventory();
+
             GameEngine.Inventory.ShowDialog();
         }
 

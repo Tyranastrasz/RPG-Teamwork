@@ -28,13 +28,11 @@
 
         int Cash { get; set; }
 
-        int Range { get; }
-
         int Level { get; set; }
 
-        List<IItem> Inventory { get; set; }
+        IList<IItem> Inventory { get; set; }
 
-        List<IItem> Equiped { get; set; }
+        IList<IItem> Equiped { get; set; }
 
         void Sell(IItem item);
 

@@ -12,14 +12,14 @@
         private Label playerStats;
         private Label statsBox;
 
-        public List<Position> inventoryItemPositions = new List<Position>();
-        public List<Position> equippedItemPositions = new List<Position>();
+        private IList<Position> inventoryItemPositions = new List<Position>();
+        private IList<Position> equippedItemPositions = new List<Position>();
 
-        public List<IItem> inventory = GameEngine.PlayerCharacter.Inventory;
-        private List<IItem> equipped = GameEngine.PlayerCharacter.Equiped;
+        public IList<IItem> inventory = GameEngine.PlayerCharacter.Inventory;
+        private IList<IItem> equipped = GameEngine.PlayerCharacter.Equiped;
 
-        private List<PictureBox> inventoryPics = new List<PictureBox>();
-        private List<PictureBox> equippedPics = new List<PictureBox>();
+        private IList<PictureBox> inventoryPics = new List<PictureBox>();
+        private IList<PictureBox> equippedPics = new List<PictureBox>();
 
         public PlayerInventory()
         {
@@ -201,7 +201,7 @@
                             + "\nHit Points: " + GameEngine.PlayerCharacter.MaxHitPoints;
         }
 
-        private void DrawImages(PictureBox pictureBox, IItem item, Image image, Position position, string id)
+        private void DrawImages(PictureBox pictureBox, Image image, Position position, string id)
         {
             pictureBox.Image = image;
             pictureBox.Width = image.Width;
@@ -223,9 +223,14 @@
             {
                 foreach (IItem item in inventory)
                 {
-                    PictureBox pic = new PictureBox();
-                    inventoryPics.Add(pic);
-                    DrawImages(pic, item, GetImage(item), inventoryItemPositions[counter], "inventory-" + counter);
+                    // This check should be redundant, but it seems WF has problems and exceptions are thrown in some cases without it.
+                    if (counter < 10)
+                    {
+                        PictureBox pic = new PictureBox();
+                        inventoryPics.Add(pic);
+                        DrawImages(pic, GetImage(item), inventoryItemPositions[counter], "inventory-" + counter);
+                    }
+                    
                     counter++;
                 }
             }
@@ -235,17 +240,17 @@
             {
                 foreach (IItem item in this.equipped)
                 {
-                    PictureBox pic = new PictureBox();
-                    equippedPics.Add(pic);
-                    DrawImages(pic, item, GetImage(item), equippedItemPositions[counter], "equipped-" + counter);
+                    // This check should be redundant, but it seems WF has problems and exceptions are thrown in some cases without it.
+                    if (counter < 5)
+                    {
+                        PictureBox pic = new PictureBox();
+                        equippedPics.Add(pic);
+                        DrawImages(pic, GetImage(item), equippedItemPositions[counter], "equipped-" + counter);
+                    }
+
                     counter++;
                 }
             }
-        }
-
-        private void PlayerInventory_FormClosing(Object sender, FormClosingEventArgs e)
-        {
-            this.Hide();
         }
 
         private Image GetImage(IItem item)
@@ -317,6 +322,11 @@
             return itemMeta[itemMeta.Length - 1];
         }
 
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
         // This code reduces the flickering when loading the forms.
         protected override CreateParams CreateParams
         {
@@ -326,11 +336,6 @@
                 cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
                 return cp;
             }
-        }
-
-        private void welcome_Click(object sender, EventArgs e)
-        {
-            this.Hide();
         }
     }
 }
