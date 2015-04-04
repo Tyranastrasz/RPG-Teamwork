@@ -2,7 +2,7 @@
 {
     using System;
 
-    class NotEnoughDicePointsException : ApplicationException
+    internal class InvalidItemTypeException : Exception
     {
     }
 }

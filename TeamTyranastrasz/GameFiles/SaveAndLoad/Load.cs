@@ -1,40 +1,46 @@
-﻿using RpgGame.Forms;
-
-namespace RpgGame.SaveAndLoad
+﻿namespace RpgGame.SaveAndLoad
 {
     using System;
-    using System.IO;
-    using System.Web.Script.Serialization;
-    using System.Windows.Forms;
     using System.Collections.Generic;
-    using RpgGame.Player;
-    using RpgGame.Interfaces;
-    using RpgGame.Items;
+    using System.IO;
+    using System.Windows.Forms;
+
+    using Forms;
+    using Interfaces;
+    using Items;
+    using Newtonsoft.Json;
+    using Player;
 
     public class Load
     {
+        private const string FolderPath = "../../SaveAndLoad/";
+
         public static void LoadGame()
         {
-            string playerClass = CheckPlayerClass();
             try
             {
-                using (StreamReader firstFile = new StreamReader(
-                    "..\\..\\SaveAndLoad\\" + playerClass + "savegame.txt"))
-                using (StreamReader secondFile = new StreamReader(
-                    "..\\..\\SaveAndLoad\\" + playerClass + "saveinventory.txt"))
-                using (StreamReader thirdFile = new StreamReader(
-                    "..\\..\\SaveAndLoad\\" + playerClass + "saveequipeditems.txt"))
-                {
-                    var saveGameContent = firstFile.ReadToEnd();
-                    ICharacter recreatedCharacter = CreatePlayerFromSavedGame(playerClass, saveGameContent);
-                    recreatedCharacter.Inventory = new List<IItem>();
-                    recreatedCharacter.Equiped = new List<IItem>();
+                Directory.CreateDirectory(Load.FolderPath);
 
-                    RecreateItems(secondFile, recreatedCharacter.Inventory);
-                    RecreateItems(thirdFile, recreatedCharacter.Equiped);
-                    
-                    GameEngine.PlayerCharacter = recreatedCharacter;
+                // TODO: Make a window pop up and choose a savegame.
+                string[] files = Directory.GetFiles(Load.FolderPath, "*.json");
+
+                if (files.Length != 0)
+                {
+                    var loadedGame = File.ReadAllText(files[0]);
+                    var jsObject = JsonConvert.DeserializeObject(loadedGame);
+                    var snapshot = JsonConvert.DeserializeObject<SnapshotOfCharacter>(loadedGame);
+                    ICharacter loadedCharacter = Load.CreatePlayerFromSavedGame(snapshot);
+                    loadedCharacter.Inventory = new List<IItem>();
+                    loadedCharacter.Equiped = new List<IItem>();
+
+                    Load.RecreateItems(loadedCharacter.Inventory, loadedCharacter.Equiped, jsObject);
+
+                    GameEngine.PlayerCharacter = loadedCharacter;
                     GameEngine.Inventory = new PlayerInventory();
+                }
+                else
+                {
+                    throw new FileNotFoundException();
                 }
             }
             catch (FileLoadException)
@@ -43,11 +49,11 @@ namespace RpgGame.SaveAndLoad
             }
             catch (DirectoryNotFoundException)
             {
-                throw new DirectoryNotFoundException("The path to the file is incorrect!");
+                MessageBox.Show("The path to the file is incorrect!");
             }
-            catch (IOException)
+            catch (UnauthorizedAccessException)
             {
-                throw new IOException("Cannot read from file!");
+                MessageBox.Show("You do not have permissions to write to the specific file location!");
             }
             catch (InvalidOperationException)
             {
@@ -57,167 +63,142 @@ namespace RpgGame.SaveAndLoad
             {
                 MessageBox.Show("Cannot identify character type!");
             }
-        }
-
-        private static void RecreateItems(StreamReader file, IList<IItem> items)
-        {
-            string currentLine;
-            while ((currentLine = file.ReadLine()) != null)
+            catch (InvalidItemTypeException)
             {
-                // name, price, picture, def, attk, hit, str, dex, vit, int, lvl, desc
-                string[] lineSplitted = currentLine.Split(',');
-
-                LoadItems(lineSplitted, items);
+                MessageBox.Show("Cannot identify item type!");
             }
         }
 
-        private static void LoadItems(string[] lineSplitted, IList<IItem> items)
+        private static void RecreateItems(IList<IItem> inventory, IList<IItem> equiped, dynamic jsObject)
         {
-            string name = lineSplitted[1].Trim();
-            int price = int.Parse(lineSplitted[2].Trim());
-            Pictures picture = (Pictures)Enum.Parse(typeof(Pictures), lineSplitted[3].Trim());
-            int def = int.Parse(lineSplitted[4].Trim());
-            int attk = int.Parse(lineSplitted[5].Trim());
-            int hit = int.Parse(lineSplitted[6].Trim());
-            int str = int.Parse(lineSplitted[7].Trim());
-            int dex = int.Parse(lineSplitted[8].Trim());
-            int vit = int.Parse(lineSplitted[9].Trim());
-            int intl = int.Parse(lineSplitted[10].Trim());
-            int lvl = int.Parse(lineSplitted[11].Trim());
-            string desc = lineSplitted[12].Trim();
-
-            switch (lineSplitted[0].Trim())
+            foreach (var item in jsObject["Inventory"])
             {
-                case "Helmet":
-                    items.Add(new Helmet(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
+                LoadItems(inventory, item);
+            }
+
+            foreach (var item in jsObject["Equiped"])
+            {
+                LoadItems(equiped, item);
+            }
+        }
+
+        private static void LoadItems(IList<IItem> items, dynamic item)
+        {
+            string name = item["Name"];
+            int price = Convert.ToInt32((item["Price"]));
+            Pictures picture = (Pictures) Convert.ToInt32(item["Picture"]);
+            int defPoints = Convert.ToInt32(item["DefencePoints"]);
+            int attackPoints = Convert.ToInt32(item["AttackPoints"]);
+            int hitPoints = Convert.ToInt32(item["HitPoints"]);
+            int strength = Convert.ToInt32(item["Strength"]);
+            int dexterity = Convert.ToInt32(item["Dexterity"]);
+            int vitality = Convert.ToInt32(item["Vitality"]);
+            int intelligence = Convert.ToInt32(item["Intelligence"]);
+            int lvlReq = Convert.ToInt32(item["levelRequirement"]);
+            string descr = item["Description"];
+            ItemType itemType = (ItemType) Convert.ToInt32(item["ItemType"]);
+
+            switch (itemType)
+            {
+                case ItemType.Chainmail:
+                    items.Add(new Chainmail(name, price, picture, defPoints, attackPoints, hitPoints, strength,
+                        dexterity,
+                        vitality, intelligence, lvlReq, descr));
                     break;
-                case "Chainmail":
-                    items.Add(new Chainmail(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
+                case ItemType.Boots:
+                    items.Add(new Boots(name, price, picture, defPoints, attackPoints, hitPoints, strength, dexterity,
+                        vitality, intelligence, lvlReq, descr));
                     break;
-                case "Gloves":
-                    items.Add(new Gloves(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
+                case ItemType.Gloves:
+                    items.Add(new Gloves(name, price, picture, defPoints, attackPoints, hitPoints, strength, dexterity,
+                        vitality, intelligence, lvlReq, descr));
                     break;
-                case "Weapon":
-                    items.Add(new Weapon(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
+                case ItemType.Helmet:
+                    items.Add(new Helmet(name, price, picture, defPoints, attackPoints, hitPoints, strength, dexterity,
+                        vitality, intelligence, lvlReq, descr));
                     break;
-                case "Boots":
-                    items.Add(new Boots(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
+                case ItemType.Potion:
+                    items.Add(new Potion(name, price, picture, defPoints, attackPoints, hitPoints, strength, dexterity,
+                        vitality, intelligence, lvlReq, descr));
                     break;
-                case "Potion":
-                    items.Add(new Potion(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
+                case ItemType.Scroll:
+                    items.Add(new Scroll(name, price, picture, defPoints, attackPoints, hitPoints, strength, dexterity,
+                        vitality, intelligence, lvlReq, descr));
                     break;
-                case "Scroll":
-                    items.Add(new Scroll(name, price, picture, def, attk, hit, str, dex, vit, intl, lvl, desc));
+                case ItemType.Weapon:
+                    items.Add(new Weapon(name, price, picture, defPoints, attackPoints, hitPoints, strength, dexterity,
+                        vitality, intelligence, lvlReq, descr));
                     break;
                 default:
-                    throw new Exception();
+                    throw new InvalidItemTypeException();
+            }
+
+            if (item["ItemType"] == 0)
+            {
+            }
+            else if (item["ItemType"] == 1)
+            {
+            }
+            else if (item["ItemType"] == 2)
+            {
+            }
+            else if (item["ItemType"] == 3)
+            {
+            }
+            else if (item["ItemType"] == 4)
+            {
+            }
+            else if (item["ItemType"] == 5)
+            {
+            }
+            else if (item["ItemType"] == 6)
+            {
             }
         }
 
-        private static ICharacter CreatePlayerFromSavedGame(string playerClass, 
-            string saveGameContent)
+        private static ICharacter CreatePlayerFromSavedGame(SnapshotOfCharacter snapshot)
         {
-            var jsonSerializer = new JavaScriptSerializer();
-            switch (playerClass)
+            ICharacter character;
+            switch (snapshot.CharacterType)
             {
-                case "Warrior":
-                {
-                    SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
-                    ICharacter recreatedCharacter = new Warrior(
-                        loadedCharacter.Name,
-                        loadedCharacter.Strength,
-                        loadedCharacter.Dexterity,
-                        loadedCharacter.Vitality,
-                        loadedCharacter.Intelligence,
-                        loadedCharacter.MaxHitPoints,
-                        loadedCharacter.Experience,
-                        loadedCharacter.Cash,
-                        loadedCharacter.Level,
-                        loadedCharacter.Position);
-                    return recreatedCharacter;
-                }
-                case "Mage":
-                {
-                    SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
-                    ICharacter recreatedCharacter = new Mage(
-                        loadedCharacter.Name,
-                        loadedCharacter.Strength,
-                        loadedCharacter.Dexterity,
-                        loadedCharacter.Vitality,
-                        loadedCharacter.Intelligence,
-                        loadedCharacter.MaxHitPoints,
-                        loadedCharacter.Experience,
-                        loadedCharacter.Cash,
-                        loadedCharacter.Level,
-                        loadedCharacter.Position);
-                    return recreatedCharacter;
-                }
-                case "Rogue":
-                {
-                    SnapshotOfCharacter loadedCharacter = jsonSerializer.Deserialize<SnapshotOfCharacter>(saveGameContent);
-                    ICharacter recreatedCharacter = new Rogue(
-                        loadedCharacter.Name,
-                        loadedCharacter.Strength,
-                        loadedCharacter.Dexterity,
-                        loadedCharacter.Vitality,
-                        loadedCharacter.Intelligence,
-                        loadedCharacter.MaxHitPoints,
-                        loadedCharacter.Experience,
-                        loadedCharacter.Cash,
-                        loadedCharacter.Level,
-                        loadedCharacter.Position);
-                    return recreatedCharacter;
-                }
+                case CharacterType.Mage:
+                    return character = new Mage(
+                        snapshot.Name,
+                        snapshot.Strength,
+                        snapshot.Dexterity,
+                        snapshot.Vitality,
+                        snapshot.Intelligence,
+                        snapshot.MaxHitPoints,
+                        snapshot.Experience,
+                        snapshot.Cash,
+                        snapshot.Level,
+                        snapshot.Position);
+                case CharacterType.Rogue:
+                    return character = new Rogue(
+                        snapshot.Name,
+                        snapshot.Strength,
+                        snapshot.Dexterity,
+                        snapshot.Vitality,
+                        snapshot.Intelligence,
+                        snapshot.MaxHitPoints,
+                        snapshot.Experience,
+                        snapshot.Cash,
+                        snapshot.Level,
+                        snapshot.Position);
+                case CharacterType.Warrior:
+                    return character = new Warrior(
+                        snapshot.Name,
+                        snapshot.Strength,
+                        snapshot.Dexterity,
+                        snapshot.Vitality,
+                        snapshot.Intelligence,
+                        snapshot.MaxHitPoints,
+                        snapshot.Experience,
+                        snapshot.Cash,
+                        snapshot.Level,
+                        snapshot.Position);
                 default:
                     throw new InvalidCharacterTypeException();
-            }
-        }
-
-        private static string CheckPlayerClass()
-        {
-            try
-            {
-                string[] filesInDirectory = Directory.GetFiles("..\\..\\SaveAndLoad\\");
-                string playerClass = string.Empty;
-                foreach (var file in filesInDirectory)
-                {
-                    if (file.Contains("warrior"))
-                    {
-                        playerClass = "Warrior";
-                        break;
-                    }
-                    if (file.Contains("mage"))
-                    {
-                        playerClass = "Mage";
-                        break;
-                    }
-                    if (file.Contains("rogue"))
-                    {
-                        playerClass = "Rogue";
-                        break;
-                    }
-                }
-
-                if (playerClass != string.Empty)
-                {
-                    return playerClass;
-                }
-                else
-                {
-                    throw new FileNotFoundException();
-                }
-            }
-            catch (FileNotFoundException)
-            {
-                throw new FileNotFoundException();
-            }
-            catch (DirectoryNotFoundException)
-            {
-                throw new DirectoryNotFoundException("The path to the file is incorrect!");
-            }
-            catch (IOException)
-            {
-                throw new IOException();
             }
         }
     }

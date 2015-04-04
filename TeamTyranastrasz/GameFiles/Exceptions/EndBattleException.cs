@@ -1,4 +1,4 @@
-﻿namespace RpgGame.Exceptions
+﻿namespace RpgGame.SaveAndLoad
 {
     using System;
 

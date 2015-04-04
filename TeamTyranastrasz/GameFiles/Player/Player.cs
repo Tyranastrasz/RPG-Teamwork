@@ -1,9 +1,10 @@
 ﻿namespace RpgGame.Player
 {
-    using RpgGame.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Linq;
+
+    using Interfaces;
 
     public abstract class Player : Unit, ITrade, ICharacter
     {
@@ -21,7 +22,9 @@
         private int experience;
         private int level;
 
-        protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier, List<IItem> baseItems) 
+        protected Player(string name, int str, int dex, int vit, int intl, int strengthModifier, int dexterityModifier,
+                         int vitalityModifier, int intelligenceModifier,
+                         List<IItem> baseItems, CharacterType characterType)
             : base(name)
         {
             this.Strength = str;
@@ -32,19 +35,23 @@
             this.DexterityModifier = dexterityModifier;
             this.VitalityModifier = vitalityModifier;
             this.IntelligenceModifier = intelligenceModifier;
-            this.Position = new Position();
+            Position = new Position();
             this.Level = 1;
             this.Cash = 500;
             this.Inventory = new List<IItem>();
             this.Equiped = new List<IItem>();
-            InitialItemEquip(baseItems);
+            this.InitialItemEquip(baseItems);
             //CalculateAttackPoints();
             //CalculateDefencePoints();
-            CalculateHitPoints();
-            this.CurrentHitPoints = this.MaxHitPoints;
+            this.CalculateHitPoints();
+            CurrentHitPoints = this.MaxHitPoints;
+            this.CharacterType = characterType;
         }
 
-        protected Player(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints, int experience, int cash, int level, Position position, int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier)
+        protected Player(string name, int strength, int dexterity, int vitality, int intelligence, int maxHitPoints,
+                         int experience, int cash, int level, Position position,
+                         int strengthModifier, int dexterityModifier, int vitalityModifier, int intelligenceModifier,
+                         CharacterType characterType)
             : base(name)
         {
             this.Strength = strength;
@@ -52,18 +59,20 @@
             this.Vitality = vitality;
             this.Intelligence = intelligence;
             this.MaxHitPoints = maxHitPoints;
-            this.CurrentHitPoints = this.MaxHitPoints;
+            CurrentHitPoints = this.MaxHitPoints;
             this.Experience = experience;
             this.Cash = cash;
             this.Level = level;
-            this.Position = position;
+            Position = position;
             this.StrengthModifier = strengthModifier;
             this.DexterityModifier = dexterityModifier;
             this.VitalityModifier = vitalityModifier;
             this.IntelligenceModifier = intelligenceModifier;
+            this.CharacterType = characterType;
         }
 
-        public int Strength { 
+        public int Strength
+        {
             get { return this.strength; }
 
             set
@@ -77,7 +86,8 @@
             }
         }
 
-        public int Dexterity {
+        public int Dexterity
+        {
             get { return this.dexterity; }
 
             set
@@ -91,7 +101,8 @@
             }
         }
 
-        public int Vitality {
+        public int Vitality
+        {
             get { return this.vitality; }
 
             set
@@ -105,7 +116,8 @@
             }
         }
 
-        public int Intelligence {
+        public int Intelligence
+        {
             get { return this.intelligence; }
 
             set
@@ -119,7 +131,8 @@
             }
         }
 
-        public int MaxHitPoints {
+        public int MaxHitPoints
+        {
             get { return this.maxHitPoints; }
 
             set
@@ -141,7 +154,8 @@
 
         public int BonusAttackPoints { get; set; }
 
-        public int Experience {
+        public int Experience
+        {
             get { return this.experience; }
 
             set
@@ -155,7 +169,8 @@
             }
         }
 
-        public int Cash {
+        public int Cash
+        {
             get { return this.cash; }
 
             set
@@ -169,7 +184,8 @@
             }
         }
 
-        public int Level {
+        public int Level
+        {
             get { return this.level; }
 
             set
@@ -187,6 +203,8 @@
 
         public IList<IItem> Equiped { get; set; }
 
+        public CharacterType CharacterType { get; set; }
+
         private void InitialItemEquip(List<IItem> baseItems)
         {
             for (int i = 0; i < baseItems.Count(); i++)
@@ -197,25 +215,26 @@
 
         private int CalculateAttackPoints()
         {
-            this.AttackPoints = this.BonusAttackPoints + (this.Strength * this.StrengthModifier) + (this.Intelligence * this.IntelligenceModifier);
+            this.AttackPoints = this.BonusAttackPoints + (this.Strength*this.StrengthModifier) +
+                                (this.Intelligence*this.IntelligenceModifier);
             return this.AttackPoints;
         }
 
         private int CalculateDefencePoints()
         {
-            this.DefencePoints = this.BonusDefencePoints + this.Dexterity * this.DexterityModifier;
+            this.DefencePoints = this.BonusDefencePoints + this.Dexterity*this.DexterityModifier;
             return this.DefencePoints;
         }
 
         public int CalculateHitPoints()
         {
-            this.MaxHitPoints = this.Vitality * this.VitalityModifier;
+            this.MaxHitPoints = this.Vitality*this.VitalityModifier;
             return this.MaxHitPoints;
         }
 
         public virtual int Attack()
         {
-            int damage = CalculateAttackPoints();
+            int damage = this.CalculateAttackPoints();
             if (this.Equiped != null)
             {
                 damage += this.Equiped.Sum(item => item.AttackPoints);
@@ -225,7 +244,7 @@
 
         public virtual int Defend()
         {
-            int defence = CalculateDefencePoints();
+            int defence = this.CalculateDefencePoints();
             if (this.Equiped != null)
             {
                 defence += this.Equiped.Sum(item => item.DefencePoints);
@@ -271,7 +290,6 @@
             {
                 throw new NullReferenceException("Fatal Error!");
             }
-            
         }
 
         public void UnEquip(IItem item)
@@ -301,7 +319,7 @@
 
         public void Sell(IItem item)
         {
-            this.Cash += item.Price / 2;
+            this.Cash += item.Price/2;
             this.RemoveFromInventory(item);
         }
 
@@ -319,11 +337,11 @@
             switch (type)
             {
                 case "low":
-                    return this.Level * 1;
+                    return this.Level*1;
                 case "medium":
-                    return (int)((double)this.Level * 1.5);
+                    return (int) (this.Level*1.5);
                 case "heavy":
-                    return this.Level * 2;
+                    return this.Level*2;
                 default:
                     return 0;
             }
@@ -335,10 +353,10 @@
 
             for (int i = 2; i <= lvl; i++)
             {
-                xp += xp * 0.5;
+                xp += xp*0.5;
             }
 
-            return (int)xp;
+            return (int) xp;
         }
 
         public abstract void CastBuff(string type);

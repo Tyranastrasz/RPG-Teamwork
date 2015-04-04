@@ -28,9 +28,13 @@
                 MessageBox.Show("Game loaded!");
                 this.Hide();
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException)
             {
-                MessageBox.Show("You have no saved games!");
+                MessageBox.Show("No save games found!");
+            }
+            catch (IOException)
+            {
+                throw new IOException("Cannot read from file!");
             }
         }
 

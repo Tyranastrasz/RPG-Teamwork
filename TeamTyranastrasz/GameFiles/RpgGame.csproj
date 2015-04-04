@@ -57,6 +57,9 @@
     <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -71,6 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleManager.cs" />
+    <Compile Include="CharacterType.cs" />
+    <Compile Include="Exceptions\InvalidItemTypeException.cs" />
+    <Compile Include="ItemType.cs" />
     <Compile Include="Exceptions\EndBattleException.cs" />
     <Compile Include="Forms\Battle.cs">
       <SubType>Form</SubType>
@@ -192,6 +198,7 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="GameDiagram.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

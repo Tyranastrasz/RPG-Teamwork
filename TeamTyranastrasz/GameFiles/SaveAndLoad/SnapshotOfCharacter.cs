@@ -1,6 +1,6 @@
 ﻿namespace RpgGame.SaveAndLoad
 {
-    using RpgGame.Interfaces;
+    using Interfaces;
 
     public struct SnapshotOfCharacter
     {
@@ -14,6 +14,7 @@
         private int cash;
         private int level;
         private Position position;
+        private CharacterType character;
 
         public SnapshotOfCharacter(ICharacter currentPlayerState)
             : this()
@@ -28,6 +29,7 @@
             this.cash = currentPlayerState.Cash;
             this.level = currentPlayerState.Level;
             this.position = currentPlayerState.Position;
+            this.character = currentPlayerState.CharacterType;
         }
 
         public string Name
@@ -97,5 +99,7 @@
             get { return this.position; } 
             set { this.position = value; }
         }
+
+        public CharacterType CharacterType { get; set; }
     }
 }

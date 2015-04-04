@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace RpgGame.Interfaces
+﻿namespace RpgGame.Interfaces
 {
     public interface IItem
     {
@@ -29,5 +27,7 @@ namespace RpgGame.Interfaces
         bool IsConsumable { get; }
 
         Pictures Picture { get; set; }
+
+        ItemType ItemType { get; set; }
     }
 }

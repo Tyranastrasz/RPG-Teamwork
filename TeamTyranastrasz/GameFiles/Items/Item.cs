@@ -11,7 +11,7 @@
         private int intelligence;
         private int price;
 
-        protected Item(string name, int price, Pictures picture, int defencePoints = 0, int attackPoints = 0, int hitPoints = 0, int str = 0, int dex = 0, int vit = 0, int intl = 0, int level = 0, string description = null)
+        protected Item(string name, int price, Pictures picture, ItemType itemType, int defencePoints = 0, int attackPoints = 0, int hitPoints = 0, int str = 0, int dex = 0, int vit = 0, int intl = 0, int level = 0, string description = null)
             : base(name)
         {
             this.Strength = str;
@@ -25,6 +25,7 @@
             this.Price = price;
             this.Description = description;
             this.Picture = picture;
+            this.ItemType = itemType;
         }
 
         public int Strength { 
@@ -111,6 +112,8 @@
         public bool IsConsumable { get; set; }
 
         public Pictures Picture { get; set; }
+
+        public ItemType ItemType { get; set; }
 
         // name, price, picture, def, attk, hit, str, dex, vit, int, lvl, desc
         public override string ToString()

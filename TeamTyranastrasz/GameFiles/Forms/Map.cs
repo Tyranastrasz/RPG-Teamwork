@@ -1,22 +1,23 @@
 ﻿namespace RpgGame.Forms
 {
     using System;
-    using System.Windows.Forms;
-    using RpgGame.Interfaces;
-    using RpgGame.SaveAndLoad;
     using System.Diagnostics;
     using System.Drawing;
-    using RpgGame.Exceptions;
+    using System.IO;
+    using System.Windows.Forms;
+
+    using Interfaces;
+    using SaveAndLoad;
 
     public partial class Map : Form
     {
         public Map()
         {
-            InitializeComponent();
-            
+            this.InitializeComponent();
+
             //ICharacter playerCharacter = GameEngine.PlayerCharacter;
-            welcome.Text = "Welcome, " + GameEngine.PlayerCharacter.Name + " !";
-            theChoosenOne.Image = GetCharacterImage(GetCharacterClass(GameEngine.PlayerCharacter));
+            this.welcome.Text = "Welcome, " + GameEngine.PlayerCharacter.Name + " !";
+            this.theChoosenOne.Image = this.GetCharacterImage(Map.GetCharacterClass(GameEngine.PlayerCharacter));
             Sound.Sound.PlayMapSound();
         }
 
@@ -47,15 +48,10 @@
             GameEngine.Inventory.ShowDialog();
         }
 
-        private void quit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void battleTower_Click(object sender, EventArgs e)
         {
             GameEngine.CreateBattleScreen();
-            this.Hide();
+            Hide();
         }
 
         private void Map_MouseMove(object sender, MouseEventArgs e)
@@ -64,53 +60,53 @@
             int mouseY = e.Y;
 
             // Battle Tower Mouse Hover
-            int towerLocationX = battleTower.Location.X;
-            int towerLocationY = battleTower.Location.Y;
+            int towerLocationX = this.battleTower.Location.X;
+            int towerLocationY = this.battleTower.Location.Y;
 
-            int towerHeigh = battleTower.Size.Height;
-            int towerWidth = battleTower.Size.Width;
+            int towerHeigh = this.battleTower.Size.Height;
+            int towerWidth = this.battleTower.Size.Width;
 
             if (mouseX > towerLocationX && mouseX < towerLocationX + towerHeigh &&
                 mouseY > towerLocationY && mouseY < towerLocationX + towerWidth)
             {
-                battleTower.Visible = true;
+                this.battleTower.Visible = true;
             }
             else
             {
-                battleTower.Visible = false;
+                this.battleTower.Visible = false;
             }
 
             // Secret Place Mouse Hover
-            int secretPlaceLocationX = secretPlace.Location.X;
-            int secretPlaceLocationY = secretPlace.Location.Y;
+            int secretPlaceLocationX = this.secretPlace.Location.X;
+            int secretPlaceLocationY = this.secretPlace.Location.Y;
 
-            int secretPlaceHeigh = secretPlace.Size.Height;
-            int secretPlaceWidth = secretPlace.Size.Width;
+            int secretPlaceHeigh = this.secretPlace.Size.Height;
+            int secretPlaceWidth = this.secretPlace.Size.Width;
 
             if (mouseX > secretPlaceLocationX && mouseX < secretPlaceLocationX + secretPlaceHeigh &&
                 mouseY > secretPlaceLocationY && mouseY < secretPlaceLocationY + secretPlaceWidth)
             {
-                secretPlace.Visible = true;
+                this.secretPlace.Visible = true;
             }
             else
             {
-                secretPlace.Visible = false;
+                this.secretPlace.Visible = false;
             }
 
-            int townLocationX = townSelected.Location.X;
-            int townLocationY = townSelected.Location.Y;
+            int townLocationX = this.townSelected.Location.X;
+            int townLocationY = this.townSelected.Location.Y;
 
-            int townHeigh = townSelected.Size.Height;
-            int townWidth = townSelected.Size.Width;
+            int townHeigh = this.townSelected.Size.Height;
+            int townWidth = this.townSelected.Size.Width;
 
             if (mouseX > townLocationX && mouseX < townLocationX + townHeigh &&
                 mouseY > townLocationY && mouseY < townLocationY + townWidth)
             {
-                townSelected.Visible = true;
+                this.townSelected.Visible = true;
             }
             else
             {
-                townSelected.Visible = false;
+                this.townSelected.Visible = false;
             }
 
             // TODO: Create separate method for mouse hover
@@ -125,7 +121,7 @@
         {
             Town enterTown = new Town();
             enterTown.Show();
-            this.Hide();
+            Hide();
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -135,18 +131,29 @@
 
         private void Map_Load(object sender, EventArgs e)
         {
-
         }
 
         private void save_Click(object sender, EventArgs e)
         {
             Save.SaveGame();
+            MessageBox.Show("Game saved!");
         }
 
         private void load_Click(object sender, EventArgs e)
         {
-            SaveAndLoad.Load.LoadGame();
-            MessageBox.Show("Game loaded!");
+            try
+            {
+                SaveAndLoad.Load.LoadGame();
+                MessageBox.Show("Game loaded!");
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("No save games found!");
+            }
+            catch (IOException)
+            {
+                throw new IOException("Cannot read from file!");
+            }
         }
 
         // This code reduces the flickering when loading the forms.
@@ -155,7 +162,7 @@
             get
             {
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                cp.ExStyle |= 0x02000000; // Turn on WS_EX_COMPOSITED
                 return cp;
             }
         }

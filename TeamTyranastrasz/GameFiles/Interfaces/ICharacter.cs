@@ -40,6 +40,8 @@
 
         Position Position { get; }
 
+        CharacterType CharacterType { get; set; }
+
         int CalculateSkillStats(string type);
 
         void CastBuff(string type);

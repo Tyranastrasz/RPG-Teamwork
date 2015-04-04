@@ -6,7 +6,7 @@
     using RpgGame.Enemies.MeleeType;
     using RpgGame.Enemies.RangeType;
     using RpgGame.Interfaces;
-    using RpgGame.Exceptions;
+    using RpgGame.SaveAndLoad;
     using System.Drawing;
 
     public class BattleManager
