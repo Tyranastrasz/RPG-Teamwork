@@ -27,13 +27,13 @@
                 if (files.Length != 0)
                 {
                     var loadedGame = File.ReadAllText(files[0]);
-                    var jsObject = JsonConvert.DeserializeObject(loadedGame);
+                    var charachterAsJson = JsonConvert.DeserializeObject(loadedGame);
                     var snapshot = JsonConvert.DeserializeObject<SnapshotOfCharacter>(loadedGame);
                     ICharacter loadedCharacter = Load.CreatePlayerFromSavedGame(snapshot);
                     loadedCharacter.Inventory = new List<IItem>();
                     loadedCharacter.Equiped = new List<IItem>();
 
-                    Load.RecreateItems(loadedCharacter.Inventory, loadedCharacter.Equiped, jsObject);
+                    Load.RecreateItems(loadedCharacter.Inventory, loadedCharacter.Equiped, charachterAsJson);
 
                     GameEngine.PlayerCharacter = loadedCharacter;
                     GameEngine.Inventory = new PlayerInventory();
